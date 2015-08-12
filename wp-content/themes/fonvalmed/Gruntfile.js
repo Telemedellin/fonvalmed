@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             livereload: true,
         },
         html: {
-            files: ["*.php",],
+            files: ["*.php", "*.html"],
         },
         sass: {
             files: ["sass/**/*.scss"],

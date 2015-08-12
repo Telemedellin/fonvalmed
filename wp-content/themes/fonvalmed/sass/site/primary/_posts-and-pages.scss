@@ -26,3 +26,17 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+//-------------Estilos del post
+
+.post__title{
+	margin-bottom: 0px;
+	color: $color__gray-dark;
+}
+
+//Fecha del artículo
+
+.post__entry-date{
+	color: $color__primary;
+}
+
