@@ -42,7 +42,12 @@ function fonvalmed_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'fonvalmed' ),
+		'primary' => esc_html__( 'Menú principal', 'fonvalmed' ),
+	) );
+
+	// Top bar menú
+	register_nav_menus( array(
+		'secondary' => esc_html__( 'Menú superior', 'fonvalmed' ),
 	) );
 
 	/*

@@ -17,6 +17,7 @@ Text Domain: fonvalmed
 # Normalize
 # Typography
 # Elements
+# Grid
 # Forms
 # Navigation
 	## Links
@@ -26,6 +27,8 @@ Text Domain: fonvalmed
 # Clearings
 # Widgets
 # Content
+	## Header
+	## Footer
     ## Posts and pages
 	## Asides
 	## Comments
@@ -51,6 +54,11 @@ Text Domain: fonvalmed
 # Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+@import "layout/grid";
 
 /*--------------------------------------------------------------
 # Forms

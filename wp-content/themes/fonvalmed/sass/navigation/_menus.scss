@@ -1,3 +1,21 @@
+.l_inline{
+	margin: 0px;
+	padding: 0px;
+	*{
+		display: inline-block;
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+	} 
+}
+.top-bar{
+	text-align: right;
+	a{
+		color: #fff;
+		font-size: 0.8rem;
+		padding: 5px 10px;
+	}
+}
 .main-navigation {
 	clear: both;
 	display: block;
