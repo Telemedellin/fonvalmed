@@ -43,10 +43,7 @@ function fonvalmed_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Menú principal', 'fonvalmed' ),
-	) );
-
-	// Top bar menú
-	register_nav_menus( array(
+		'footer' => esc_html__( 'Menú footer', 'fonvalmed' ),
 		'secondary' => esc_html__( 'Menú superior', 'fonvalmed' ),
 	) );
 
@@ -107,8 +104,48 @@ function fonvalmed_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 1', 'fonvalmed' ),
+		'id'            => 'sidebar-footer-1',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-footer">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title-footer">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'fonvalmed' ),
+		'id'            => 'sidebar-footer-2',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-footer">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title-footer">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 3', 'fonvalmed' ),
+		'id'            => 'sidebar-footer-3',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-footer">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title-footer">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 4', 'fonvalmed' ),
+		'id'            => 'sidebar-footer-4',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-footer">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title-footer">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'fonvalmed_widgets_init' );

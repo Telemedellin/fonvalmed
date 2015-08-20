@@ -8,11 +8,57 @@
 	margin: 0px;
 	a{
 		text-indent: -9999px;
-		display: block;
 	}
+}
+.ctn_logo{
+}
+.logo{
+	margin: 0 auto;
+	max-width: 100%;
+	height:auto;
 }
 .ctn_logos-alcaldia{
 	a{
 		display: block;
+		margin-top: 15%;
+	}
+}
+/* Estilos para pantallas entre los 768 px y 992 px */
+@media only screen and (min-width: 768px) {
+	.site-branding{
+		padding-left: 0;
+	}
+	.logo{
+		max-height: 120px;
+		margin: 0;
+	}
+	.ctn_logos-alcaldia{
+		a{
+			margin-top: 11%;
+		}
+	}
+	.logos-alcaldia{
+		max-width: 70%;
+		float: right;
+	}
+}
+@media only screen and (min-width: 992px){
+	.site-title{
+		margin-top: 15px;
+	}
+	.ctn_logo{
+		z-index: 50;
+    	position: relative;
+	}
+	.logo{
+		max-height: 135px;
+	}
+	.ctn_logos-alcaldia{
+		a{
+			margin-top: 3%;
+		}
+	}
+	.logos-alcaldia{
+		max-width: 60%;
 	}
 }

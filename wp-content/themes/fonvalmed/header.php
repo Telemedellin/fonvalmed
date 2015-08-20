@@ -14,6 +14,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600italic,300italic,600,700italic,400italic' rel='stylesheet' type='text/css'>
 
 <?php wp_head(); ?>
 </head>
@@ -29,16 +31,18 @@
 		</div><!-- /ctn_top-bar -->
 		<div class="header_container container">
 			<div class="site-branding col-xs-6">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><img class="logo img-responsive" src="<?php bloginfo("template_directory"); ?>/img/logo-fonvalmed.png" alt="Logo Fonvalmed"></a></h1>
+				<h1 class="site-title"><a class="ctn_logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php bloginfo("template_directory"); ?>/img/logo-fonvalmed.png" alt="Logo Fonvalmed"></a></h1>
 			</div><!-- .site-branding -->
 			<div class="ctn_logos-alcaldia col-xs-6">
-				<a href="https://www.medellin.gov.co/irj/portal/medellin"><img src="<?php bloginfo("template_directory"); ?>/img/logos-alcaldia-medellin.jpg" alt="Logos Alcaldía de Medellín"></a>
+				<a href="https://www.medellin.gov.co/irj/portal/medellin"><img class="logos-alcaldia" src="<?php bloginfo("template_directory"); ?>/img/logos-alcaldia.png" alt="Logos Alcaldía de Medellín"></a>
 			</div>
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fonvalmed' ); ?></button>
+		</div><!-- .header_container -->
+		<div class="ctn_navigation">
+			<nav id="site-navigation" class="main-navigation container" role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Ver navegación', 'fonvalmed' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', ) ); ?>
 			</nav><!-- #site-navigation -->
-		</div><!-- .header_container -->
+		</div>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content container">
