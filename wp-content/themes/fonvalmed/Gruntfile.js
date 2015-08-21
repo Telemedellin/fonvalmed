@@ -7,9 +7,9 @@ module.exports = function(grunt) {
     //Compilador de Sass
     sass: {
         css: {
-        options: {
-          style: "expanded"
-        },
+			options: {
+			  style: "expanded"
+			},
             files: {
                 "style.css": "sass/style.scss"
             }
@@ -39,6 +39,7 @@ module.exports = function(grunt) {
   // Load plugins
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-sass');
 
   // Default task(s).
   grunt.registerTask('default', ['sass']);

@@ -9,6 +9,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fonvalmed
 
+
 */
 
 /*--------------------------------------------------------------
@@ -17,6 +18,7 @@ Text Domain: fonvalmed
 # Normalize
 # Typography
 # Elements
+# Grid
 # Forms
 # Navigation
 	## Links
@@ -26,6 +28,8 @@ Text Domain: fonvalmed
 # Clearings
 # Widgets
 # Content
+	## Header
+	## Footer
     ## Posts and pages
 	## Asides
 	## Comments
@@ -51,6 +55,11 @@ Text Domain: fonvalmed
 # Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+@import "layout/grid";
 
 /*--------------------------------------------------------------
 # Forms
