@@ -145,11 +145,14 @@
 	.main-navigation{
 		padding-left: 256px;
 		width: 1170px;
-		a{
-			width: 148px;
-			font-size: 0.8rem;
-			padding: 0 15px;
+		.mega-menu-wrap{
+			a{
+				width: 148px;
+				font-size: 0.8rem;
+				padding: 0 15px;
+			}
 		}
+		
 	}
 	.ctn_logos-alcaldia{
 		a{

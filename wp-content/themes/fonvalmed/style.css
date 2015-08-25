@@ -2732,7 +2732,7 @@ a:hover, a:active {
     padding-left: 256px;
     width: 1170px;
   }
-  .main-navigation a {
+  .main-navigation .mega-menu-wrap a {
     width: 148px;
     font-size: 0.8rem;
     padding: 0 15px;
