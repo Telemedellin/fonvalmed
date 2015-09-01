@@ -59,7 +59,7 @@
   background: none;
 }
 #mega-menu-wrap-primary {
-  background: #222;
+  background: #f3f3f3;
   -webkit-border-radius: 0px 0px 0px 0px;
   -moz-border-radius: 0px 0px 0px 0px;
   -ms-border-radius: 0px 0px 0px 0px;
@@ -134,7 +134,7 @@
   margin: 0 0 0 0px;
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item.mega-toggle-on > a, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a:focus {
-  background: #333;
+  background: #f08014;
   color: #fff;
   font-weight: normal;
   text-decoration: none;
@@ -147,7 +147,7 @@
   border-bottom: 0px solid #fff;
   outline: none;
   text-decoration: none;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 7px 0px 7px;
   line-height: 40px;
   font-weight: normal;
   height: 40px;
@@ -155,10 +155,10 @@
   text-align: left;
   width: auto;
   display: block;
-  color: #fff;
-  text-transform: normal;
+  color: #000;
+  text-transform: uppercase;
   text-decoration: none;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   -webkit-border-radius: 0px 0px 0px 0px;
   -moz-border-radius: 0px 0px 0px 0px;
   -ms-border-radius: 0px 0px 0px 0px;
@@ -168,7 +168,7 @@
   font-size: 14px;
   cursor: pointer;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item {
     display: list-item;
     margin: 0;
@@ -198,7 +198,7 @@
   -ms-border-radius: 0px 0px 0px 0px;
   -o-border-radius: 0px 0px 0px 0px;
   border-radius: 0px 0px 0px 0px;
-  background: #f1f1f1;
+  background: #fff;
   padding: 0px 0px 0px 0px;
   position: absolute;
   width: 100%;
@@ -208,7 +208,7 @@
   border-bottom: 0px solid #fff;
   left: 0;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu {
     float: left;
     position: static;
@@ -323,7 +323,7 @@
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-columns-8-of-8 {
   width: 100%;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu {
     border: 0;
     padding: 10px;
@@ -382,12 +382,12 @@
   /* Second level menu item */
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a {
-  color: #555;
+  color: #f08014;
   font-family: inherit;
-  font-size: 16px;
-  text-transform: uppercase;
+  font-size: 18px;
+  text-transform: none;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   vertical-align: top;
@@ -399,10 +399,10 @@
   /* Second level menu item hover */
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a:focus {
-  color: #555;
-  font-weight: bold;
+  color: #f08014;
+  font-weight: normal;
   text-decoration: none;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   /* third level menu item */
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a {
@@ -422,12 +422,12 @@
   color: #666;
   font-weight: normal;
   text-decoration: none;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu {
   z-index: 999;
   position: absolute;
-  width: 150px;
+  width: 115px;
   border-top: 0px solid #fff;
   border-left: 0px solid #fff;
   border-right: 0px solid #fff;
@@ -435,7 +435,7 @@
   padding: 0px 0px 0px 0px;
   background: #f1f1f1;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu {
     float: left;
     position: static;
@@ -444,7 +444,7 @@
     border: 0;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item {
     clear: both;
   }
@@ -457,16 +457,16 @@
   font-size: 14px;
   font-weight: normal;
   padding: 0px 10px 0px 10px;
-  line-height: 35px;
+  line-height: 50px;
   text-decoration: none;
-  text-transform: normal;
+  text-transform: none;
   vertical-align: baseline;
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:first-child a {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:first-child a {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -476,7 +476,7 @@
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:last-child a {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -493,7 +493,7 @@
   left: 100%;
   top: 0;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {
     position: static;
     left: 0;
@@ -504,7 +504,7 @@
   }
 }
 #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-menu-item-has-children > a:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout li.mega-menu-item-has-children > a:after, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item-has-children > a:after {
-  content: '\f140';
+  content: '';
   display: inline-block;
   font: inherit;
   font-family: dashicons;
@@ -519,31 +519,31 @@
   transform: rotate(0);
   color: inherit;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-menu-item-has-children a:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout li.mega-menu-item-has-children a:after, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item-has-children a:after {
     float: right;
   }
   #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-menu-item-has-children.mega-toggle-on > a:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout li.mega-menu-item-has-children.mega-toggle-on > a:after, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item-has-children.mega-toggle-on > a:after {
-    content: '\f142';
+    content: '';
   }
 }
 #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-menu-item-has-children.mega-hide-arrow > a:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout li.mega-menu-item-has-children.mega-hide-arrow > a:after, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item-has-children.mega-hide-arrow > a:after {
   display: none;
 }
 #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item li.mega-menu-item-has-children > a:after {
-  content: '\f139';
+  content: '';
   float: right;
   margin: 0;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item li.mega-menu-item-has-children > a:after {
-    content: '\f140';
+    content: '';
   }
 }
 #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li a {
   text-align: right;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li a {
     text-align: left;
   }
@@ -552,20 +552,20 @@
   float: right;
   margin: 0 0 0 6px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li a:before {
     float: left;
     margin: 0 6px 0 0;
   }
 }
 #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item-has-children > a:after {
-  content: '\f141';
+  content: '';
   float: left;
   margin: 0;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item-has-children > a:after {
-    content: '\f140';
+    content: '';
     float: right;
   }
 }
@@ -578,7 +578,7 @@
   z-index: 1;
   cursor: pointer;
   text-align: right;
-  background: #222;
+  background: #f3f3f3;
   -webkit-border-radius: 2px 2px 2px 2px;
   -moz-border-radius: 2px 2px 2px 2px;
   -ms-border-radius: 2px 2px 2px 2px;
@@ -586,9 +586,9 @@
   border-radius: 2px 2px 2px 2px;
   line-height: 40px;
   height: 40px;
-  color: #fff;
+  color: #000;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary .mega-menu-toggle {
     display: block;
   }
@@ -609,7 +609,7 @@
 #mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open:after {
   content: "";
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   #mega-menu-wrap-primary .mega-menu-toggle + #mega-menu-primary {
     display: none;
   }
@@ -627,4 +627,18 @@
 }
 #mega-menu-wrap-primary {
   clear: both;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #mega-menu-wrap-primary #mega-menu-primary {
+    height: 50px;
+  }
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a {
+    line-height: normal;
+    height: 50px;
+    display: table-cell;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    width: 115px;
+  }
 }
