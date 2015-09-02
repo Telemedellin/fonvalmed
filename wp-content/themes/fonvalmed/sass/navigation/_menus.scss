@@ -112,20 +112,29 @@
 #mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open:before {
 	content: "\f158";
 }
+li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children > .mega-sub-menu > li.mega-menu-item {
+	margin-bottom: 10px !important;
+	margin-left: 10px !important;
+	padding-left: 5px;
+}
+li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children > .mega-sub-menu > li.mega-current-menu-item {
+	border-color: #FF7F00 !important;
+}:hover{
 
+}
+li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children > .mega-sub-menu > li.mega-menu-item > a {
+	padding-left: 5px !important;
+	border-left: 2px solid $color__gray !important;
+	transition: all 0.5s ease;
+}
+li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children > .mega-sub-menu > li.mega-menu-item > a:hover{
+	border-left: 2px solid $color__primary !important;
+}
 @media (min-width: 0px) and (max-width: 991px) {
-	li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children > .mega-sub-menu > li.mega-menu-item {
-		border-left: 2px solid !important;
-		margin-bottom: 5px !important;
-	}
-	li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children > .mega-sub-menu > li.mega-current-menu-item {
-		border-color: #FF7F00 !important;
-	}
-	li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children > .mega-sub-menu > li.mega-menu-item > a {
-    	padding-left: 5px !important;
-	}
+
+
     #mega-menu-primary > li {
-    	background: #ff7f00 !important;
+    	background: $color__primary !important;
         margin-bottom: 2px !important;
   	}
     #mega-menu-primary > li > a {
@@ -151,24 +160,6 @@
     	padding-bottom: 0px;
     }
 }
-@media only screen and (min-width: 992px)  and (max-width: 1199px) {
-	#mega-menu-wrap-primary #mega-menu-primary {
-		height: 50px;
-	}
-    #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-menu-item-has-children > a:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout li.mega-menu-item-has-children > a:after, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item-has-children > a:after {
-    	content: "";
-    }
-	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a {
-		line-height: normal;
-    	height: 50px;
-    	display: table-cell;
-    	font-size: 12px;
-    	vertical-align: middle;
-        text-align: center;
-    	width: 115px;
-	}
-}
-
 @media screen and (min-width: 768px) {
 	.menu-toggle{
 		width: 50%;
@@ -212,6 +203,44 @@
     		}
 		}
 	}
+	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > ul.mega-sub-menu{
+		@include sombra-cajas(0.3);
+	}
+	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li ul.mega-sub-menu{
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+	}
+	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item{
+		padding: 15px 15px 0px 15px !important;
+	}
+	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item {
+		padding: 15px 15px 0px 15px !important;
+		a{
+			transition: all 0.5s ease;
+			&:hover{
+				padding-left: 5px;
+			}
+		}
+	}
+	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a{
+		line-height: 20px !important;
+		margin-bottom: 10px !important;
+	}
+	#mega-menu-wrap-primary #mega-menu-primary {
+		height: 50px;
+	}
+    #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout.mega-menu-item-has-children > a:after, #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-flyout li.mega-menu-item-has-children > a:after, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item-has-children > a:after {
+    	content: "";
+    }
+	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a {
+		line-height: normal;
+    	height: 50px;
+    	display: table-cell;
+    	font-size: 12px;
+    	vertical-align: middle;
+        text-align: center;
+    	width: 115px;
+	}
 }
 
 @media screen and (min-width: 1200px){
@@ -225,7 +254,9 @@
 				padding: 0 15px;
 			}
 		}
-		
+	}
+	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a{
+		width: 145px;
 	}
 	.ctn_logos-alcaldia{
 		a{
