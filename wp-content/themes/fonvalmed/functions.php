@@ -167,6 +167,18 @@ function fonvalmed_scripts() {
 add_action( 'wp_enqueue_scripts', 'fonvalmed_scripts' );
 
 /**
+* Script que me permite alterar el administrador
+* 
+**/
+function custom_admin_init()
+{
+	wp_register_script('customScript', get_template_directory_uri() . '/js/custom-script-admin.js',true);
+	wp_enqueue_script('customScript');
+}
+add_action('admin_init', 'custom_admin_init');
+
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

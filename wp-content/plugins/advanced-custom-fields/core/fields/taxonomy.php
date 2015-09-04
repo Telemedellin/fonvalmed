@@ -351,57 +351,144 @@ class acf_field_taxonomy extends acf_field
 		{
 			$field['value'] = array( $field['value'] );
 		}
-		
-		
-		// vars
-		$args = array(
-			'taxonomy'     => $field['taxonomy'],
-			'hide_empty'   => false,
-			'style'        => 'none',
-			'walker'       => new acf_taxonomy_field_walker( $field ),
-		);
-		
-		$args = apply_filters('acf/fields/taxonomy/wp_list_categories', $args, $field );
+
+		// Un buque que le meti para que me detectara los sidebar
+		if( $field['taxonomy'] == 'sidebar' ):  ?>
+
+			<?php 
+			/**
+			* Ininio parte personalizada
+			**/
+			$sidebars  	= get_option('sidebars_widgets') ;
+			$options_sidebar 	= '';  
+
+			global $post_ID;
+			$save_sidebar = get_post_meta ( $post_ID, $field['label'] , true);
+
+			foreach ($sidebars as $sidebar_id => $sidebar) 
+			{
+
+				if( $sidebar_id != 'wp_inactive_widgets' AND $sidebar_id != 'array_version' )
+				{
+					if( !empty($save_sidebar))
+					{
+						foreach ($save_sidebar as  $save) 
+						{
+						 	if($save == $sidebar_id)
+						 	{
+						 		$options_sidebar .= '<li><label class="selectit"><input type="checkbox" name="'.$field['name'].'" value="'.$sidebar_id.'" checked> '.$sidebar_id.'</label></li>';	
+						 		continue;
+						 	}
+						} 						
+					}
+
+					$options_sidebar .= '<li><label class="selectit"><input type="checkbox" name="'.$field['name'].'" value="'.$sidebar_id.'"> '.$sidebar_id.'</label></li>';
+				}
+			}
+			
+		?>
+		<div class="acf-taxonomy-field" data-load_save="<?php echo $field['load_save_terms']; ?>">
+			<input type="hidden" name="<?php echo $single_name; ?>" value="" />
+			
+			<?php if( $field['field_type'] == 'select' ): ?>
+				
+				<select id="<?php echo $field['id']; ?>" name="<?php echo $field['name']; ?>" <?php if( $field['multiple'] ): ?>multiple="multiple" size="5"<?php endif; ?>>
+					<?php if( $field['allow_null'] ): ?>
+						<option value=""><?php _e("None", 'acf'); ?></option>
+					<?php endif; ?>
+			
+			<?php else: ?>
+				<div class="categorychecklist-holder">
+				<ul class="acf-checkbox-list">
+					<?php if( $field['allow_null'] ): ?>
+						<li>
+							<label class="selectit">
+								<input type="<?php echo $field['field_type']; ?>" name="<?php echo $field['name']; ?>" value="" /> <?php _e("None", 'acf'); ?>
+							</label>
+						</li>
+					<?php endif; ?>
+			
+			<?php endif; ?>
+					<?php
+						// Aca le meto la mano para que muestre los sidebar que quiero
+						 echo $options_sidebar ;
+					 ?>
+			
+			<?php if( $field['field_type'] == 'select' ): ?>
+			
+				</select>
+			
+			<?php else: ?>
+			
+				</ul>
+				</div>
+				
+			<?php endif; ?>
+			<?php	/**
+					* fin parte personalizada
+					**/
+			?>
+		</div>
+
+		<?php else: 
+
+			// vars
+			$args = array(
+				'taxonomy'     => $field['taxonomy'],
+				'hide_empty'   => false,
+				'style'        => 'none',
+				'walker'       => new acf_taxonomy_field_walker( $field ),
+			);
+			
+			$args = apply_filters('acf/fields/taxonomy/wp_list_categories', $args, $field );
+
+	
+
 		
 		?>
-<div class="acf-taxonomy-field" data-load_save="<?php echo $field['load_save_terms']; ?>">
-	<input type="hidden" name="<?php echo $single_name; ?>" value="" />
-	
-	<?php if( $field['field_type'] == 'select' ): ?>
-		
-		<select id="<?php echo $field['id']; ?>" name="<?php echo $field['name']; ?>" <?php if( $field['multiple'] ): ?>multiple="multiple" size="5"<?php endif; ?>>
-			<?php if( $field['allow_null'] ): ?>
-				<option value=""><?php _e("None", 'acf'); ?></option>
-			<?php endif; ?>
-	
-	<?php else: ?>
-		<div class="categorychecklist-holder">
-		<ul class="acf-checkbox-list">
-			<?php if( $field['allow_null'] ): ?>
-				<li>
-					<label class="selectit">
-						<input type="<?php echo $field['field_type']; ?>" name="<?php echo $field['name']; ?>" value="" /> <?php _e("None", 'acf'); ?>
-					</label>
-				</li>
-			<?php endif; ?>
-	
-	<?php endif; ?>
+		<div class="acf-taxonomy-field" data-load_save="<?php echo $field['load_save_terms']; ?>">
+			<input type="hidden" name="<?php echo $single_name; ?>" value="" />
 			
-			<?php wp_list_categories( $args ); ?>
-	
-	<?php if( $field['field_type'] == 'select' ): ?>
-	
-		</select>
-	
-	<?php else: ?>
-	
-		</ul>
-		</div>
-		
-	<?php endif; ?>
+			<?php if( $field['field_type'] == 'select' ): ?>
+				
+				<select id="<?php echo $field['id']; ?>" name="<?php echo $field['name']; ?>" <?php if( $field['multiple'] ): ?>multiple="multiple" size="5"<?php endif; ?>>
+					<?php if( $field['allow_null'] ): ?>
+						<option value=""><?php _e("None", 'acf'); ?></option>
+					<?php endif; ?>
+			
+			<?php else: ?>
+				<div class="categorychecklist-holder">
+				<ul class="acf-checkbox-list">
+					<?php if( $field['allow_null'] ): ?>
+						<li>
+							<label class="selectit">
+								<input type="<?php echo $field['field_type']; ?>" name="<?php echo $field['name']; ?>" value="" /> <?php _e("None", 'acf'); ?>
+							</label>
+						</li>
+					<?php endif; ?>
+			
+			<?php endif; ?>
+					
+					<?php wp_list_categories( $args ); ?>
+			
+			<?php if( $field['field_type'] == 'select' ): ?>
+			
+				</select>
+			
+			<?php else: ?>
+			
+				</ul>
+				</div>
+				
+			<?php endif; ?>
 
-</div>
-	<?php
+		</div>
+		<?php 
+		//fin de else taxonomi 
+		endif; 
+		?>
+
+			<?php
 	
 	}
 	
@@ -435,7 +522,8 @@ class acf_field_taxonomy extends acf_field
 		// vars
 		$choices = array();
 		$taxonomies = get_taxonomies( array(), 'objects' );
-		$ignore = array( 'post_format', 'nav_menu', 'link_category' );
+		//$ignore = array( 'post_format', 'nav_menu', 'link_category' );
+		$ignore = array( 'post_format', 'link_category' );
 		
 		
 		foreach( $taxonomies as $taxonomy )
@@ -447,6 +535,9 @@ class acf_field_taxonomy extends acf_field
 			
 			$choices[ $taxonomy->name ] = $taxonomy->name;
 		}
+
+		// agregar Sidebars
+		$choices[ 'sidebar'] = 'sidebar';
 		
 				
 		do_action('acf/create_field', array(
