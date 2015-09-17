@@ -1,7 +1,7 @@
 a {
 	color: $color__link;
 	text-decoration: none;
-	transition: all 0.5s;
+	transition: all 0.5s ease;
 
 	&:visited {
 		color: $color__link-visited;
@@ -18,5 +18,5 @@ a {
 	&:hover,
 	&:active {
 		outline: 0;
-	}
+	}	
 }

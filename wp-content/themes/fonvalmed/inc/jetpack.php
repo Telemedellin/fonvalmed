@@ -25,6 +25,6 @@ add_action( 'after_setup_theme', 'fonvalmed_jetpack_setup' );
 function fonvalmed_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'template-parts/content', get_post_format() );
+		get_template_part( 'templates/template-parts/content', get_post_format() );
 	}
 } // end function fonvalmed_infinite_scroll_render

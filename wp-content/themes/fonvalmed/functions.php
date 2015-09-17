@@ -42,7 +42,9 @@ function fonvalmed_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'fonvalmed' ),
+		'primary' => esc_html__( 'Menú principal', 'fonvalmed' ),
+		'footer' => esc_html__( 'Menú footer', 'fonvalmed' ),
+		'secondary' => esc_html__( 'Menú superior', 'fonvalmed' ),
 	) );
 
 	/*
@@ -102,8 +104,48 @@ function fonvalmed_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 1', 'fonvalmed' ),
+		'id'            => 'sidebar-footer-1',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-footer">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title-footer">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'fonvalmed' ),
+		'id'            => 'sidebar-footer-2',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-footer">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title-footer">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 3', 'fonvalmed' ),
+		'id'            => 'sidebar-footer-3',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-footer">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title-footer">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 4', 'fonvalmed' ),
+		'id'            => 'sidebar-footer-4',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-footer">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title-footer">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'fonvalmed_widgets_init' );
@@ -123,6 +165,52 @@ function fonvalmed_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'fonvalmed_scripts' );
+
+// Register Custom Taxonomy
+function custom_taxonomy_obras() {
+
+	$labels = array(
+		'name'                       => _x( 'Nombre obras', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Nombre obra', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Nombre obra', 'text_domain' ),
+		'all_items'                  => __( 'Todas los nombres de las obras', 'text_domain' ),
+		'parent_item'                => __( 'Superior', 'text_domain' ),
+		'parent_item_colon'          => __( 'Superior:', 'text_domain' ),
+		'new_item_name'              => __( 'Nuevo nombre obra', 'text_domain' ),
+		'add_new_item'               => __( 'Añadir nuevo nombre', 'text_domain' ),
+		'edit_item'                  => __( 'Editar nombre', 'text_domain' ),
+		'update_item'                => __( 'Actualizar nombre', 'text_domain' ),
+		'view_item'                  => __( 'Ver nombre', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'search_items'               => __( 'Search Items', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                       => '/%nombre%/',
+		'with_front'                 => false,
+		'hierarchical'               => true,
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'rewrite'                    => $rewrite,
+	);
+	register_taxonomy( 'nombre', array( 'obra' ), $args );
+
+}
+add_action( 'init', 'custom_taxonomy_obras', 0 );
+
+function navigation_obra()
+{
+	
+}
 
 /**
  * Implement the Custom Header feature.
