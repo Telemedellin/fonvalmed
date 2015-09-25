@@ -5,7 +5,7 @@
 			<!-- #main -->
 			<main id="main" class="site-main" role="main">
 			<?php if (is_tax()): ?>
-				<?php include 'template-parts/content-category.php'; ?>
+				<?php include 'template-parts/content-category-obra.php'; ?>
 			<?php else: ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php include 'template-parts/content-single.php'; ?>

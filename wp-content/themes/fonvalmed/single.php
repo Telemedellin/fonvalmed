@@ -27,7 +27,6 @@
 			)
 		);
 
-		include 'header-obra.php';
 		include 'navigation-obra.php';
 
 		if (!is_null($layout) || !empty($layout))

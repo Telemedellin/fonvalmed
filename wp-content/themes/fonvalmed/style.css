@@ -2132,6 +2132,37 @@ a {
     padding: 0;
     list-style: none; }
 
+#obras-menu {
+  display: inline-block;
+  width: 100%;
+  height: 100%; }
+  #obras-menu ul {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    #obras-menu ul li {
+      background-color: #B1B1B1;
+      float: left;
+      list-style: none;
+      padding: 15px;
+      color: #fff;
+      margin-right: 2px; }
+      #obras-menu ul li a {
+        text-decoration: blink;
+        color: #fff; }
+      #obras-menu ul li:hover {
+        background-color: #969696; }
+      #obras-menu ul li.active {
+        background-color: #FF7F00; }
+        #obras-menu ul li.active a {
+          color: #fff; }
+        #obras-menu ul li.active:hover {
+          background-color: #969696; }
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -2274,6 +2305,33 @@ a {
     margin-top: 3%; }
   .logos-alcaldia {
     max-width: 60%; } }
+
+.obra-header {
+  display: block;
+  background-size: cover;
+  width: 100%;
+  min-height: 250px;
+  text-align: left;
+  margin-top: -28px;
+  margin-bottom: 50px;
+  z-index: -1; }
+  .obra-header div.container {
+    position: relative;
+    height: 250px; }
+  .obra-header h2 {
+    width: auto;
+    max-width: 80%;
+    background-color: #fff;
+    color: #FF7F00;
+    text-align: center;
+    opacity: 0.94;
+    border-radius: 10px 10px 0px 0px;
+    display: inline-block;
+    padding: 10px 20px;
+    position: absolute;
+    margin: 0px;
+    bottom: 0px;
+    left: 0; }
 
 /*--------------------------------------------------------------
 ## Footer
@@ -2474,6 +2532,147 @@ a {
 
 .post__entry-date {
   color: #FF7F00; }
+
+article.type-obra header h1 {
+  font-size: 1.7em;
+  font-weight: 400;
+  border-bottom: 2px solid #ccc; }
+
+article.type-obra header h1::before {
+  content: "";
+  width: 74px;
+  height: 37px;
+  position: absolute;
+  top: 23px;
+  right: 15px;
+  background: url(img/edificios-line.png) no-repeat; }
+
+#obra-map {
+  position: static;
+  background-color: #eee;
+  padding: 1px 10px 10px 10px; }
+  #obra-map span.solucion {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px; }
+
+#obra-detalle {
+  position: static;
+  width: 135px; }
+  #obra-detalle div.obra-imagen {
+    display: inline-block;
+    height: 70px;
+    width: 135px;
+    background-position: center;
+    background-size: cover; }
+  #obra-detalle span {
+    display: inline-block;
+    width: 100%;
+    text-align: center; }
+  #obra-detalle span.obra-estado {
+    color: #FF7F00; }
+  #obra-detalle hr.linea {
+    height: 1px;
+    background-color: #ccc;
+    margin: 0px;
+    padding: 0px; }
+  #obra-detalle div.obra-avance {
+    width: 100%;
+    height: 18px;
+    background-color: #ccc;
+    position: relative; }
+    #obra-detalle div.obra-avance span {
+      position: absolute;
+      display: inline-block;
+      height: 18px;
+      color: #FFF; }
+    #obra-detalle div.obra-avance span.texto {
+      z-index: 1; }
+    #obra-detalle div.obra-avance span.porcentaje {
+      background-color: #FF7F00;
+      content: ""; }
+
+#obra-filtro-tipo {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: 35px;
+  text-align: center;
+  background-color: #ccc;
+  margin-bottom: 25px; }
+  #obra-filtro-tipo a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: #828282;
+    padding: 5px 0px 5px 0px;
+    height: 35px; }
+    #obra-filtro-tipo a:hover {
+      background-color: #FF7F00;
+      color: #fff; }
+      #obra-filtro-tipo a:hover span {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #FF7F00;
+        margin-top: 30px;
+        left: 47.5%; }
+
+#obra-listado .filtros {
+  min-height: 117px;
+  border-right: 1px solid #969696;
+  text-align: center; }
+  #obra-listado .filtros:nth-child(3) {
+    border-right: 0px solid #fff; }
+  #obra-listado .filtros span:first-child {
+    display: inline-block;
+    background-color: transparent;
+    width: 100%;
+    border-radius: 0px;
+    color: #000;
+    font-size: 16px; }
+    #obra-listado .filtros span:first-child:hover {
+      background-color: transparent; }
+  #obra-listado .filtros span {
+    display: inline-block;
+    background-color: #B1B1B1;
+    width: 46%;
+    height: 100%;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px; }
+    #obra-listado .filtros span:nth-child(2), #obra-listado .filtros span:nth-child(3) {
+      margin-top: 25px; }
+    #obra-listado .filtros span:nth-child(4), #obra-listado .filtros span:nth-child(5) {
+      margin-top: 10px;
+      margin-bottom: 10px; }
+    #obra-listado .filtros span:hover {
+      background-color: #969696; }
+    #obra-listado .filtros span:active {
+      background-color: #FF7F00; }
+
+#obra-listado .obras {
+  background-color: #eee;
+  padding: 0px 0px 15px 0px;
+  margin-top: 15px; }
+  #obra-listado .obras div div {
+    display: block;
+    width: 100%;
+    background-color: #fff; }
+
+.entry-content p {
+  color: #FF7F00;
+  text-align: center; }
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #obra-listado .filtros {
+    border-right: 0px solid #fff; }
+  .obras {
+    padding: 0px 0px 15px 0px; } }
 
 /*--------------------------------------------------------------
 ## Asides

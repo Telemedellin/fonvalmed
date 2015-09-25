@@ -11,7 +11,11 @@
 			<!-- #main -->
 			<main id="main" class="site-main" role="main">
 			<?php if (is_tax()): ?>
-				<?php include 'template-parts/content-category.php'; ?>
+				<?php if ($terms->parent != 0): ?>
+					<?php include 'template-parts/content-category-obra.php'; ?>
+				<?php else: ?>
+					<?php include 'template-parts/content-category-proyecto.php'; ?>
+				<?php endif; ?>
 			<?php else: ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php include 'template-parts/content-obra.php'; ?>
