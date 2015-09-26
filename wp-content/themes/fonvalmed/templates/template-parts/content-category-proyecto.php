@@ -17,46 +17,50 @@
 	<div class="entry-content">
 		<?php //the_field('obra_contenido', $terms->taxonomy.'_'.$terms->term_id); ?>
 		<div id="obra-filtro-tipo">
-			<a href="#">Listado<span></span></a>
+			<a href="#">Listado</a>
 		</div>
 		<div id="obra-filtro-tipo">
-			<a href="#">Mapa<span></span></a>
+			<a href="#">Mapa</a>
 		</div>
 		<p>
 			Utiliza los siguientes filtros para conocer las obras.
 		</p>
 		<div>
-			<div id="obra-listado" class="col-md-12">
-				<div class="filtros col-md-4">
-					<span>Estado de la obra</span>
-					<span>Finalizados</span>
-					<span>En ejecución</span>
-					<span>Por ejecutar</span>
-					<span>En licitación</span>
-				</div>
-				<div class="filtros col-md-4">
-					<span>Zona de influencia</span>
-				</div>
-				<div class="filtros col-md-4">
-					<span>Tipo de obra</span>
-					<span>Ampliación</span>
-					<span>Apertura</span>
-					<span>Paso a desnivel</span>
-					<span>Otras obras</span>
-				</div>
-				<div class="obras col-md-12">
+			<div id="obra-listado" class="container-fluid">
+				<div class="row ctn__filtros">
+					<div class="filtros col-md-4">
+						<span class="filtro-title">Estado de la obra</span>
+						<span class="fm-label">Finalizados</span>
+						<span class="fm-label">En ejecución</span>
+						<span class="fm-label">Por ejecutar</span>
+						<span class="fm-label">En licitación</span>
+					</div>
+					<div class="filtros col-md-4">
+						<span class="filtro-title">Zona de influencia</span>
+					</div>
+					<div class="filtros col-md-4">
+						<span class="filtro-title">Tipo de obra</span>
+						<span class="fm-label">Ampliación</span>
+						<span class="fm-label">Apertura</span>
+						<span class="fm-label">Paso a desnivel</span>
+						<span class="fm-label">Otras obras</span>
+					</div>
+				</div><!-- /ctn_filtros -->
+				<div class="obras grid">
 					<?php $index = 0; ?>
 					<?php foreach(get_term_children($terms->term_id, $terms->taxonomy) as $term_id): ?>
-						<div class="col-md-4">
-							<div>
+						<div class="ctn__obra-preview grid-item">
+							<div class="ctn__obra-preview_image" style="background: url(http://lorempixel.com/400/200/) no-repeat; background-size: cover;">
+								
+							</div>
+							<div class="ctn__obra-preview_contenido">
 								<?php $obra = get_term($term_id, $terms->taxonomy); ?>
-								<div></div>
-								<p><?php echo $obra->name; ?></p>
-								<p><?php echo get_field('obra_estado', $terms->taxonomy.'_'.$term_id); ?></p>
+								<h3><?php echo $obra->name; ?></h3>
 								<hr class="linea">
+								<span class="obra-preview_estado"><?php echo get_field('obra_estado', $terms->taxonomy.'_'.$term_id); ?></span>
 								<div class="obra-avance">
-									<span class="texto"><?php echo get_field('obra_avance', $terms->taxonomy.'_'.$term_id); ?>%</span>
-									<span class="porcentaje" style="width: <?php echo get_field('obra_avance', $terms->taxonomy.'_'.$term_id); ?>%;"></span>
+									<span class="obra-avance_texto"><?php echo get_field('obra_avance', $terms->taxonomy.'_'.$term_id); ?>%</span>
+									<span class="obra-avance_porcentaje" style="width: <?php echo get_field('obra_avance', $terms->taxonomy.'_'.$term_id); ?>%;"></span>
 								</div>
 							</div>
 						</div>
@@ -91,7 +95,7 @@
 <script>
 	function initMap()
 	{
-		var location = {lat: <?php echo $location['lat']; ?>, lng: <?php echo $location['lng']; ?>};
+		var location = {lat: 0, lng: 0};
 		var content = '<div id="obra-detalle">' +
 					'<div class="obra-imagen" style="background-image:url(<?php echo $image_header['url']; ?>);"></div>' +
 						'<br />' +
