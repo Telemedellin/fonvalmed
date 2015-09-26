@@ -22,6 +22,7 @@ function fonvalmed_setup() {
 	 */
 	load_theme_textdomain( 'fonvalmed', get_template_directory() . '/languages' );
 
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -150,6 +151,20 @@ function fonvalmed_widgets_init() {
 }
 add_action( 'widgets_init', 'fonvalmed_widgets_init' );
 
+
+/**
+* Funcion adicional para instanciar los Widgets creados
+**/
+
+function creaWidgets()
+{
+	// Widget Avance de la obra 
+	 register_widget( 'WidgetAvanceProyecto' );
+
+}
+add_action( 'widgets_init', 'creaWidgets' );
+
+
 /**
  * Enqueue scripts and styles.
  */
@@ -202,3 +217,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+* Load widgets
+*/
+require get_template_directory() . '/widgets/avance.php';

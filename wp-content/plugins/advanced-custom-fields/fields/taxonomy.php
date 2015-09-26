@@ -83,6 +83,7 @@ class acf_field_taxonomy extends acf_field {
    		$r = array();
 		$args = array( 'hide_empty'	=> false );
 		
+
 		
 		// load field
 		$field = acf_get_field( $options['field_key'] );
@@ -627,7 +628,7 @@ class acf_field_taxonomy extends acf_field {
 			}
 			
 		}
-		
+
 		
 		// render select		
 		acf_render_field( $field );
@@ -672,7 +673,7 @@ class acf_field_taxonomy extends acf_field {
 			'walker'       => new acf_taxonomy_field_walker( $field ),
 		);
 		
-
+die;
 		// Un buque que le meti para que me detectara los sidebar
 		if( $field['taxonomy'] == 'sidebar' ):  ?>
 
