@@ -46,7 +46,8 @@ article.type-obra {
 		h1 {
 			font-size: 1.7em;
 			font-weight: 400;
-			border-bottom: 2px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			color: $color__gray-dark;
 		}
 		h1::before {
 			content: "";
@@ -218,8 +219,8 @@ article.type-obra {
 
 .entry-content {
 	p {
-		color: $color__primary;
-		text-align: center;
+		color: $color__gray-dark;
+		text-align: left;
 	}
 }
 
@@ -232,4 +233,19 @@ article.type-obra {
 	.obras {
 		padding: 0px 0px 15px 0px;
 	}
+}
+
+
+//Estilos del template Avance del proyecto
+
+.ctn__recaudo_texto{
+	background: $color__primary;
+	padding: 25px;
+}
+p.recaudo-texto{
+	color: #fff;
+	margin: 0;
+	font-size: 1.5rem;
+	text-align: center;
+	line-height: 2rem;
 }

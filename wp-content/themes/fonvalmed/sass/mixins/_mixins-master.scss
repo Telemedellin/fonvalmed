@@ -28,3 +28,19 @@
 	-moz-box-shadow:    0px 0px 12px 0px rgba(50, 50, 50, 0.3);
 	box-shadow:         0px 0px 12px 0px rgba(50, 50, 50, 0.3);
 }
+
+//Bordes degradados
+@mixin borde-degrade(){
+	border-width: 1px;
+    border-style: solid;
+    -webkit-border-image: 
+      -webkit-gradient(linear, 0 0, 0 100%, from($color__primary), to(rgba(0, 0, 0, 0))) 1 1%;
+    -webkit-border-image: 
+      -webkit-linear-gradient($color__primary, rgba(0, 0, 0, 0)) 1 1%;
+    -moz-border-image:
+      -moz-linear-gradient($color__primary, rgba(0, 0, 0, 0)) 1 1%;    
+    -o-border-image:
+      -o-linear-gradient($color__primary, rgba(0, 0, 0, 0)) 1 1%;
+    border-image:
+      linear-gradient(to bottom, $color__primary, rgba(0, 0, 0, 0)) 1 1%;
+}

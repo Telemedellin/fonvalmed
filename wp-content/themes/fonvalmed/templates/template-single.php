@@ -8,7 +8,7 @@
 				<?php include 'template-parts/content-category-obra.php'; ?>
 			<?php else: ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<?php include 'template-parts/content-single.php'; ?>
+					<?php include 'template-parts/content-obra.php'; ?>
 					<?php the_post_navigation(); ?>
 					<?php
 						// If comments are open or we have at least one comment, load up the comment template.
