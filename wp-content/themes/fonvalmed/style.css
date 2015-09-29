@@ -3704,6 +3704,10 @@ p.recaudo-total-texto {
   .info-recaudo_propietarios_total {
     font-size: 2rem;
   }
+
+  .grid-item {
+    width: 50%;
+  }
 }
 @media screen and (min-width: 992px) {
   article.type-obra header h1::before {
@@ -3748,6 +3752,10 @@ p.recaudo-total-texto {
 
   .recaudo-total-numero {
     font-size: 2rem;
+  }
+
+  .grid-item {
+    width: 33.30%;
   }
 }
 @media screen and (min-width: 1200px) {
