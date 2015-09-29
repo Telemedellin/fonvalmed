@@ -173,7 +173,6 @@ article.type-obra {
 		span {
 			display: inline-block;
 			background-color: $color__background-obra-menu;
-			width: 46%;
 			height: 100%;
 			border-radius: 5px;
 			color: #fff;
@@ -201,15 +200,62 @@ article.type-obra {
 		margin-top: 15px;
 	}
 }
-.grid-item{
+.fm-label{
+	padding: 5px 2px;
+	cursor: pointer;
+	margin-top: 10px !important;
+	margin-bottom: 0px !important;
 	width: 100%;
+}
+.fm-label-active{
+	background: $color__primary !important;
+}
+.grid {
+  background: #EEE;
+  margin: 0 auto;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-sizer, .grid-item {
+  width: 100%;
+}
+.grid-item {
+  //float: left;
 }
 .ctn__obra-preview{
 	background: #fff;
-	margin: 0 0 25px 0;
+	margin: 0 10px 25px 0;
+	display: block;
+	overflow: auto;
+	cursor: pointer;
+	color: $color__gray-dark;
+	height: auto;
+	float: left;
+	&:hover{
+		text-decoration: none;
+		color: $color__gray-dark;
+		.ctn__obra-preview_image{
+			background-size: 130% !important;
+		}
+	}
 }
 .ctn__obra-preview_image{
-	height: 200px;
+	background-size: 100%; 
+	transition: all ease 1s;
+	background-position: center center;
+	&:before{
+		content: "";
+		padding-top: 100%;
+		display: block;
+	}
 }
 .ctn__obra-preview_contenido{
 	padding: 10px;
@@ -217,6 +263,7 @@ article.type-obra {
 		margin: 10px 0;
 		font-size: 1.2rem;
 		text-align: center;
+		color: $color__gray-dark;
 	}
 	hr{
 		height: 1px;
@@ -243,7 +290,8 @@ article.type-obra {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    color: #000000;
 }
 .obra-avance_porcentaje{
 	display: block;
@@ -334,8 +382,11 @@ p.recaudo-total-texto{
 	.info-recaudo_propietarios_total{
 		font-size: 2rem;
 	}
-	.grid-item{
-		width: 50%;
+	.grid-sizer, .grid-item{
+		width: 48.2%;
+	}
+	.fm-label{
+		width: 46%;
 	}
 }
 
@@ -385,8 +436,8 @@ p.recaudo-total-texto{
 	.recaudo-total-numero{
 		font-size: 2rem;
 	}
-	.grid-item{
-		width: 33.30%;
+	.grid-sizer, .grid-item{
+		width: 31.7%;
 	}
 }
 @media screen and (min-width: 1200px){

@@ -3521,7 +3521,6 @@ article.type-obra header h1::before {
 #obra-listado .filtros span {
   display: inline-block;
   background-color: #B1B1B1;
-  width: 46%;
   height: 100%;
   border-radius: 5px;
   color: #fff;
@@ -3546,17 +3545,62 @@ article.type-obra header h1::before {
   margin-top: 15px;
 }
 
-.grid-item {
+.fm-label {
+  padding: 5px 2px;
+  cursor: pointer;
+  margin-top: 10px !important;
+  margin-bottom: 0px !important;
+  width: 100%;
+}
+
+.fm-label-active {
+  background: #FF7F00 !important;
+}
+
+.grid {
+  background: #EEE;
+  margin: 0 auto;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+.grid-sizer, .grid-item {
   width: 100%;
 }
 
 .ctn__obra-preview {
   background: #fff;
-  margin: 0 0 25px 0;
+  margin: 0 10px 25px 0;
+  display: block;
+  overflow: auto;
+  cursor: pointer;
+  color: #898989;
+  height: auto;
+  float: left;
+}
+.ctn__obra-preview:hover {
+  text-decoration: none;
+  color: #898989;
+}
+.ctn__obra-preview:hover .ctn__obra-preview_image {
+  background-size: 130% !important;
 }
 
 .ctn__obra-preview_image {
-  height: 200px;
+  background-size: 100%;
+  transition: all ease 1s;
+  background-position: center center;
+}
+.ctn__obra-preview_image:before {
+  content: "";
+  padding-top: 100%;
+  display: block;
 }
 
 .ctn__obra-preview_contenido {
@@ -3566,6 +3610,7 @@ article.type-obra header h1::before {
   margin: 10px 0;
   font-size: 1.2rem;
   text-align: center;
+  color: #898989;
 }
 .ctn__obra-preview_contenido hr {
   height: 1px;
@@ -3595,6 +3640,7 @@ article.type-obra header h1::before {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  color: #000000;
 }
 
 .obra-avance_porcentaje {
@@ -3705,8 +3751,12 @@ p.recaudo-total-texto {
     font-size: 2rem;
   }
 
-  .grid-item {
-    width: 50%;
+  .grid-sizer, .grid-item {
+    width: 48.2%;
+  }
+
+  .fm-label {
+    width: 46%;
   }
 }
 @media screen and (min-width: 992px) {
@@ -3754,8 +3804,8 @@ p.recaudo-total-texto {
     font-size: 2rem;
   }
 
-  .grid-item {
-    width: 33.30%;
+  .grid-sizer, .grid-item {
+    width: 31.7%;
   }
 }
 @media screen and (min-width: 1200px) {

@@ -30,7 +30,7 @@
 				<div class="row ctn__filtros">
 					<div class="filtros col-md-4">
 						<span class="filtro-title">Estado de la obra</span>
-						<span class="fm-label">Finalizados</span>
+						<span class="fm-label fm-label-active">Finalizados</span>
 						<span class="fm-label">En ejecución</span>
 						<span class="fm-label">Por ejecutar</span>
 						<span class="fm-label">En licitación</span>
@@ -47,10 +47,11 @@
 					</div>
 				</div><!-- /ctn_filtros -->
 				<div class="obras grid">
+					<div class="grid-sizer"></div>
 					<?php $index = 0; ?>
 					<?php foreach(get_term_children($terms->term_id, $terms->taxonomy) as $term_id): ?>
-						<div class="ctn__obra-preview grid-item">
-							<div class="ctn__obra-preview_image" style="background: url(http://lorempixel.com/400/200/) no-repeat; background-size: cover;">
+						<a class="ctn__obra-preview grid-item">
+							<div class="ctn__obra-preview_image" style="background: url(http://lorempixel.com/400/400/) no-repeat; background-size: 100%; background-position: center center;">
 								
 							</div>
 							<div class="ctn__obra-preview_contenido">
@@ -63,7 +64,7 @@
 									<span class="obra-avance_porcentaje" style="width: <?php echo get_field('obra_avance', $terms->taxonomy.'_'.$term_id); ?>%;"></span>
 								</div>
 							</div>
-						</div>
+						</a>
 						<?php $index++; ?>
 					<?php endforeach; ?>
 				</div>

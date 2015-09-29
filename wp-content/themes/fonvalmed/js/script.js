@@ -1,14 +1,15 @@
-jQuery(document).on("ready", function(){
+/*jQuery(document).on("ready", function(){
 
 	if( jQuery('.grid').length > 0 )
 	{
-		jQuery('.grid').ready(function(){
-			$('.grid').masonry({
-			  // options
-			  itemSelector: '.grid-item',
-			  columnWidth: 200
-			});
+		
+		jQuery('.grid').masonry({
+		  // options
+		  itemSelector: '.grid-item',
+		  columnWidth: '.grid-sizer',
+		  percentPosition: true
 		});
+
 	}
  
-});
+});*/
