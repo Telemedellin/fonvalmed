@@ -29,7 +29,7 @@
 				<div class="row ctn__filtros">
 					<div class="filtros col-md-4">
 						<span class="filtro-title">Estado de la obra</span>
-						<span class="fm-label" rel="estado:finalizados" onclick="javascript:filtrar(this)">Finalizados</span>
+						<span class="fm-label fm-label-active" rel="estado:finalizados" onclick="javascript:filtrar(this)">Finalizados</span>
 						<span class="fm-label" rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 						<span class="fm-label" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
 						<span class="fm-label" rel="estado:en-licitacion" onclick="javascript:filtrar(this)">En licitaci&oacute;n</span>
@@ -69,7 +69,9 @@
 
 									$obras[] = $obra;
 								?>
+								<div></div>
 								<p><?php echo $obra->name; ?></p>
+								<p><?php echo $obra->estado; ?></p>
 								<hr class="linea">
 								<span class="obra-preview_estado"><?php echo get_field('obra_estado', $terms->taxonomy.'_'.$term_id); ?></span>
 								<div class="obra-avance">
@@ -77,12 +79,12 @@
 									<span class="obra-avance_porcentaje" style="width: <?php echo $obra->avance; ?>%;"></span>
 								</div>
 							</div>
-						</a>
+						</div>
 					<?php endforeach; ?>
 				</div>
 			</div>
-			<div id="obra-mapas" style="visibility:hidden">
-				<div id="obra-mapas-filtros">
+			<div id="obra-mapas" class="col-md-12" style="visibility:hidden">
+				<div id="obra-mapas-filtros" class="col-md-12">
 					<span rel="estado:finalizados" onclick="javascript:filtrar(this)">Finalizados</span>
 					<span rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 					<span rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
@@ -107,8 +109,8 @@
 <script>
     jQuery('#obra-filtro-tipo > span').on('click', function () {
 
-        jQuery('.entry-content #obra-filtro-tipo').children().removeClass('active')
-        jQuery(this).addClass('active');
+        jQuery('.entry-content #obra-filtro-tipo').children().removeAttr('class')
+        jQuery(this).attr('class','active');
 
         if (jQuery(this).attr('rel') == 'mapa')
         {
@@ -124,22 +126,22 @@
 
 	function filtrar(element)
 	{
-		var tipo = jQuery(element).parent().parent().parent().attr('id') == 'obra-mapas' ? 'mapa' : 'listado';
+		var tipo = jQuery(element).parent().parent().attr('id') == 'obra-mapas' ? 'mapa' : 'listado';
 		var filtro = [];
         var term_id = '<?php echo $terms->term_id; ?>';
         var taxonomy = '<?php echo $terms->taxonomy; ?>';
         var active = false;
 
-        jQuery(element).hasClass('fm-label-active') ? jQuery(element).removeClass('fm-label-active') : jQuery(element).addClass('fm-label-active');
+        jQuery(element).hasClass('active') ? jQuery(element).removeAttr('class') : jQuery(element).attr('class','active');
 
-        if (jQuery('#obra-listado .ctn__filtros .filtros span.fm-label-active').length > 0 && tipo == 'listado')
+        if (jQuery('#obra-listado .filtros span.active').length > 0 && tipo == 'listado')
         {
-            jQuery.each(jQuery('#obra-listado .ctn__filtros .filtros span.fm-label-active'), function (k,v) { filtro[k] = jQuery(v).attr('rel'); });
+            jQuery.each(jQuery('#obra-listado .filtros span.active'), function (k,v) { filtro[k] = jQuery(v).attr('rel'); });
             active = true;
         }
         else if (jQuery('#obra-mapas #obra-mapas-filtros span.active').length > 0 && tipo == 'mapa')
         {
-            jQuery.each(jQuery('#obra-mapas #obra-mapas-filtros span.fm-label-active'), function (k,v) { filtro[k] = jQuery(v).attr('rel'); });
+            jQuery.each(jQuery('#obra-mapas #obra-mapas-filtros span.active'), function (k,v) { filtro[k] = jQuery(v).attr('rel'); });
             active = true;
         }
 

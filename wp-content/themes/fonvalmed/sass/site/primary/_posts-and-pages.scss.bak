@@ -1,0 +1,235 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+//-------------Estilos del post
+
+.post__title{
+	margin-bottom: 0px;
+	color: $color__gray-dark;
+}
+
+//Fecha del artículo
+
+.post__entry-date{
+	color: $color__primary;
+}
+
+//-------------Estilos de las obras
+article.type-obra {
+	header {
+		h1 {
+			font-size: 1.7em;
+			font-weight: 400;
+			border-bottom: 2px solid #ccc;
+		}
+		h1::before {
+			content: "";
+			width: 74px;
+			height: 37px;
+			position: absolute;
+			top: 23px;
+			right: 15px;
+			background: url(img/edificios-line.png) no-repeat;
+		}
+	}
+}
+
+#obra-map {
+	position: static;
+	background-color: $color__background-pre;
+	padding: 1px 10px 10px 10px;
+	span.solucion {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		padding: 10px;
+	}
+}
+
+#obra-detalle {
+	position: static;
+	width: 135px;
+	div.obra-imagen {
+		display: inline-block;
+		height: 70px;
+		width: 135px;
+		background-position: center;
+		background-size: cover;
+	}
+	span {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+	}
+	span.obra-estado {
+		color: $color__primary;
+	}
+	hr.linea {
+		height: 1px;
+		background-color: $color__background-hr;
+		margin: 0px;
+		padding: 0px;
+	}
+	div.obra-avance {
+		width: 100%;
+		height: 18px;
+		background-color: $color__background-hr;
+		position: relative;
+		span {
+			position: absolute;
+			display: inline-block;
+			height: 18px;
+			color: #FFF;
+		}
+		span.texto {
+			z-index: 1;
+		}
+		span.porcentaje {
+			background-color: $color__primary;
+			content: "";
+		}
+	}
+}
+
+#obra-filtro-tipo {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	height: 35px;
+	text-align: center;
+	background-color: $color__background-hr;
+	margin-bottom: 25px;
+	> span {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		text-decoration: none;
+		color: #828282;
+		padding: 5px 0px 5px 0px;
+		height: 35px;
+		&:hover, &.active {
+			background-color: $color__primary;
+			color: #fff;
+			span {
+				position: absolute;
+				width: 0; 
+				height: 0; 
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-top: 10px solid $color__primary;
+				margin-top: 30px;
+				left: 47.5%;
+			}
+		}
+	}
+}
+
+#obra-listado {
+	.filtros {
+		min-height: 117px;
+		border-right: 1px solid $color__obra-menu-hover;
+		text-align: center;
+		&:nth-child(3) {
+			border-right: 0px solid #fff;
+		}
+		span:first-child {
+			display: inline-block;
+			background-color: transparent;
+			width: 100%;
+			border-radius: 0px;
+			color: #000;
+			font-size: 16px;
+			&:hover {
+				background-color: transparent;
+			}
+		}
+		span {
+			display: inline-block;
+			background-color: $color__background-obra-menu;
+			width: 46%;
+			height: 100%;
+			border-radius: 5px;
+			color: #fff;
+			font-size: 14px;
+			&:nth-child(2), &:nth-child(3)
+			{
+				margin-top: 25px;
+			}
+			&:nth-child(4), &:nth-child(5)
+			{
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			&:hover {
+				background-color: $color__obra-menu-hover;
+			}
+			&.active {
+				background-color: $color__primary;
+			}
+		}
+	}
+	.obras {
+		background-color: $color__background-pre;
+		padding: 0px 0px 15px 0px;
+		margin-top: 15px;
+		div {
+			div {
+				display: block;
+				width: 100%;
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+#obra-mapas {
+	
+}
+
+#obra-mapas-filtros {
+	
+}
+
+.entry-content {
+	p {
+		color: $color__primary;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+	#obra-listado {
+		.filtros {
+			border-right: 0px solid #fff;
+		}
+	}
+	.obras {
+		padding: 0px 0px 15px 0px;
+	}
+}

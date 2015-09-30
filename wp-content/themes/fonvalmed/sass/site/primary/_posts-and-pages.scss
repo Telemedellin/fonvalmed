@@ -46,14 +46,15 @@ article.type-obra {
 		h1 {
 			font-size: 1.7em;
 			font-weight: 400;
-			border-bottom: 2px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			color: $color__gray-dark;
 		}
 		h1::before {
 			content: "";
 			width: 74px;
 			height: 37px;
 			position: absolute;
-			top: 23px;
+			top: 4px;
 			right: 15px;
 			background: url(img/edificios-line.png) no-repeat;
 		}
@@ -63,7 +64,7 @@ article.type-obra {
 #obra-map {
 	position: static;
 	background-color: $color__background-pre;
-	padding: 1px 10px 10px 10px;
+	padding: 10px;
 	span.solucion {
 		display: inline-block;
 		width: 100%;
@@ -172,7 +173,6 @@ article.type-obra {
 		span {
 			display: inline-block;
 			background-color: $color__background-obra-menu;
-			width: 46%;
 			height: 100%;
 			border-radius: 5px;
 			color: #fff;
@@ -189,41 +189,188 @@ article.type-obra {
 			&:hover {
 				background-color: $color__obra-menu-hover;
 			}
-			&.active {
+			&:active {
 				background-color: $color__primary;
 			}
 		}
 	}
 	.obras {
 		background-color: $color__background-pre;
-		padding: 0px 0px 15px 0px;
+		padding: 10px;
 		margin-top: 15px;
-		div {
-			div {
-				display: block;
-				width: 100%;
-				background-color: #fff;
-			}
+	}
+}
+.fm-label{
+	padding: 5px 2px;
+	cursor: pointer;
+	margin-top: 10px !important;
+	margin-bottom: 0px !important;
+	width: 100%;
+}
+.fm-label-active{
+	background: $color__primary !important;
+}
+.grid {
+  background: #EEE;
+  margin: 0 auto;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-sizer, .grid-item {
+  width: 100%;
+}
+.grid-item {
+  //float: left;
+}
+.ctn__obra-preview{
+	background: #fff;
+	margin: 0 10px 25px 0;
+	display: block;
+	overflow: auto;
+	cursor: pointer;
+	color: $color__gray-dark;
+	height: auto;
+	float: left;
+	&:hover{
+		text-decoration: none;
+		color: $color__gray-dark;
+		.ctn__obra-preview_image{
+			background-size: 130% !important;
 		}
 	}
 }
-
-#obra-mapas {
-	
+.ctn__obra-preview_image{
+	background-size: 100%; 
+	transition: all ease 1s;
+	background-position: center center;
+	&:before{
+		content: "";
+		padding-top: 100%;
+		display: block;
+	}
 }
-
-#obra-mapas-filtros {
-	
+.ctn__obra-preview_contenido{
+	padding: 10px;
+	h3{
+		margin: 10px 0;
+		font-size: 1.2rem;
+		text-align: center;
+		color: $color__gray-dark;
+	}
+	hr{
+		height: 1px;
+		margin: 5px 0;
+	}
+}
+.obra-preview_estado{
+	color: $color__primary;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	text-align: center;
+	display: block;
+	font-weight: 500;
+	margin-top: 10px;
+}
+.obra-avance{
+	background: #eee;
+	position: relative;
+}
+.obra-avance_texto{
+	display: block;
+	position: absolute;
+	margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+}
+.obra-avance_porcentaje{
+	display: block;
+	background: $color__primary;
+	height: 25px;
 }
 
 .entry-content {
 	p {
-		color: $color__primary;
-		text-align: center;
+		color: $color__gray-dark;
+		text-align: left;
 	}
 }
 
-@media screen and (min-width: 0px) and (max-width: 768px) {
+//Estilos del template Avance del proyecto
+
+.ctn__recaudo_texto{
+	background: $color__primary;
+	padding: 20px;
+	position: relative;
+	&:before{
+		content: "";
+		width: 0;
+		height: 0;
+		border-top: 30px solid $color__primary; 
+		border-right: 30px solid transparent;	
+		position: absolute;
+		bottom: -30px;
+		left: 0;
+		z-index: 2;
+	}
+}
+p.recaudo-texto{
+	color: #fff;
+	margin: 0;
+	font-size: 1.3rem;
+	text-align: center;
+	line-height: 2rem;
+}
+.ctn__recaudo_total{
+	@include bg-degrade;
+	padding: 25px;
+	text-align: center;
+}
+p.recaudo-total-texto{
+	font-size: 1rem;
+	text-align: center;
+	margin: 0 0 10px 0;
+}
+.recaudo-total-numero{
+	font-size: 1.5rem;
+	color: $color__primary;
+	font-weight: 700;
+}
+.ctn__info-recaudo, .ctn__recaudo{
+	margin-bottom: 30px;
+}
+.ctn__info-recaudo_propietarios{
+	@include borde-degrade();
+}
+.info-recaudo_propietarios_title{
+	margin: 0;
+	background: $color__gray-light;
+	text-align: center;
+	padding: 10px 5px;
+	text-transform: uppercase;
+	color: $color__primary;
+	font-size: 1rem;
+	font-weight: normal;
+}
+.info-recaudo_propietarios_total{
+	color: $color__primary;
+	font-size: 3rem;
+	display: block;
+	text-align: center;
+	padding: 20px 10px;
+}
+
+@media screen and (min-width: 768px){
 	#obra-listado {
 		.filtros {
 			border-right: 0px solid #fff;
@@ -231,5 +378,81 @@ article.type-obra {
 	}
 	.obras {
 		padding: 0px 0px 15px 0px;
+	}
+	.info-recaudo_propietarios_total{
+		font-size: 2rem;
+	}
+	.grid-sizer, .grid-item{
+		width: 48.2%;
+	}
+	.fm-label{
+		width: 46%;
+	}
+}
+
+@media screen and (min-width: 992px){
+	article.type-obra {
+		header {
+			h1 {
+				&::before {
+					top: 22px;
+				}
+			}
+		}
+	}
+
+
+	.no-margin{
+		margin-left: -30px;
+	}
+	.ctn__recaudo_texto{
+		padding: 40px 30px;
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		width: 108%;
+		&:before{
+			content: "";
+			width: 0;
+		    height: 0;
+		    border-bottom: 30px solid $color__primary; 
+		    border-right: 30px solid transparent;	
+		    border-top: none;
+			position: absolute;
+			bottom: 0px;
+			right: -30px;
+			z-index: 2;
+			left: inherit;
+		}
+	}
+	p.recaudo-texto{
+		font-size: 1.5rem;
+	}
+	.ctn__recaudo_total{
+		padding: 23px;
+	}
+	p.recaudo-total-texto{
+		font-size: 1.5rem;
+	}
+	.recaudo-total-numero{
+		font-size: 2rem;
+	}
+	.grid-sizer, .grid-item{
+		width: 31.7%;
+	}
+}
+@media screen and (min-width: 1200px){
+	.ctn__recaudo_texto {
+    	padding: 47px 30px;
+    	width: 107%;
+    }
+    p.recaudo-texto {
+	    font-size: 2rem;
+	    line-height: 2.5rem;
+	}
+	p.recaudo-total-texto {
+	    font-size: 1.8rem;
+	}
+	.recaudo-total-numero {
+	    font-size: 3rem;
 	}
 }

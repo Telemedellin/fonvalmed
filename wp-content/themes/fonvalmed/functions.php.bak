@@ -147,32 +147,8 @@ function fonvalmed_widgets_init() {
 		'before_title'  => '<h3 class="widget-title-footer">',
 		'after_title'   => '</h3>',
 	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Proyecto', 'proyecto' ),
-		'id'            => 'proyecto',
-		'description'   => 'Widget relacionado con la informacion de las obras de cada proyecto ',
-		'before_widget' => '<div id="%1$s" class="widget ctn_widget-proyecto">',
-		'after_widget'  => '</div>',
-	) );
 }
 add_action( 'widgets_init', 'fonvalmed_widgets_init' );
-
-
-/**
-* Funcion adicional para instanciar los Widgets creados
-**/
-
-function creaWidgets()
-{
-	// Widget Avance de la obra 
-	 register_widget( 'WidgetAvanceProyecto' );
-
-}
-add_action( 'widgets_init', 'creaWidgets' );
-
-
-
 
 /**
  * Enqueue scripts and styles.
@@ -264,8 +240,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
-* avance widgets
-*/
-require get_template_directory() . '/widgets/avance.php';

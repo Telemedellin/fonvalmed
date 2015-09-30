@@ -2583,7 +2583,7 @@ article.type-obra header h1::before {
 #obra-map {
   position: static;
   background-color: #eee;
-  padding: 10px; }
+  padding: 1px 10px 10px 10px; }
   #obra-map span.solucion {
     display: inline-block;
     width: 100%;
