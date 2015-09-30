@@ -125,7 +125,7 @@ article.type-obra {
 	text-align: center;
 	background-color: $color__background-hr;
 	margin-bottom: 25px;
-	a {
+	> span {
 		position: relative;
 		display: inline-block;
 		width: 100%;
@@ -133,7 +133,7 @@ article.type-obra {
 		color: #828282;
 		padding: 5px 0px 5px 0px;
 		height: 35px;
-		&:hover {
+		&:hover, &.active {
 			background-color: $color__primary;
 			color: #fff;
 			span {
@@ -189,7 +189,7 @@ article.type-obra {
 			&:hover {
 				background-color: $color__obra-menu-hover;
 			}
-			&:active {
+			&.active {
 				background-color: $color__primary;
 			}
 		}

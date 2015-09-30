@@ -2601,7 +2601,7 @@ article.type-obra header h1::before {
   text-align: center;
   background-color: #ccc;
   margin-bottom: 25px; }
-  #obra-filtro-tipo a {
+  #obra-filtro-tipo > span {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -2609,10 +2609,10 @@ article.type-obra header h1::before {
     color: #828282;
     padding: 5px 0px 5px 0px;
     height: 35px; }
-    #obra-filtro-tipo a:hover {
+    #obra-filtro-tipo > span:hover, #obra-filtro-tipo > span.active {
       background-color: #FF7F00;
       color: #fff; }
-      #obra-filtro-tipo a:hover span {
+      #obra-filtro-tipo > span:hover span, #obra-filtro-tipo > span.active span {
         position: absolute;
         width: 0;
         height: 0;
@@ -2652,7 +2652,7 @@ article.type-obra header h1::before {
       margin-bottom: 10px; }
     #obra-listado .filtros span:hover {
       background-color: #969696; }
-    #obra-listado .filtros span:active {
+    #obra-listado .filtros span.active {
       background-color: #FF7F00; }
 
 #obra-listado .obras {
