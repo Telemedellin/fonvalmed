@@ -28,30 +28,9 @@ class WidgetAvanceProyecto extends WP_Widget
 		extract($args);																					
 		echo $before_widget;
 
-		if ( post_type_exists( 'obra' ) ) 
-		{
-			echo  get_the_ID();
-			$term = wp_get_post_terms(get_the_ID() , 'nombre');
+		if ( post_type_exists( 'obra' ) ):
 
-   			if( empty($term[0]->parent) )
-   			{
-   				$opt = array('parent'=> $term[0]->term_id);
-   			}
-   			else
-   			{
-				$opt = array('parent'=> $term[0]->parent);
-   			}
-
-   			$term_child = get_terms('nombre', $opt);
-   		//	print_r($term_child);
-   			/** Que chimba
-   			**/
-   			print_r(get_field('obra_contenido', 'nombre'.'_'.$term_child[0]->term_id));
-echo '<br><br>';
-   		
-   			
-		}
-
+   			$est 	= $this->estadisticasObras();
 		?>
 		<div class="ctn__contador-obras container-fluid">
 			<div class="row">
@@ -61,7 +40,18 @@ echo '<br><br>';
 							Obras finalizadas
 						</h3>
 						<span class="contador-obra-numero">
-							10
+							<?php 
+							if( isset($est['finalizada']) )
+							{
+								echo $est['finalizada'];
+							} 
+								
+							else 
+							{
+								echo 0 ;
+							}
+								
+							?>
 						</span>
 					</div>
 				</div>
@@ -71,7 +61,18 @@ echo '<br><br>';
 							Obras en ejecución
 						</h3>
 						<span class="contador-obra-numero">
-							10
+							<?php 
+							if( isset($est['en-ejecucion']) )
+							{
+								echo $est['en-ejecucion'] ;
+							} 
+								
+							else 
+							{
+								echo 0 ;
+							}
+								
+							?>
 						</span>
 					</div>
 				</div>
@@ -81,24 +82,96 @@ echo '<br><br>';
 							Obras en licitación
 						</h3>
 						<span class="contador-obra-numero">
-							10
+							<?php 
+							if( isset($est['en-licitacion']) ) 
+							{
+								echo $est['en-licitacion'] ;
+							}
+							else 
+							{
+								echo 0  ;
+							}
+								
+							?>
 						</span>
 					</div>
 				</div>
 				<div class="col-xs-6 col-md-3">
 					<div class="contador-obra contador-obras-ejecutar">
 						<h3 class="contador-obra-titulo">
-							Obras ejecutadas
+							Obras por ejecutar
 						</h3>
 						<span class="contador-obra-numero">
-							10
+							<?php 
+							if( isset($est['por-ejecutar']) ) 
+							{
+								echo $est['por-ejecutar'] ;
+							}
+							else
+							{
+								echo 0 ;
+							} 
+								
+							?>
 						</span>
 					</div>
 				</div>
 			</div>
 		</div><!-- /ctn__contador-obras -->
-		<?php	
+		<?php else: ?>
+
+		<div class="ctn__contador-obras container-fluid">
+			<div class="row">
+				<div>
+					Widget disponible solo para la sesión de obras.
+				</div>
+			</div>
+		</div><!-- /ctn__contador-obras -->
+
+		<?php 
+		endif;
+
 			echo $after_widget;
+	}
+
+
+	/**
+	 * Devuelve un array con las estadisticas de las obras por proyecto
+	 *
+	 * @return array con estadisticas
+	 * @author Telemedellìn
+	 **/
+
+	private function estadisticasObras()
+	{
+		$term 		= null;
+		$elements 	= null;
+		$fields 	= array();
+
+		$term 		= $this->getProyecto();
+		$elements 	= $this->getElements($term[0]); 
+
+		foreach ($elements as $key => $element) 
+		{
+			$field = $this->getElementField($element, 'obra_estado');
+
+			if( !empty($field) )
+			{
+				if( isset($fields[$field]) )
+				{
+					$fields[$field] += 1 ;		
+				}
+				else
+				{
+					$fields[$field] =  1 ;			
+				}
+
+			}
+			
+		}
+
+		return $fields;
+
 	}
 
 	/**
@@ -110,6 +183,41 @@ echo '<br><br>';
 
 	private function getProyecto()
 	{
+		$id 	= get_the_ID();
+		$term 	= wp_get_post_terms($id , 'nombre');
+		return $term;
+	}
 
+
+	private function getElements($term)
+	{
+		if( empty($term->parent) )
+		{
+			$opt = array('parent'=> $term->term_id);
+		}
+		else
+		{
+			$opt = array('parent'=> $term->parent);
+		}
+
+		$term_child = get_terms('nombre', $opt);
+
+		return $term_child;
+	}
+
+
+	private function getElementField($term, $value)
+	{
+		$field = null;
+		$field = get_field($value, $term);
+
+		if(empty($field))
+		{
+			return 0;
+		}
+		else
+		{
+			return $field;
+		}
 	}
 }
