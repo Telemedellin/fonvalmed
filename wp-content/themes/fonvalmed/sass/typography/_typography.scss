@@ -69,6 +69,12 @@
 .icon-search-find:before {
   content: "k";
 }
+.icon-file-text:before {
+  content: "l";
+}
+.icon-pin:before {
+  content: "m";
+}
 
 body,
 button,
@@ -84,3 +90,5 @@ textarea {
 @import "headings";
 
 @import "copy";
+
+@import "icons";

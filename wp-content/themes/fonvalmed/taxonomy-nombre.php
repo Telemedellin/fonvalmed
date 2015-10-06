@@ -10,9 +10,9 @@
 		$terms = $terms[0];
 	endif;
 
-	if ($terms->parent != 0):
-		$home = get_term_link($terms->term_id, $terms->taxonomy);
+	$home = get_term_link($terms->term_id, $terms->taxonomy);
 
+	if ($terms->parent != 0):
 		$posts = get_posts(
 			array(
 				'posts_per_page' => -1,
@@ -34,6 +34,21 @@
 		else
 			include 'templates/template-2col-D.php';
 	else:
+		wp_reset_postdata();
+		$args = array(
+			'post_type' => 'obra',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'nombre',
+					'field'    => 'slug',
+					'terms'    => $terms->slug,
+					'include_children'	=> false
+				),
+			),
+		);
+
+		$posts = new WP_Query($args);
+
 		include 'templates/template-2col-I.php';
 	endif;
 

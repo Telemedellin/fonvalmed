@@ -32,7 +32,3 @@
 	</ul>
 </div>
 <!-- #menu -->
-
-<!-- #menu-test -->
-
-<!-- #menu-test -->

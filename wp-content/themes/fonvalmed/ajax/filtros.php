@@ -25,38 +25,43 @@ if ((isset($_POST['tipo']) && isset($_POST['filtro'])) || (isset($_POST['tipo'])
 
                 switch ($opcion):
                     case 'estado':
-                        $filtro_b = sanitize_title(get_field('obra_estado', $taxonomy.'_'.$termid));
+                        $filtro_b = get_field('obra_estado', $taxonomy.'_'.$termid);
                         break;
                     case 'zona':
-                        $filtro_b = sanitize_title(get_field('obra_zona', $taxonomy.'_'.$termid));
+                        $filtro_b = get_field('obra_zona', $taxonomy.'_'.$termid);
                         break;
                     case 'tipo':
-                        $filtro_b = sanitize_title(get_field('obra_tipo', $taxonomy.'_'.$termid));
+                        $filtro_b = get_field('obra_tipo', $taxonomy.'_'.$termid);
                         break;
                 endswitch;
 
                 if ($filtro_a == $filtro_b):
                     if (!in_array($obra->name, $obra_name)):
                         $obra_name[] = $obra->name;
+
+						$obra->cabezote = get_field('imagen_destacada', $taxonomy.'_'.$termid);
+						$geolocalizacion = get_field('obra_geolocalizacion', $taxonomy.'_'.$termid);
+						$obra->latitud = $geolocalizacion['lat'];
+						$obra->longitud = $geolocalizacion['lng'];
+
+						$obra_estado = get_field_object('obra_estado', $taxonomy.'_'.$termid);
+						$obra_estado_valor = get_field('obra_estado', $taxonomy.'_'.$termid);
+						$obra->estado = $obra_estado['choices'][$obra_estado_valor];
+
+						$obra->avance = get_field('obra_avance', $taxonomy.'_'.$termid);
+
                         if ($tipo == 'mapa'):
-                            $cabezote = get_field('obra_cabezote', $taxonomy.'_'.$termid);
-                            $obra->cabezote = $cabezote['url'];
-                            $geolocalizacion = get_field('obra_geolocalizacion', $taxonomy.'_'.$termid);
-                            $obra->latitud = $geolocalizacion['lat'];
-                            $obra->longitud = $geolocalizacion['lng'];
-                            $obra->estado = get_field('obra_estado', $taxonomy.'_'.$termid);
-                            $obra->avance = get_field('obra_avance', $taxonomy.'_'.$termid);
                             $obras[] = $obra;
                         else:
-                            $html .= '<a class="ctn__obra-preview grid-item">';
-                                $html .= '<div class="ctn__obra-preview_image" style="background: url(http://lorempixel.com/400/400/) no-repeat; background-size: 100%; background-position: center center;"></div>';
+                            $html .= '<a href="'.get_term_link($term_id, $taxonomy).'" class="ctn__obra-preview grid-item">';
+                                $html .= '<div class="ctn__obra-preview_image" style="background: url('.$obra->cabezote.') no-repeat; background-size: 100%; background-position: center center;"></div>';
                                     $html .= '<div class="ctn__obra-preview_contenido">';
 										$html .= '<p>'.$obra->name.'</p>';
 										$html .= '<hr class="linea">';
-										$html .= '<span class="obra-preview_estado">'.get_field('obra_estado', $taxonomy.'_'.$termid).'</span>';
+										$html .= '<span class="obra-preview_estado">'.$obra->estado.'</span>';
 										$html .= '<div class="obra-avance">';
-											$html .= '<span class="obra-avance_texto">'.get_field('obra_avance', $taxonomy.'_'.$termid).'%</span>';
-											$html .= '<span class="obra-avance_porcentaje" style="width: '.get_field('obra_avance', $taxonomy.'_'.$termid).'%;"></span>';
+											$html .= '<span class="obra-avance_texto">'.$obra->avance.'%</span>';
+											$html .= '<span class="obra-avance_porcentaje" style="width: '.$obra->avance.'%;"></span>';
 										$html .= '</div>';
 									$html .= '</div>';
 								$html .= '</div>';
@@ -68,25 +73,30 @@ if ((isset($_POST['tipo']) && isset($_POST['filtro'])) || (isset($_POST['tipo'])
     else:
         foreach (get_term_children($term_id, $taxonomy) as $termid):
             $obra = get_term($termid, $taxonomy);
+
+			$obra->cabezote = get_field('imagen_destacada', $taxonomy.'_'.$termid);
+			$geolocalizacion = get_field('obra_geolocalizacion', $taxonomy.'_'.$termid);
+			$obra->latitud = $geolocalizacion['lat'];
+			$obra->longitud = $geolocalizacion['lng'];
+
+			$obra_estado = get_field_object('obra_estado', $taxonomy.'_'.$termid);
+			$obra_estado_valor = get_field('obra_estado', $taxonomy.'_'.$termid);
+			$obra->estado = $obra_estado['choices'][$obra_estado_valor];
+
+			$obra->avance = get_field('obra_avance', $taxonomy.'_'.$termid);
+
             if ($tipo == 'mapa'):
-                $cabezote = get_field('obra_cabezote', $taxonomy.'_'.$termid);
-                $obra->cabezote = $cabezote['url'];
-                $geolocalizacion = get_field('obra_geolocalizacion', $taxonomy.'_'.$termid);
-                $obra->latitud = $geolocalizacion['lat'];
-                $obra->longitud = $geolocalizacion['lng'];
-                $obra->estado = get_field('obra_estado', $taxonomy.'_'.$termid);
-                $obra->avance = get_field('obra_avance', $taxonomy.'_'.$termid);
                 $obras[] = $obra;
             else:
-                $html .= '<a class="ctn__obra-preview grid-item">';
-                    $html .= '<div class="ctn__obra-preview_image" style="background: url(http://lorempixel.com/400/400/) no-repeat; background-size: 100%; background-position: center center;"></div>';
+                $html .= '<a href="'.get_term_link($term_id, $taxonomy).'" class="ctn__obra-preview grid-item">';
+                    $html .= '<div class="ctn__obra-preview_image" style="background: url('.$obra->cabezote.') no-repeat; background-size: 100%; background-position: center center;"></div>';
                         $html .= '<div class="ctn__obra-preview_contenido">';
 							$html .= '<p>'.$obra->name.'</p>';
 							$html .= '<hr class="linea">';
-							$html .= '<span class="obra-preview_estado">'.get_field('obra_estado', $taxonomy.'_'.$termid).'</span>';
+							$html .= '<span class="obra-preview_estado">'.$obra->estado.'</span>';
 							$html .= '<div class="obra-avance">';
-								$html .= '<span class="obra-avance_texto">'.get_field('obra_avance', $taxonomy.'_'.$termid).'%</span>';
-								$html .= '<span class="obra-avance_porcentaje" style="width: '.get_field('obra_avance', $taxonomy.'_'.$termid).'%;"></span>';
+								$html .= '<span class="obra-avance_texto">'.$obra->avance.'%</span>';
+								$html .= '<span class="obra-avance_porcentaje" style="width: '.$obra->avance.'%;"></span>';
 							$html .= '</div>';
 						$html .= '</div>';
 					$html .= '</div>';

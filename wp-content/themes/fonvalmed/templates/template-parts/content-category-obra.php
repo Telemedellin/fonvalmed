@@ -7,9 +7,16 @@
 
 	$image_header = get_field('obra_cabezote', $terms->taxonomy.'_'.$terms->term_id);
 	$location = get_field('obra_geolocalizacion', $terms->taxonomy.'_'.$terms->term_id);
-	$estado = get_field('obra_estado', $terms->taxonomy.'_'.$terms->term_id);
+
+	$obra_estado = get_field_object('obra_estado', $terms->taxonomy.'_'.$terms->term_id);
+	$obra_estado_valor = get_field('obra_estado', $terms->taxonomy.'_'.$terms->term_id);
+	$estado = $obra_estado['choices'][$obra_estado_valor];
+
 	$avance = get_field('obra_avance', $terms->taxonomy.'_'.$terms->term_id);
-	$solucion = get_field('obra_solucion', $terms->taxonomy.'_'.$terms->term_id);
+
+	$obra_solucion = get_field_object('obra_solucion', $terms->taxonomy.'_'.$terms->term_id);
+	$obra_solucion_valor = get_field('obra_solucion', $terms->taxonomy.'_'.$terms->term_id);
+	$solucion = $obra_solucion['choices'][$obra_solucion_valor];
 ?>
 
 <article id="obra-<?php echo $terms->term_id; ?>" class="obra type-obra status-publish hentry">

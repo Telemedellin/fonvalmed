@@ -151,10 +151,9 @@ article.type-obra {
 	}
 }
 
-#obra-listado {
+#obra-listado, #obra-mapas {
 	.filtros {
 		min-height: 117px;
-		border-right: 1px solid $color__obra-menu-hover;
 		text-align: center;
 		&:nth-child(3) {
 			border-right: 0px solid #fff;
@@ -200,6 +199,46 @@ article.type-obra {
 		margin-top: 15px;
 	}
 }
+
+.sidebar {
+	border-top: 1px solid $color__background-pre;
+	padding-top: 5px;
+	margin-bottom: 15px;
+}
+
+#obra-estado {
+    text-transform: uppercase;
+    text-align: center;
+	color: $color__primary;
+	font-weight: 600;
+	#obra-detalle {
+		position: static;
+		width: 100%;
+		text-align: initial;
+		padding-top: 5px;
+		div.obra-avance {
+			width: 100%;
+			height: 23px;
+			background-color: $color__background-pre;
+			position: relative;
+			span.texto {
+				z-index: 1;
+			}
+			span.porcentaje {
+				background-color: $color__primary;
+				content: "";
+				height: 23px;
+			}
+		}
+	}
+}
+
+#obra-descripcion {
+	span {
+		font-weight: 600;
+	}
+}
+
 .fm-label{
 	padding: 5px 2px;
 	cursor: pointer;
@@ -313,15 +352,7 @@ article.type-obra {
 	padding: 20px;
 	position: relative;
 	&:before{
-		content: "";
-		width: 0;
-		height: 0;
-		border-top: 30px solid $color__primary; 
-		border-right: 30px solid transparent;	
-		position: absolute;
-		bottom: -30px;
-		left: 0;
-		z-index: 2;
+		@include triangulos($color__primary, 30px)
 	}
 }
 p.recaudo-texto{

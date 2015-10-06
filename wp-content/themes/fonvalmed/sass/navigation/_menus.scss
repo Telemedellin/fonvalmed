@@ -1,7 +1,7 @@
 .l_inline{
 	margin: 0px;
 	padding: 0px;
-	*{
+	> li{
 		display: inline-block;
 		margin: 0px;
 		padding: 0px;
@@ -111,6 +111,51 @@
 }
 #mega-menu-wrap-primary .mega-menu-toggle.mega-menu-open:before {
 	content: "\f158";
+}
+
+/*----------- Menú Lateral --------------*/
+
+.menu-micro_title{
+	span{
+		display: block;
+	}
+	margin: 0 0 20px 0;
+	background: $color__primary;
+	color: #fff;
+	padding: 10px 10px;
+	text-align: center;
+	line-height: 1.3rem;
+	position: relative;
+	&:before{
+		@include triangulos($color__primary, 15px)
+	}
+}
+
+.menu-micro{
+	margin: 0;
+	padding: 0;
+	li{
+		list-style: none;
+		a{
+			color: $color__gray-dark;
+			display: block;
+			padding: 10px 10px 10px 25px;
+			border-bottom: solid 1px $color__gray-light;
+			transition: all ease 0.5s;
+			&:hover, &:active, &:focus{
+				text-decoration: none;
+				color: $color__primary;
+			}
+			&.menu-micro_-active{
+				color: $color__primary;
+				border-bottom: solid 1px $color__primary;
+				position: relative;
+				&:before{
+					@include triangulos ($color__primary, 10px)
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 0px) and (max-width: 991px) {
@@ -258,7 +303,7 @@
 	}
 }
 
-/* MenÃº footer */
+/* Menú footer */
 #menu-menu-footer{
 	margin: 0;
 	padding: 0;

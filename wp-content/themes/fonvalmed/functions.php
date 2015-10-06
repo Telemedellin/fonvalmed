@@ -92,6 +92,15 @@ function fonvalmed_content_width() {
 }
 add_action( 'after_setup_theme', 'fonvalmed_content_width', 0 );
 
+function get_admin_path() {
+	// Replace the site base URL with the absolute path to its installation directory. 
+	$admin_path = str_replace( get_bloginfo( 'url' ) . '/', ABSPATH, get_admin_url() );
+	
+	// Make it filterable, so other plugins can hook into it.
+	$admin_path = apply_filters( 'my_plugin_get_admin_path', $admin_path );
+	return $admin_path;
+}
+
 /**
  * Register widget area.
  *

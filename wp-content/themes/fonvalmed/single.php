@@ -2,7 +2,9 @@
 
 <?php if (!is_singular(array('page', 'attachment', 'post'))): ?>
 	<?php
-		$layout =  ($layout = get_field('es_video', get_the_ID())) == false ? null : $layout;
+		$layout =  !is_null($layout = get_field('layout')) == true ? $layout : 'single';
+		$heredar = get_field('heredar_layout');
+		$tipo_plantilla_obra = get_field('tipo_plantilla_obra');
 
 		if (is_tax()):
 			$terms = get_queried_object();
@@ -13,26 +15,48 @@
 
 		$home = get_term_link($terms->term_id, $terms->taxonomy);
 
-		$posts = get_posts(
-			array(
-				'posts_per_page' => -1,
+		if ($terms->parent == 0):
+			$args = array(
 				'post_type' => 'obra',
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'nombre',
-						'field' => 'term_id',
-						'terms' => $terms->term_id,
+						'field'    => 'slug',
+						'terms'    => $terms->slug,
+						'include_children'	=> false
+					),
+				),
+			);
+
+			$posts = new WP_Query($args);
+			include 'templates/template-2col-I.php';
+		else:
+			$posts = get_posts(
+				array(
+					'posts_per_page' => -1,
+					'post_type' => 'obra',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'nombre',
+							'field' => 'term_id',
+							'terms' => $terms->term_id,
+						)
 					)
 				)
-			)
-		);
+			);
 
-		include 'navigation-obra.php';
+			include 'navigation-obra.php';
 
-		if (!is_null($layout) || !empty($layout))
-			include 'templates/template-'.$layout.'.php';
-		else
-			include 'templates/template-single.php';
+			if ($heredar == 'si'):
+				include 'templates/template-2col-D.php';
+			else:
+				if ($layout != 'single'):
+					include 'templates/template-'.$layout.'.php';
+				else:
+					include 'templates/template-single.php';
+				endif;
+			endif;
+		endif;
 	?>
 <?php else: ?>
 	<div id="primary" class="content-area">
