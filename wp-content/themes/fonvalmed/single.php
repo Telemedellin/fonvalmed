@@ -13,22 +13,26 @@
 			$terms = $terms[0];
 		endif;
 
+		$post_id = get_the_ID();
+
 		$home = get_term_link($terms->term_id, $terms->taxonomy);
 
 		if ($terms->parent == 0):
-			$args = array(
-				'post_type' => 'obra',
-				'tax_query' => array(
-					array(
-						'taxonomy' => 'nombre',
-						'field'    => 'slug',
-						'terms'    => $terms->slug,
-						'include_children'	=> false
+			$posts = new WP_Query(
+				array(
+					'post_type' => 'obra',
+					'orderby' => 'title',
+					'order'   => 'ASC',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'nombre',
+							'field'    => 'slug',
+							'terms'    => $terms->slug,
+							'include_children'	=> false
+						),
 					),
-				),
+				)
 			);
-
-			$posts = new WP_Query($args);
 			include 'templates/template-2col-I.php';
 		else:
 			$posts = get_posts(

@@ -22,6 +22,7 @@
 				<?php endif; ?>
 			<?php else: ?>
 				<?php if($terms->parent == 0): ?>
+				<?php $posts = new WP_Query(array('p' => $post_id, 'post_type' => 'obra')); ?>
 				<?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
 					<?php include 'template-parts/content-obra.php'; ?>
 					<?php //the_post_navigation(); ?>

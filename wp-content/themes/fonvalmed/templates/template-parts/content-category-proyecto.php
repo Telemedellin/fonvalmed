@@ -63,6 +63,7 @@
 							$obra->estado = $obra_estado['choices'][$obra_estado_valor];
 
 							$obra->avance = get_field('obra_avance', $terms->taxonomy.'_'.$term_id);
+							$obra->enlace = get_term_link($term_id, $terms->taxonomy);
 
 							$obras[] = $obra;
 						?>
@@ -272,8 +273,10 @@
 				map: map, title: locations[i].name, position: latlngset
 			});
 
+			console.log(locations[i].url);
 			map.setCenter(marker.getPosition());
-			var content = '<div id="obra-detalle">' +
+			var content = '<a href="' + locations[i].enlace + '" target="_blank">' +
+						'<div id="obra-detalle">' +
 						'<div class="obra-imagen" style="background-image:url(' + locations[i].cabezote + ');"></div>' +
 							'<br />' +
 							'<span class="obra-titulo">'  + locations[i].name + '</span>' +
@@ -286,7 +289,8 @@
 								'<span class="texto">' + locations[i].avance + '%</span>' +
 								'<span class="porcentaje" style="width: ' + locations[i].avance + '%;"></span>' +
 							'</div>' +
-						'</div>';
+						'</div>' +
+						'</a>';
 
 			var infowindow = new google.maps.InfoWindow();
 

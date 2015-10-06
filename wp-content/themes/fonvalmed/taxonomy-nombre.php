@@ -34,9 +34,10 @@
 		else
 			include 'templates/template-2col-D.php';
 	else:
-		wp_reset_postdata();
 		$args = array(
 			'post_type' => 'obra',
+			'orderby' => 'title',
+			'order'   => 'ASC',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'nombre',

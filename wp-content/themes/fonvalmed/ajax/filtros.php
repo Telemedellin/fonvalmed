@@ -49,11 +49,12 @@ if ((isset($_POST['tipo']) && isset($_POST['filtro'])) || (isset($_POST['tipo'])
 						$obra->estado = $obra_estado['choices'][$obra_estado_valor];
 
 						$obra->avance = get_field('obra_avance', $taxonomy.'_'.$termid);
+						$obra->enlace = get_term_link($termid, $taxonomy);
 
                         if ($tipo == 'mapa'):
                             $obras[] = $obra;
                         else:
-                            $html .= '<a href="'.get_term_link($term_id, $taxonomy).'" class="ctn__obra-preview grid-item">';
+                            $html .= '<a href="'.get_term_link($termid, $taxonomy).'" class="ctn__obra-preview grid-item">';
                                 $html .= '<div class="ctn__obra-preview_image" style="background: url('.$obra->cabezote.') no-repeat; background-size: 100%; background-position: center center;"></div>';
                                     $html .= '<div class="ctn__obra-preview_contenido">';
 										$html .= '<p>'.$obra->name.'</p>';
@@ -84,11 +85,12 @@ if ((isset($_POST['tipo']) && isset($_POST['filtro'])) || (isset($_POST['tipo'])
 			$obra->estado = $obra_estado['choices'][$obra_estado_valor];
 
 			$obra->avance = get_field('obra_avance', $taxonomy.'_'.$termid);
+			$obra->enlace = get_term_link($termid, $taxonomy);
 
             if ($tipo == 'mapa'):
                 $obras[] = $obra;
             else:
-                $html .= '<a href="'.get_term_link($term_id, $taxonomy).'" class="ctn__obra-preview grid-item">';
+                $html .= '<a href="'.get_term_link($termid, $taxonomy).'" class="ctn__obra-preview grid-item">';
                     $html .= '<div class="ctn__obra-preview_image" style="background: url('.$obra->cabezote.') no-repeat; background-size: 100%; background-position: center center;"></div>';
                         $html .= '<div class="ctn__obra-preview_contenido">';
 							$html .= '<p>'.$obra->name.'</p>';
