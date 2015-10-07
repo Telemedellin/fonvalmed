@@ -23,10 +23,10 @@
 }
 
 //Sombra para las cajas
-@mixin sombra-cajas(){
-	-webkit-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.3);
-	-moz-box-shadow:    0px 0px 12px 0px rgba(50, 50, 50, 0.3);
-	box-shadow:         0px 0px 12px 0px rgba(50, 50, 50, 0.3);
+@mixin sombra-cajas($transparencia: 0.3){
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,$transparencia) !important;
+	-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,$transparencia) !important;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,$transparencia) !important;
 }
 
 //Bordes degradados
