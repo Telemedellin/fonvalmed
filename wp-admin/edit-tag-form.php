@@ -221,6 +221,13 @@ submit_button( __('Update') );
 </form>
 </div>
 
+<?php if ($_GET['taxonomy'] == 'nombre'): ?>
+<script>
+	jQuery('#slug').parent().parent().css('display','none');
+	jQuery('#description').parent().parent().css('display','none');
+</script>
+<?php endif; ?>
+
 <?php if ( ! wp_is_mobile() ) : ?>
 <script type="text/javascript">
 try{document.forms.edittag.name.focus();}catch(e){}

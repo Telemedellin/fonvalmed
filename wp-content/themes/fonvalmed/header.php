@@ -45,4 +45,9 @@
 		</div>
 	</header><!-- #masthead -->
 
+	<?php $term = get_the_terms(get_the_ID(), 'nombre'); ?>
+	<?php if (is_tax() || $term[0]->taxonomy == 'nombre'): ?>
+		<?php include 'header-obra.php'; ?>
+	<?php endif; ?>
+
 	<div id="content" class="site-content container">

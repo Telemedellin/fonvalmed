@@ -11,3 +11,80 @@
 .widget_search .search-submit {
 	display: none;
 }
+
+
+/* Contador de obras */
+.contador-obra{
+	@include borde-degrade();
+}
+.contador-obra-titulo{
+	margin: 0px;
+	background: $color__gray-light;
+	text-align: center;
+	padding: 10px 5px;
+	text-transform: uppercase;
+	color: $color__primary;
+	font-size: 1rem;
+	font-weight: normal;
+}
+.contador-obra-numero{
+	display: block;
+	color: $color__primary;
+	font-size: 5rem;
+	text-align: center;
+}
+
+/*Sidebar de obras*/
+.sidebar_block{
+	margin-bottom: 30px;
+}
+.sidebar_block_title{
+	color: $color__gray-dark;
+	padding: 10px;
+	margin: 0 0 20px 0;
+	background: $color__gray-light;
+	font-size: 1.2rem;
+	border-right: solid 3px $color__primary;
+	text-align: center;
+	position: relative;
+	&:before{
+		@include triangulos($color__gray-light, 15px);
+
+	}
+}
+.ctn__obra-preview_sidebar{
+	display: block;
+	margin-bottom: 30px;
+	&:hover{
+		text-decoration: none;
+		.ctn__obra-preview_sidebar_image{
+			background-size: 130% !important;
+		}
+		.obra-preview_sidebar_title{
+			color: $color__primary;
+		}
+	}
+	&:active, &:focus, &:visited{
+		text-decoration: none;
+	}
+}
+.ctn__obra-preview_sidebar_image{
+	transition: all ease 1s;
+	&:before{
+		content: "";
+		padding-top: 100%;
+		display: block;
+	}
+}
+.obra-preview_sidebar_image{
+	display: none !important;
+}
+.obra-preview_sidebar_title{
+	margin: 5px 0;
+	color: $color__gray-dark;
+	transition: all ease 0.5s;
+	line-height: 1.5rem;
+}
+.obra-preview_sidebar_time{
+	color: $color__gray-dark;
+}

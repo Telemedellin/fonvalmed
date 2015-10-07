@@ -92,6 +92,15 @@ function fonvalmed_content_width() {
 }
 add_action( 'after_setup_theme', 'fonvalmed_content_width', 0 );
 
+function get_admin_path() {
+	// Replace the site base URL with the absolute path to its installation directory. 
+	$admin_path = str_replace( get_bloginfo( 'url' ) . '/', ABSPATH, get_admin_url() );
+	
+	// Make it filterable, so other plugins can hook into it.
+	$admin_path = apply_filters( 'my_plugin_get_admin_path', $admin_path );
+	return $admin_path;
+}
+
 /**
  * Register widget area.
  *
@@ -147,8 +156,32 @@ function fonvalmed_widgets_init() {
 		'before_title'  => '<h3 class="widget-title-footer">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Proyecto', 'proyecto' ),
+		'id'            => 'proyecto',
+		'description'   => 'Widget relacionado con la informacion de las obras de cada proyecto ',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-proyecto">',
+		'after_widget'  => '</div>',
+	) );
 }
 add_action( 'widgets_init', 'fonvalmed_widgets_init' );
+
+
+/**
+* Funcion adicional para instanciar los Widgets creados
+**/
+
+function creaWidgets()
+{
+	// Widget Avance de la obra 
+	 register_widget( 'WidgetAvanceProyecto' );
+
+}
+add_action( 'widgets_init', 'creaWidgets' );
+
+
+
 
 /**
  * Enqueue scripts and styles.
@@ -156,15 +189,65 @@ add_action( 'widgets_init', 'fonvalmed_widgets_init' );
 function fonvalmed_scripts() {
 	wp_enqueue_style( 'fonvalmed-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'fonvalmed-masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array(), true );
+
 	wp_enqueue_script( 'fonvalmed-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'fonvalmed-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_script( 'fonvalmed-script', get_template_directory_uri() . '/js/script.js', array(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'fonvalmed_scripts' );
+
+// Register Custom Taxonomy
+function custom_taxonomy_obras() {
+
+	$labels = array(
+		'name'                       => _x( 'Nombre obras', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Nombre obra', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Nombre obra', 'text_domain' ),
+		'all_items'                  => __( 'Todas los nombres de las obras', 'text_domain' ),
+		'parent_item'                => __( 'Superior', 'text_domain' ),
+		'parent_item_colon'          => __( 'Superior:', 'text_domain' ),
+		'new_item_name'              => __( 'Nuevo nombre obra', 'text_domain' ),
+		'add_new_item'               => __( 'Añadir nuevo nombre', 'text_domain' ),
+		'edit_item'                  => __( 'Editar nombre', 'text_domain' ),
+		'update_item'                => __( 'Actualizar nombre', 'text_domain' ),
+		'view_item'                  => __( 'Ver nombre', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'search_items'               => __( 'Search Items', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                       => '/%nombre%/',
+		'with_front'                 => false,
+		'hierarchical'               => true,
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'rewrite'                    => $rewrite,
+	);
+	register_taxonomy( 'nombre', array( 'obra' ), $args );
+
+}
+add_action( 'init', 'custom_taxonomy_obras', 0 );
+
+function navigation_obra()
+{
+	
+}
 
 /**
  * Implement the Custom Header feature.
@@ -190,3 +273,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+* avance widgets
+*/
+require get_template_directory() . '/widgets/avance.php';
