@@ -21,7 +21,7 @@
 
 <article id="obra-<?php echo $terms->term_id; ?>" class="obra type-obra status-publish hentry">
 	<header class="entry-header">
-		<h1 class="entry-title">Obras</h1>
+		<h1 class="entry-title">Conoce la obra</h1>
 		<!-- .entry-meta -->
 	</header>
 	<!-- .entry-header -->
@@ -41,7 +41,7 @@
 </style>
 <div id="obra-map">
 	<span class="solucion">
-		<?php echo $solucion; ?>
+		Geolocalización de la obra
 	</span>
 	<div id="map"></div>
 </div>
@@ -85,4 +85,3 @@
 	}
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
-  
