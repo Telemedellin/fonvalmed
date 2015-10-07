@@ -96,9 +96,8 @@
 				<h2 class="sidebar_block_title">Obras relacionadas</h2>
 				<div class="ctn__sidebar_content">
 					<?php $obras_relacionadas = get_field('obras_relacionadas', $terms->taxonomy.'_'.$terms->term_id); ?>
-					<?php var_dump($obras_relacionadas); ?>
-					<?php if (count($obras_relacionadas) > 0): ?>
-					<?php /*foreach($obras_relacionadas as $term_id): ?>
+					<?php if (count($obras_relacionadas) > 0 && !is_null($obras_relacionadas) && !empty($obras_relacionadas)): ?>
+					<?php foreach($obras_relacionadas as $term_id): ?>
 					<?php if ($terms->term_id != $term_id): ?>
 					<?php $obra = get_term($term_id, $terms->taxonomy); ?>
 					<?php $obra->cabezote = get_field('imagen_destacada', $terms->taxonomy.'_'.$term_id); ?>
@@ -109,7 +108,7 @@
 						<h3 class="obra-preview_sidebar_title"><?php echo $obra->name; ?></h3>
 					</a>
 					<?php endif; ?>
-					<?php endforeach;*/ ?>
+					<?php endforeach; ?>
 					<?php else: ?>
 					<center>No se encontraron obras relacionadas</center>
 					<?php endif; ?>
