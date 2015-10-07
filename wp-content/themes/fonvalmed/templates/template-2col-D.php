@@ -97,7 +97,7 @@
 				<div class="ctn__sidebar_content">
 					<?php $obras_relacionadas = get_field('obras_relacionadas', $terms->taxonomy.'_'.$terms->term_id); ?>
 					<?php if (count($obras_relacionadas) > 0): ?>
-					<?php foreach(get_field('obras_relacionadas', $terms->taxonomy.'_'.$terms->term_id) as $term_id): ?>
+					<?php foreach($obras_relacionadas as $term_id): ?>
 					<?php if ($terms->term_id != $term_id): ?>
 					<?php $obra = get_term($term_id, $terms->taxonomy); ?>
 					<?php $obra->cabezote = get_field('imagen_destacada', $terms->taxonomy.'_'.$term_id); ?>
