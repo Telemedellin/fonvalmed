@@ -113,8 +113,12 @@
 	content: "\f158";
 }
 
-/*----------- Menú Lateral --------------*/
+<<<<<<< HEAD
 
+/*----------- Men� Lateral --------------*/
+=======
+/*----------- Menú Lateral --------------*/
+>>>>>>> cf5c4a0f1c02fc81455b8900ca74d4f20acb49c3
 
 .menu-micro_title{
 	span{

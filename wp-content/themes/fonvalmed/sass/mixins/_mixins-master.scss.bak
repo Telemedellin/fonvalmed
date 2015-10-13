@@ -45,7 +45,7 @@
       linear-gradient(to bottom, $color__primary, rgba(0, 0, 0, 0)) 1 1%;
 }
 
-// Fondo degradado radial de gris a blanco
+// Fondo degradado de gris a blanco
 @mixin bg-degrade(){
 	background: #ffffff;
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZWRlZGVkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -56,18 +56,4 @@
 	background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,$color__gray-light 100%);
 	background: radial-gradient(ellipse at center, #ffffff 0%,$color__gray-light 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='$color__gray-light',GradientType=1 );
-}
-
-//Triangulos 
-
-@mixin triangulos($color, $tamano){
-	content: "";
-	width: 0;
-	height: 0;
-	border-top: $tamano solid $color; 
-	border-right: $tamano solid transparent;	
-	position: absolute;
-	bottom: -$tamano;
-	left: 0;
-	z-index: 2;
 }
