@@ -2087,6 +2087,57 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children > .mega-sub-menu > li.mega-menu-item > a:hover {
   border-left: 2px solid #FF7F00 !important; }
 
+/*----------- Menú Lateral --------------*/
+.menu-micro_title {
+  margin: 0 0 20px 0;
+  background: #FF7F00;
+  color: #fff;
+  padding: 10px 10px;
+  text-align: center;
+  line-height: 1.3rem;
+  position: relative; }
+  .menu-micro_title span {
+    display: block; }
+  .menu-micro_title:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 15px solid #FF7F00;
+    border-right: 15px solid transparent;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    z-index: 2; }
+
+.menu-micro {
+  margin: 0;
+  padding: 0; }
+  .menu-micro li {
+    list-style: none; }
+    .menu-micro li a {
+      color: #898989;
+      display: block;
+      padding: 10px 10px 10px 25px;
+      border-bottom: solid 1px #EDEDEF;
+      transition: all ease 0.5s; }
+      .menu-micro li a:hover, .menu-micro li a:active, .menu-micro li a:focus {
+        text-decoration: none;
+        color: #FF7F00; }
+      .menu-micro li a.menu-micro_-active {
+        color: #FF7F00;
+        border-bottom: solid 1px #FF7F00;
+        position: relative; }
+        .menu-micro li a.menu-micro_-active:before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 10px solid #FF7F00;
+          border-right: 10px solid transparent;
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          z-index: 2; }
+
 @media (min-width: 0px) and (max-width: 991px) {
   #mega-menu-primary > li {
     background: #FF7F00 !important;
@@ -2142,6 +2193,10 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
       .main-navigation a:hover, .main-navigation a :focus {
         color: #fff;
         background: #FF7F00; }
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > ul.mega-sub-menu {
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.3);
+    box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.3); }
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li ul.mega-sub-menu {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
