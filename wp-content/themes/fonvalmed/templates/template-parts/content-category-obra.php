@@ -27,6 +27,37 @@
 	<!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php if(have_rows('imagen_antes_despues', $terms->taxonomy.'_'.$terms->term_id)): ?>
+		<?php while (have_rows('imagen_antes_despues', $terms->taxonomy.'_'.$terms->term_id)) : the_row(); ?>
+		<?php $antes_img = get_sub_field('antes', $terms->taxonomy.'_'.$terms->term_id); ?>
+		<?php $antes_pie = get_sub_field('antes_pie', $terms->taxonomy.'_'.$terms->term_id); ?>
+		<?php $despues_img = get_sub_field('despues', $terms->taxonomy.'_'.$terms->term_id); ?>
+		<?php $despues_pie = get_sub_field('despues_pie', $terms->taxonomy.'_'.$terms->term_id); ?>
+		
+		<div class="ctn__img-obras">
+			<div class="img-obras_antes">
+				<figure>
+					<img src="<?php echo $antes_img; ?>" alt="<?php echo $antes_pie; ?>">
+					<figcaption>
+						<?php echo $antes_pie ?>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="img-obras_despues">
+				<figure>
+					<img src="<?php echo $despues_img; ?>" alt="<?php echo $antes_pie; ?>">
+					<figcaption>
+						<?php echo $antes_pie; ?>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="ctn__img-obras_controles">
+				<span id="antes" class="img-obras_controles">Antes</span>
+				<span id="despues" class="img-obras_controles">despues</span>
+			</div>
+		</div>
+		<?php endwhile; ?>
+		<?php endif; ?>
 		<?php the_field('obra_contenido', $terms->taxonomy.'_'.$terms->term_id); ?>
 	</div>
 	<!-- .entry-content -->
@@ -47,6 +78,27 @@
 </div>
 
 <script>
+	jQuery(function($) {
+		$('.ctn__img-obras_controles > span').on('click', function(evt)
+		{
+			var option = $(this).attr('id');
+
+			switch (option)
+			{
+				case 'antes':
+					$('.img-obras_antes').show();
+					$('.img-obras_despues').hide();
+					break;
+				case 'despues':
+					$('.img-obras_despues').show();
+					$('.img-obras_antes').hide();
+					break;
+			}
+
+			evt.stopPropagation();
+		})
+	});
+
 	function initMap()
 	{
 		var location = {lat: <?php echo $location['lat']; ?>, lng: <?php echo $location['lng']; ?>};
