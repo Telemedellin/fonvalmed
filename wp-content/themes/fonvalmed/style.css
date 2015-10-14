@@ -3216,6 +3216,9 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 .wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li.ui-tabs-active a {
   color: #fff;
 }
+.wpb_content_element.tabs_fonvalmed .wpb_tab {
+  background-color: #fff !important;
+}
 
 /*--------------------------------------------------------------
 # Widgets
