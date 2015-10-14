@@ -2417,11 +2417,15 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
     list-style: none;
     display: inline-block; }
     .wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li a {
-      color: #898989; }
+      color: #898989;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      display: block; }
     .wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li:hover {
       background-color: #FF7F00; }
       .wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li:hover a {
-        color: #fff; }
+        color: #fff;
+        text-decoration: none; }
     .wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li.ui-tabs-active {
       background-color: #FF7F00; }
       .wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li.ui-tabs-active a {
