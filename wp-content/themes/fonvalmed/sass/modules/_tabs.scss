@@ -13,11 +13,15 @@
 				display: inline-block;
 				a{
 					color: $color__gray-dark;
+					text-decoration: none;
+					padding: 0.5em 1em;
+					display: block;
 				}
 				&:hover{
 					background-color: $color__primary;
 					a{
 						color: #fff;
+						text-decoration: none;
 					}
 				}
 				&.ui-tabs-active{
