@@ -3195,7 +3195,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 --------------------------------------------------------------*/
 .wpb_content_element.tabs_fonvalmed .wpb_tabs_nav {
   border-bottom: solid 2px #FF7F00;
-  margin: 0px;
+  margin: 0 0 30px 0;
   padding: 0px;
 }
 .wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li {
