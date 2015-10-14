@@ -3,17 +3,25 @@
 	&.tabs_fonvalmed{
 		.wpb_tabs_nav{
 			border-bottom: solid 2px $color__primary;
+			margin: 0 0 30px 0;
+			padding: 0px;
 			li{
 				background-color: $color__gray-light;
 				transition: all ease 0.5s;
 				margin: 0 5px 0 0;
+				list-style: none;
+				display: inline-block;
 				a{
 					color: $color__gray-dark;
+					text-decoration: none;
+					padding: 0.5em 1em;
+					display: block;
 				}
 				&:hover{
 					background-color: $color__primary;
 					a{
 						color: #fff;
+						text-decoration: none;
 					}
 				}
 				&.ui-tabs-active{
