@@ -1,0 +1,28 @@
+//Tabs del visual composer
+.wpb_content_element{
+	&.tabs_fonvalmed{
+		.wpb_tabs_nav{
+			border-bottom: solid 2px $color__primary;
+			li{
+				background-color: $color__gray-light;
+				transition: all ease 0.5s;
+				margin: 0 5px 0 0;
+				a{
+					color: $color__gray-dark;
+				}
+				&:hover{
+					background-color: $color__primary;
+					a{
+						color: #fff;
+					}
+				}
+				&.ui-tabs-active{
+					background-color: $color__primary;
+					a{
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
