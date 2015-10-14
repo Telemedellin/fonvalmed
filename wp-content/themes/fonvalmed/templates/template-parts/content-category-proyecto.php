@@ -34,15 +34,13 @@
 						<span class="fm-label" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
 						<span class="fm-label" rel="estado:en-licitacion" onclick="javascript:filtrar(this)">En licitaci&oacute;n</span>
 					</div>
-					<div class="filtros col-md-4">
-						<span class="filtro-title">Zona de influencia</span>
-					</div>
-					<div class="filtros col-md-4">
+					<div class="filtros col-md-8">
 						<span class="filtro-title">Tipo de obra</span>
-						<span class="fm-label" rel="tipo:ampliacion" onclick="javascript:filtrar(this)">Ampliaci&oacute;n</span>
-						<span class="fm-label" rel="tipo:apertura" onclick="javascript:filtrar(this)">Apertura</span>
-						<span class="fm-label" rel="tipo:paso-a-desnivel" onclick="javascript:filtrar(this)">Paso a desnivel</span>
-						<span class="fm-label" rel="tipo:otras-obras" onclick="javascript:filtrar(this)">Otras obras</span>
+						<span class="fm-label" rel="tipo:puente" onclick="javascript:filtrar(this)">Puente</span>
+						<span class="fm-label" rel="tipo:paso-a-desnivel-puente" onclick="javascript:filtrar(this)">Paso a desnivel: puente</span>
+						<span class="fm-label" rel="tipo:paso-a-deprimido" onclick="javascript:filtrar(this)">Paso a desnivel: deprimido</span>
+						<span class="fm-label" rel="tipo:via-nueva-o-mejorada" onclick="javascript:filtrar(this)">Vía nueva o mejorada</span>
+						<span class="fm-label" rel="tipo:doble-calzada" onclick="javascript:filtrar(this)">Doble calzada</span>
 					</div>
 				</div><!-- /ctn_filtros -->
 				<div class="obras grid">

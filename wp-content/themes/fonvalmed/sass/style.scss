@@ -26,6 +26,7 @@ Text Domain: fonvalmed
 # Accessibility
 # Alignments
 # Clearings
+# Tabs
 # Widgets
 # Content
 	## Header
@@ -85,6 +86,11 @@ Text Domain: fonvalmed
 # Clearings
 --------------------------------------------------------------*/
 @import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Tabs
+--------------------------------------------------------------*/
+@import "modules/tabs";
 
 /*--------------------------------------------------------------
 # Widgets

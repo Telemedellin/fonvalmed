@@ -7,11 +7,14 @@
 			<?php if (is_tax()): ?>
 				<?php include 'template-parts/content-category-obra.php'; ?>
 			<?php else: ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php while (have_posts()) : the_post(); ?>
 					<?php
 						switch ($tipo_plantilla_obra):
 							case 'galeria':
 								include 'template-parts/content-obra-gallery.php';
+								break;
+							case 'publicaciones':
+								include 'template-parts/content-obra-publicaciones.php';
 								break;
 							default:
 								include 'template-parts/content-obra.php';
@@ -58,9 +61,9 @@
 
 			$direccion = get_field('obra_direccion', $terms->taxonomy.'_'.$terms->term_id);
 			$fecha_a = get_field('obra_fecha_inicio', $terms->taxonomy.'_'.$terms->term_id);
-			$fecha_inicio = substr($fecha_a,0,4).'-'.substr($fecha_a,4,2).'-'.substr($fecha_a,6,2);
+			$fecha_inicio = substr($fecha_a,0,4).'-'.substr($fecha_a,4,2);
 			$fecha_b = get_field('obra_fecha_finalizacion', $terms->taxonomy.'_'.$terms->term_id);
-			$fecha_fin = substr($fecha_b,0,4).'-'.substr($fecha_b,4,2).'-'.substr($fecha_b,6,2);
+			$fecha_fin = substr($fecha_b,0,4).'-'.substr($fecha_b,4,2);
 		?>
 		<div id="obra-descripcion" class="sidebar">
 			<span>Tipo de obra:</span> <?php echo $tipo; ?> <br>

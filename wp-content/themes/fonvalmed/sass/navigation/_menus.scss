@@ -131,7 +131,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 	border-left: 2px solid $color__primary !important;
 }
 
-/*----------- Menú Lateral --------------*/
+/*----------- MenÃº Lateral --------------*/
 
 .menu-micro_title{
 	span{
@@ -249,6 +249,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
     		}
 		}
 	}
+
 	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > ul.mega-sub-menu{
 		@include sombra-cajas(0.3);
 	}
@@ -335,7 +336,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 	}
 }
 
-/* Menú footer */
+/* MenÃº footer */
 #menu-menu-footer{
 	margin: 0;
 	padding: 0;
@@ -343,5 +344,44 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 		margin: 0;
 		padding: 0;
 		list-style: none;
+	}
+}
+
+#obras-menu {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	ul {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		padding-left: 15px;
+		padding-right: 15px;
+		li {
+			background-color: $color__background-obra-menu;
+			float: left;
+			list-style: none;
+			padding: 15px;
+			color: #fff;
+			margin-right: 2px;
+			a {
+				text-decoration: blink;
+				color: #fff;
+			}
+			&:hover {
+				background-color: $color__obra-menu-hover;
+			}
+			&.active {
+				background-color: $color__primary;
+				a {
+					color: #fff;
+				}
+				&:hover {
+					background-color: $color__obra-menu-hover;
+				}
+			}
+		}
 	}
 }

@@ -18,3 +18,59 @@ td{
 tr:nth-child(odd){
 	background-color: lighten($color__gray, 12%);
 }
+
+/*---------- Estilos de tablepress--------------*/
+.dataTables_wrapper {
+	font-family: $font__main;
+	.dataTables_length{
+		margin-bottom: 15px;
+		label{
+			font-weight: 300;	
+		}
+	}
+	.dataTables_filter{
+		@extend .dataTables_length;
+	}
+	.dataTables_info{
+		font-family: $font__main;
+		font-weight: 300;
+	}
+	.paginate_button {
+		color: $color__primary !important;
+		text-decoration: none;
+		&.next{
+			&:after{
+				color: $color__gray-dark;
+				text-shadow: .1em .1em #CCC !important;
+			}
+		}
+		&:hover{
+			&.next{
+				&:after{
+					color: $color__primary;
+				}
+				&.disabled{
+					&:after{
+						color: $color__gray-dark !important;
+					}
+				}
+			}
+			&.previous{
+				&:before{
+					color: $color__primary;
+				}
+				&.disabled{
+					&:before{
+						color: $color__gray-dark !important;
+					}
+				}
+			}
+		}
+		&.previous{
+			&:before{
+				color: $color__gray-dark;
+				text-shadow: .1em .1em #CCC !important;
+			}
+		}
+	}
+}

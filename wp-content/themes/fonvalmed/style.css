@@ -26,6 +26,7 @@ Text Domain: fonvalmed
 # Accessibility
 # Alignments
 # Clearings
+# Tabs
 # Widgets
 # Content
 	## Header
@@ -569,6 +570,45 @@ td {
 
 tr:nth-child(odd) {
   background-color: #e9e8e9;
+}
+
+/*---------- Estilos de tablepress--------------*/
+.dataTables_wrapper {
+  font-family: "Open Sans", sans-serif;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+  margin-bottom: 15px;
+}
+.dataTables_wrapper .dataTables_length label, .dataTables_wrapper .dataTables_filter label {
+  font-weight: 300;
+}
+.dataTables_wrapper .dataTables_info {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+.dataTables_wrapper .paginate_button {
+  color: #FF7F00 !important;
+  text-decoration: none;
+}
+.dataTables_wrapper .paginate_button.next:after {
+  color: #898989;
+  text-shadow: .1em .1em #CCC !important;
+}
+.dataTables_wrapper .paginate_button:hover.next:after {
+  color: #FF7F00;
+}
+.dataTables_wrapper .paginate_button:hover.next.disabled:after {
+  color: #898989 !important;
+}
+.dataTables_wrapper .paginate_button:hover.previous:before {
+  color: #FF7F00;
+}
+.dataTables_wrapper .paginate_button:hover.previous.disabled:before {
+  color: #898989 !important;
+}
+.dataTables_wrapper .paginate_button.previous:before {
+  color: #898989;
+  text-shadow: .1em .1em #CCC !important;
 }
 
 /*--------------------------------------------------------------
@@ -2797,7 +2837,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   border-left: 2px solid #FF7F00 !important;
 }
 
-/*----------- MenÂ· Lateral --------------*/
+/*----------- Menú Lateral --------------*/
 .menu-micro_title {
   margin: 0 0 20px 0;
   background: #FF7F00;
@@ -2938,8 +2978,8 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   }
 
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > ul.mega-sub-menu {
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3) !important;
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3) !important;
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.3);
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3) !important;
   }
 
@@ -3028,7 +3068,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   width: 50%;
 }
 
-/* MenÂ· footer */
+/* Menú footer */
 #menu-menu-footer {
   margin: 0;
   padding: 0;
@@ -3037,6 +3077,45 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+#obras-menu {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+#obras-menu ul {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#obras-menu ul li {
+  background-color: #B1B1B1;
+  float: left;
+  list-style: none;
+  padding: 15px;
+  color: #fff;
+  margin-right: 2px;
+}
+#obras-menu ul li a {
+  text-decoration: blink;
+  color: #fff;
+}
+#obras-menu ul li:hover {
+  background-color: #969696;
+}
+#obras-menu ul li.active {
+  background-color: #FF7F00;
+}
+#obras-menu ul li.active a {
+  color: #fff;
+}
+#obras-menu ul li.active:hover {
+  background-color: #969696;
 }
 
 /*--------------------------------------------------------------
@@ -3118,6 +3197,36 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 .site-content:after,
 .site-footer:after {
   clear: both;
+}
+
+/*--------------------------------------------------------------
+# Tabs
+--------------------------------------------------------------*/
+.wpb_content_element.tabs_fonvalmed .wpb_tabs_nav {
+  border-bottom: solid 2px #FF7F00;
+}
+.wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li {
+  background-color: #EDEDEF;
+  transition: all ease 0.5s;
+  margin: 0 5px 0 0;
+}
+.wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li a {
+  color: #898989;
+}
+.wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li:hover {
+  background-color: #FF7F00;
+}
+.wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li:hover a {
+  color: #fff;
+}
+.wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li.ui-tabs-active {
+  background-color: #FF7F00;
+}
+.wpb_content_element.tabs_fonvalmed .wpb_tabs_nav li.ui-tabs-active a {
+  color: #fff;
+}
+.wpb_content_element.tabs_fonvalmed .wpb_tab {
+  background-color: #fff !important;
 }
 
 /*--------------------------------------------------------------
