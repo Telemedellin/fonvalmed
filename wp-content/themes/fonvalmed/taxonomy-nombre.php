@@ -13,15 +13,18 @@
 	$home = get_term_link($terms->term_id, $terms->taxonomy);
 
 	if ($terms->parent != 0):
-		$posts = get_posts(
+		$_posts = get_posts(
 			array(
 				'posts_per_page' => -1,
 				'post_type' => 'obra',
+				'orderby' => 'post_date',
+				'order'   => 'ASC',
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'nombre',
 						'field' => 'term_id',
 						'terms' => $terms->term_id,
+						'include_children'	=> false
 					)
 				)
 			)
@@ -34,21 +37,22 @@
 		else
 			include 'templates/template-2col-D.php';
 	else:
-		$args = array(
-			'post_type' => 'obra',
-			'orderby' => 'title',
-			'order'   => 'ASC',
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'nombre',
-					'field'    => 'slug',
-					'terms'    => $terms->slug,
-					'include_children'	=> false
-				),
-			),
+		$_posts = get_posts(
+			array(
+				'posts_per_page' => -1,
+				'post_type' => 'obra',
+				'orderby' => 'post_date',
+				'order'   => 'ASC',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'nombre',
+						'field' => 'term_id',
+						'terms' => $terms->term_id,
+						'include_children'	=> false
+					)
+				)
+			)
 		);
-
-		$posts = new WP_Query($args);
 
 		include 'templates/template-2col-I.php';
 	endif;

@@ -13,44 +13,44 @@
 			$terms = $terms[0];
 		endif;
 
-		$post_id = get_the_ID();
-
 		$home = get_term_link($terms->term_id, $terms->taxonomy);
 
 		if ($terms->parent == 0):
-			$posts = new WP_Query(
-				array(
-					'post_type' => 'obra',
-					'orderby' => 'title',
-					'order'   => 'ASC',
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'nombre',
-							'field'    => 'slug',
-							'terms'    => $terms->slug,
-							'include_children'	=> false
-						),
-					),
-				)
-			);
-			include 'templates/template-2col-I.php';
-		else:
-			$posts = get_posts(
+			$_posts = get_posts(
 				array(
 					'posts_per_page' => -1,
 					'post_type' => 'obra',
+					'orderby' => 'post_date',
+					'order'   => 'ASC',
 					'tax_query' => array(
 						array(
 							'taxonomy' => 'nombre',
 							'field' => 'term_id',
 							'terms' => $terms->term_id,
+							'include_children'	=> false
 						)
 					)
 				)
 			);
-
+			include 'templates/template-2col-I.php';
+		else:
+			$_posts = get_posts(
+				array(
+					'posts_per_page' => -1,
+					'post_type' => 'obra',
+					'orderby' => 'post_date',
+					'order'   => 'ASC',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'nombre',
+							'field' => 'term_id',
+							'terms' => $terms->term_id,
+							'include_children'	=> false
+						)
+					)
+				)
+			);
 			include 'navigation-obra.php';
-
 			if ($heredar == 'si'):
 				include 'templates/template-2col-D.php';
 			else:

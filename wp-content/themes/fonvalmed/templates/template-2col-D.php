@@ -7,11 +7,14 @@
 			<?php if (is_tax()): ?>
 				<?php include 'template-parts/content-category-obra.php'; ?>
 			<?php else: ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php while (have_posts()) : the_post(); ?>
 					<?php
 						switch ($tipo_plantilla_obra):
 							case 'galeria':
 								include 'template-parts/content-obra-gallery.php';
+								break;
+							case 'publicaciones':
+								include 'template-parts/content-obra-publicaciones.php';
 								break;
 							default:
 								include 'template-parts/content-obra.php';
