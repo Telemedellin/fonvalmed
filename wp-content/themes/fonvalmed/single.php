@@ -17,7 +17,7 @@
 		$_posts = get_posts(
 			array(
 				'posts_per_page' => -1,
-				'post_type' => 'obra',
+				'post_type' => 'p-valorizacion',
 				'orderby' => 'post_date',
 				'order'   => 'ASC',
 				'tax_query' => array(
