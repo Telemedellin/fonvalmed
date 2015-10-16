@@ -1,7 +1,6 @@
-<?php get_header(); ?>
+<?php get_header();
 
-<?php if (!is_singular(array('page', 'attachment', 'post'))): ?>
-	<?php
+	if (!is_singular(array('page', 'attachment', 'post'))):
 		$layout =  !is_null($layout = get_field('layout')) == true ? $layout : 'single';
 		$heredar = get_field('heredar_layout');
 		$tipo_plantilla_obra = get_field('tipo_plantilla_obra');
@@ -18,7 +17,7 @@
 		$_posts = get_posts(
 			array(
 				'posts_per_page' => -1,
-				'post_type' => 'obra',
+				'post_type' => 'p-valorizacion',
 				'orderby' => 'post_date',
 				'order'   => 'ASC',
 				'tax_query' => array(
@@ -46,8 +45,7 @@
 				endif;
 			endif;
 		endif;
-	?>
-<?php else: ?>
+	else: ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -64,7 +62,7 @@
 		<!-- #main -->
 	</div>
 	<!-- #primary -->
-	<?php get_sidebar(); ?>
+	<?php //get_sidebar(); ?>
 <?php endif; ?>
 
 <?php get_footer(); ?>
