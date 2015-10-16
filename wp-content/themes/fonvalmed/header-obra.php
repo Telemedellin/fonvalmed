@@ -13,13 +13,15 @@
 	else:
 		$image_header['url'] = get_field('imagen_de_cabezote', $post_id);
 	endif;
+	
+	$caption = !is_null($terms) ? $terms->name : get_the_title($post_id);
 ?>
 
 <!-- #header -->
 <div class="obra-header" style="background-image:url(<?php echo $image_header['url']; ?>);">
 	<div class="container">
 		<!-- #titulo -->
-		<h2 class="obra-titulo"><?php echo $terms->name; ?></h2>
+		<h2 class="obra-titulo"><?php echo $caption; ?></h2>
 		<!-- #titulo -->
 	</div>
 </div>
