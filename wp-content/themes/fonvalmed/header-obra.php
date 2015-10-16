@@ -2,11 +2,17 @@
 	if (is_tax()):
 		$terms = get_queried_object();
 	else:
-		$terms = get_the_terms(get_the_ID(), 'nombre');
-		$terms = $terms[0];
+		if ($post_id == 0):
+			$terms = get_the_terms(get_the_ID(), 'nombre');
+			$terms = $terms[0];
+		endif;
 	endif;
 
-	$image_header = get_field('obra_cabezote', $terms->taxonomy.'_'.$terms->term_id);
+	if ($post_id == 0):
+		$image_header = get_field('obra_cabezote', $terms->taxonomy.'_'.$terms->term_id);
+	else:
+		$image_header['url'] = get_field('imagen_de_cabezote', $post_id);
+	endif;
 ?>
 
 <!-- #header -->

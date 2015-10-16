@@ -45,8 +45,12 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<?php $term = get_the_terms(get_the_ID(), 'nombre'); ?>
-	<?php if (is_tax() || $term[0]->taxonomy == 'nombre'): ?>
+	<?php
+		$post_id = 0;
+		$term = get_the_terms(get_the_ID(), 'nombre');
+		$post_id = (get_field('generar_automaticamente') == 'si') ? $post->ID : ((get_field('generar_automaticamente', $post->post_parent) == 'si') ? $post->post_parent : 0);
+	?>
+	<?php if (is_tax() || $term[0]->taxonomy == 'nombre' || ($post_id != 0 && !is_null(get_field('imagen_de_cabezote', $post_id)))): ?>
 		<?php include 'header-obra.php'; ?>
 	<?php endif; ?>
 
