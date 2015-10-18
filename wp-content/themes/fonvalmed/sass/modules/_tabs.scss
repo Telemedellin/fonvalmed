@@ -37,3 +37,71 @@
 		}
 	}
 }
+.tabs_fonvalmed{
+	.vc_tta-tabs-list{
+		border-bottom: solid 2px $color__primary;
+		margin: 0 0 30px 0;
+		padding: 0px;
+		li{
+			background-color: $color__gray-light !important;
+			transition: all ease 0.5s;
+			margin: 0 5px 0 0 !important;
+			list-style: none;
+			display: inline-block;
+			a{
+				color: $color__gray-dark;
+				text-decoration: none;
+				padding: 0.5em 1em !important;
+				display: block;
+				background: none !important;
+				border: none !important;
+			}
+			&:hover{
+				background-color: $color__primary !important;
+				a{
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+			&.vc_active{
+				background-color: $color__primary !important;
+				a{
+					color: #fff !important;
+				}
+			}
+		}
+	}
+	.vc_tta-panel-body{
+		background: #fff !important;
+	}
+}
+
+//Acordeón
+
+.acordeon_fonvalmed{
+	.vc_tta-panels{
+		.vc_tta-panel{
+			&.vc_active{
+				.vc_tta-panel-heading{
+					background: $color__primary !important;
+					color: #fff !important;
+					border: none;
+					border-radius: 0;
+					h4{
+						a{
+							 color: #fff;
+							 .vc_tta-controls-icon{
+							 	&::before{
+							 		border-top-color: #fff !important;
+							 	}
+							 }
+						}
+					}
+				}
+			}
+		}
+	}
+	.vc_tta-color-grey.vc_tta-style-classic .vc_active .vc_tta-panel-heading .vc_tta-controls-icon::before, .vc_tta-color-grey.vc_tta-style-classic .vc_active .vc_tta-panel-heading .vc_tta-controls-icon::after{
+		border-color: #fff !important;
+	}
+}

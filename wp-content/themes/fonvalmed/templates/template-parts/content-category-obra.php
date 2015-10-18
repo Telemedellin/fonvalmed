@@ -45,15 +45,15 @@
 			</div>
 			<div class="img-obras_despues">
 				<figure>
-					<img src="<?php echo $despues_img; ?>" alt="<?php echo $antes_pie; ?>">
+					<img src="<?php echo $despues_img; ?>" alt="<?php echo $despues_pie; ?>">
 					<figcaption>
-						<?php echo $antes_pie; ?>
+						<?php echo $despues_pie; ?>
 					</figcaption>
 				</figure>
 			</div>
 			<div class="ctn__img-obras_controles">
-				<span id="antes" class="img-obras_controles">Antes</span>
-				<span id="despues" class="img-obras_controles">despues</span>
+				<span id="antes" class="img-obras_controles active">Antes</span>
+				<span id="despues" class="img-obras_controles">Ahora</span>
 			</div>
 		</div>
 		<?php endwhile; ?>
