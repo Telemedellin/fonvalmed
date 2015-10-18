@@ -363,6 +363,11 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: "Open Sans", sans-serif;
   font-weight: 100;
+  color: #FF7F00;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-bottom: 0px;
 }
 
 .subtitulos {
@@ -372,8 +377,15 @@ h1, h2, h3, h4, h5, h6 {
   color: #898989;
 }
 
+.vc_toggle_title h4 {
+  color: #898989 !important;
+  font-size: 1.1rem;
+}
+
 p {
+  margin-top: 0;
   margin-bottom: 1.5em;
+  font-weight: 100;
 }
 
 dfn, cite, em, i {
@@ -508,6 +520,8 @@ hr {
 
 ul, ol {
   margin: 0 0 1.5em 1em;
+  color: #898989;
+  font-weight: 100;
 }
 
 ul {
@@ -2697,7 +2711,7 @@ a {
   transition: all 0.5s ease;
 }
 a:visited {
-  color: #b35900;
+  color: #FF7F00;
 }
 a:hover, a:focus, a:active {
   color: #cc6600;
@@ -3753,18 +3767,20 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   color: #FF7F00;
 }
 
-article.type-obra header h1 {
-  font-size: 1.7em;
-  font-weight: 400;
+.entry-title {
+  font-size: 2em;
+  font-weight: 100;
   border-bottom: 1px solid #ccc;
   color: #898989;
+  position: relative;
 }
-article.type-obra header h1::before {
+
+.entry-title::before {
   content: "";
   width: 74px;
   height: 37px;
   position: absolute;
-  top: 4px;
+  bottom: -1px;
   right: 15px;
   background: url(img/edificios-line.png) no-repeat;
 }
@@ -4189,8 +4205,8 @@ p.recaudo-total-texto {
   }
 }
 @media screen and (min-width: 992px) {
-  article.type-obra header h1::before {
-    top: 22px;
+  .entry-title {
+    margin-top: 0px;
   }
 
   .no-margin {

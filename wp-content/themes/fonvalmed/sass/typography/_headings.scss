@@ -2,10 +2,20 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: $font__main;
 	font-weight: 100;
+	color: $color__primary;
+}
+h2, h3, h4, h5, h6{
+	margin-bottom: 0px;
 }
 .subtitulos{
 	font-size: 1.7em;
     font-weight: 400;
     border-bottom: 1px solid #ccc;
     color: $color__gray-dark;
+}
+.vc_toggle_title{
+	h4{
+		color: $color__gray-dark !important;
+		font-size: 1.1rem;
+	}
 }
