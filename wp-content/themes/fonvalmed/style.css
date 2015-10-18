@@ -580,6 +580,7 @@ tr:nth-child(odd) {
 /*---------- Estilos de tablepress--------------*/
 .dataTables_wrapper {
   font-family: "Open Sans", sans-serif;
+  overflow: auto;
 }
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
   margin-bottom: 15px;
@@ -3099,19 +3100,24 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   padding-right: 15px;
 }
 #obras-menu ul li {
-  background-color: #B1B1B1;
+  background-color: #EDEDEF;
   float: left;
   list-style: none;
-  padding: 15px;
   color: #fff;
   margin-right: 2px;
 }
 #obras-menu ul li a {
   text-decoration: blink;
+  padding: 15px;
+  display: block;
+  color: #898989;
+}
+#obras-menu ul li a:hover {
   color: #fff;
 }
 #obras-menu ul li:hover {
   background-color: #969696;
+  color: #fff;
 }
 #obras-menu ul li.active {
   background-color: #FF7F00;
@@ -3120,7 +3126,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   color: #fff;
 }
 #obras-menu ul li.active:hover {
-  background-color: #969696;
+  background-color: #FF7F00;
 }
 
 /*--------------------------------------------------------------
@@ -3773,6 +3779,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   border-bottom: 1px solid #ccc;
   color: #898989;
   position: relative;
+  padding-right: 65px;
 }
 
 .entry-title::before {
@@ -3893,26 +3900,28 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 #obra-listado .filtros span:first-child:hover, #obra-mapas .filtros span:first-child:hover {
   background-color: transparent;
 }
-#obra-listado .filtros span, #obra-mapas .filtros span {
+#obra-listado .filtros span.fm-label, #obra-mapas .filtros span.fm-label {
   display: inline-block;
-  background-color: #B1B1B1;
+  background-color: #EDEDEF;
   height: 100%;
   border-radius: 5px;
-  color: #fff;
+  color: #898989;
   font-size: 14px;
 }
-#obra-listado .filtros span:nth-child(2), #obra-listado .filtros span:nth-child(3), #obra-mapas .filtros span:nth-child(2), #obra-mapas .filtros span:nth-child(3) {
+#obra-listado .filtros span.fm-label:nth-child(2), #obra-listado .filtros span.fm-label:nth-child(3), #obra-mapas .filtros span.fm-label:nth-child(2), #obra-mapas .filtros span.fm-label:nth-child(3) {
   margin-top: 25px;
 }
-#obra-listado .filtros span:nth-child(4), #obra-listado .filtros span:nth-child(5), #obra-mapas .filtros span:nth-child(4), #obra-mapas .filtros span:nth-child(5) {
+#obra-listado .filtros span.fm-label:nth-child(4), #obra-listado .filtros span.fm-label:nth-child(5), #obra-mapas .filtros span.fm-label:nth-child(4), #obra-mapas .filtros span.fm-label:nth-child(5) {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#obra-listado .filtros span:hover, #obra-mapas .filtros span:hover {
+#obra-listado .filtros span.fm-label:hover, #obra-mapas .filtros span.fm-label:hover {
   background-color: #969696;
+  color: #fff;
 }
-#obra-listado .filtros span:active, #obra-mapas .filtros span:active {
+#obra-listado .filtros span.fm-label:active, #obra-mapas .filtros span.fm-label:active {
   background-color: #FF7F00;
+  color: #fff;
 }
 #obra-listado .obras, #obra-mapas .obras {
   background-color: #eee;
@@ -3967,6 +3976,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 
 .fm-label-active {
   background: #FF7F00 !important;
+  color: #fff !important;
 }
 
 .grid {
@@ -4201,7 +4211,8 @@ p.recaudo-total-texto {
   }
 
   .fm-label {
-    width: 46%;
+    width: auto;
+    padding: 5px 10px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -4385,6 +4396,10 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+.wonderplugingallery-container a[href*="wonderplugin"] {
+  display: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

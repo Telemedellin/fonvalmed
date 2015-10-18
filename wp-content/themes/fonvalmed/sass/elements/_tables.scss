@@ -22,6 +22,7 @@ tr:nth-child(odd){
 /*---------- Estilos de tablepress--------------*/
 .dataTables_wrapper {
 	font-family: $font__main;
+	overflow: auto;
 	.dataTables_length{
 		margin-bottom: 15px;
 		label{

@@ -27,14 +27,14 @@
 		<div>
 			<div id="obra-listado" class="container-fluid">
 				<div class="row ctn__filtros">
-					<div class="filtros col-md-4">
+					<div class="filtros col-md-5">
 						<span class="filtro-title">Estado de la obra</span>
 						<span class="fm-label" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizada</span>
 						<span class="fm-label" rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 						<span class="fm-label" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
 						<span class="fm-label" rel="estado:en-licitacion" onclick="javascript:filtrar(this)">En licitaci&oacute;n</span>
 					</div>
-					<div class="filtros col-md-8">
+					<div class="filtros col-md-7">
 						<span class="filtro-title">Tipo de obra</span>
 						<span class="fm-label" rel="tipo:puente" onclick="javascript:filtrar(this)">Puente</span>
 						<span class="fm-label" rel="tipo:paso-a-desnivel-puente" onclick="javascript:filtrar(this)">Paso a desnivel: puente</span>

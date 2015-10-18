@@ -47,6 +47,7 @@
 	border-bottom: 1px solid #ccc;
 	color: $color__gray-dark;
 	position: relative;
+	padding-right: 65px;
 }
 .entry-title::before {
 	content: "";
@@ -166,12 +167,12 @@
 				background-color: transparent;
 			}
 		}
-		span {
+		span.fm-label {
 			display: inline-block;
-			background-color: $color__background-obra-menu;
+			background-color: $color__gray-light;
 			height: 100%;
 			border-radius: 5px;
-			color: #fff;
+			color: $color__gray-dark;
 			font-size: 14px;
 			&:nth-child(2), &:nth-child(3)
 			{
@@ -184,9 +185,11 @@
 			}
 			&:hover {
 				background-color: $color__obra-menu-hover;
+				color: #fff;
 			}
 			&:active {
 				background-color: $color__primary;
+				color: #fff;
 			}
 		}
 	}
@@ -245,6 +248,7 @@
 }
 .fm-label-active{
 	background: $color__primary !important;
+	color: #fff !important;
 }
 .grid {
   background: #EEE;
@@ -449,7 +453,8 @@ p.recaudo-total-texto{
 		width: 48.2%;
 	}
 	.fm-label{
-		width: 46%;
+		width: auto;
+		padding: 5px 10px;
 	}
 }
 

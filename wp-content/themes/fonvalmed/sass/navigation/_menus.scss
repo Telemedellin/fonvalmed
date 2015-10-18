@@ -360,18 +360,23 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 		padding-left: 15px;
 		padding-right: 15px;
 		li {
-			background-color: $color__background-obra-menu;
+			background-color: $color__gray-light;
 			float: left;
 			list-style: none;
-			padding: 15px;
 			color: #fff;
 			margin-right: 2px;
 			a {
 				text-decoration: blink;
-				color: #fff;
+				padding: 15px;
+				display: block;
+				color: $color__gray-dark;
+				&:hover{
+					color: #fff;
+				}
 			}
 			&:hover {
 				background-color: $color__obra-menu-hover;
+				color: #fff;
 			}
 			&.active {
 				background-color: $color__primary;
@@ -379,7 +384,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 					color: #fff;
 				}
 				&:hover {
-					background-color: $color__obra-menu-hover;
+					background-color: $color__primary;
 				}
 			}
 		}

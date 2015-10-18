@@ -44,3 +44,9 @@
 .gallery-caption {
 	display: block;
 }
+
+.wonderplugingallery-container{
+	a[href*="wonderplugin"] {
+		display: none !important;
+	}	
+}
