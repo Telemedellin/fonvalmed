@@ -3,7 +3,7 @@
 <?php $current = $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
 <!-- #menu -->
 <aside class="ctn__menu-micro">
-	<h3 class="menu-micro_title"><span>Menú</span> <?php echo get_the_title($post_id); ?></h3>
+	<h3 class="menu-micro_title"><?php echo get_the_title($post_id); ?></h3>
 	<ul class="menu-micro">
 	<?php foreach ($_pages as $_page): ?>
 		<?php $class = ($current == get_permalink($_page->ID)) ? 'menu-micro_-active' : ''; ?>
