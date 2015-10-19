@@ -15,6 +15,7 @@
 	endif;
 	
 	$caption = !is_null($terms) ? $terms->name : get_the_title($post_id);
+	$post->caption = $caption;
 ?>
 
 <!-- #header -->

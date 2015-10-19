@@ -11,6 +11,18 @@
 	}
 }
 
+.gallery-caption {
+    position: absolute;
+	background-color: rgba(0,0,0,0.5);
+    width: 100%;
+	min-height: 35px;
+    padding: 10px;
+    color: #fff;
+    font-size: 18px;
+	bottom: 0;
+    z-index: 1;
+}
+
 .wp-caption-text {
 	text-align: center;
 }

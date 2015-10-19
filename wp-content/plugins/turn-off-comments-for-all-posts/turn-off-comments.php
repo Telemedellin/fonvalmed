@@ -22,14 +22,14 @@ function toac_plugin_menu() {
 	add_submenu_page( 'tools.php', 'Turn off all comments', 'Turn off comments', 'delete_others_posts', 'toac', 'toac_plugin_options');
 }
 
-function toac_count_open_comments() {
+function toac_count_open_comments_page() {
 	global $wpdb;
-	return $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE comment_status ='open' AND post_status='publish' " );
+	return $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE comment_status ='open' AND post_status='publish' AND post_type = 'page' " );
 }
 
-function toac_count_open_pings() {
+function toac_count_open_comments_post() {
 	global $wpdb;
-	return $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE ping_status ='open' AND post_status='publish' " );
+	return $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE comment_status ='open' AND post_status='publish' AND post_type = 'post' " );
 }
 
 #print the markup for the page
@@ -38,39 +38,41 @@ function toac_plugin_options() {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
 
-	$comment_count = toac_count_open_comments();
-	$ping_count = toac_count_open_pings();
+	$comment_page_count = toac_count_open_comments_page();
+	$comment_post_count = toac_count_open_comments_post();
 
 	echo '<div class="wrap">';
 
 	echo '<h2>Turn off comments for all posts</h2>';
 
-	if (isset($_GET['status']) && $_GET['status']=='success') { 
+	if (isset($_GET['status']) && $_GET['status']=='success') {
 	?>
 		<div id="message" class="updated notice is-dismissible">
-			<p>Posts updated: <?php echo $_GET['rows']; ?></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
+			<p>Pages updated: <?php echo $_GET['rows_pages']; ?></p>
+			<p>Posts updated: <?php echo $_GET['rows_posts']; ?></p>
+			<button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
 		</div>
 	<?php
 	}
 
-	echo "<p>{$comment_count} posts/pages with comments turned on.</p>";
-	echo "<p>{$ping_count} posts/pages with pings turned on.</p>";
+	echo "<p>{$comment_page_count} pages with comments turned on.</p>";
+	echo "<p>{$comment_post_count} posts with pings turned on.</p>";
 
 	?>
 		<form method="post" action="/wp-admin/admin-post.php">
 
 			<input type="hidden" name="action" value="update_posts_comment_status" />
-			<input class="" type="hidden" name="update_comment_status" value="0" />
-			<input class="" type="hidden" name="update_ping_status" value="0" />
+			<input class="" type="hidden" name="update_page_comment_status" value="0" />
+			<input class="" type="hidden" name="update_post_comment_status" value="0" />
 			<p>
 			<label>
-				<input class="" type="checkbox" name="update_comment_status" value="1" />
-				Turn off comments on all posts/pages
+				<input class="" type="checkbox" name="update_page_comment_status" value="1" />
+				Turn off comments on all pages
 			</label><br />
 			<label>
-				<input class="" type="checkbox" name="update_ping_status" value="1" />
-				Turn off pings on all posts/pages
-			</label>
+				<input class="" type="checkbox" name="update_post_comment_status" value="1" />
+				Turn off comments on all posts
+			</label><br />
 			</p>
 			<input class="button button-primary" type="submit" value="Do it now" />
 		</form>
@@ -84,42 +86,58 @@ function toac_plugin_options() {
 function toac_handle_request() {
 
 	#check which options were sent
-	$comments = $_POST['update_comment_status'];
-	$pings = $_POST['update_ping_status'];
+	$pages_comments = $_POST['update_page_comment_status'];
+	$posts_comments = $_POST['update_post_comment_status'];
 
 	#call DB update function
-	$rows = toac_update_posts( $comments, $pings );
+	$rows = toac_update_posts( $pages_comments, $posts_comments );
 
 	#redirect back to page
-	$redirect_url = get_bloginfo('url') . "/wp-admin/tools.php?page=toac&status=success&rows={$rows}";
+	$redirect_url = get_bloginfo('url') . "/wp-admin/tools.php?page=toac&status=success&rows_pages={$rows['pages']}&rows_posts={$rows['posts']}";
     header("Location: ".$redirect_url);
     exit;
 }
 
 #handles the actual updating of the DB
-function toac_update_posts($comments_off=FALSE, $pings_off=FALSE) {
-
-	#No updates means we dont do anything
-	if (!$comments_off && !$pings_off)
-		return;
-
+function toac_update_posts($pages_comments_off=FALSE, $posts_comments_off=FALSE)
+{
 	#have to globalize $wpdb;
 	global $wpdb;
+	
+	$rows = array();
 
 	#build query in segments depending on options
 	$query = "UPDATE $wpdb->posts SET "; 
+    if ($pages_comments_off)
+	{
+		$query.=" comment_status = 'closed'";
+		$query.=" WHERE post_type  = 'page'";
+	}
+	else
+	{
+		$query.=" comment_status = 'open'";
+		$query.=" WHERE post_type  = 'page'";
+	}
+	echo $query;
+	$rows['pages'] = $wpdb->query($query);
 
-    if ($comments_off)
-    	$query.=" comment_status = 'closed'";
-
-    #optionally add commma to prevent syntax errors
-    if ($pings_off)
-    	$query.= ($comments_off) ? ", ping_status = 'closed'" : " ping_status = 'closed'";
-    
-    $query.=" WHERE 1";
+	#build query in segments depending on options
+	$query = "UPDATE $wpdb->posts SET "; 
+	if ($posts_comments_off)
+	{
+		$query.=" comment_status = 'closed'";
+		$query.=" WHERE post_type  = 'post'";
+	}
+	else
+	{
+		$query.=" comment_status = 'open'";
+		$query.=" WHERE post_type  = 'post'";
+	}
+	echo $query;
+	$rows['posts'] = $wpdb->query($query);
 
     #return number of records updated
-	return $wpdb->query($query);
+	return $rows;
 
 }
 

@@ -50,3 +50,12 @@
 		display: none !important;
 	}	
 }
+
+.img-gallery {
+	position: initial !important;
+	top: initial !important;
+	left: initial !important;
+	width: auto !important;
+	height: 100% !important;
+	z-index:-1;
+}

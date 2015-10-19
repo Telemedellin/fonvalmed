@@ -271,7 +271,6 @@
 				map: map, title: locations[i].name, position: latlngset
 			});
 
-			console.log(locations[i].url);
 			map.setCenter(marker.getPosition());
 			var content = '<a href="' + locations[i].enlace + '" target="_blank">' +
 						'<div id="obra-detalle">' +
