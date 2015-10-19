@@ -4,7 +4,7 @@
 <!-- #menu -->
 <aside class="ctn__menu-micro">
 	<h3 class="menu-micro_title"><span>Menú</span> Proyectos Valorización</h3>
-	<div class="menu-micro-toggle"></div>
+	<div class="menu-micro-toggle">Menú <?php echo $post->caption; ?></div>
 	<ul class="menu-micro">
 		<?php foreach ($_posts as $_post): ?>
 			<?php $class = ($current == get_permalink($_post->ID)) ? 'menu-micro_-active' : ''; ?>

@@ -3,7 +3,7 @@
 <?php $current = $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
 <!-- #menu -->
 <div id="obras-menu">
-	<div class="obras-menu-toggle"></div>
+	<div class="obras-menu-toggle">Menú obras</div>
 	<ul>
 		<?php foreach ($_posts as $_post): ?>
 			<?php $class = ($current == get_permalink($_post->ID)) ? 'active' : ''; ?>

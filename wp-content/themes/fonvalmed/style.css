@@ -2159,17 +2159,14 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   background-color: #EDEDEF;
   line-height: 40px;
   height: 40px;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: center; }
   .menu-micro-toggle:before {
     content: "\f333";
     font-family: 'dashicons';
     margin: 0 5px;
     font-size: 35px;
     float: left; }
-  .menu-micro-toggle:after {
-    content: 'Menú proyecto';
-    display: block;
-    text-align: center; }
 
 .menu-micro-open:before {
   content: "\f158"; }
@@ -2337,7 +2334,8 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   display: inline-block;
   width: 100%;
   height: 100%;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: center; }
   #obras-menu .obras-menu-toggle {
     display: block;
     background-color: #EDEDEF;
@@ -2349,10 +2347,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
       margin: 0 5px;
       font-size: 35px;
       float: left; }
-    #obras-menu .obras-menu-toggle:after {
-      content: 'Menú obras';
-      display: block;
-      text-align: center; }
   #obras-menu .obras-menu-open:before {
     content: "\f158"; }
   #obras-menu ul {
@@ -3269,7 +3263,8 @@ p.recaudo-total-texto {
 
 .ctn__img-obras_controles {
   text-align: center;
-  padding: 5px; }
+  padding: 5px;
+  cursor: pointer; }
   .ctn__img-obras_controles .img-obras_controles {
     display: inlin-block;
     margin: 0 10px;
@@ -3400,16 +3395,14 @@ object {
 
 .gallery-caption {
   position: absolute;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   min-height: 35px;
-  padding-bottom: 5px;
-  padding-left: 15px;
+  padding: 10px;
   color: #fff;
   font-size: 18px;
   bottom: 0;
-  z-index: 1;
-  opacity: 0.5; }
+  z-index: 1; }
 
 .wp-caption-text {
   text-align: center; }
@@ -3447,3 +3440,11 @@ object {
 
 .wonderplugingallery-container a[href*="wonderplugin"] {
   display: none !important; }
+
+.img-gallery {
+  position: initial !important;
+  top: initial !important;
+  left: initial !important;
+  width: auto !important;
+  height: 100% !important;
+  z-index: -1; }

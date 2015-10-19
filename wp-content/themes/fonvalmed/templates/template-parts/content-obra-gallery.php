@@ -96,7 +96,7 @@ $indice = 0;
 				});
 			</script>
 
-			<div id="gallery_container" style="position: relative; top: 0px; left: 0px; width: 800px; height: 456px; background: transparent; overflow: hidden;">
+			<div id="gallery_container" style="position: relative; top: 0px; left: 0px; width: 800px; height: 556px; background: transparent; overflow: hidden;">
 
 				<!-- Loading Screen -->
 				<div u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -109,15 +109,15 @@ $indice = 0;
 				</div>
 
 				<!-- Slides Container -->
-				<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 356px; overflow: hidden;">
+				<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 456px; overflow: hidden;text-align: center;">
 					<?php if(have_rows('galerias')): ?>
 					<?php while (have_rows('galerias')) : the_row(); ?>
 						<?php $imagenes = get_sub_field('imagenes'); ?>
 						<?php $galerias[get_sub_field('titulo')] = $imagenes; ?>
 						<?php if ($indice == 0): ?>
 						<?php foreach ($imagenes as $imagen): ?>
-						<div>
-							<div u="image" style="background-image:url(<?php echo $imagen['sizes']['large']; ?>);background-position:center;background-size:cover;background-repeat:no-repeat;width:100%;height:100%;z-index:-1;"></div>
+						<div style="text-align:center;">
+							<img u="image" class="img-gallery" src="<?php echo $imagen['sizes']['large']; ?>" style="">
 							<img u="thumb" src="<?php echo $imagen['sizes']['thumbnail']; ?>" alt="<?php echo $imagen['alt']; ?>" />
 							<span class="gallery-caption"><?php echo $imagen['caption']; ?></span>
 						</div>
