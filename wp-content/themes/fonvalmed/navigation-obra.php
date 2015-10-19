@@ -3,6 +3,7 @@
 <?php $current = $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
 <!-- #menu -->
 <div id="obras-menu">
+	<div class="obras-menu-toggle"></div>
 	<ul>
 		<?php foreach ($_posts as $_post): ?>
 			<?php $class = ($current == get_permalink($_post->ID)) ? 'active' : ''; ?>
@@ -32,3 +33,13 @@
 	</ul>
 </div>
 <!-- #menu -->
+<script>
+jQuery(function($) {
+	$('.obras-menu-toggle').on('click', function(evt) {
+		if ($(this).hasClass('obras-menu-open'))
+			$(this).removeClass('obras-menu-open').next().fadeOut();
+		else
+			$(this).addClass('obras-menu-open').next().fadeIn();
+	});
+});
+</script>

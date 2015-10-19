@@ -117,8 +117,9 @@ $indice = 0;
 						<?php if ($indice == 0): ?>
 						<?php foreach ($imagenes as $imagen): ?>
 						<div>
-							<img u="image" src="<?php echo $imagen['sizes']['large']; ?>" alt="<?php echo $imagen['alt']; ?>"/>
-							<img u="thumb" src="<?php echo $imagen['sizes']['thumbnail']; ?>" alt="<?php echo $imagen['alt']; ?>"/>
+							<div u="image" style="background-image:url(<?php echo $imagen['sizes']['large']; ?>);background-position:center;background-size:cover;background-repeat:no-repeat;width:100%;height:100%;z-index:-1;"></div>
+							<img u="thumb" src="<?php echo $imagen['sizes']['thumbnail']; ?>" alt="<?php echo $imagen['alt']; ?>" />
+							<span class="gallery-caption"><?php echo $imagen['caption']; ?></span>
 						</div>
 						<?php endforeach; ?>
 						<?php endif; ?>
