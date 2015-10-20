@@ -462,13 +462,30 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 }
 
 .breadcrumbs {
-	padding: 0px 0px 15px 15px;
+	margin-bottom: 25px;
+    margin-top: 10px;
 	span {
 		border-bottom: 1px solid $color__gray-dark;
 		position: relative;
 		a {
 			text-decoration: blink;
 			color: $color__gray-dark;
+		}
+	}
+	> span.content-separator {
+		display: inline-block;
+		border-bottom: 1px solid $color__gray-dark;
+		padding: 0 5px;
+		bottom: 1px;
+		.separator {
+			display: inline-block;
+			width: 2px;
+			height: 12px;
+			bottom: -6px;
+			background: -webkit-linear-gradient(white, #898989);
+			background: -o-linear-gradient(white, #898989);
+			background: -moz-linear-gradient(white, #898989);
+			background: linear-gradient(white, #898989);
 		}
 	}
 	.active {

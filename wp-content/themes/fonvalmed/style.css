@@ -2401,13 +2401,28 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
       margin-right: 2px; } }
 
 .breadcrumbs {
-  padding: 0px 0px 15px 15px; }
+  margin-bottom: 25px;
+  margin-top: 10px; }
   .breadcrumbs span {
     border-bottom: 1px solid #898989;
     position: relative; }
     .breadcrumbs span a {
       text-decoration: blink;
       color: #898989; }
+  .breadcrumbs > span.content-separator {
+    display: inline-block;
+    border-bottom: 1px solid #898989;
+    padding: 0 5px;
+    bottom: 1px; }
+    .breadcrumbs > span.content-separator .separator {
+      display: inline-block;
+      width: 2px;
+      height: 12px;
+      bottom: -6px;
+      background: -webkit-linear-gradient(white, #898989);
+      background: -o-linear-gradient(white, #898989);
+      background: -moz-linear-gradient(white, #898989);
+      background: linear-gradient(white, #898989); }
   .breadcrumbs .active {
     color: #FF7F00;
     border-bottom: 1px solid #FF7F00; }
@@ -2727,7 +2742,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   min-height: 250px;
   text-align: left;
   margin-top: -28px;
-  margin-bottom: 50px;
   z-index: -1; }
   .obra-header div.container {
     position: relative;
