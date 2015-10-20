@@ -109,7 +109,7 @@ $indice = 0;
 				</div>
 
 				<!-- Slides Container -->
-				<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 456px; overflow: hidden;text-align: center;">
+				<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 456px; overflow: hidden;">
 					<?php if(have_rows('galerias')): ?>
 					<?php while (have_rows('galerias')) : the_row(); ?>
 						<?php $imagenes = get_sub_field('imagenes'); ?>
@@ -117,9 +117,9 @@ $indice = 0;
 						<?php if ($indice == 0): ?>
 						<?php foreach ($imagenes as $imagen): ?>
 						<div style="text-align:center;">
-							<img u="image" class="img-gallery" src="<?php echo $imagen['sizes']['large']; ?>" style="">
+							<img u="image" class="img-gallery" src="<?php echo $imagen['sizes']['large']; ?>">
 							<img u="thumb" src="<?php echo $imagen['sizes']['thumbnail']; ?>" alt="<?php echo $imagen['alt']; ?>" />
-							<span class="gallery-caption"><?php echo $imagen['caption']; ?></span>
+							<span class="gallery-obras-caption"><?php echo $imagen['caption']; ?></span>
 						</div>
 						<?php endforeach; ?>
 						<?php endif; ?>

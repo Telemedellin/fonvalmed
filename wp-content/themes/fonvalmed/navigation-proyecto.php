@@ -3,7 +3,7 @@
 <?php $current = $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
 <!-- #menu -->
 <aside class="ctn__menu-micro">
-	<h3 class="menu-micro_title"><span>Menú</span> Proyectos Valorización</h3>
+	<h3 class="menu-micro_title"><span>Menú</span></h3>
 	<div class="menu-micro-toggle">Menú <?php echo $post->caption; ?></div>
 	<ul class="menu-micro">
 		<?php foreach ($_posts as $_post): ?>
@@ -11,7 +11,7 @@
 			<?php if($key ==0): ?>
 				<?php if (is_tax()): ?>
 					<li>
-						<a href="<?php echo $home; ?>" class="menu-micro_-active"><?php echo $terms->name; ?></a>
+						<a href="<?php echo $home; ?>" class="menu-micro_-active">Obras del proyecto</a>
 					</li>
 					<li>
 						<a href="<?php echo get_permalink($_post->ID); ?>"><?php echo $_post->post_title; ?></a>
