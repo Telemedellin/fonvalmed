@@ -341,7 +341,7 @@
 
 .entry-content {
 	p {
-		color: $color__gray-dark;
+		color: darken($color__gray-dark, 15%);
 		text-align: left;
 	}
 }
@@ -442,6 +442,7 @@ p.recaudo-total-texto{
 	#obra-listado {
 		.filtros {
 			border-right: 0px solid #fff;
+			text-align: left;
 		}
 	}
 	.obras {
