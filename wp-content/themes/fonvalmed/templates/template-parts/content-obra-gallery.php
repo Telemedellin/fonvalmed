@@ -264,7 +264,7 @@ $indice = 0;
 					<div class="ctn__gallery-album col-sm-6 col-md-4">
 						<div id="galeria" rel="galeria-<?php echo $galeria[0]['ID']; ?>" style="text-align: center; cursor: pointer;">
 							<div class="galeria-portada" style="background-image: url(<?php echo $galeria[0]['sizes']['thumbnail']; ?>); background-position: center; background-repeat: no-repeat; height: 165px;"></div>
-							<span style="font-size: 20px;color: #FF7F00;"><?php echo $titulo; ?></span>
+							<span class="gallery-album-title"><?php echo $titulo; ?></span>
 						</div>
 					</div>
 				<?php endforeach; ?>
