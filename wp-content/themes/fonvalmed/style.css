@@ -3542,6 +3542,12 @@ object {
     left: -2px;
     background: url("img/folder-tab.jpg") no-repeat; }
 
+.gallery-album-title {
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #FF7F00;
+}
+
 .jssora05l, .jssora05r {
   color: #FF7F00;
   font-size: 3rem;
