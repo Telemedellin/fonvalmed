@@ -115,6 +115,7 @@ $indice = 0;
 						<?php $imagenes = get_sub_field('imagenes'); ?>
 						<?php $galerias[get_sub_field('titulo')] = $imagenes; ?>
 						<?php if ($indice == 0): ?>
+						<h2 class="gallery-obras-title"> <?php echo get_sub_field('titulo') ?> </h2>
 						<?php foreach ($imagenes as $imagen): ?>
 						<div style="text-align:center;">
 							<img u="image" class="img-gallery" src="<?php echo $imagen['sizes']['large']; ?>">
@@ -143,9 +144,9 @@ $indice = 0;
 						position: absolute;
 						/* size of arrow element */
 						width: 40px;
-						height: 40px;
+						height: 70px;
 						cursor: pointer;
-						background: url(<?php echo get_template_directory_uri(); ?>/img/a17.png) no-repeat;
+						//background: url(<?php echo get_template_directory_uri(); ?>/img/a17.png) no-repeat;
 						overflow: hidden;
 					}
 					.jssora05l { background-position: -10px -40px; }
@@ -156,9 +157,9 @@ $indice = 0;
 					.jssora05r.jssora05rdn { background-position: -310px -40px; }
 				</style>
 				<!-- Arrow Left -->
-				<span u="arrowleft" class="jssora05l" style="top: 158px; left: 8px;"></span>
+				<span u="arrowleft" class="jssora05l icon-left-open-big" style="top: 158px; left: 8px;"></span>
 				<!-- Arrow Right -->
-				<span u="arrowright" class="jssora05r" style="top: 158px; right: 8px"></span>
+				<span u="arrowright" class="jssora05r icon-right-open-big" style="top: 158px; right: 8px"></span>
 				<!--#endregion Arrow Navigator Skin End -->
 				<!--#region Thumbnail Navigator Skin Begin -->
 				<!-- Help: http://www.jssor.com/development/slider-with-thumbnail-navigator-jquery.html -->
@@ -253,21 +254,26 @@ $indice = 0;
 					<!-- Thumbnail Item Skin End -->
 				</div>
 			</div>
-		</div>
-
-		<div class="container-fluid">
-			<div class="row">
-			<?php foreach ($galerias as $titulo => $galeria): ?>
-				<div id="galeria" class="col-md-4" rel="galeria-<?php echo $galeria[0]['ID']; ?>" style="text-align: center; cursor: pointer;">
-					<div class="galeria-portada" style="background-image: url(<?php echo $galeria[0]['sizes']['thumbnail']; ?>); background-position: center; background-repeat: no-repeat; height: 165px;"></div>
-					<span style="font-size: 20px;color: #FF7F00;"><?php echo $titulo; ?></span>
+		</div><!-- /maingallery -->
+		
+		<div class="ctn__gallery-albums">
+			<h2 class="gallery-albums-title">Otras galerías</h2>
+			<div class="container-fluid">
+				<div class="row-fluid">
+				<?php foreach ($galerias as $titulo => $galeria): ?>
+					<div class="ctn__gallery-album col-sm-6 col-md-4">
+						<div id="galeria" rel="galeria-<?php echo $galeria[0]['ID']; ?>" style="text-align: center; cursor: pointer;">
+							<div class="galeria-portada" style="background-image: url(<?php echo $galeria[0]['sizes']['thumbnail']; ?>); background-position: center; background-repeat: no-repeat; height: 165px;"></div>
+							<span style="font-size: 20px;color: #FF7F00;"><?php echo $titulo; ?></span>
+						</div>
+					</div>
+				<?php endforeach; ?>
 				</div>
-			<?php endforeach; ?>
 			</div>
 		</div>
 		<script>
 			jQuery(function($) {
-				$('.row > #galeria').on('click', function(evt) {
+				$('.ctn__gallery-album > #galeria').on('click', function(evt) {
 					var post_id = <?php echo get_the_ID(); ?>;
 					var galeria_id = jQuery(this).attr('rel').split('-')[1];
 					
