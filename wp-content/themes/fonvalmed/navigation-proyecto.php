@@ -18,7 +18,7 @@
 					</li>
 				<?php else: ?>
 					<li>
-						<a href="<?php echo $home; ?>"><?php echo $terms->name; ?></a>
+						<a href="<?php echo $home; ?>">Obras del proyecto</a>
 					</li>
 					<li>
 						<a href="<?php echo get_permalink($_post->ID); ?>" class="<?php echo $class; ?>"><?php echo $_post->post_title; ?></a>

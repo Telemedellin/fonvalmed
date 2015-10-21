@@ -146,7 +146,7 @@ $indice = 0;
 						width: 40px;
 						height: 70px;
 						cursor: pointer;
-						//background: url(<?php echo get_template_directory_uri(); ?>/img/a17.png) no-repeat;
+						// background: url(<?php echo get_template_directory_uri(); ?>/img/a17.png) no-repeat;
 						overflow: hidden;
 					}
 					.jssora05l { background-position: -10px -40px; }
