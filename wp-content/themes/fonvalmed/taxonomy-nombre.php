@@ -1,5 +1,4 @@
-<?php
-	get_header();
+<?php get_header();
 
 	$layout = ($layout = get_field('es_video', get_the_ID())) == false ? null : $layout;
 
@@ -15,7 +14,7 @@
 	$_posts = get_posts(
 		array(
 			'posts_per_page' => -1,
-			'post_type' => 'obra',
+			'post_type' => 'p-valorizacion',
 			'orderby' => 'post_date',
 			'order'   => 'ASC',
 			'tax_query' => array(

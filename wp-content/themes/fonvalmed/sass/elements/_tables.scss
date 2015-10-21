@@ -10,6 +10,7 @@ th{
 	border: 1px solid $color__gray;
 	font-weight: 100;
 	text-transform: uppercase;
+	text-align: center !important;
 }
 td{
 	border: 1px solid $color__gray;
@@ -22,6 +23,7 @@ tr:nth-child(odd){
 /*---------- Estilos de tablepress--------------*/
 .dataTables_wrapper {
 	font-family: $font__main;
+	overflow: auto;
 	.dataTables_length{
 		margin-bottom: 15px;
 		label{

@@ -41,6 +41,75 @@
 	}
 }
 
-.gallery-caption {
+.gallery-obras-caption {
 	display: block;
+}
+
+.wonderplugingallery-container{
+	a[href*="wonderplugin"] {
+		display: none !important;
+	}	
+}
+
+.img-gallery {
+	position: initial !important;
+	top: initial !important;
+	left: initial !important;
+	width: auto !important;
+	height: 100% !important;
+	z-index:-1;
+}
+.ctn__gallery-album{
+	border: solid 1px $color__gray;
+    padding: 20px 5px 20px 5px;
+    margin: 40px 10px 0 0;
+    position: relative;
+    &:before{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 130px;
+		height: 26px;
+		top: -26px;
+		left: -2px;
+		background: url("img/folder-tab.jpg") no-repeat;
+    }
+}
+.gallery-album-title{
+	font-size: 1rem;
+	line-height: 1rem;
+	color: $color__primary;
+}
+.jssora05l, .jssora05r{
+	color: $color__primary;
+	font-size: 3rem;
+	text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.87);
+}
+
+/*Galerías nativas de Wordpress*/
+
+.gallery{
+	figure{
+		margin-bottom: 30px;
+	}
+}
+
+.gallery-caption{
+	font-size: 0.9rem;
+	padding: 0 10px;
+}
+
+@media screen and (min-width: 768px){
+	.ctn__gallery-album{
+		width: 48% !important;
+	}
+}
+
+@media screen and (min-width: 992px){
+	.gallery-caption{
+		padding: 0 25px;
+	}
+	.ctn__gallery-album{
+		width: 30% !important;
+	}
 }

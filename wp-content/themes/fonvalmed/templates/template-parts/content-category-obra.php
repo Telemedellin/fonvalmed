@@ -45,15 +45,15 @@
 			</div>
 			<div class="img-obras_despues">
 				<figure>
-					<img src="<?php echo $despues_img; ?>" alt="<?php echo $antes_pie; ?>">
+					<img src="<?php echo $despues_img; ?>" alt="<?php echo $despues_pie; ?>">
 					<figcaption>
-						<?php echo $antes_pie; ?>
+						<?php echo $despues_pie; ?>
 					</figcaption>
 				</figure>
 			</div>
 			<div class="ctn__img-obras_controles">
-				<span id="antes" class="img-obras_controles">Antes</span>
-				<span id="despues" class="img-obras_controles">despues</span>
+				<span id="antes" class="img-obras_controles active">Antes</span>
+				<span id="despues" class="img-obras_controles">Ahora</span>
 			</div>
 		</div>
 		<?php endwhile; ?>
@@ -81,17 +81,21 @@
 	jQuery(function($) {
 		$('.ctn__img-obras_controles > span').on('click', function(evt)
 		{
+			$(this).parent().children().removeClass('active');
+			$(this).addClass('active');
 			var option = $(this).attr('id');
 
 			switch (option)
 			{
 				case 'antes':
-					$('.img-obras_antes').show();
+					$('.img-obras_antes').fadeIn();
 					$('.img-obras_despues').hide();
+					$('.img-obras_despues').fadeOut();
 					break;
 				case 'despues':
-					$('.img-obras_despues').show();
+					$('.img-obras_despues').fadeIn();
 					$('.img-obras_antes').hide();
+					$('.img-obras_antes').fadeOut();
 					break;
 			}
 

@@ -41,24 +41,22 @@
 }
 
 //-------------Estilos de las obras
-article.type-obra {
-	header {
-		h1 {
-			font-size: 1.7em;
-			font-weight: 400;
-			border-bottom: 1px solid #ccc;
-			color: $color__gray-dark;
-		}
-		h1::before {
-			content: "";
-			width: 74px;
-			height: 37px;
-			position: absolute;
-			top: 4px;
-			right: 15px;
-			background: url(img/edificios-line.png) no-repeat;
-		}
-	}
+.entry-title {
+	font-size: 2em;
+	font-weight: 100;
+	border-bottom: 1px solid #ccc;
+	color: $color__gray-dark;
+	position: relative;
+	padding-right: 65px;
+}
+.entry-title::before {
+	content: "";
+	width: 74px;
+	height: 37px;
+	position: absolute;
+	bottom: -1px;
+	right: 15px;
+	background: url(img/edificios-line.png) no-repeat;
 }
 
 #obra-map {
@@ -169,12 +167,12 @@ article.type-obra {
 				background-color: transparent;
 			}
 		}
-		span {
+		span.fm-label {
 			display: inline-block;
-			background-color: $color__background-obra-menu;
+			background-color: $color__gray-light;
 			height: 100%;
 			border-radius: 5px;
-			color: #fff;
+			color: $color__gray-dark;
 			font-size: 14px;
 			&:nth-child(2), &:nth-child(3)
 			{
@@ -187,9 +185,11 @@ article.type-obra {
 			}
 			&:hover {
 				background-color: $color__obra-menu-hover;
+				color: #fff;
 			}
 			&:active {
 				background-color: $color__primary;
+				color: #fff;
 			}
 		}
 	}
@@ -248,6 +248,7 @@ article.type-obra {
 }
 .fm-label-active{
 	background: $color__primary !important;
+	color: #fff !important;
 }
 .grid {
   background: #EEE;
@@ -340,7 +341,7 @@ article.type-obra {
 
 .entry-content {
 	p {
-		color: $color__gray-dark;
+		color: darken($color__gray-dark, 15%);
 		text-align: left;
 	}
 }
@@ -401,10 +402,47 @@ p.recaudo-total-texto{
 	padding: 20px 10px;
 }
 
+/*----------- Estilos de la página incial de obras ---------------*/
+.ctn__img-obras{
+	figure{
+		position: relative;
+	}
+	figcaption{
+		position: absolute;
+		bottom: 0;
+		background: rgba(0,0,0,0.5);
+		display: block;
+		padding: 10px;
+		width: 100%;
+		color: #fff;
+	}
+}
+.ctn__img-obras_controles{
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+	.img-obras_controles{
+		display: inlin-block;
+		margin:0 10px;
+		padding: 10px;
+		background: $color__gray-light;
+		&.active{
+			background: $color__primary;
+			color: #fff;
+		}
+	}
+}
+
+.img-obras_despues{
+	display: none;
+}
+
+
 @media screen and (min-width: 768px){
 	#obra-listado {
 		.filtros {
 			border-right: 0px solid #fff;
+			text-align: left;
 		}
 	}
 	.obras {
@@ -417,21 +455,15 @@ p.recaudo-total-texto{
 		width: 48.2%;
 	}
 	.fm-label{
-		width: 46%;
+		width: auto;
+		padding: 5px 10px;
 	}
 }
 
 @media screen and (min-width: 992px){
-	article.type-obra {
-		header {
-			h1 {
-				&::before {
-					top: 22px;
-				}
-			}
-		}
+	.entry-title {
+		margin-top: 0px;
 	}
-
 
 	.no-margin{
 		margin-left: -30px;

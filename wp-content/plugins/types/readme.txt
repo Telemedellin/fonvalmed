@@ -4,8 +4,8 @@ Donate link: http://wp-types.com
 Tags: CMS, custom field, custom fields, custom post type, custom post types, field, fields post, post type, post types, taxonomies, taxonomy
 License: GPLv2
 Requires at least: 3.4
-Tested up to: 4.3
-Stable tag: 1.8.5
+Tested up to: 4.3.1
+Stable tag: 1.8.7.1
 
 The complete and reliable plugin for managing custom post types, custom taxonomies and custom fields.
 
@@ -154,6 +154,39 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 9. Children post list
 
 == Changelog ==
+
+= 1.8.7.1 =
+
+* Release date: 2015-10-20
+* Add check to do not translate if value to translate is empty or not a string.
+
+= 1.8.7 =
+
+* Release date: 2015-10-18
+* Fixed a problem with shortcode playlist.
+* Fixed a problem with backslash in WYSIWYG field name.
+* Improve WPML integration, replace `icl_t()` by filter `wpml_translate_single_string`.
+* Change Installer version to 1.6.7 - to reduce requests to Toolset API.
+
+= 1.8.6.2 =
+
+* Release date: 2015-09-29
+* Fixed a problem with "Feature Image".
+* Fixed a problem with loading parent data in child table.
+
+= 1.8.6.1 =
+
+* Release date: 2015-09-28
+* Fixed a problem with get_plugins() function is some Installer actions.
+
+= 1.8.6 =
+
+* Release date: 2015-09-28
+* Replace parameter "numberposts" with "posts_per_page" in post relationships query.
+* Fixed a meta post data before use and if is too complex just do not handle this in Types.
+* Fixed a problem with selecting file in child tabele when is no WYSIWYG or other file field on edit screen.
+* When we get User Group we added information about affected roles.
+* Fixed a problem with playlist.
 
 = 1.8.5 =
 

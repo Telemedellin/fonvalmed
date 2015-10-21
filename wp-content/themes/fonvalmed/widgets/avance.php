@@ -1,4 +1,5 @@
 <?php
+
 setlocale(LC_ALL, 'es_ES.UTF8');
 class WidgetAvanceProyecto extends WP_Widget 
 {
@@ -24,13 +25,13 @@ class WidgetAvanceProyecto extends WP_Widget
 	
 	function avanceView($args, $instance)
 	{
-
 		extract($args);																					
 		echo $before_widget;
 
-		if ( post_type_exists( 'obra' ) ):
+		if ( post_type_exists( 'p-valorizacion' ) ):
 
    			$est 	= $this->estadisticasObras();
+
 		?>
 		<div class="ctn__contador-obras container-fluid">
 			<div class="row">
@@ -185,19 +186,25 @@ class WidgetAvanceProyecto extends WP_Widget
 	{
 		$id 	= get_the_ID();
 		$term 	= wp_get_post_terms($id , 'nombre');
+
 		return $term;
 	}
 
 
 	private function getElements($term)
 	{
+		/**
+		* hide_empty es la propiedad que permite tomar en cuenta los post que 
+		* no tienen contenido relacionado.
+		**/
+
 		if( empty($term->parent) )
 		{
-			$opt = array('parent'=> $term->term_id);
+			$opt = array('parent'=> $term->term_id, 'hide_empty' => 0);
 		}
 		else
 		{
-			$opt = array('parent'=> $term->parent);
+			$opt = array('parent'=> $term->parent, 'hide_empty' => 0);
 		}
 
 		$term_child = get_terms('nombre', $opt);
