@@ -164,6 +164,14 @@ function fonvalmed_widgets_init() {
 		'before_widget' => '<div id="%1$s" class="widget ctn_widget-proyecto">',
 		'after_widget'  => '</div>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Consistencia', 'consistencia' ),
+		'id'            => 'consistencia',
+		'description'   => 'Widget que inserta un mapa informativo con filtros. ',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-consistencia">',
+		'after_widget'  => '</div>',
+	) );
 }
 add_action( 'widgets_init', 'fonvalmed_widgets_init' );
 
@@ -176,6 +184,7 @@ function creaWidgets()
 {
 	// Widget Avance de la obra 
 	 register_widget( 'WidgetAvanceProyecto' );
+	 register_widget( 'WidgetConsistencia' );
 
 }
 add_action( 'widgets_init', 'creaWidgets' );
@@ -278,3 +287,8 @@ require get_template_directory() . '/inc/jetpack.php';
 * avance widgets
 */
 require get_template_directory() . '/widgets/avance.php';
+
+/**
+* consistencia de las obras
+*/
+require get_template_directory() . '/widgets/consistencia/consistencia.php';
