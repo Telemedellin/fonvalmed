@@ -96,6 +96,15 @@ $indice = 0;
 				});
 			</script>
 
+			<?php if(have_rows('galerias')): ?>
+				<?php while (have_rows('galerias')) : the_row(); ?>
+					<?php if ($indice == 0): ?>
+						<h2 class="gallery-obras-title"> <?php echo get_sub_field('titulo') ?> </h2>
+						<?php $indice++; ?>
+					<?php endif; ?>
+				<?php endwhile; ?>
+			<?php endif; ?>
+			<?php $indice = 0; ?>
 			<div id="gallery_container" style="position: relative; top: 0px; left: 0px; width: 800px; height: 556px; background: transparent; overflow: hidden;">
 
 				<!-- Loading Screen -->
@@ -115,7 +124,6 @@ $indice = 0;
 						<?php $imagenes = get_sub_field('imagenes'); ?>
 						<?php $galerias[get_sub_field('titulo')] = $imagenes; ?>
 						<?php if ($indice == 0): ?>
-						<h2 class="gallery-obras-title"> <?php echo get_sub_field('titulo') ?> </h2>
 						<?php foreach ($imagenes as $imagen): ?>
 						<div style="text-align:center;">
 							<img u="image" class="img-gallery" src="<?php echo $imagen['sizes']['large']; ?>">
