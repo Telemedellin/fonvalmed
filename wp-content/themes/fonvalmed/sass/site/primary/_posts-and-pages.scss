@@ -438,14 +438,14 @@ p.recaudo-total-texto{
 }
 
 .recaudo-home {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ededed+0,ffffff+24,ffffff+38,ffffff+47,ffffff+52,ededed+100 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ededed+0,ffffff+24,ffffff+38,ffffff+47,ffffff+71,ededed+100 */
 	background: #ededed; /* Old browsers */
-	background: -moz-linear-gradient(left,  #ededed 0%, #ffffff 24%, #ffffff 38%, #ffffff 47%, #ffffff 52%, #ededed 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ededed), color-stop(24%,#ffffff), color-stop(38%,#ffffff), color-stop(47%,#ffffff), color-stop(52%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 52%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 52%,#ededed 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 52%,#ededed 100%); /* IE10+ */
-	background: linear-gradient(to right,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 52%,#ededed 100%); /* W3C */
+	background: -moz-linear-gradient(left,  #ededed 0%, #ffffff 24%, #ffffff 38%, #ffffff 47%, #ffffff 71%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ededed), color-stop(24%,#ffffff), color-stop(38%,#ffffff), color-stop(47%,#ffffff), color-stop(71%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 71%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 71%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 71%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to right,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 71%,#ededed 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
 	border-bottom: 4px solid $color__primary;
 	span {
