@@ -585,7 +585,7 @@ function wpcf_pr_admin_wpcf_relationship_search()
     $posts = array(
         'items' => array(),
         'total_count' => $the_query->found_posts,
-        'incomplete_results' => $the_query->found_posts > $numberposts,
+        'incomplete_results' => $the_query->found_posts > $posts_per_page,
     );
 
     if ( $the_query->have_posts() ) {
@@ -602,6 +602,24 @@ function wpcf_pr_admin_wpcf_relationship_search()
     }
     /* Restore original Post Data */
     wp_reset_postdata();
+
+    // If WPML is on
+    if ( $active_lang = apply_filters( 'wpml_current_language', false ) ) {
+        foreach ($posts['items'] as $key => $item) {
+            $args = array('element_id' => $posts['items'][ $key ]['ID'], 'element_type' => $posts['items'][ $key ]['post_type'] );
+            $item_lang = apply_filters( 'wpml_element_language_code', NULL, $args );
+
+            // unset the item if not in the current language
+            if ( $item_lang != $active_lang ) {
+                unset( $posts['items'][ $key ] );
+                $posts['total_count']--;
+            }
+        }
+
+        // Reset numerical keys
+        $posts['items'] = array_values( $posts['items'] );
+        $posts['incomplete_results'] = $posts['total_count'] > $numberposts;
+    }
 
     echo json_encode($posts);
     die;

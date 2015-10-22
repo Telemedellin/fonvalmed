@@ -53,5 +53,15 @@
 	<?php if (is_tax() || $term[0]->taxonomy == 'nombre' || ($post_id != 0 && !is_null(get_field('imagen_de_cabezote', $post_id)))): ?>
 		<?php include 'header-obra.php'; ?>
 	<?php endif; ?>
+	<div class="container">
+		<!-- #breadcrumbs -->
+		<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+			<?php if(function_exists('bcn_display'))
+			{
+				bcn_display();
+			}?>
+		</div>
+		<!-- #breadcrumbs -->
+	</div>
 
 	<div id="content" class="site-content container">

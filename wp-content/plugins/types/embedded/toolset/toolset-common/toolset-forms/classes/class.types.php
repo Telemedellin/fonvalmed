@@ -25,7 +25,6 @@ class WPToolset_Types
      */
     static function filterField($field, $post_id = null, $_post_wpcf = array())
     {
-
         // Get field settings (as when using get_option('wpcf-fields') from DB)
         $field = self::getConfig( $field );
         if ( is_null( $field ) ) return array();
@@ -134,12 +133,6 @@ class WPToolset_Types
                         . $k . ' title', $option['title'] ),
                     );
                 }
-            }
-            break;
-        case 'entry':
-            $_field['post_type'] = 'post';
-            if ( isset($field['data']['post_type']) ) {
-                $_field['post_type'] = $field['data']['post_type'];
             }
             break;
         }

@@ -3119,7 +3119,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   display: inline-block;
   width: 100%;
   height: 100%;
-  cursor: pointer;
   text-align: center;
 }
 #obras-menu .obras-menu-toggle {
@@ -3147,6 +3146,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   border-top: 1px solid #EDEDEF;
 }
 #obras-menu ul li {
+  cursor: pointer;
   background-color: #EDEDEF;
   list-style: none;
   color: #fff;
@@ -3200,7 +3200,89 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
     float: left;
     margin-right: 2px;
   }
+
+  .menu-menu-home-container #menu-menu-home li {
+    width: 32.26% !important;
+  }
 }
+.breadcrumbs {
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+.breadcrumbs span {
+  border-bottom: 1px solid #898989;
+  position: relative;
+}
+.breadcrumbs span a {
+  text-decoration: blink;
+  color: #898989;
+}
+.breadcrumbs > span.content-separator {
+  display: inline-block;
+  border-bottom: 1px solid #898989;
+  padding: 0 5px;
+  bottom: 1px;
+}
+.breadcrumbs > span.content-separator .separator {
+  display: inline-block;
+  width: 2px;
+  height: 12px;
+  bottom: -6px;
+  background: -webkit-linear-gradient(white, #898989);
+  background: -o-linear-gradient(white, #898989);
+  background: -moz-linear-gradient(white, #898989);
+  background: linear-gradient(white, #898989);
+}
+.breadcrumbs .active {
+  color: #FF7F00;
+  border-bottom: 1px solid #FF7F00;
+}
+.breadcrumbs .active:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid #FF7F00;
+  border-right: 10px solid transparent;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  z-index: 2;
+}
+
+.menu-menu-home-container {
+  position: relative;
+}
+.menu-menu-home-container #menu-menu-home {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.menu-menu-home-container #menu-menu-home li {
+  position: relative;
+  float: left;
+  background-color: #EDEDED;
+  width: 49%;
+  height: 105px;
+  margin: 0px;
+  padding: 0px;
+  margin: 2px;
+}
+.menu-menu-home-container #menu-menu-home li a {
+  display: block;
+  position: absolute;
+  width: 100%;
+  padding: 0px 15px 5px 15px;
+  bottom: 0;
+  text-align: center;
+  text-decoration: blink;
+  font-size: 12.5px;
+  font-weight: normal;
+  color: #A4A4A4;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -3355,6 +3437,9 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 }
 .tabs_fonvalmed .vc_tta-panel-body {
   background: #fff !important;
+}
+.tabs_fonvalmed .vc_tta-tabs-container {
+  z-index: 0 !important;
 }
 
 .acordeon_fonvalmed .vc_tta-panels .vc_tta-panel.vc_active .vc_tta-panel-heading {
@@ -3571,7 +3656,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   min-height: 250px;
   text-align: left;
   margin-top: -28px;
-  margin-bottom: 50px;
   z-index: -1;
 }
 .obra-header div.container {
@@ -4426,8 +4510,9 @@ object {
   margin: 0.8075em 0;
 }
 
-.gallery-caption {
+.gallery-obras-caption {
   position: absolute;
+  display: block;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   min-height: 35px;
@@ -4480,7 +4565,7 @@ object {
   max-width: 11.11%;
 }
 
-.gallery-caption {
+.gallery-obras-caption {
   display: block;
 }
 
@@ -4495,6 +4580,54 @@ object {
   width: auto !important;
   height: 100% !important;
   z-index: -1;
+}
+
+.ctn__gallery-album {
+  border: solid 1px #CBC9CA;
+  padding: 20px 5px 20px 5px;
+  margin: 40px 10px 0 0;
+  position: relative;
+}
+.ctn__gallery-album:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 26px;
+  top: -26px;
+  left: -2px;
+  background: url("img/folder-tab.jpg") no-repeat;
+}
+
+.jssora05l, .jssora05r {
+  color: #FF7F00;
+  font-size: 3rem;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.87);
+}
+
+/*Galer├¡as nativas de Wordpress*/
+.gallery figure {
+  margin-bottom: 30px;
+}
+
+.gallery-caption {
+  font-size: 0.9rem;
+  padding: 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .ctn__gallery-album {
+    width: 48% !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .gallery-caption {
+    padding: 0 25px;
+  }
+
+  .ctn__gallery-album {
+    width: 30% !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
