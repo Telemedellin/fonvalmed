@@ -3076,7 +3076,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 
   /*-----------Submenu sin megamenu---------*/
   #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu {
-    width: 300px !important;
+    width: 220px !important;
     right: 0;
   }
 
