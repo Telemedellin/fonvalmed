@@ -548,16 +548,17 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 			float: left;
 			background-color: #EDEDED;
 			width: 49%;
-			height: 105px;
 			margin: 0px;
 			padding: 0px;
 			margin: 2px;
+			display: table;
 			a {
-				display: block;
-				position: absolute;
+				display: table-cell;
 				width: 100%;
+				height: 105px;
 				padding: 0px 15px 5px 15px;
-				bottom: 0;
+				top: 0;
+				vertical-align: middle;
 				text-align: center;
 				text-decoration: blink;
 				font-size: 12.5px;
