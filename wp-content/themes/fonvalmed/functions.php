@@ -118,6 +118,16 @@ function fonvalmed_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar noticias', 'fonvalmed' ),
+		'id'            => 'sidebar-noticias',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="sidebar-block widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="sidebar_block_title widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 1', 'fonvalmed' ),
 		'id'            => 'sidebar-footer-1',
 		'description'   => '',
