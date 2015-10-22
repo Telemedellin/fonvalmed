@@ -2851,6 +2851,19 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   border-left: 2px solid #FF7F00 !important;
 }
 
+/*-----------Submenu sin megamenu---------*/
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  background: #fff;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a {
+  color: #FF7F00 !important;
+  background: #fff !important;
+  font-size: 18px;
+}
+
 /*----------- Men├║ Lateral --------------*/
 .menu-micro_title {
   display: none;
@@ -3059,6 +3072,26 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
     vertical-align: middle;
     text-align: center;
     width: 115px;
+  }
+
+  /*-----------Submenu sin megamenu---------*/
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu {
+    width: 300px !important;
+    right: 0;
+  }
+
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item {
+    padding: 0px;
+    border-bottom: none;
+  }
+
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a {
+    font-size: 0.9rem;
+    line-height: 40px;
+  }
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a:hover {
+    background: #FF7F00 !important;
+    color: #fff !important;
   }
 }
 @media screen and (min-width: 1200px) {
