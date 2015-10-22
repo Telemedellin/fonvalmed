@@ -81,7 +81,7 @@ jQuery(function($) {
 });
 </script>
 
-<div id="gallery_container" style="position: relative; top: 0px; left: 0px; width: 800px; height: 556px; background: transparent; overflow: hidden;">
+<?php if(have_rows('galerias',$post_id)): ?>
 	<?php while (have_rows('galerias',$post_id)) : the_row(); ?>
 		<?php $imagenes = get_sub_field('imagenes', $post_id); ?>
 		<?php if ($imagenes[0]['ID'] == $galeria_id): ?>
