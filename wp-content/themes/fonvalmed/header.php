@@ -55,7 +55,7 @@
 		<?php include 'header-obra.php'; ?>
 	<?php endif; ?>
 
-	<?php if (!is_home()):?>
+	<?php if (!is_front_page()):?>
 	<div class="container">
 		<!-- #breadcrumbs -->
 		<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
