@@ -54,6 +54,8 @@
 	<?php if (is_tax() || $term[0]->taxonomy == 'nombre' || ($post_id != 0 && !is_null(get_field('imagen_de_cabezote', $post_id)))): ?>
 		<?php include 'header-obra.php'; ?>
 	<?php endif; ?>
+
+	<?php if (!is_home()):?>
 	<div class="container">
 		<!-- #breadcrumbs -->
 		<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
@@ -64,5 +66,6 @@
 		</div>
 		<!-- #breadcrumbs -->
 	</div>
+	<?php endif; ?>
 
 	<div id="content" class="site-content container">
