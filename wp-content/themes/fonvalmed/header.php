@@ -16,6 +16,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600italic,300italic,600,700italic,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <?php wp_head(); ?>
 </head>

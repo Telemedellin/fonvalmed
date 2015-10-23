@@ -1,5 +1,5 @@
- <?php
-setlocale(LC_ALL, 'es_ES.UTF8');
+<?php
+
 class WidgetConsistencia extends WP_Widget 
 {
 
