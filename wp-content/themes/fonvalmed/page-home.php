@@ -1,17 +1,8 @@
 <?php
 
-setlocale(LC_ALL,"es_ES");
-
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package fonvalmed
- */
+/*
+Template Name: Plantilla para el home
+*/
 
 get_header();
 
