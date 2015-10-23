@@ -530,6 +530,9 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 				font-size: 12.5px;
 				font-weight: normal;
 				color: #A4A4A4;
+				&:hover {
+					background-color: #FFF;
+				}
 			}
 		}
 	}

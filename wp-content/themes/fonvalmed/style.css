@@ -2473,6 +2473,8 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
         font-size: 12.5px;
         font-weight: normal;
         color: #A4A4A4; }
+        .menu-menu-home-container #menu-menu-home li a:hover {
+          background-color: #FFF; }
 
 @media only screen and (min-width: 992px) {
   .menu-micro_title {
