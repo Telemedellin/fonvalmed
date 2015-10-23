@@ -38,42 +38,12 @@ $date = DateTime::createFromFormat("m", date('m'));
 
 					$(menu).find('ul').children().each(function (k, v) {
 						var link = $(v).children().get(0);
-						var link_text = link.innerHTML;
+						var icon_name = $(link).attr('menu-icono');
+						var menu_color = $(link).attr('menu-color');
 						var span_icon = $('<span>').css({'float':'left','font-size':'40px','margin-top':'5px','width':'100%'});
 						var span_text = $('<span>').css({'float':'left','width':'100%'}).html(link.innerHTML);
-
 						link.innerHTML = '';
-
-						switch (link_text)
-						{
-							case 'Paga tu factura':
-								$(link).append(span_icon.attr('class','fa fa-barcode').css({'color':'#F60'})).append(span_text);
-								break;
-							case 'Movilidad durante la construcción de las obras':
-								$(link).append(span_icon.attr('class','fa fa-road').css({'color':'#F4C247'})).append(span_text);
-								break;
-							case 'Proyecto de valorización El Poblado':
-								$(link).append(span_icon.attr('class','fa fa-map-o').css({'color':'#CDCC00'})).append(span_text);
-								break;
-							case 'Escribenos':
-								$(link).append(span_icon.attr('class','fa fa-envelope-o').css({'color':'#C7A039'})).append(span_text);
-								break;
-							case 'Trámites y servicios':
-								$(link).append(span_icon.attr('class','fa fa-barcode').css({'color':'#99CC01'})).append(span_text);
-								break;
-							case 'Acompañamiento social':
-								$(link).append(span_icon.attr('class','fa fa-users').css({'color':'#BC8660'})).append(span_text);
-								break;
-							case 'Chat':
-								$(link).append(span_icon.attr('class','fa fa-commenting-o').css({'color':'#FFCE00'})).append(span_text);
-								break;
-							case 'Suscríbete a nuestro boletín':
-								$(link).append(span_icon.attr('class','fa fa-user-plus').css({'color':'#C3C96F'})).append(span_text);
-								break;
-							case 'Contratación':
-								$(link).append(span_icon.attr('class','fa fa-file-text-o').css({'color':'#F29248'})).append(span_text);
-								break;
-						}
+						$(link).append(span_icon.attr('class','fa fa-' + icon_name).css({'color':menu_color})).append(span_text);
 					});
 
 					$('.menu-menu-home-container').html($(menu).find('div').html());

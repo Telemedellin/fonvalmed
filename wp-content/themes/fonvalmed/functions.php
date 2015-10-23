@@ -286,6 +286,32 @@ function add_custom_rewrite_rule() {
 } // end add_custom_rewrite_rule
 add_action('init', 'add_custom_rewrite_rule');
 
+function custom_menu_options_default_fonvalmed(){
+	$fields = array(
+		array(
+			'type' => 'color',
+			'name' => 'color',
+			'label' => 'Color'
+		),
+		array(
+			'type' => 'text',
+			'name' => 'menu-icono',
+			'label' => 'Icono del menú'
+		)
+		
+	);
+	return $fields;
+} 
+add_filter( 'custom_menu_fields', 'custom_menu_options_default_fonvalmed' );
+
+add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
+function my_nav_menu_attribs( $atts, $item, $args )
+{
+	$atts['menu-icono'] = get_menu_field( 'menu-icono', $item->ID );
+	$atts['menu-color'] = get_menu_field( 'color', $item->ID );
+	return $atts;
+}
+
 /**
  * Implement the Custom Header feature.
  */
