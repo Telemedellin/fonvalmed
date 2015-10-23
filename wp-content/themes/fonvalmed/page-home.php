@@ -6,7 +6,7 @@ Template Name: Plantilla para el home
 
 get_header();
 
-$menu = preg_replace( "/\r|\n/", "", wp_nav_menu( array( 'menu' => '78', 'echo' => false ) ) );
+$menu = preg_replace( "/\r|\n/", "", wp_nav_menu( array( 'menu' => get_field('menu'), 'echo' => false ) ) );
 $meses = array(
 	"01" => "Enero",
 	"02" => "Febrero",
@@ -21,12 +21,13 @@ $meses = array(
 	"11" => "Noviembre",
 	"12" => "Diciembre"
 );
+
 $date = DateTime::createFromFormat("m", date('m'));
 
 ?>
 	<div class="row">
 		<div class="col-md-7">
-			<?php if (function_exists('soliloquy')) { soliloquy( '697' ); } ?>
+			<?php if (function_exists('soliloquy')) { soliloquy( get_field('slider') ); } ?>
 		</div>
 		<div class="col-md-5">
 			<script>
