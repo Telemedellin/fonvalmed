@@ -16,6 +16,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600italic,300italic,600,700italic,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <?php wp_head(); ?>
 </head>
@@ -39,10 +40,32 @@
 		</div><!-- .header_container -->
 		<div class="ctn_navigation">
 			<nav id="site-navigation" class="main-navigation container" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Ver navegación', 'fonvalmed' ); ?></button>
+				<!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Ver navegación', 'fonvalmed' ); ?></button>-->
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->
+
+	<?php
+		$post_id = 0;
+		$term = get_the_terms(get_the_ID(), 'nombre');
+		$post_id = (get_field('generar_automaticamente') == 'si') ? $post->ID : ((get_field('generar_automaticamente', $post->post_parent) == 'si') ? $post->post_parent : 0);
+	?>
+	<?php if (is_tax() || $term[0]->taxonomy == 'nombre' || ($post_id != 0 && !is_null(get_field('imagen_de_cabezote', $post_id)))): ?>
+		<?php include 'header-obra.php'; ?>
+	<?php endif; ?>
+
+	<?php if (!is_front_page()):?>
+	<div class="container">
+		<!-- #breadcrumbs -->
+		<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+			<?php if(function_exists('bcn_display'))
+			{
+				bcn_display();
+			}?>
+		</div>
+		<!-- #breadcrumbs -->
+	</div>
+	<?php endif; ?>
 
 	<div id="content" class="site-content container">

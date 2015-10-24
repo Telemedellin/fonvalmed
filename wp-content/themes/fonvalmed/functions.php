@@ -92,6 +92,15 @@ function fonvalmed_content_width() {
 }
 add_action( 'after_setup_theme', 'fonvalmed_content_width', 0 );
 
+function get_admin_path() {
+	// Replace the site base URL with the absolute path to its installation directory. 
+	$admin_path = str_replace( get_bloginfo( 'url' ) . '/', ABSPATH, get_admin_url() );
+	
+	// Make it filterable, so other plugins can hook into it.
+	$admin_path = apply_filters( 'my_plugin_get_admin_path', $admin_path );
+	return $admin_path;
+}
+
 /**
  * Register widget area.
  *
@@ -105,6 +114,16 @@ function fonvalmed_widgets_init() {
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar noticias', 'fonvalmed' ),
+		'id'            => 'sidebar-noticias',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="sidebar-block widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="sidebar_block_title widget-title">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -147,8 +166,41 @@ function fonvalmed_widgets_init() {
 		'before_title'  => '<h3 class="widget-title-footer">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Proyecto', 'proyecto' ),
+		'id'            => 'proyecto',
+		'description'   => 'Widget relacionado con la informacion de las obras de cada proyecto ',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-proyecto">',
+		'after_widget'  => '</div>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Consistencia', 'consistencia' ),
+		'id'            => 'consistencia',
+		'description'   => 'Widget que inserta un mapa informativo con filtros. ',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-consistencia">',
+		'after_widget'  => '</div>',
+	) );
 }
 add_action( 'widgets_init', 'fonvalmed_widgets_init' );
+
+
+/**
+* Funcion adicional para instanciar los Widgets creados
+**/
+
+function creaWidgets()
+{
+	// Widget Avance de la obra 
+	 register_widget( 'WidgetAvanceProyecto' );
+	 register_widget( 'WidgetConsistencia' );
+
+}
+add_action( 'widgets_init', 'creaWidgets' );
+
+
+
 
 /**
  * Enqueue scripts and styles.
@@ -156,15 +208,109 @@ add_action( 'widgets_init', 'fonvalmed_widgets_init' );
 function fonvalmed_scripts() {
 	wp_enqueue_style( 'fonvalmed-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'fonvalmed-masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array(), true );
+
 	wp_enqueue_script( 'fonvalmed-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'fonvalmed-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_script( 'fonvalmed-script', get_template_directory_uri() . '/js/script.js', array(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'fonvalmed_scripts' );
+
+// Register Custom Taxonomy
+function custom_taxonomy_obras() {
+
+	$labels = array(
+		'name'                       => _x( 'Nombre obras', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Nombre obra', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Nombre obra', 'text_domain' ),
+		'all_items'                  => __( 'Todas los nombres de las obras', 'text_domain' ),
+		'parent_item'                => __( 'Superior', 'text_domain' ),
+		'parent_item_colon'          => __( 'Superior:', 'text_domain' ),
+		'new_item_name'              => __( 'Nuevo nombre obra', 'text_domain' ),
+		'add_new_item'               => __( 'Añadir nuevo nombre', 'text_domain' ),
+		'edit_item'                  => __( 'Editar nombre', 'text_domain' ),
+		'update_item'                => __( 'Actualizar nombre', 'text_domain' ),
+		'view_item'                  => __( 'Ver nombre', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'search_items'               => __( 'Search Items', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                       => '/%nombre%/',
+		'with_front'                 => true,
+		'hierarchical'               => true,
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'rewrite'                    => $rewrite,
+	);
+	register_taxonomy( 'nombre', array( 'p-valorizacion' ), $args );
+
+}
+add_action( 'init', 'custom_taxonomy_obras', 0 );
+
+function add_custom_rewrite_rule() {
+
+    // First, try to load up the rewrite rules. We do this just in case
+    // the default permalink structure is being used.
+    if( ($current_rules = get_option('rewrite_rules')) ) {
+
+        // Next, iterate through each custom rule adding a new rule
+        // that replaces 'p-valorizacion' with 'films' and give it a higher
+        // priority than the existing rule.
+        foreach($current_rules as $key => $val) {
+            if(strpos($key, 'p-valorizacion') !== false) {
+                add_rewrite_rule(str_ireplace('p-valorizacion', 'proyecto-de-valorizacion', $key), $val, 'top');   
+            } // end if
+        } // end foreach
+
+    } // end if/else
+
+    // ...and we flush the rules
+    flush_rewrite_rules();
+
+} // end add_custom_rewrite_rule
+add_action('init', 'add_custom_rewrite_rule');
+
+function custom_menu_options_default_fonvalmed(){
+	$fields = array(
+		array(
+			'type' => 'color',
+			'name' => 'color',
+			'label' => 'Color'
+		),
+		array(
+			'type' => 'text',
+			'name' => 'menu-icono',
+			'label' => 'Icono del menú'
+		)
+		
+	);
+	return $fields;
+} 
+add_filter( 'custom_menu_fields', 'custom_menu_options_default_fonvalmed' );
+
+add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
+function my_nav_menu_attribs( $atts, $item, $args )
+{
+	$atts['menu-icono'] = get_menu_field( 'menu-icono', $item->ID );
+	$atts['menu-color'] = get_menu_field( 'color', $item->ID );
+	return $atts;
+}
 
 /**
  * Implement the Custom Header feature.
@@ -190,3 +336,13 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+* avance widgets
+*/
+require get_template_directory() . '/widgets/avance.php';
+
+/**
+* consistencia de las obras
+*/
+require get_template_directory() . '/widgets/consistencia/consistencia.php';

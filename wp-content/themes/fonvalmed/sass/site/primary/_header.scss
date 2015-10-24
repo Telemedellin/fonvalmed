@@ -65,3 +65,32 @@
 		max-width: 60%;
 	}
 }
+
+.obra-header {
+    display: block;
+	background-size: cover;
+    width: 100%;
+	min-height: 250px;
+	text-align: left;
+	margin-top: -28px;
+	z-index: -1;
+	div.container {
+		position: relative;
+		height: 250px;
+	}
+	h2 {
+		width: auto;
+		max-width: 80%;
+		background-color: #fff;
+		color: $color__primary;
+		text-align: center;
+		opacity: 0.94;
+		border-radius: 10px 10px 0px 0px;
+		display: inline-block;
+		padding: 10px 20px;
+		position: absolute;
+		margin: 0px;
+		bottom: 0px;
+		left: 0;
+	}
+}
