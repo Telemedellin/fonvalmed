@@ -88,3 +88,35 @@
 .obra-preview_sidebar_time{
 	color: $color__gray-dark;
 }
+
+//Singup form de Mailchimp
+
+#mc_embed_signup{
+	.indicates-required{
+		font-size: 0.7rem;
+		color: $color__gray;
+		width: 80%;
+		margin: 0 auto;
+	}
+	input{
+		width: 80%;
+		margin: 0 auto 5px auto;
+		display: block;
+		font-size: 0.8rem;
+	}
+	.mc-terminos-condiciones{
+		label{
+			font-size: 0.9rem;
+			color: $color__gray-dark;
+			font-weight: 300;
+		}
+		input{
+			display: inline-block;
+			width: auto;
+		}
+		a{
+			display: inline-block;
+			font-size: 0.9rem;
+		}
+	}
+}
