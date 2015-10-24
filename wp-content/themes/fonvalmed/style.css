@@ -2887,7 +2887,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -15px;
   left: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 .menu-micro-toggle {
@@ -2943,7 +2943,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -10px;
   left: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 @media (min-width: 0px) and (max-width: 991px) {
@@ -3210,9 +3210,10 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 .breadcrumbs {
   margin-bottom: 25px;
   margin-top: 10px;
+  display: inline-block;
+  border-bottom: solid 1px #CBC9CA;
 }
 .breadcrumbs span {
-  border-bottom: 1px solid #898989;
   position: relative;
 }
 .breadcrumbs span a {
@@ -3221,7 +3222,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 }
 .breadcrumbs > span.content-separator {
   display: inline-block;
-  border-bottom: 1px solid #898989;
   padding: 0 5px;
   bottom: 1px;
 }
@@ -3238,6 +3238,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 .breadcrumbs .active {
   color: #FF7F00;
   border-bottom: 1px solid #FF7F00;
+  padding-bottom: 1px;
 }
 .breadcrumbs .active:before {
   content: "";
@@ -3248,7 +3249,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -10px;
   left: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 .menu-menu-home-container {
@@ -3591,7 +3592,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -15px;
   left: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 .ctn__obra-preview_sidebar {
@@ -4336,7 +4337,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -30px;
   left: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 p.recaudo-texto {
@@ -4475,6 +4476,10 @@ p.recaudo-total-texto {
   font-size: 24px;
   font-weight: bold;
   color: #FF7F00;
+}
+
+.ctn__heroe-home {
+  margin-top: 15px;
 }
 
 @media screen and (min-width: 768px) {

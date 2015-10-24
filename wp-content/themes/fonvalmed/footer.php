@@ -84,10 +84,10 @@
 					<li><a class="icon-facebook" href="http://www.facebook.com/pages/#!/pages/Fonval-Fondo-de-Valorizacion-Municipio-de-Medellin/183667628320342" target="_blank"></a></li>
 					<li><a class="icon-twitter" href="http://twitter.com/fonvalmed" target="_blank"></a></li>
 					<li class="hidden-xs"><a class="icon-youtube" href="http://www.youtube.com/user/fonvalmed" target="_blank"></a></li>
-					<li class="hidden-xs"><a class="icon-talk-chat-2" href="#" target="_blank"></a></li>
+					<li class="hidden-xs"><a class="icon-talk-chat-2" href="http://serviciochat.intercobros.com.co/chatfonvalmed/client.php?locale=es" target="_blank"></a></li>
 					<li class="hidden-xs"><a class="icon-mail" href="#" target="_blank"></a></li>
 					<li><a class="icon-call-phone" href="tel:0346048533"></a><span class="txt-phone hidden-xs hidden-sm">Línea gratuita: 01 8000 18 03 03</span></li>
-					<li class="hidden-xs"><a href="#">Conoce las obras</a></li>
+					<li class="hidden-xs"><a href="http://pruebas.telemedellin.tv/fonvalmed/proyecto-de-valorizacion-el-poblado/">Conoce las obras</a></li>
 				</ul>
 			</div>
 		</div>

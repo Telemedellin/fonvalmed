@@ -467,8 +467,10 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 .breadcrumbs {
 	margin-bottom: 25px;
     margin-top: 10px;
+    display: inline-block;
+    border-bottom: solid 1px $color__gray;
 	span {
-		border-bottom: 1px solid $color__gray-dark;
+		//border-bottom: 1px solid $color__gray-dark;
 		position: relative;
 		a {
 			text-decoration: blink;
@@ -477,7 +479,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 	}
 	> span.content-separator {
 		display: inline-block;
-		border-bottom: 1px solid $color__gray-dark;
+		//border-bottom: 1px solid $color__gray-dark;
 		padding: 0 5px;
 		bottom: 1px;
 		.separator {
@@ -494,6 +496,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 	.active {
 		color: $color__primary;
 		border-bottom: 1px solid $color__primary;
+		padding-bottom: 1px;
 		&:before {
 			@include triangulos($color__primary, 10px);
 		}
