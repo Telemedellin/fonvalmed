@@ -481,6 +481,13 @@ p.recaudo-total-texto{
 	}
 }
 
+//Entry styles
+.entry-meta{
+	font-size: 0.8rem;
+	color: $color__gray-dark;
+	margin-top: -15px;
+}
+
 @media screen and (min-width: 768px){
 	#obra-listado {
 		.filtros {
