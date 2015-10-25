@@ -3748,6 +3748,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   text-align: left;
   margin-top: -28px;
   z-index: -1;
+  background-position: top center;
 }
 .obra-header div.container {
   position: relative;
