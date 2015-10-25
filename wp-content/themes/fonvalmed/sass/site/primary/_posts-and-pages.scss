@@ -466,10 +466,19 @@ p.recaudo-total-texto{
 	}
 }
 
-//Heroe Home
+//Home
 
 .ctn__heroe-home{
 	margin-top: 15px;
+}
+
+.title-home{
+	border-bottom: 2px solid $color__primary;
+	position: relative;
+	margin-bottom: 20px;
+	&:before{
+		@include triangulos($color__primary, 15px);
+	}
 }
 
 @media screen and (min-width: 768px){
