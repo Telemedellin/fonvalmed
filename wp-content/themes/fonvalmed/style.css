@@ -3211,14 +3211,22 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   margin-bottom: 25px;
   margin-top: 10px;
   display: inline-block;
-  border-bottom: solid 1px #CBC9CA;
+  overflow-x: auto;
+  text-overflow: inherit;
+  white-space: nowrap;
+  width: 100%;
+  padding-bottom: 15px;
 }
 .breadcrumbs span {
   position: relative;
+  font-size: 0.9rem;
 }
 .breadcrumbs span a {
   text-decoration: blink;
   color: #898989;
+}
+.breadcrumbs span a:hover {
+  color: #FF7F00;
 }
 .breadcrumbs > span.content-separator {
   display: inline-block;
@@ -3330,6 +3338,11 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   }
   .menu-menu-home-container #menu-menu-home li a span.fa {
     font-size: 30px !important;
+  }
+
+  .breadcrumbs {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 @media only screen and (min-width: 1200px) {
