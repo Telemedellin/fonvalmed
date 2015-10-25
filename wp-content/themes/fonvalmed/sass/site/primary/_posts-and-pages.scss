@@ -48,6 +48,7 @@
 	color: $color__gray-dark;
 	position: relative;
 	padding-right: 65px;
+	line-height: 2.5rem;
 }
 .entry-title::before {
 	content: "";
@@ -479,6 +480,13 @@ p.recaudo-total-texto{
 	&:before{
 		@include triangulos($color__primary, 15px);
 	}
+}
+
+//Entry styles
+.entry-meta{
+	font-size: 0.8rem;
+	color: $color__gray-dark;
+	margin-top: -15px;
 }
 
 @media screen and (min-width: 768px){

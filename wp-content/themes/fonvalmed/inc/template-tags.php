@@ -83,13 +83,13 @@ function fonvalmed_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'fonvalmed' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		esc_html_x( 'Publicado el %s', 'post date', 'fonvalmed' ),
+		'<span class="time-entry">' . $time_string . '</span>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'fonvalmed' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		esc_html_x( 'por %s', 'post author', 'fonvalmed' ),
+		'<span class="author vcard">' . esc_html( get_the_author() ) . '</span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
