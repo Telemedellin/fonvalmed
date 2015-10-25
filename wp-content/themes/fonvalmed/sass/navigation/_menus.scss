@@ -172,6 +172,10 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 	height: 40px;
 	cursor: pointer;
 	text-align: center;
+	width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
 	&:before {
 		content: "\f333";
 		font-family: 'dashicons';
