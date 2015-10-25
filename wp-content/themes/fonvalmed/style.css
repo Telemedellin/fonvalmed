@@ -4482,6 +4482,23 @@ p.recaudo-total-texto {
   margin-top: 15px;
 }
 
+.title-home {
+  border-bottom: 2px solid #FF7F00;
+  position: relative;
+  margin-bottom: 20px;
+}
+.title-home:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 15px solid #FF7F00;
+  border-right: 15px solid transparent;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  z-index: 0;
+}
+
 @media screen and (min-width: 768px) {
   #obra-listado .filtros {
     border-right: 0px solid #fff;
