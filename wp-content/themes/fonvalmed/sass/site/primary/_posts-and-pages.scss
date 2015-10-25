@@ -473,6 +473,11 @@ p.recaudo-total-texto{
 	margin-top: 15px;
 }
 
+.soliloquy-container .soliloquy-caption{
+	display: block !important;
+	bottom: 10px !important;
+}
+
 .title-home{
 	border-bottom: 2px solid $color__primary;
 	position: relative;
@@ -487,6 +492,12 @@ p.recaudo-total-texto{
 	font-size: 0.8rem;
 	color: $color__gray-dark;
 	margin-top: -15px;
+}
+
+@media screen and (min-width: 601px){
+	.soliloquy-container .soliloquy-caption{
+		bottom: 35px !important;
+	}
 }
 
 @media screen and (min-width: 768px){
