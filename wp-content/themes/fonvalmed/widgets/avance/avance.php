@@ -327,7 +327,7 @@ class WidgetAvanceProyecto extends WP_Widget
 	private function getElementField($term, $value)
 	{
 		$field = null;
-		$field = get_field($value, $term);
+		$field = get_field($value, $term->taxonomy . '_' . $term->term_id);
 
 		if(empty($field))
 		{
