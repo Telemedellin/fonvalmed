@@ -51,18 +51,10 @@ $date = DateTime::createFromFormat("m", date('m'));
 			</script>
 			<div class="menu-menu-home-container">
 			</div>
-			<?php
-				$recaudo = 0;
-				if(have_rows('obra_recaudo','nombre_8')):
-					while (have_rows('obra_recaudo','nombre_8')) : the_row();
-						$recaudo = $recaudo + get_sub_field('recaudo','nombre_8');
-					endwhile;
-				endif;
-			?>
 			<div class="recaudo-home">
 				<span class="recaudo-titulo">Recaudo contribución de valorización</span>
 				<span class="recaudo-fecha">Hoy <?php echo date('d'); ?> de <?php echo $meses[date('m')]; ?></span>
-				<span class="recaudo-dinero">$<?php echo number_format($recaudo,2,',','.'); ?></span>
+				<span class="recaudo-dinero">$<?php echo number_format(get_field('recaudo'),2,',','.'); ?></span>
 			</div>
 		</div>
 	</div>
