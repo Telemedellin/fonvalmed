@@ -160,13 +160,14 @@
 						'width':'100%',
 						'height':'400px',
 						'z-index':'1'
-					}).prepend(jQuery('<sapn>').css({
+					}).prepend(jQuery('<span>').css({
 						'display':'block',
 						'width':'100%',
 						'padding-top':'21%',
 						'text-align':'center',
 						'font-size':'30px',
-						'color':'red'
+						'color':'#FF7F00',
+						'font-family':'"Open Sans"'
 					}).text('CARGANDO').append(jQuery('<img>', {
 						'src':'http://www.samvernon.com/resources/img/loading2.gif'
 					}).css({
