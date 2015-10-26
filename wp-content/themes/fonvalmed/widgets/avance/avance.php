@@ -162,9 +162,9 @@ class WidgetAvanceProyecto extends WP_Widget
 						<?php $total_recaudo = 0; ?>
 						<?php if(have_rows('obra_recaudo', $slug)): ?>
 							<?php while (have_rows('obra_recaudo', $slug)) : the_row(); ?>
-								<?php echo $mes = get_sub_field('mes', $slug); ?>
-								<?php echo $anho = get_sub_field('ano', $slug); ?>
-								<?php echo $recaudo = get_sub_field('recaudo', $slug); ?>
+								<?php $mes = get_sub_field('mes', $slug); ?>
+								<?php $anho = get_sub_field('ano', $slug); ?>
+								<?php $recaudo = get_sub_field('recaudo', $slug); ?>
 								<?php if (date('Y') == $anho): ?>
 									<?php $datos[$anho][$mes] = $recaudo; ?>
 									<?php $total_recaudo += $recaudo; ?>
@@ -327,7 +327,7 @@ class WidgetAvanceProyecto extends WP_Widget
 	private function getElementField($term, $value)
 	{
 		$field = null;
-		$field = get_field($value, $term);
+		$field = get_field($value, $term->taxonomy . '_' . $term->term_id);
 
 		if(empty($field))
 		{

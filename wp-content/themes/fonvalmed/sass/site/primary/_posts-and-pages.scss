@@ -360,15 +360,16 @@
 	padding: 20px;
 	position: relative;
 	&:before{
-		@include triangulos($color__primary, 30px)
+		@include triangulos($color__primary, 30px);
+		z-index: 2;
 	}
 }
 p.recaudo-texto{
 	color: #fff;
 	margin: 0;
-	font-size: 1.3rem;
+	font-size: 1.8rem;
 	text-align: center;
-	line-height: 2rem;
+	line-height: 2.5rem;
 }
 .ctn__recaudo_total{
 	@include bg-degrade;
@@ -376,12 +377,12 @@ p.recaudo-texto{
 	text-align: center;
 }
 p.recaudo-total-texto{
-	font-size: 1rem;
+	font-size: 1.5rem;
 	text-align: center;
 	margin: 0 0 10px 0;
 }
 .recaudo-total-numero{
-	font-size: 1.5rem;
+	font-size: 2rem;
 	color: $color__primary;
 	font-weight: 700;
 }
@@ -537,10 +538,10 @@ p.recaudo-total-texto{
 		margin-left: -30px;
 	}
 	.ctn__recaudo_texto{
-		padding: 40px 30px;
+		padding: 26px 30px;
 		font-size: 1.8rem;
 		line-height: 2.5rem;
-		width: 108%;
+		width: 111%;
 		&:before{
 			content: "";
 			width: 0;
@@ -557,6 +558,7 @@ p.recaudo-total-texto{
 	}
 	p.recaudo-texto{
 		font-size: 1.5rem;
+		//line-height: 2.5rem;
 	}
 	.ctn__recaudo_total{
 		padding: 23px;
@@ -573,17 +575,17 @@ p.recaudo-total-texto{
 }
 @media screen and (min-width: 1200px){
 	.ctn__recaudo_texto {
-    	padding: 47px 30px;
-    	width: 107%;
+    	padding: 39px 30px;
+    	width: 109%;
     }
     p.recaudo-texto {
-	    font-size: 2rem;
-	    line-height: 2.5rem;
+		font-size: 1.6rem;
+		line-height: 2.2rem;
 	}
 	p.recaudo-total-texto {
-	    font-size: 1.8rem;
+	    font-size: 1.5rem;
 	}
 	.recaudo-total-numero {
-	    font-size: 3rem;
+	    font-size: 2.3rem;
 	}
 }
