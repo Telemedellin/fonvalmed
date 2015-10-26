@@ -87,7 +87,7 @@
 					<li class="hidden-xs"><a class="icon-talk-chat-2" href="http://serviciochat.intercobros.com.co/chatfonvalmed/client.php?locale=es" target="_blank"></a></li>
 					<li class="hidden-xs"><a class="icon-mail" href="#" target="_blank"></a></li>
 					<li><a class="icon-call-phone" href="tel:0346048533"></a><span class="txt-phone hidden-xs hidden-sm">Línea gratuita: 01 8000 18 03 03</span></li>
-					<li class="hidden-xs"><a href="http://pruebas.telemedellin.tv/fonvalmed/proyecto-de-valorizacion-el-poblado/">Conoce las obras</a></li>
+					<li class="hidden-xs"><a href="http://fonvalmed.gov.co/proyecto-de-valorizacion-el-poblado/">Conoce las obras</a></li>
 				</ul>
 			</div>
 		</div>
