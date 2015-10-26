@@ -2902,6 +2902,10 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   height: 40px;
   cursor: pointer;
   text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
 }
 .menu-micro-toggle:before {
   content: "\f333";
@@ -3216,14 +3220,22 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   margin-bottom: 25px;
   margin-top: 10px;
   display: inline-block;
-  border-bottom: solid 1px #CBC9CA;
+  overflow-x: auto;
+  text-overflow: inherit;
+  white-space: nowrap;
+  width: 100%;
+  padding-bottom: 15px;
 }
 .breadcrumbs span {
   position: relative;
+  font-size: 0.9rem;
 }
 .breadcrumbs span a {
   text-decoration: blink;
   color: #898989;
+}
+.breadcrumbs span a:hover {
+  color: #FF7F00;
 }
 .breadcrumbs > span.content-separator {
   display: inline-block;
@@ -3287,7 +3299,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   vertical-align: middle;
   text-align: center;
   text-decoration: blink;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: normal;
   color: #A4A4A4;
 }
@@ -3335,6 +3347,11 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   }
   .menu-menu-home-container #menu-menu-home li a span.fa {
     font-size: 30px !important;
+  }
+
+  .breadcrumbs {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -3753,6 +3770,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   text-align: left;
   margin-top: -28px;
   z-index: -1;
+  background-position: top center;
 }
 .obra-header div.container {
   position: relative;
@@ -3767,7 +3785,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   opacity: 0.94;
   border-radius: 10px 10px 0px 0px;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 10px;
   position: absolute;
   margin: 0px;
   bottom: 0px;
@@ -4032,6 +4050,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   color: #898989;
   position: relative;
   padding-right: 65px;
+  line-height: 2.5rem;
 }
 
 .entry-title::before {
@@ -4487,6 +4506,11 @@ p.recaudo-total-texto {
   margin-top: 15px;
 }
 
+.soliloquy-container .soliloquy-caption {
+  display: block !important;
+  bottom: 10px !important;
+}
+
 .title-home {
   border-bottom: 2px solid #FF7F00;
   position: relative;
@@ -4504,6 +4528,17 @@ p.recaudo-total-texto {
   z-index: 0;
 }
 
+.entry-meta {
+  font-size: 0.8rem;
+  color: #898989;
+  margin-top: -15px;
+}
+
+@media screen and (min-width: 601px) {
+  .soliloquy-container .soliloquy-caption {
+    bottom: 35px !important;
+  }
+}
 @media screen and (min-width: 768px) {
   #obra-listado .filtros {
     border-right: 0px solid #fff;
