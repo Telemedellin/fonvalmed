@@ -16,6 +16,15 @@
 		padding: 5px 10px;
 	}
 }
+
+.menu-menu-superior-container{
+	overflow: scroll;
+}
+#top-bar-menu{
+	min-width: 760px;
+	text-align: left;
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -256,6 +265,13 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 }
 
 @media screen and (min-width: 992px) {
+	.menu-menu-superior-container{
+		overflow: initial;
+	}
+	#top-bar-menu{
+		min-width: 100%;
+		text-align: right;
+	}
 	.ctn_navigation{
 		background: #F3F3F3;
 		position: absolute;
