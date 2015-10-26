@@ -124,8 +124,8 @@ class WidgetAvanceProyecto extends WP_Widget
 				</div>
 			</div>
 		</div><!-- /ctn__contador-obras -->
-		<h2 class="subtitulos">Recaudo</h2>
-		<div class="ctn__recaudo container-fluid">
+		<h2>Recaudo</h2>
+		<div class="ctn__recaudo">
 			<div class="row">
 				<div class="col-md-5">
 					<div class="ctn__recaudo_texto">
