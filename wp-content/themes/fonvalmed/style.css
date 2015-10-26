@@ -4340,7 +4340,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 }
 
 .obra-avance {
-  background: #eee;
+  background: #CCCCCC;
   position: relative;
 }
 
@@ -4352,7 +4352,9 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  color: #000000;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-shadow: 0px 0px 2px #4E4E4E;
 }
 
 .obra-avance_porcentaje {
@@ -4364,6 +4366,10 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 .entry-content p {
   color: #636363;
   text-align: left;
+}
+
+.ctn__recaudo {
+  margin-top: 15px;
 }
 
 .ctn__recaudo_texto {
