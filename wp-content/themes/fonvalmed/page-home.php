@@ -22,8 +22,6 @@ $meses = array(
 	"12" => "Diciembre"
 );
 
-$date = DateTime::createFromFormat("m", date('m'));
-
 ?>
 	<div class="row ctn__heroe-home">
 		<div class="col-md-7">
