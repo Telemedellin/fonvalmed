@@ -125,7 +125,7 @@ class WidgetAvanceProyecto extends WP_Widget
 			</div>
 		</div><!-- /ctn__contador-obras -->
 		<h2 class="subtitulos">Recaudo</h2>
-		<div class="ctn__recaudo container-fluid">
+		<div class="ctn__recaudo">
 			<div class="row">
 				<div class="col-md-5">
 					<div class="ctn__recaudo_texto">
@@ -219,7 +219,11 @@ class WidgetAvanceProyecto extends WP_Widget
 							Propietarios que han pagado el total de la contribución
 						</h3>
 						<span class="info-recaudo_propietarios_total">
-							<?php $pago_contribucion = empty(get_field('pago_contribucion', $slug)) ? 0 : get_field('pago_contribucion', $slug); ?>
+							<?php
+								$pago_contribucion = 0;
+								if (empty(get_field('pago_contribucion', $slug)) || is_null(get_field('pago_contribucion', $slug)))
+									$pago_contribucion = get_field('pago_contribucion', $slug);
+							?>
 							<?php echo number_format($pago_contribucion,0,',','.'); ?>
 						</span>
 					</div>
