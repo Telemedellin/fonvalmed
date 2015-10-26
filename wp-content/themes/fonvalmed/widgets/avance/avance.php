@@ -200,9 +200,9 @@ class WidgetAvanceProyecto extends WP_Widget
 								labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
 								datasets : [
 									{
-										fillColor : "#6b9dfa",
+										fillColor : "#CBC9CA",
 										strokeColor : "#ffffff",
-										highlightFill: "#1864f2",
+										highlightFill: "#898989",
 										highlightStroke: "#ffffff",
 										data : [<?php echo $data_chart; ?>]
 									}
