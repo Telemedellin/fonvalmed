@@ -59,7 +59,7 @@
   background: none;
 }
 #mega-menu-wrap-primary {
-  background: #f3f3f3;
+  background: #efefef;
   -webkit-border-radius: 0px 0px 0px 0px;
   -moz-border-radius: 0px 0px 0px 0px;
   -ms-border-radius: 0px 0px 0px 0px;
@@ -578,7 +578,7 @@
   z-index: 1;
   cursor: pointer;
   text-align: right;
-  background: #f3f3f3;
+  background: #efefef;
   -webkit-border-radius: 2px 2px 2px 2px;
   -moz-border-radius: 2px 2px 2px 2px;
   -ms-border-radius: 2px 2px 2px 2px;
