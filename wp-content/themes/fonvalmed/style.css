@@ -2896,7 +2896,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -15px;
   left: 0;
-  z-index: 0;
 }
 
 .menu-micro-toggle {
@@ -2956,7 +2955,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -10px;
   left: 0;
-  z-index: 0;
 }
 
 @media (min-width: 0px) and (max-width: 991px) {
@@ -3280,7 +3278,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -10px;
   left: 0;
-  z-index: 0;
 }
 
 .menu-menu-home-container {
@@ -3593,7 +3590,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   padding: 10px 5px;
   text-transform: uppercase;
   color: #FF7F00;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: normal;
 }
 
@@ -3628,7 +3625,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -15px;
   left: 0;
-  z-index: 0;
 }
 
 .ctn__obra-preview_sidebar {
@@ -4381,15 +4377,15 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   position: absolute;
   bottom: -30px;
   left: 0;
-  z-index: 0;
+  z-index: 2;
 }
 
 p.recaudo-texto {
   color: #fff;
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   text-align: center;
-  line-height: 2rem;
+  line-height: 2.5rem;
 }
 
 .ctn__recaudo_total {
@@ -4407,13 +4403,13 @@ p.recaudo-texto {
 }
 
 p.recaudo-total-texto {
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: center;
   margin: 0 0 10px 0;
 }
 
 .recaudo-total-numero {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #FF7F00;
   font-weight: 700;
 }
@@ -4545,7 +4541,6 @@ p.recaudo-total-texto {
   position: absolute;
   bottom: -15px;
   left: 0;
-  z-index: 0;
 }
 
 .entry-meta {
@@ -4592,10 +4587,10 @@ p.recaudo-total-texto {
   }
 
   .ctn__recaudo_texto {
-    padding: 40px 30px;
+    padding: 26px 30px;
     font-size: 1.8rem;
     line-height: 2.5rem;
-    width: 108%;
+    width: 111%;
   }
   .ctn__recaudo_texto:before {
     content: "";
@@ -4633,21 +4628,21 @@ p.recaudo-total-texto {
 }
 @media screen and (min-width: 1200px) {
   .ctn__recaudo_texto {
-    padding: 47px 30px;
-    width: 107%;
+    padding: 39px 30px;
+    width: 109%;
   }
 
   p.recaudo-texto {
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
   }
 
   p.recaudo-total-texto {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .recaudo-total-numero {
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
 }
 /*--------------------------------------------------------------
