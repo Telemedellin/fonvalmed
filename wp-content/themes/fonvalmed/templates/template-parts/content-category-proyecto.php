@@ -29,7 +29,7 @@
 				<div class="row ctn__filtros">
 					<div class="filtros col-md-5">
 						<span class="filtro-title">Estado de la obra</span>
-						<span class="fm-label" rel="estado:finalizados" onclick="javascript:filtrar(this)">Finalizados</span>
+						<span class="fm-label" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizadas</span>
 						<span class="fm-label" rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 						<span class="fm-label" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
 						<span class="fm-label" rel="estado:en-licitacion" onclick="javascript:filtrar(this)">En licitaci&oacute;n</span>
@@ -86,7 +86,7 @@
 				<div class="row ctn__filtros" style="margin-left: 0px;margin-right: 0px;">
 					<div class="filtros col-md-12">
 						<span></span>
-						<span class="fm-label" style="width:24%;" rel="estado:finalizados" onclick="javascript:filtrar(this)">Finalizados</span>
+						<span class="fm-label" style="width:24%;" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizadas</span>
 						<span class="fm-label" style="width:24%;" rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 						<span class="fm-label" style="width:24%;" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
 						<span class="fm-label" style="width:24%;" rel="estado:en-licitacion" onclick="javascript:filtrar(this)">En licitaci&oacute;n</span>
