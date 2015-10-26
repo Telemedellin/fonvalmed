@@ -162,17 +162,17 @@ class WidgetAvanceProyecto extends WP_Widget
 						<?php $total_recaudo = 0; ?>
 						<?php if(have_rows('obra_recaudo', $slug)): ?>
 							<?php while (have_rows('obra_recaudo', $slug)) : the_row(); ?>
-								<?php $mes = get_sub_field('mes', $slug); ?>
-								<?php $anho = get_sub_field('ano', $slug); ?>
-								<?php $recaudo = get_sub_field('recaudo', $slug); ?>
-								<?php if (date('Y') == $_anho): ?>
+								<?php echo $mes = get_sub_field('mes', $slug); ?>
+								<?php echo $anho = get_sub_field('ano', $slug); ?>
+								<?php echo $recaudo = get_sub_field('recaudo', $slug); ?>
+								<?php if (date('Y') == $anho): ?>
 									<?php $datos[$anho][$mes] = $recaudo; ?>
-									<?php $total_recaudo .= $recaudo; ?>
+									<?php $total_recaudo += $recaudo; ?>
 								<?php endif; ?>
 							<?php endwhile; ?>
 						<?php endif; ?>
 						<p class="recaudo-total-texto">Recuado contribución de valorización - <span class="recaudo-total-fecha">Hoy <?php echo date('d'); ?> de <?php echo $meses[date('m')]; ?></span></p>
-						<span class="recaudo-total-numero">$<?php echo number_format($recaudo,2,',','.'); ?></span>
+						<span class="recaudo-total-numero">$<?php echo number_format($total_recaudo,2,',','.'); ?></span>
 					</div>
 				</div>
 			</div>
@@ -182,11 +182,11 @@ class WidgetAvanceProyecto extends WP_Widget
 				<div class="col-sm-9">
 					<div class="ctn__infor-recaudo_grafico">
 						<?php echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/widgets/avance/js/chart.js?ver=1.0.0"></script>'; ?>
-						<canvas id="chart-area" style="width: 100%;height: 190px;"></canvas>
+						<canvas id="chart-area" style="width: 90%;height: 190px;"></canvas>
 						<?php
 							$data_chart = '';
 							$mes_index = 1;
-							foreach ($datos['2015'] as $key => $value):
+							foreach ($datos[date('Y')] as $key => $value):
 								if ($mes_index != 12):
 									$data_chart .= $value . ',';
 								else:
@@ -219,7 +219,8 @@ class WidgetAvanceProyecto extends WP_Widget
 							Propietarios que han pagado el total de la contribución
 						</h3>
 						<span class="info-recaudo_propietarios_total">
-							<?php echo number_format(get_field('pago_contribucion', $slug),0,',','.'); ?>
+							<?php $pago_contribucion = empty(get_field('pago_contribucion', $slug)) ? 0 : get_field('pago_contribucion', $slug); ?>
+							<?php echo number_format($pago_contribucion,0,',','.'); ?>
 						</span>
 					</div>
 				</div>
