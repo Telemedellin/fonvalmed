@@ -43,7 +43,7 @@
 						<input type="text" value="" name="APELLIDOS" class="required" id="mce-APELLIDOS" placeholder="*Apellidos">
 					</div>
 					<div class="mc-terminos-condiciones">
-						<label for="checkbox-input"><input id="checkbox-input" type="checkbox" required="required"> Acepto <a href="#">Términos y condiciones</a></label>
+						<label for="checkbox-input"><input id="checkbox-input" type="checkbox" required="required"> Acepto <a href="http://fonvalmed.gov.co/proteccion-de-datos/" target="_blank">Términos y condiciones</a></label>
 					</div>
 						<div id="mce-responses" class="clear">
 							<div class="response" id="mce-error-response" style="display:none"></div>
