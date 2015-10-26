@@ -340,7 +340,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
 * avance widgets
 */
-require get_template_directory() . '/widgets/avance.php';
+require get_template_directory() . '/widgets/avance/avance.php';
 
 /**
 * consistencia de las obras

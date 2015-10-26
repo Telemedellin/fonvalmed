@@ -1,12 +1,11 @@
 <?php
 
-setlocale(LC_ALL, 'es_ES.UTF8');
 class WidgetAvanceProyecto extends WP_Widget 
 {
 
 	function WidgetAvanceProyecto()
 	{
-		parent::__construct( false, 'Avance Preoyecto', array('description'=>'Permite ver el avance de tus proyectos.'));
+		parent::__construct( false, 'Avance Proyecto', array('description'=>'Permite ver el avance de tus proyectos.'));
 	}
 
 	function widget( $args, $instance )
@@ -22,7 +21,13 @@ class WidgetAvanceProyecto extends WP_Widget
 	function form( $instance ) {
 
 	}
-	
+
+	function script_chart()
+	{
+		
+	}
+	//add_action('wp_head','script_chart');
+
 	function avanceView($args, $instance)
 	{
 		extract($args);																					
@@ -42,7 +47,7 @@ class WidgetAvanceProyecto extends WP_Widget
 						</h3>
 						<span class="contador-obra-numero">
 							<?php 
-							if( isset($est['finalizada']) )
+							if(isset($est['finalizada']))
 							{
 								echo $est['finalizada'];
 							} 
@@ -119,6 +124,107 @@ class WidgetAvanceProyecto extends WP_Widget
 				</div>
 			</div>
 		</div><!-- /ctn__contador-obras -->
+		<h2 class="subtitulos">Recaudo</h2>
+		<div class="ctn__recaudo container-fluid">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="ctn__recaudo_texto">
+						<p class="recaudo-texto">
+							Con tu aporte estamos haciendo realidad las obras en El Poblado
+						</p>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="ctn__recaudo_total">
+						<?php
+							$meses = array(
+								"01" => "Enero",
+								"02" => "Febrero",
+								"03" => "Marzo",
+								"04" => "Abril",
+								"05" => "Mayo",
+								"06" => "Junio",
+								"07" => "Julio",
+								"08" => "Agosto",
+								"09" => "Septiembre",
+								"10" => "Octubre",
+								"11" => "Noviembre",
+								"12" => "Diciembre"
+							);
+
+							$datos = array();
+							foreach ($meses as $key => $value):
+								$datos[date('Y')][$value] = 0;
+							endforeach;
+						?>
+						<?php $term = $this->getProyecto(); ?>
+						<?php $slug = $term[0]->taxonomy . '_' . $term[0]->term_id; ?>
+						<?php $total_recaudo = 0; ?>
+						<?php if(have_rows('obra_recaudo', $slug)): ?>
+							<?php while (have_rows('obra_recaudo', $slug)) : the_row(); ?>
+								<?php $mes = get_sub_field('mes', $slug); ?>
+								<?php $anho = get_sub_field('ano', $slug); ?>
+								<?php $recaudo = get_sub_field('recaudo', $slug); ?>
+								<?php if (date('Y') == $_anho): ?>
+									<?php $datos[$anho][$mes] = $recaudo; ?>
+									<?php $total_recaudo .= $recaudo; ?>
+								<?php endif; ?>
+							<?php endwhile; ?>
+						<?php endif; ?>
+						<p class="recaudo-total-texto">Recuado contribución de valorización - <span class="recaudo-total-fecha">Hoy <?php echo date('d'); ?> de <?php echo $meses[date('m')]; ?></span></p>
+						<span class="recaudo-total-numero">$<?php echo number_format($recaudo,2,',','.'); ?></span>
+					</div>
+				</div>
+			</div>
+		</div><!-- /ctn__recaudo -->
+		<div class="ctn__info-recaudo container-fluid">
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="ctn__infor-recaudo_grafico">
+						<?php echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/widgets/avance/js/chart.js?ver=1.0.0"></script>'; ?>
+						<canvas id="chart-area" style="width: 100%;height: 190px;"></canvas>
+						<?php
+							$data_chart = '';
+							$mes_index = 1;
+							foreach ($datos['2015'] as $key => $value):
+								if ($mes_index != 12):
+									$data_chart .= $value . ',';
+								else:
+									$data_chart .= $value;
+								endif;
+								$mes_index++;
+							endforeach;
+						?>
+						<script>
+							var barChartData = {
+								labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+								datasets : [
+									{
+										fillColor : "#6b9dfa",
+										strokeColor : "#ffffff",
+										highlightFill: "#1864f2",
+										highlightStroke: "#ffffff",
+										data : [<?php echo $data_chart; ?>]
+									}
+								]
+							}
+							var ctx3 = document.getElementById("chart-area").getContext("2d");
+							window.myPie = new Chart(ctx3).Bar(barChartData, {responsive:true});
+						</script>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="ctn__info-recaudo_propietarios">
+						<h3 class="info-recaudo_propietarios_title">
+							Propietarios que han pagado el total de la contribución
+						</h3>
+						<span class="info-recaudo_propietarios_total">
+							<?php echo number_format(get_field('pago_contribucion', $slug),0,',','.'); ?>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div><!-- /ctn__info-recaudo -->
 		<?php else: ?>
 
 		<div class="ctn__contador-obras container-fluid">
