@@ -24,8 +24,5 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
-		<?php fonvalmed_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
