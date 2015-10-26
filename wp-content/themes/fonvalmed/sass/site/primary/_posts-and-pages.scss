@@ -48,6 +48,7 @@
 	color: $color__gray-dark;
 	position: relative;
 	padding-right: 65px;
+	line-height: 2.5rem;
 }
 .entry-title::before {
 	content: "";
@@ -463,6 +464,39 @@ p.recaudo-total-texto{
 		font-size: 24px;
 		font-weight: bold;
 		color: $color__primary;
+	}
+}
+
+//Home
+
+.ctn__heroe-home{
+	margin-top: 15px;
+}
+
+.soliloquy-container .soliloquy-caption{
+	display: block !important;
+	bottom: 10px !important;
+}
+
+.title-home{
+	border-bottom: 2px solid $color__primary;
+	position: relative;
+	margin-bottom: 20px;
+	&:before{
+		@include triangulos($color__primary, 15px);
+	}
+}
+
+//Entry styles
+.entry-meta{
+	font-size: 0.8rem;
+	color: $color__gray-dark;
+	margin-top: -15px;
+}
+
+@media screen and (min-width: 601px){
+	.soliloquy-container .soliloquy-caption{
+		bottom: 35px !important;
 	}
 }
 

@@ -16,6 +16,15 @@
 		padding: 5px 10px;
 	}
 }
+
+.menu-menu-superior-container{
+	overflow: scroll;
+}
+#top-bar-menu{
+	min-width: 760px;
+	text-align: left;
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -172,6 +181,10 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 	height: 40px;
 	cursor: pointer;
 	text-align: center;
+	width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
 	&:before {
 		content: "\f333";
 		font-family: 'dashicons';
@@ -252,6 +265,13 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 }
 
 @media screen and (min-width: 992px) {
+	.menu-menu-superior-container{
+		overflow: initial;
+	}
+	#top-bar-menu{
+		min-width: 100%;
+		text-align: right;
+	}
 	.ctn_navigation{
 		background: #F3F3F3;
 		position: absolute;
@@ -467,17 +487,28 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 .breadcrumbs {
 	margin-bottom: 25px;
     margin-top: 10px;
-	span {
-		border-bottom: 1px solid $color__gray-dark;
+    display: inline-block;
+    //border-bottom: solid 1px $color__gray;
+    overflow-x: auto;
+    text-overflow: inherit;
+    white-space: nowrap;
+    width: 100%;
+    padding-bottom: 15px;
+    span {
+		//border-bottom: 1px solid $color__gray-dark;
 		position: relative;
+		font-size: 0.9rem;
 		a {
 			text-decoration: blink;
 			color: $color__gray-dark;
+			&:hover{
+				color: $color__primary;
+			}
 		}
 	}
 	> span.content-separator {
 		display: inline-block;
-		border-bottom: 1px solid $color__gray-dark;
+		//border-bottom: 1px solid $color__gray-dark;
 		padding: 0 5px;
 		bottom: 1px;
 		.separator {
@@ -494,6 +525,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 	.active {
 		color: $color__primary;
 		border-bottom: 1px solid $color__primary;
+		padding-bottom: 1px;
 		&:before {
 			@include triangulos($color__primary, 10px);
 		}
@@ -527,7 +559,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 				vertical-align: middle;
 				text-align: center;
 				text-decoration: blink;
-				font-size: 12.5px;
+				font-size: 12px;
 				font-weight: normal;
 				color: #A4A4A4;
 				&:hover {
@@ -578,6 +610,10 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 				}
 			}
 		}
+	}
+	.breadcrumbs{
+		overflow: hidden;
+    	text-overflow: ellipsis;
 	}
 }
 

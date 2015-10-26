@@ -25,7 +25,7 @@ $meses = array(
 $date = DateTime::createFromFormat("m", date('m'));
 
 ?>
-	<div class="row">
+	<div class="row ctn__heroe-home">
 		<div class="col-md-7">
 			<?php if (function_exists('soliloquy')) { soliloquy( get_field('slider') ); } ?>
 		</div>
