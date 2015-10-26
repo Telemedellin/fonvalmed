@@ -220,9 +220,9 @@ class WidgetAvanceProyecto extends WP_Widget
 						</h3>
 						<span class="info-recaudo_propietarios_total">
 							<?php
-								$pago_contribucion = get_field('pago_contribucion', $slug);
-								if ((empty($pago_contribucion)) || (is_null($pago_contribucion)))
-									$pago_contribucion = 0;
+								$pago_contribucion = 0;
+								if (empty(get_field('pago_contribucion', $slug)) || is_null(get_field('pago_contribucion', $slug)))
+									$pago_contribucion = get_field('pago_contribucion', $slug);
 							?>
 							<?php echo number_format($pago_contribucion,0,',','.'); ?>
 						</span>
