@@ -187,14 +187,26 @@ class WidgetAvanceProyecto extends WP_Widget
 							$mes_index = 1;
 							foreach ($datos[date('Y')] as $key => $value):
 								if ($mes_index != 12):
-									$data_chart .= '"'.number_format($value,0,',','.').'",';
+									$data_chart .= $value . ',';
 								else:
-									$data_chart .= '"'.number_format($value,0,',','.').'"';
+									$data_chart .= $value;
 								endif;
 								$mes_index++;
 							endforeach;
 						?>
 						<script>
+							Number.prototype.formatMoney = function(c, d, t) {
+								var n = this, 
+									c = isNaN(c = Math.abs(c)) ? 2 : c, 
+									d = d == undefined ? "." : d, 
+									t = t == undefined ? "," : t, 
+									s = n < 0 ? "-" : "", 
+									i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+									j = (j = i.length) > 3 ? j % 3 : 0;
+
+								return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+							};
+
 							var barChartData = {
 								labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
 								datasets : [
@@ -206,13 +218,17 @@ class WidgetAvanceProyecto extends WP_Widget
 										data : [<?php echo $data_chart; ?>]
 									}
 								]
-							}
+							};
+
 							var ctx3 = document.getElementById("chart-area").getContext("2d");
 							window.myPie = new Chart(ctx3).Bar(barChartData, {
 								responsive:true,
 								scaleShowLabels: false,
 								scaleIntegersOnly: false,
-								tooltipTemplate: "<%if (label){%><%=label%>: $ <%}%><%= value %>"
+								tooltipTemplate: function(data)
+								{
+									return "$ " + data.value.formatMoney(0,',','.');
+								}
 							});
 						</script>
 					</div>
