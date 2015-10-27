@@ -159,15 +159,14 @@ class WidgetAvanceProyecto extends WP_Widget
 						?>
 						<?php $term = $this->getProyecto(); ?>
 						<?php $slug = $term[0]->taxonomy . '_' . $term[0]->term_id; ?>
-						<?php $total_recaudo = 0; ?>
+						<?php $total_recaudo = get_field('recaudo', 5); ?>
 						<?php if(have_rows('obra_recaudo', $slug)): ?>
 							<?php while (have_rows('obra_recaudo', $slug)) : the_row(); ?>
 								<?php $mes = get_sub_field('mes', $slug); ?>
 								<?php $anho = get_sub_field('ano', $slug); ?>
 								<?php $recaudo = get_sub_field('recaudo', $slug); ?>
-								<?php if (date('Y') == $anho): ?>
+								<?php if (date('Y') == $anho && $mes != $meses[date('m')]): ?>
 									<?php $datos[$anho][$mes] = $recaudo; ?>
-									<?php $total_recaudo += $recaudo; ?>
 								<?php endif; ?>
 							<?php endwhile; ?>
 						<?php endif; ?>
@@ -188,9 +187,9 @@ class WidgetAvanceProyecto extends WP_Widget
 							$mes_index = 1;
 							foreach ($datos[date('Y')] as $key => $value):
 								if ($mes_index != 12):
-									$data_chart .= $value . ',';
+									$data_chart .= '"'.number_format($value,0,',','.').'",';
 								else:
-									$data_chart .= $value;
+									$data_chart .= '"'.number_format($value,0,',','.').'"';
 								endif;
 								$mes_index++;
 							endforeach;
@@ -209,7 +208,12 @@ class WidgetAvanceProyecto extends WP_Widget
 								]
 							}
 							var ctx3 = document.getElementById("chart-area").getContext("2d");
-							window.myPie = new Chart(ctx3).Bar(barChartData, {responsive:true});
+							window.myPie = new Chart(ctx3).Bar(barChartData, {
+								responsive:true,
+								scaleShowLabels: false,
+								scaleIntegersOnly: false,
+								tooltipTemplate: "<%if (label){%><%=label%>: $ <%}%><%= value %>"
+							});
 						</script>
 					</div>
 				</div>
