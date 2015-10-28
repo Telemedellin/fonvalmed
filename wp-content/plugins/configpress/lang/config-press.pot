@@ -1,0 +1,43 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ConfigPress\n"
+"POT-Creation-Date: 2015-10-07 09:21-0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: WPAAM <support@wpaam.com>\n"
+"Language-Team: Vasyl Martyniuk <vasyl@vasyltech.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: config-press.php:338 config-press.php:339
+msgid "ConfigPress"
+msgstr ""
+
+#: config-press.php:408
+msgid "PHP 5.3.0 or higher is required."
+msgstr ""
+
+#: view/index.phtml:7
+msgid "Configurations"
+msgstr ""
+
+#: view/index.phtml:9
+#, php-format
+msgid "valid INI format. For more information check %sthis blog%s."
+msgstr ""
+
+#: view/index.phtml:28
+msgid "Control Panel"
+msgstr ""
+
+#: view/index.phtml:33
+msgid "Save Configurations"
+msgstr ""
