@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WPBakery Visual Composer Main manager.
  *
@@ -20,6 +21,8 @@ class Vc_Mapper {
 	protected $init_activity = array();
 
 	protected $hasAccess = array();
+
+	// @todo fix_roles and maybe remove/@deprecate this
 	protected $checkForAccess = true;
 
 	/**
@@ -71,7 +74,7 @@ class Vc_Mapper {
 		do_action( 'vc_mapper_call_activities_before' );
 		while ( $activity = each( $this->init_activity ) ) {
 			list( $object, $method, $params ) = $activity[1];
-			if ( $object === 'mapper' ) {
+			if ( 'mapper' === $object ) {
 				switch ( $method ) {
 					case 'map':
 						WPBMap::map( $params['tag'], $params['attributes'] );
@@ -104,6 +107,7 @@ class Vc_Mapper {
 	 *
 	 * @param $shortcode
 	 *
+	 * @todo fix_roles and maybe remove/@deprecate this
 	 * @since 4.5
 	 * @return bool
 	 */
@@ -112,18 +116,7 @@ class Vc_Mapper {
 			if ( isset( $this->hasAccess[ $shortcode ] ) ) {
 				return $this->hasAccess[ $shortcode ];
 			} else {
-				global $current_user;
-				get_currentuserinfo();
-				$show = true;
-
-				$settings = vc_settings()->get( 'groups_access_rules' );
-				foreach ( $current_user->roles as $role ) {
-					if ( isset( $settings[ $role ]['shortcodes'] ) && ! isset( $settings[ $role ]['shortcodes'][ $shortcode ] ) ) {
-						$show = false;
-						break;
-					}
-				}
-				$this->hasAccess[ $shortcode ] = $show;
+				$this->hasAccess[ $shortcode ] = vc_user_access_check_shortcode_edit( $shortcode );
 			}
 
 			return $this->hasAccess[ $shortcode ];
@@ -133,17 +126,21 @@ class Vc_Mapper {
 	}
 
 	/**
-	 * @return boolean
+	 * @todo fix_roles and maybe remove/@deprecate this
+	 * @since 4.5
+	 * @return bool
 	 */
 	public function isCheckForAccess() {
 		return $this->checkForAccess;
 	}
 
 	/**
-	 * @param boolean $checkForAccess
+	 * @todo fix_roles and maybe remove/@deprecate this
+	 * @since 4.5
+	 *
+	 * @param bool $checkForAccess
 	 */
 	public function setCheckForAccess( $checkForAccess ) {
 		$this->checkForAccess = $checkForAccess;
 	}
-
 }

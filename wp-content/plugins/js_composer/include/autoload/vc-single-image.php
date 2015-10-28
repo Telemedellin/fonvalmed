@@ -11,7 +11,7 @@ function vc_single_image_convert_old_link_to_new( $atts ) {
 	if ( empty( $atts['onclick'] ) && isset( $atts['img_link_large'] ) && 'yes' === $atts['img_link_large'] ) {
 		$atts['onclick'] = 'img_link_large';
 		unset( $atts['img_link_large'] );
-	} else if ( empty( $atts['onclick'] ) && ( ! isset( $atts['img_link_large'] ) || 'yes' !== $atts['img_link_large'] ) ) {
+	} elseif ( empty( $atts['onclick'] ) && ( ! isset( $atts['img_link_large'] ) || 'yes' !== $atts['img_link_large'] ) ) {
 		unset( $atts['img_link_large'] );
 	}
 

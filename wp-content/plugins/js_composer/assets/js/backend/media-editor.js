@@ -5,13 +5,20 @@
  *
  * WP 3.5 Media manager integration into Visual Composer.
  * ========================================================= */
-(function ( $ ) {
+/* global wp, _ */
+(function ( $, _ ) {
+	'use strict';
 	var media = wp.media,
 		origFeaturedImageSet = media.featuredImage.set,
 		origEditorSendAttachment = media.editor.send.attachment,
 		l10n = i18nLocale,
 		workflows = {},
-		attachmentCompatRender
+		attachmentCompatRender,
+		templateSettings = {
+			evaluate: /<#([\s\S]+?)#>/g,
+			interpolate: /\{\{\{([\s\S]+?)\}\}\}/g,
+			escape: /\{\{([^\}]+?)\}\}(?!\})/g
+		};
 
 	attachmentCompatRender = _.extend( media.view.AttachmentCompat.prototype.render );
 	media.view.AttachmentCompat.prototype.render = function () {
@@ -145,7 +152,7 @@
 			return this.$hidden_ids.val();
 		},
 		set: function ( selection ) {
-			this.$img_ul.html( _.template( $( '#vc_settings-image-block' ).html(), selection ) );
+			this.$img_ul.html( _.template( $( '#vc_settings-image-block' ).html(), selection, templateSettings ) );
 
 			this.$clear_button.show();
 
@@ -258,7 +265,7 @@
 				$thumbnails_string = '';
 
 			_.each( images, function ( image ) {
-				$thumbnails_string += _.template( $( '#vc_settings-image-block' ).html(), image );
+				$thumbnails_string += _.template( $( '#vc_settings-image-block' ).html(), image, templateSettings );
 			} );
 
 			$hidden_ids.val( _.map( images, function ( image ) {
@@ -332,8 +339,8 @@
 	 * @param callback Processed attachments are passed as first and only argument
 	 * @return void
 	 */
-	function processImages( ids, callback ) {
-
+	function processImages( attachments, callback ) {
+		var ids = attachments.models ? attachments.pluck( 'id' ) : attachments;
 		$.ajax( {
 			dataType: "json",
 			type: 'POST',
@@ -346,26 +353,28 @@
 				_vcnonce: window.vcAdminNonce
 			}
 		} ).done( function ( response ) {
-			var attachments, attachment, promises, i;
+			var models, attachment, promises, i;
 
 			if ( 'function' !== typeof(callback) ) {
 				return;
 			}
 
-			attachments = [];
+			models = [];
 			promises = [];
 
 			for ( i = 0;
 				  i < response.data.ids.length;
 				  i ++ ) {
-
-				attachment = media.model.Attachment.get( response.data.ids[ i ] );
-				promises.push( attachment.fetch() );
-				attachments.push( attachment );
+				attachment = attachments[ response.data.ids[ i ] ];
+				if ( ! attachment ) {
+					attachment = media.model.Attachment.get( response.data.ids[ i ] );
+					promises.push( attachment.fetch() );
+				}
+				models.push( attachment );
 			}
 
 			$.when.apply( $, promises ).done( function () {
-				callback( attachments );
+				callback( models );
 			} );
 		} ).fail( function ( response ) {
 			$( '.media-modal-close' ).click();
@@ -379,17 +388,8 @@
 	}
 
 	vc.events.on( 'click:media_editor:add_image', function ( selection, type ) {
-		var ids;
-
-		ids = [];
-
 		$( '.media-modal' ).addClass( 'processing-media' );
-
-		selection.each( function ( model ) {
-			ids.push( model.get( 'id' ) );
-		} );
-
-		processImages( ids, finishImageProcessing );
+		processImages( _.extend( {}, selection ), finishImageProcessing );
 
 		function finishImageProcessing( newAttachments ) {
 			var attachments,
@@ -494,5 +494,4 @@
 		} );
 	}
 
-}
-( jQuery ));
+}( window.jQuery, window._ ));

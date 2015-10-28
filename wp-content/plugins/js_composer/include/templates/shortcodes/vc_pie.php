@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -37,7 +38,7 @@ $colors = array(
 	'purple' => '#b97ebb',
 	'black' => '#2a2a2a',
 	'grey' => '#ebebeb',
-	'white' => '#ffffff'
+	'white' => '#ffffff',
 );
 
 if ( 'custom' === $color ) {

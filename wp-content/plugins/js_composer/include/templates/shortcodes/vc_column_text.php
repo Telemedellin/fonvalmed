@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -16,7 +17,6 @@ extract( $atts );
 $class_to_filter = 'wpb_text_column wpb_content_element ' . $this->getCSSAnimation( $css_animation );
 $class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class );
 $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
-
 
 $output = '
 	<div class="' . esc_attr( $css_class ) . '">

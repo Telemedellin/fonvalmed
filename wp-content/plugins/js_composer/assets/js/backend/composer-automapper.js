@@ -219,7 +219,7 @@ var vc_am = {
 			_.each( attrs.params, function ( param ) {
 				_.each( fields_required, function ( field ) {
 					if ( '' === param[ field ] ) {
-						result = window.i18nLocaleVcAutomapper.error_enter_required_fields // '';
+						result = window.i18nLocaleVcAutomapper.error_enter_required_fields; // '';
 					} else if ( 'param_name' === field && ! param[ field ].match( /^[a-z0-9_]+$/g ) ) {
 						result = window.i18nLocaleVcAutomapper.error_enter_required_fields;
 					}
