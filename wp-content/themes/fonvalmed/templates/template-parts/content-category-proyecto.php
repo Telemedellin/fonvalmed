@@ -43,8 +43,7 @@
 						<span class="fm-label" rel="tipo:doble-calzada" onclick="javascript:filtrar(this)">Doble calzada</span>
 					</div>
 				</div><!-- /ctn_filtros -->
-				<div class="obras grid">
-					<div class="grid-sizer"></div>
+				<div class="obras">
 					<?php $obras = array(); ?>
 					<?php foreach(get_term_children($terms->term_id, $terms->taxonomy) as $term_id): ?>
 						<?php
@@ -65,7 +64,7 @@
 
 							$obras[] = $obra;
 						?>
-						<a href="<?php echo get_term_link($term_id, $terms->taxonomy); ?>" class="ctn__obra-preview grid-item">
+						<a href="<?php echo get_term_link($term_id, $terms->taxonomy); ?>" class="ctn__obra-preview">
 							<div class="ctn__obra-preview_image" style="background: url(<?php echo $obra->cabezote; ?>) no-repeat; background-size: 100%; background-position: center center;">
 								
 							</div>

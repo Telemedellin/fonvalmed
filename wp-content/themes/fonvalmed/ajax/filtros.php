@@ -54,7 +54,7 @@ if ((isset($_POST['tipo']) && isset($_POST['filtro'])) || (isset($_POST['tipo'])
                         if ($tipo == 'mapa'):
                             $obras[] = $obra;
                         else:
-                            $html .= '<a href="'.get_term_link($termid, $taxonomy).'" class="ctn__obra-preview grid-item">';
+                            $html .= '<a href="'.get_term_link($termid, $taxonomy).'" class="ctn__obra-preview">';
                                 $html .= '<div class="ctn__obra-preview_image" style="background: url('.$obra->cabezote.') no-repeat; background-size: 100%; background-position: center center;"></div>';
                                     $html .= '<div class="ctn__obra-preview_contenido">';
 										$html .= '<p>'.$obra->name.'</p>';
@@ -90,7 +90,7 @@ if ((isset($_POST['tipo']) && isset($_POST['filtro'])) || (isset($_POST['tipo'])
             if ($tipo == 'mapa'):
                 $obras[] = $obra;
             else:
-                $html .= '<a href="'.get_term_link($termid, $taxonomy).'" class="ctn__obra-preview grid-item">';
+                $html .= '<a href="'.get_term_link($termid, $taxonomy).'" class="ctn__obra-preview">';
                     $html .= '<div class="ctn__obra-preview_image" style="background: url('.$obra->cabezote.') no-repeat; background-size: 100%; background-position: center center;"></div>';
                         $html .= '<div class="ctn__obra-preview_contenido">';
 							$html .= '<p>'.$obra->name.'</p>';
