@@ -1,0 +1,42 @@
+<div class="wrap">
+    <div class="postbox-container config-area">
+        <div class="metabox-holder">
+            <div class="meta-box-sortables">
+                <div class="postbox">
+                    <h3 class="hndle">
+                        <span class="header-logo"><?php echo __('Configurations', CONFIGPRESS_KEY); ?></span>
+                        <small><?php
+                            echo sprintf(__('valid INI format. For more information check %sthis blog%s.', CONFIGPRESS_KEY), '<a href="http://vasyltech.com/blog/how-to-avoid-hard-coding-in-wordpress-plugin" target="_blank">', '</a>');
+                        ?></small>
+                    </h3>
+                    <div class="inside">
+                        <textarea id="configpress" class="configpress-editor"><?php echo $this->readOption(); ?></textarea>
+                        <span class="error-message">
+                            <?php echo ($this->valid() ? '' : $this->getError()); ?>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="postbox-container control-area">
+        <div class="metabox-holder">
+            <div class="meta-box-sortables">
+                <div class="postbox" id="control_panel">
+                    <h3 class="hndle">
+                        <span><?php echo __('Control Panel', CONFIGPRESS_KEY); ?></span>
+                    </h3>
+                    <div class="inside">
+                        <div id="publishing-action">
+                            <span class="spinner"></span>
+                            <input type="button" value="<?php echo __('Save Configurations', CONFIGPRESS_KEY); ?>" id="save-configurations" class="button button-primary button-large" />
+                        </div>
+                        <span class="status"></span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
