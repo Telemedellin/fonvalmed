@@ -104,7 +104,7 @@
 			this.$data_field = this.$el.find( '.vc_teaser-data-field' );
 			this.$bgcolor = this.$el.find( '.vc_teaser-bgcolor' );
 			this.$toolbar = this.$contructor_container.find( '.vc_toolbar' );
-			this.$spinner = this.$contructor_container.find( '.vc_teaser_loading_block' )
+			this.$spinner = this.$contructor_container.find( '.vc_teaser_loading_block' );
 			this.renderButtons( this.controls );
 			this.$list = this.$contructor_container.find( '.vc_teaser-list' );
 			this.$list.sortable( {

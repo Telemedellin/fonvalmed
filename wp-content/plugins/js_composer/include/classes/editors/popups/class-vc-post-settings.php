@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WPBakery Visual Composer main class.
  *
@@ -36,7 +37,7 @@ class Vc_Post_Settings implements Vc_Render {
 	 */
 	public function render() {
 		vc_include_template( 'editors/popups/panel_post_settings.tpl.php', array(
-			'box' => $this
+			'box' => $this,
 		) );
 	}
 	/**
@@ -44,7 +45,7 @@ class Vc_Post_Settings implements Vc_Render {
 	 */
 	public function renderUITemplate() {
 		vc_include_template( 'editors/popups/vc_ui-panel-post-settings.tpl.php', array(
-			'box' => $this
+			'box' => $this,
 		) );
 	}
 }

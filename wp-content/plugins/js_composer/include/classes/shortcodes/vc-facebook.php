@@ -3,10 +3,10 @@
 class WPBakeryShortCode_VC_Facebook extends WPBakeryShortCode {
 	protected function contentInline( $atts, $content = null ) {
 		extract( shortcode_atts( array(
-			'type' => 'standard',//standard, button_count, box_count
-			'url' => ''
+			'type' => 'standard', //standard, button_count, box_count
+			'url' => '',
 		), $atts ) );
-		if ( $url === '' ) {
+		if ( '' === $url ) {
 			$url = get_permalink();
 		}
 

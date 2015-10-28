@@ -66,7 +66,7 @@ function vc_attachment_filter_field( $form_fields, $post ) {
 				</select>
 			</div>',
 		'value' => get_post_meta( $post->ID, 'vc_image_filter', true ),
-		'helps' => ''
+		'helps' => '',
 	);
 
 	return $form_fields;
@@ -89,15 +89,18 @@ function vc_attachment_filter_field( $form_fields, $post ) {
  * @return string json
  */
 function vc_media_editor_add_image() {
-	if ( ! vc_verify_admin_nonce() || ! current_user_can( 'upload_files' ) ) {
-		die();
-	}
+	vc_user_access()
+		->checkAdminNonce()
+		->validateDie()
+		->wpAny( 'upload_files' )
+		->validateDie();
+
 	require_once vc_path_dir( 'APP_ROOT', 'vendor/mmihey/PHP-Instagram-effects/src/Image/Filter.php' );
 	$response = array(
 		'success' => true,
 		'data' => array(
-			'ids' => array()
-		)
+			'ids' => array(),
+		),
 	);
 
 	$filters = (array) vc_post_param( 'filters', array() );
@@ -117,7 +120,7 @@ function vc_media_editor_add_image() {
 	$overrides = array( 'action' => $action );
 	$_POST = array( 'action' => $action );
 
-	foreach ( $ids as $k => $attachment_id ) {
+	foreach ( $ids as $key => $attachment_id ) {
 		if ( ! empty( $filters[ $attachment_id ] ) ) {
 			$filter_name = $filters[ $attachment_id ];
 		} else {
@@ -137,7 +140,7 @@ function vc_media_editor_add_image() {
 		}
 
 		$extension = strtolower( pathinfo( $temp_path, PATHINFO_EXTENSION ) );
-
+		$mime_type = '';
 		switch ( $extension ) {
 			case 'jpeg':
 			case 'jpg':
@@ -178,8 +181,8 @@ function vc_media_editor_add_image() {
 				'type' => $mime_type,
 				'tmp_name' => $temp_path,
 				'error' => UPLOAD_ERR_OK,
-				'size' => filesize( $temp_path )
-			)
+				'size' => filesize( $temp_path ),
+			),
 		);
 
 		$new_attachment_id = media_handle_upload( $file_key, $post_id, $post_data, $overrides );
@@ -190,7 +193,7 @@ function vc_media_editor_add_image() {
 
 		update_post_meta( $new_attachment_id, 'vc-applied-image-filter', $filter_name );
 
-		$ids[ $k ] = $new_attachment_id;
+		$ids[ $key ] = $new_attachment_id;
 	}
 
 	$response['data']['ids'] = $ids;
@@ -210,16 +213,19 @@ function vc_media_editor_add_image() {
  * @return void Results are sent out as json
  */
 function vc_media_editor_preview_image() {
-	if ( ! vc_verify_admin_nonce() || ! current_user_can( 'upload_files' ) ) {
-		die();
-	}
+	vc_user_access()
+		->checkAdminNonce()
+		->validateDie()
+		->wpAny( 'upload_files' )
+		->validateDie();
+
 	require_once vc_path_dir( 'APP_ROOT', 'vendor/mmihey/PHP-Instagram-effects/src/Image/Filter.php' );
 
 	$response = array(
 		'success' => true,
 		'data' => array(
-			'src' => ''
-		)
+			'src' => '',
+		),
 	);
 
 	$filter_name = vc_post_param( 'filter', '' );

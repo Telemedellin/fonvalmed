@@ -6,7 +6,7 @@ class WPBakeryShortCode_VC_TweetMeMe extends WPBakeryShortCode {
 		 * @var $type
 		 */
 		extract( shortcode_atts( array(
-			'type' => 'horizontal'//horizontal, vertical, none
+			'type' => 'horizontal',//horizontal, vertical, none
 		), $atts ) );
 
 		$css = isset( $atts['css'] ) ? $atts['css'] : '';

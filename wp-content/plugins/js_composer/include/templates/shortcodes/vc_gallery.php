@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -18,6 +19,7 @@
  * Shortcode class
  * @var $this WPBakeryShortCode_VC_gallery
  */
+$thumbnail = '';
 $title = $source = $type = $onclick = $custom_links = $custom_links_target = $img_size = $external_img_size = $images = $custom_srcs = $el_class = $interval = $css = '';
 $large_img_src = '';
 
@@ -43,14 +45,14 @@ if ( 'nivo' === $type ) {
 
 	$slides_wrap_start = '<div class="nivoSlider">';
 	$slides_wrap_end = '</div>';
-} else if ( 'flexslider' === $type || 'flexslider_fade' === $type || 'flexslider_slide' === $type || 'fading' === $type ) {
+} elseif ( 'flexslider' === $type || 'flexslider_fade' === $type || 'flexslider_slide' === $type || 'fading' === $type ) {
 	$el_start = '<li>';
 	$el_end = '</li>';
 	$slides_wrap_start = '<ul class="slides">';
 	$slides_wrap_end = '</ul>';
 	wp_enqueue_style( 'flexslider' );
 	wp_enqueue_script( 'flexslider' );
-} else if ( 'image_grid' === $type ) {
+} elseif ( 'image_grid' === $type ) {
 	wp_enqueue_script( 'vc_grid-js-imagesloaded' );
 	wp_enqueue_script( 'isotope' );
 
@@ -69,10 +71,10 @@ $flex_fx = '';
 if ( 'flexslider' === $type || 'flexslider_fade' === $type || 'fading' === $type ) {
 	$type = ' wpb_flexslider flexslider_fade flexslider';
 	$flex_fx = ' data-flex_fx="fade"';
-} else if ( 'flexslider_slide' === $type ) {
+} elseif ( 'flexslider_slide' === $type ) {
 	$type = ' wpb_flexslider flexslider_slide flexslider';
 	$flex_fx = ' data-flex_fx="slide"';
-} else if ( 'image_grid' === $type ) {
+} elseif ( 'image_grid' === $type ) {
 	$type = ' wpb_image_grid';
 }
 

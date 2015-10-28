@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Get woocommerce data for product
  *
@@ -15,14 +16,14 @@ function vc_gitem_template_attribute_woocommerce_product( $value, $data ) {
 	 */
 	extract( array_merge( array(
 		'post' => null,
-		'data' => ''
+		'data' => '',
 	), $data ) );
 	require_once WC()->plugin_path() . '/includes/abstracts/abstract-wc-product.php';
 	$product = new WC_Product( $post );
 	if ( preg_match( '/_labeled$/', $data ) ) {
 		$data = preg_replace( '/_labeled$/', '', $data );
 		$label = apply_filters( 'vc_gitem_template_attribute_woocommerce_product_' . $data . '_label',
-			Vc_Vendor_Woocommerce::getProductFieldLabel( $data ) . ': ' );
+		Vc_Vendor_Woocommerce::getProductFieldLabel( $data ) . ': ' );
 	}
 	$price_format = get_woocommerce_price_format();
 	switch ( $data ) {
@@ -34,16 +35,16 @@ function vc_gitem_template_attribute_woocommerce_product( $value, $data ) {
 			break;
 		case 'price':
 			$value = sprintf( $price_format, wc_format_decimal( $product->get_price(), 2 ),
-				get_woocommerce_currency() );
+			get_woocommerce_currency() );
 			break;
 		case 'regular_price':
 			$value = sprintf( $price_format, wc_format_decimal( $product->get_regular_price(), 2 ),
-				get_woocommerce_currency() );
+			get_woocommerce_currency() );
 			break;
 		case 'sale_price':
 			$value = sprintf( get_woocommerce_price_format(),
 				$product->get_sale_price() ? wc_format_decimal( $product->get_sale_price(), 2 ) : '',
-				get_woocommerce_currency() );
+			get_woocommerce_currency() );
 			break;
 		case 'price_html':
 			$value = $product->get_price_html();
@@ -72,8 +73,8 @@ function vc_gitem_template_attribute_woocommerce_product( $value, $data ) {
 	}
 
 	return strlen( $value ) > 0 ? $label . apply_filters( 'vc_gitem_template_attribute_woocommerce_product_'
-	                                                      . $data . '_value',
-			$value ) : '';
+		. $data . '_value',
+	$value ) : '';
 }
 
 /**
@@ -92,14 +93,14 @@ function vc_gitem_template_attribute_woocommerce_order( $value, $data ) {
 	 */
 	extract( array_merge( array(
 		'post' => null,
-		'data' => ''
+		'data' => '',
 	), $data ) );
 	require_once WC()->plugin_path() . '/includes/class-wc-order.php';
 	$order = new WC_Order( $post->ID );
 	if ( preg_match( '/_labeled$/', $data ) ) {
 		$data = preg_replace( '/_labeled$/', '', $data );
 		$label = apply_filters( 'vc_gitem_template_attribute_woocommerce_order_' . $data . '_label',
-			Vc_Vendor_Woocommerce::getOrderFieldLabel( $data ) . ': ' );
+		Vc_Vendor_Woocommerce::getOrderFieldLabel( $data ) . ': ' );
 	}
 	switch ( $data ) {
 		case 'id':
@@ -110,7 +111,7 @@ function vc_gitem_template_attribute_woocommerce_order( $value, $data ) {
 			break;
 		case 'total':
 			$value = sprintf( get_woocommerce_price_format(), wc_format_decimal( $order->get_total(), 2 ),
-				$order->order_currency );
+			$order->order_currency );
 			break;
 		case 'payment_method':
 			$value = $order->payment_method_title;
@@ -131,8 +132,7 @@ function vc_gitem_template_attribute_woocommerce_order( $value, $data ) {
 			$value = $order->$data;
 	}
 
-	return strlen( $value ) > 0 ? $label . apply_filters( 'vc_gitem_template_attribute_woocommerce_order_' . $data . '_value'
-			, $value ) : '';
+	return strlen( $value ) > 0 ? $label . apply_filters( 'vc_gitem_template_attribute_woocommerce_order_' . $data . '_value', $value ) : '';
 }
 
 /**
@@ -152,7 +152,7 @@ function vc_gitem_template_attribute_woocommerce_product_link( $value, $data ) {
 	 */
 	extract( array_merge( array(
 		'post' => null,
-		'data' => ''
+		'data' => '',
 	), $data ) );
 	$link = do_shortcode( '[add_to_cart_url id="' . $post->ID . '"]' );
 
