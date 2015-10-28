@@ -1,0 +1,82 @@
+/**
+  Copyright (C) <2015>  Vasyl Martyniuk <vasyl@vasyltech.com>
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ */
+ 
+ .header-logo {
+    background-image: url('images/logo.png');
+    display: inline-block;
+    min-height: 16px;
+    background-position: left center;
+    padding-left: 25px;
+    background-repeat: no-repeat;
+ }
+ 
+ .metabox-holder h3 {
+     font-size: 16px;
+ }
+ 
+.config-area {
+    width: 75%;
+}
+
+h3.hndle small {
+    font-weight: normal;
+}
+
+.control-area {
+    width:20%; 
+    margin-left: 2%;
+}
+
+.configpress-editor {
+    width:100%; 
+    min-height: 300px;
+}
+
+.postbox .inside {
+    padding-bottom: 0;
+}
+
+.status {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    left: 15px;
+    visibility: hidden;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+.status.success {
+    background-image: url('images/success.svg');
+}
+
+.status.failure {
+    background-image: url('images/failure.svg');
+}
+
+.error-message {
+    margin-left: 30px;
+}
+
+.hndle a {
+    text-decoration: none;
+}
