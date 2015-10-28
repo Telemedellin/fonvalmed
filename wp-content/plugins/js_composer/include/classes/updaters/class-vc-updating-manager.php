@@ -94,7 +94,7 @@ class Vc_Updating_Manager {
 	/**
 	 * Add our self-hosted description to the filter
 	 *
-	 * @param boolean $false
+	 * @param bool $false
 	 * @param array $action
 	 * @param object $arg
 	 *
@@ -111,7 +111,7 @@ class Vc_Updating_Manager {
 			$array_replace = array(
 				'<h4>$2</h4>',
 				'</div><div>',
-				'</div><div>'
+				'</div><div>',
 			);
 			$information->name = vc_updater()->title;
 			$information->sections['changelog'] = '<div>' . preg_replace( $array_pattern, $array_replace, $information->sections['changelog'] ) . '</div>';
@@ -153,7 +153,7 @@ class Vc_Updating_Manager {
 	/**
 	 * Return the status of the plugin licensing
 	 *
-	 * @return boolean $remote_license
+	 * @return bool $remote_license
 	 */
 	public function getRemote_license() {
 		$request = wp_remote_post( $this->update_path, array( 'body' => array( 'action' => 'license' ) ) );

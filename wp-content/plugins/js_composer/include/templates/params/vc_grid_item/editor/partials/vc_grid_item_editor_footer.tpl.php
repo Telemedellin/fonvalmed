@@ -14,14 +14,23 @@ $edit_layout->render();
 $grid_item = new Vc_Grid_Item();
 $shortcodes = $grid_item->shortcodes();
 
-require_once vc_path_dir( 'AUTOLOAD_DIR', 'class-vc-settings-presets.php' );
+if ( vc_user_access()->part( 'presets' )->can()->get() ) {
+	require_once vc_path_dir( 'AUTOLOAD_DIR', 'class-vc-settings-presets.php' );
+	$vc_settings_presets = Vc_Settings_Preset::listDefaultSettingsPresets();
+	$vc_vendor_settings_presets = Vc_Settings_Preset::listDefaultVendorSettingsPresets();
+} else {
+	$vc_settings_presets = array();
+	$vc_vendor_settings_presets = array();;
+}
+
 ?>
 	<script type="text/javascript">
-		var vc_user_mapper = <?php echo json_encode(WpbMap_Grid_Item::getGitemUserShortCodes()) ?>,
-			vc_mapper = <?php echo json_encode(WpbMap_Grid_Item::getShortCodes()) ?>,
-			vc_settings_presets = <?php echo json_encode(Vc_Settings_Preset::listDefaultSettingsPresets()) ?>,
+		var vc_user_mapper = <?php echo json_encode( WpbMap_Grid_Item::getGitemUserShortCodes() ) ?>,
+			vc_mapper = <?php echo json_encode( WpbMap_Grid_Item::getShortCodes() ) ?>,
+			vc_vendor_settings_presets = <?php echo json_encode( $vc_vendor_settings_presets ) ?>,
+			vc_settings_presets = <?php echo json_encode( $vc_settings_presets ) ?>,
 			vc_frontend_enabled = false,
-			vc_mode = '<?php echo vc_mode() ?>',
+			vc_mode = '<?php echo vc_mode(); ?>',
 			vcAdminNonce = '<?php echo vc_generate_nonce( 'vc-admin-nonce' ); ?>';
 	</script>
 
@@ -30,13 +39,15 @@ require_once vc_path_dir( 'AUTOLOAD_DIR', 'class-vc-settings-presets.php' );
 			<div class="inner" style="width: 80px; height: 80px; overflow: hidden;text-align: center;">
 				<img rel="<%= id %>" src="<%= url %>"/>
 			</div>
-			<a href="#" class="icon-remove"></a>
+			<a href="#" class="vc_icon-remove"></a>
 		</li>
 	</script>
-<?php foreach ( WpbMap_Grid_Item::getGitemUserShortCodes() as $sc_base => $el ): ?>
+<?php foreach ( WpbMap_Grid_Item::getShortCodes() as $sc_base => $el ) :  ?>
 	<script type="text/html" id="vc_shortcode-template-<?php echo $sc_base ?>">
 		<?php
 		echo visual_composer()->getShortCode( $sc_base )->template();
 		?>
 	</script>
-<?php endforeach; ?>
+<?php endforeach ?>
+
+<?php vc_include_template( 'editors/partials/access-manager-js.tpl.php' );

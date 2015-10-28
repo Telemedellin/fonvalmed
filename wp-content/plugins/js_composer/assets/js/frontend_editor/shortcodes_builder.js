@@ -241,7 +241,7 @@
 				url: url || vc.admin_ajax,
 				type: 'POST',
 				dataType: 'html',
-				data: _.extend( { post_id: vc.post_id, vc_inline: true }, data ),
+				data: _.extend( { post_id: vc.post_id, vc_inline: true, _vcnonce: window.vcAdminNonce }, data ),
 				context: this
 			} );
 		},

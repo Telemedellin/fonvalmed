@@ -18,7 +18,7 @@ if ( _.isUndefined( window.vc ) ) {
 			interpolate: /\{\{\{([\s\S]+?)\}\}\}/g,
 			escape: /\{\{([^\}]+?)\}\}(?!\})/g
 		},
-		removeOldDesignOptions
+		removeOldDesignOptions;
 
 	media.controller.VcCssSingleImage = media.controller.VcSingleImage.extend( {
 		setCssEditor: function ( view ) {
@@ -66,7 +66,7 @@ if ( _.isUndefined( window.vc ) ) {
 		simplify: false,
 		$simplify: false,
 		events: {
-			'click .icon-remove': 'removeImage',
+			'click .vc_icon-remove': 'removeImage',
 			'click .vc_add-image': 'addBackgroundImage',
 			'change .vc_simplify': 'changeSimplify'
 		},

@@ -4,7 +4,7 @@
  * Class Vc_Hooks_Vc_Grid
  * @since 4.4
  */
-Class Vc_Hooks_Vc_Grid implements Vc_Vendor_Interface {
+class Vc_Hooks_Vc_Grid implements Vc_Vendor_Interface {
 	protected $grid_id_unique_name = 'vc_gid'; // if you change this also change in vc-basic-grid.php
 
 	/**
@@ -17,43 +17,39 @@ Class Vc_Hooks_Vc_Grid implements Vc_Vendor_Interface {
 
 		// Hook for set post settings meta with shortcodes data
 		/**
-		 * Filter called after page saved, used to append some post meta for post
-		 * Used to save appended grid shortcodes to post meta with serialized array,
-		 * @see Vc_Hooks_Vc_Grid::gridSavePostSettings (fetching shortcodes and return it data) and Vc_Hooks_Vc_Grid::get_shortcode_regex (search exact shortcode in content)
-		 * @see Vc_Post_Admin::setSettings for filter info
-		 * @deprecated 4.4.3 due to invalid hash algorithm on saving.
-		 */
-		add_filter( 'vc_hooks_vc_post_settings', array(
-			&$this,
-			'gridSavePostSettings'
-		), 10, 3 );
-		/**
 		 * @since 4.4.3
 		 */
 		add_filter( 'vc_hooks_vc_post_settings', array(
 			&$this,
-			'gridSavePostSettingsId'
+			'gridSavePostSettingsId',
 		), 10, 3 );
 		/**
 		 * Used to output shortcode data for ajax request. called on any page request.
 		 */
-		add_action( 'wp_ajax_vc_get_vc_grid_data', array( &$this, 'getGridDataForAjax' ) );
-		add_action( 'wp_ajax_nopriv_vc_get_vc_grid_data', array( &$this, 'getGridDataForAjax' ) );
+		add_action( 'wp_ajax_vc_get_vc_grid_data', array(
+			&$this,
+			'getGridDataForAjax',
+		) );
+		add_action( 'wp_ajax_nopriv_vc_get_vc_grid_data', array(
+			&$this,
+			'getGridDataForAjax',
+		) );
 	}
 
 	/**
-	 * @since 4.4.3
-	 * @deprecated and should not be used and will be removed in future!
+	 * @since 4.4
+	 * @deprecated and should not be used and will be removed in future! since 4.4.3
 	 * @return string
 	 */
 	private function getShortcodeRegexForHash() {
+		_deprecated_function( 'Vc_Hooks_Vc_Grid: getShortcodeRegexForHash method', '4.4.3', 'getShortcodeRegexForId' );
 		$tagnames = apply_filters( 'vc_grid_shortcodes_tags', array(
 			'vc_basic_grid',
 			'vc_masonry_grid',
 			'vc_media_grid',
-			'vc_masonry_media_grid'
+			'vc_masonry_media_grid',
 		) ); // return only grid shortcodes
-		$tagregexp = join( '|', array_map( 'preg_quote', $tagnames ) );
+		$tagregexp = implode( '|', array_map( 'preg_quote', $tagnames ) );
 
 		// WARNING! Do not change this regex without changing do_shortcode_tag() and strip_shortcode_tag()
 		// Also, see shortcode_unautop() and shortcode.js.
@@ -97,7 +93,7 @@ Class Vc_Hooks_Vc_Grid implements Vc_Vendor_Interface {
 		return
 			'\\['                              // Opening bracket
 			. '(\\[?)'                           // 1: Optional second opening bracket for escaping shortcodes: [[tag]]
-			. "([\\w-_]+)"                     // 2: Shortcode name
+			. '([\\w-_]+)'                     // 2: Shortcode name
 			. '(?![\\w-])'                       // Not followed by word character or hyphen
 			. '('                                // 3: Unroll the loop: Inside the opening shortcode tag
 			. '[^\\]\\/]*'                   // Not a closing bracket or forward slash
@@ -145,6 +141,8 @@ Class Vc_Hooks_Vc_Grid implements Vc_Vendor_Interface {
 	 * @return array - shortcode settings to save.
 	 */
 	public function gridSavePostSettings( array $settings, $post_id, $post ) {
+		_deprecated_function( 'Vc_Hooks_Vc_Grid: gridSavePostSettings method', '4.4.3', 'gridSavePostSettingsId' );
+
 		$pattern = $this->getShortcodeRegexForHash();
 		preg_match_all( "/$pattern/", $post->post_content, $found ); // fetch only needed shortcodes
 		$settings['vc_grid'] = array();
@@ -152,7 +150,7 @@ Class Vc_Hooks_Vc_Grid implements Vc_Vendor_Interface {
 			$to_save = array();
 			if ( isset( $found[3] ) && is_array( $found[3] ) ) {
 				foreach ( $found[3] as $key => $shortcode_atts ) {
-					if ( strpos( $shortcode_atts, 'vc_gid:' ) !== false ) {
+					if ( false !== strpos( $shortcode_atts, 'vc_gid:' ) ) {
 						continue;
 					}
 					$atts = shortcode_parse_atts( $shortcode_atts );
@@ -190,7 +188,7 @@ Class Vc_Hooks_Vc_Grid implements Vc_Vendor_Interface {
 			$to_save = array();
 			if ( isset( $found[1] ) && is_array( $found[1] ) ) {
 				foreach ( $found[1] as $key => $parse_able ) {
-					if ( empty( $parse_able ) || $parse_able !== '[' ) {
+					if ( empty( $parse_able ) || '[' !== $parse_able ) {
 						$id_pattern = '/' . $this->grid_id_unique_name . '\:([\w-_]+)/';
 						$id_value = $found[4][ $key ];
 
@@ -241,12 +239,12 @@ Class Vc_Hooks_Vc_Grid implements Vc_Vendor_Interface {
 				if ( method_exists( $vc_grid, 'isObjectPageable' ) && $vc_grid->isObjectPageable()
 				     && method_exists( $vc_grid, 'renderAjax' )
 				) {
-					die( $vc_grid->renderAjax( vc_request_param( 'data' ) ) );
+					echo $vc_grid->renderAjax( vc_request_param( 'data' ) );
+					die();
 				}
 			}
 		}
 	}
-
 }
 
 /**
@@ -257,3 +255,27 @@ $hook = new Vc_Hooks_Vc_Grid();
 
 // when visual composer initialized let's trigger Vc_Grid hooks.
 add_action( 'vc_after_init', array( $hook, 'load' ) );
+
+VcShortcodeAutoloader::getInstance()
+					 ->includeClass( 'WPBakeryShortCode_VC_Basic_Grid' );
+
+
+add_filter( 'vc_edit_form_fields_attributes_vc_basic_grid', array(
+	'WPBakeryShortCode_VC_Basic_Grid',
+	'convertButton2ToButton3',
+) );
+
+add_filter( 'vc_edit_form_fields_attributes_vc_media_grid', array(
+	'WPBakeryShortCode_VC_Basic_Grid',
+	'convertButton2ToButton3',
+) );
+
+add_filter( 'vc_edit_form_fields_attributes_vc_masonry_grid', array(
+	'WPBakeryShortCode_VC_Basic_Grid',
+	'convertButton2ToButton3',
+) );
+
+add_filter( 'vc_edit_form_fields_attributes_vc_masonry_media_grid', array(
+	'WPBakeryShortCode_VC_Basic_Grid',
+	'convertButton2ToButton3',
+) );
