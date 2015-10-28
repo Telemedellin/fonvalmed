@@ -24,7 +24,7 @@
 				<div class="edit_form_line">
 					<pre id="wpb_csseditor" class="wpb_content_element custom_css wpb_frontend"></pre>
 					<span
-						class="vc_description vc_clearfix"><?php _e( 'Enter custom CSS (Note: it will be outputted only on this particular page).', "js_composer" ) ?></span>
+						class="vc_description vc_clearfix"><?php _e( 'Enter custom CSS (Note: it will be outputted only on this particular page).', 'js_composer' ) ?></span>
 				</div>
 			</div>
 		</div>

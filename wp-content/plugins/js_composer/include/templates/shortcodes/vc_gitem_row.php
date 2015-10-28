@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -14,7 +15,7 @@ $css = $el_class = $position = '';
 extract( shortcode_atts( array(
 	'css' => '',
 	'el_class' => '',
-	'position' => 'top'
+	'position' => 'top',
 ), $atts ) );
 
 $css_class = 'vc_gitem_row vc_row'

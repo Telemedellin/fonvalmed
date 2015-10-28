@@ -5,7 +5,7 @@
  *
  * @since 4.4
  */
-Class Vc_Post_Admin {
+class Vc_Post_Admin {
 	/**
 	 * Add hooks required to save, update and manipulate post
 	 */
@@ -27,7 +27,12 @@ Class Vc_Post_Admin {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+
+		// @todo fix_roles maybe check also for is vc_enabled
+		if ( ! vc_user_access()
+			->wpAny( array( 'edit_post', $post_id ) )
+			->get()
+		) {
 			return;
 		}
 		$this->setJsStatus( $post_id );
@@ -48,15 +53,15 @@ Class Vc_Post_Admin {
 	 */
 	public function setJsStatus( $post_id ) {
 		$value = vc_post_param( 'wpb_vc_js_status' );
-		if ( $value !== null ) {
+		if ( null !== $value ) {
 			// Add value
-			if ( get_post_meta( $post_id, '_wpb_vc_js_status' ) === '' ) {
+			if ( '' === get_post_meta( $post_id, '_wpb_vc_js_status' ) ) {
 				add_post_meta( $post_id, '_wpb_vc_js_status', $value, true );
 			} // Update value
-			elseif ( $value != get_post_meta( $post_id, '_wpb_vc_js_status', true ) ) {
+			elseif ( get_post_meta( $post_id, '_wpb_vc_js_status', true ) != $value ) {
 				update_post_meta( $post_id, '_wpb_vc_js_status', $value );
 			} // Delete value
-			elseif ( $value === '' ) {
+			elseif ( '' === $value ) {
 				delete_post_meta( $post_id, '_wpb_vc_js_status', get_post_meta( $post_id, '_wpb_vc_js_status', true ) );
 			}
 		}
@@ -65,11 +70,11 @@ Class Vc_Post_Admin {
 	/**
 	 * Saves VC interface version which is used for building post content.
 	 * @since 4.4
-	 *
+	 * @todo check is it used everywhere and is it needed?!
 	 * @param $post_id
 	 */
 	public function setInterfaceVersion( $post_id ) {
-		if ( ( $value = vc_post_param( 'wpb_vc_js_interface_version' ) ) !== null ) {
+		if ( null !== ( $value = vc_post_param( 'wpb_vc_js_interface_version' ) ) ) {
 			update_post_meta( $post_id, '_wpb_vc_js_interface_version', $value );
 		}
 	}

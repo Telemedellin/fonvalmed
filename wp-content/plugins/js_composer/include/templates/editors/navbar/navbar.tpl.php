@@ -5,7 +5,7 @@
 		<?php echo $nav_bar->getLogo() ?>
 	</div>
 	<ul class="vc_navbar-nav">
-		<?php foreach ( $controls as $control ): echo $control[1]; endforeach; ?>
+		<?php foreach ( $controls as $control ) :  echo $control[1]; endforeach; ?>
 	</ul>
 	<!--/.nav-collapse -->
 </div>

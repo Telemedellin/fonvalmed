@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WPBakery Visual Composer shortcodes attributes class.
  *
@@ -67,7 +68,10 @@ class WpbakeryShortcodeParams {
 	 */
 	public static function registerScript( $script ) {
 		$script_name = 'vc_edit_form_enqueue_script_' . md5( $script );
-		self::$enqueue_script[] = array( 'name' => $script_name, 'script' => $script );
+		self::$enqueue_script[] = array(
+			'name' => $script_name,
+			'script' => $script,
+		);
 	}
 
 	/**
@@ -79,7 +83,7 @@ class WpbakeryShortcodeParams {
 				wp_register_script( $item['name'], $item['script'], array(
 					'jquery',
 					'wp-color-picker',
-					'wpb_js_composer_js_view'
+					'wpb_js_composer_js_view',
 				), WPB_VC_VERSION, true );
 				wp_enqueue_script( $item['name'] );
 			}
@@ -105,8 +109,8 @@ class WpbakeryShortcodeParams {
 		if ( ! empty( $name ) && ! empty( $form_field_callback ) ) {
 			self::$params[ $name ] = array(
 				'callbacks' => array(
-					'form' => $form_field_callback
-				)
+					'form' => $form_field_callback,
+				),
 			);
 			$result = true;
 
@@ -192,10 +196,12 @@ function vc_add_shortcode_param( $name, $form_field_callback, $script_url = null
  * @param $script_url - javascript file url which will be attached at the end of settings form.
  *
  * @since 4.2
- * @deprecated due to without prefix name
+ * @deprecated due to without prefix name 4.4
  * @return bool
  */
 function add_shortcode_param( $name, $form_field_callback, $script_url = null ) {
+	_deprecated_function( 'add_shortcode_param', '4.4', 'vc_add_shortcode_param' );
+
 	return vc_add_shortcode_param( $name, $form_field_callback, $script_url );
 }
 
@@ -208,10 +214,12 @@ function add_shortcode_param( $name, $form_field_callback, $script_url = null ) 
  * @param $tag - attribute tag
  *
  * @since 4.2
- * @deprecated due to without prefix function
+ * @deprecated due to without prefix function 4.4
  * @return mixed|string - returns html which will be render in hook
  */
 function do_shortcode_param_settings_field( $name, $param_settings, $param_value, $tag ) {
+	_deprecated_function( 'do_shortcode_param_settings_field', '4.4', 'vc_do_shortcode_param_settings_field' );
+
 	return vc_do_shortcode_param_settings_field( $name, $param_settings, $param_value, $tag );
 }
 
@@ -229,7 +237,6 @@ function do_shortcode_param_settings_field( $name, $param_settings, $param_value
 function vc_do_shortcode_param_settings_field( $name, $param_settings, $param_value, $tag ) {
 	return WpbakeryShortcodeParams::renderSettingsField( $name, $param_settings, $param_value, $tag );
 }
-
 /**
  * Helper function to create tag attributes string for linked attributes of shortcode.
  *
@@ -237,8 +244,10 @@ function vc_do_shortcode_param_settings_field( $name, $param_settings, $param_va
  *
  * @since 4.2
  * @return string
- * @deprecated
+ * @deprecated 4.8
  */
 function vc_generate_dependencies_attributes( $settings ) {
+	_deprecated_function( 'vc_generate_dependencies_attributes', '4.8' );
+
 	return '';
 }
