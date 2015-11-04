@@ -1,0 +1,15 @@
+table.cmb_metabox textarea.cmb_textarea_code{font-family:'Open Sans',sans-serif!important}
+p.cmb_metabox_description{font-family:'Open Sans',sans-serif!important;color:#AAA!important;font-style:italic!important;line-height:1.3!important}
+table.cmb_metabox .cmb_media_status .img_status{max-width:150px}
+input.regular-text{width:100%!important}
+table.cmb_metabox input.cmb_text_medium{width:50%!important;min-width:250px}
+.ts-post-font-icon{display:inline-block;font-size:18px;line-height:18px;margin:0;padding:0;border:none;text-align:center;-moz-box-sizing:content-box!important;-webkit-box-sizing:content-box!important;box-sizing:content-box!important;o-box-sizing:content-box!important;vertical-align:middle}
+#ts_vcsc_timeline_media_featuredslider_status li{width:85px;height:85px;margin-right:10px;margin-bottom:10px}
+#ts_vcsc_timeline_media_featuredslider_status li img{width:75px;height:75px;margin:0 auto}
+table tr.cmb_id_ts_vcsc_testimonial_basic_author td,table tr.cmb_id_ts_vcsc_testimonial_basic_author th{border:none!important}
+table tr.cmb_id_ts_vcsc_testimonial_basic_content,table tr.cmb_id_ts_vcsc_testimonial_basic_image,table tr.cmb_id_ts_vcsc_testimonial_basic_title{display:none}
+.ts-posts-widgets-critical,.ts-posts-widgets-info,.ts-posts-widgets-warning{background:#fff;border-left:4px solid #fff;-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,.1);box-shadow:0 1px 1px 0 rgba(0,0,0,.1);padding:1px 12px;margin:5px 0 15px;color:#444;font-family:"Open Sans",sans-serif;font-size:13px;line-height:1.4em;text-align:justify}
+.ts-posts-widgets-info{border-color:#7ad03a}
+.ts-posts-widgets-warning{border-color:#E8C61A}
+.ts-posts-widgets-critical{border-color:#dd3d36}
+.ts-posts-widgets-critical p,.ts-posts-widgets-info p,.ts-posts-widgets-warning p{line-height:1em}
