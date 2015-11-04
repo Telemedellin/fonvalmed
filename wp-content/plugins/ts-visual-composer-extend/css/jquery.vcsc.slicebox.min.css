@@ -1,0 +1,39 @@
+@font-face{font-family:flexslider-icon;src:url(../icons/flexslider-icons/flexslider.eot?) format('eot'),url(../icons/flexslider-icons/flexslider.eot?#iefix) format('embedded-opentype'),url(../icons/flexslider-icons/flexslider.woff) format('woff'),url(../icons/flexslider-icons/flexslider.ttf) format('truetype'),url(../icons/flexslider-icons/flexslider.svg#flexslider) format('svg');font-weight:400;font-style:normal}
+.ts-lightbox-gallery-slicebox{position:relative;width:100%;margin:0;padding:0}
+.ts-lightbox-gallery-slicebox .sb-slider{margin:0 auto;position:relative;overflow:hidden;width:100%;list-style-type:none;padding:0}
+.ts-lightbox-gallery-slicebox .sb-slider li{margin:0;padding:0;display:none}
+.ts-lightbox-gallery-slicebox .sb-slider li>a{outline:0}
+.ts-lightbox-gallery-slicebox .sb-slider li>a img{border:none}
+.ts-lightbox-gallery-slicebox .sb-slider img{max-width:100%;display:block}
+.ts-lightbox-gallery-slicebox .sb-description{padding:20px;bottom:10px;left:10px;right:10px;z-index:1000;position:absolute;background:#CBBFAE;background:rgba(190,176,155,.5);border-left:4px solid rgba(255,255,255,.8);-ms-filter:"alpha(Opacity=0)";filter:alpha(opacity=0);opacity:0;color:#fff;-webkit-transition:all 200ms;-moz-transition:all 200ms;-o-transition:all 200ms;-ms-transition:all 200ms;transition:all 200ms}
+.ts-lightbox-gallery-slicebox .sb-slider li.sb-current .sb-description{-ms-filter:"alpha(Opacity=80)";filter:alpha(opacity=80);opacity:1}
+.sb-slider li.sb-current .sb-description:hover{-ms-filter:"alpha(Opacity=99)";filter:alpha(opacity=99);background:rgba(190,176,155,.8)}
+.ts-lightbox-gallery-slicebox .sb-perspective{position:relative}
+.ts-lightbox-gallery-slicebox .sb-perspective>div{position:absolute;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-o-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden}
+.ts-lightbox-gallery-slicebox .sb-side{margin:0;display:block;position:absolute;-moz-backface-visibility:hidden;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d}
+.ts-lightbox-gallery-slicebox .sb-description h3{font-size:20px;text-shadow:1px 1px 1px rgba(0,0,0,.3)}
+.ts-lightbox-gallery-slicebox .sb-description h3 a{color:#4a3c27;text-shadow:0 1px 1px rgba(255,255,255,.5)}
+.ts-lightbox-gallery-slicebox .nav-arrows{display:none;height:0;width:100%;position:absolute;top:50%;left:0;margin:0;padding:0}
+.ts-lightbox-gallery-slicebox .nav-arrows a{text-decoration:none;display:block;width:50px;height:50px;margin:-50px 0 0 0;position:absolute;top:50%;z-index:10;overflow:hidden;opacity:0;cursor:pointer;color:rgba(0,0,0,.8);text-shadow:1px 1px 0 rgba(255,255,255,.3);-webkit-transition:all .3s ease;-moz-transition:all .3s ease;transition:all .3s ease;background-color:rgba(0,0,0,.5);padding:0;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+.ts-lightbox-gallery-slicebox .nav-arrows a:before{font-family:flexslider-icon;font-size:40px;height:40px;line-height:40px;margin:0;padding:0;display:inline-block;content:'\f001';-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;color:#ededed;position:absolute;top:5px}
+.ts-lightbox-gallery-slicebox .nav-arrows a.ts-slicebox-controls-next{right:0;left:auto}
+.ts-lightbox-gallery-slicebox .nav-arrows a.ts-slicebox-controls-next:before{right:10px;left:auto;content:'\f002'}
+.ts-lightbox-gallery-slicebox .nav-arrows a.ts-slicebox-controls-prev{left:0;right:auto}
+.ts-lightbox-gallery-slicebox .nav-arrows a.ts-slicebox-controls-prev:before{left:10px;right:auto;content:'\f001'}
+.ts-lightbox-gallery-slicebox:hover .nav-arrows a.ts-slicebox-controls-next{right:0;opacity:.7}
+.ts-lightbox-gallery-slicebox:hover .nav-arrows a.ts-slicebox-controls-prev{left:0;opacity:.7}
+.ts-lightbox-gallery-slicebox:hover .nav-arrows a.ts-slicebox-controls-next:hover,.ts-lightbox-gallery-slicebox:hover .nav-arrows a.ts-slicebox-controls-prev:hover{opacity:1}
+.ts-lightbox-gallery-slicebox .nav-dots{text-align:center;position:relative;height:30px;width:100%;display:none;margin-top:10px}
+.ts-lightbox-gallery-slicebox .nav-dots span{display:inline-block;width:16px;height:16px;border-radius:50%;margin:3px;background:#cbbfae;cursor:pointer;box-shadow:0 1px 1px rgba(255,255,255,.6),inset 0 1px 1px rgba(0,0,0,.1)}
+.ts-lightbox-gallery-slicebox .nav-dots span.nav-dot-current{box-shadow:0 1px 1px rgba(255,255,255,.6),inset 0 1px 1px rgba(0,0,0,.1),inset 0 0 0 3px #cbbfae,inset 0 0 0 8px #fff}
+.ts-lightbox-gallery-slicebox .nav-options{width:80px;height:30px;position:absolute;left:0;top:0;display:none}
+.ts-lightbox-gallery-slicebox .nav-options span{text-decoration:none;display:block;width:40px;height:30px;margin:0;position:absolute;top:0;z-index:10;overflow:hidden;opacity:0;cursor:pointer;color:rgba(0,0,0,.8);text-shadow:1px 1px 0 rgba(255,255,255,.3);-webkit-transition:all .3s ease;-moz-transition:all .3s ease;transition:all .3s ease;background-color:rgba(0,0,0,.5);padding:6px 0 10px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+.ts-lightbox-gallery-slicebox .nav-options span:before{font-family:flexslider-icon;font-size:24px;height:24px;line-height:24px;margin:0;padding:0;display:inline-block;content:'\f001';-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;color:#ededed;position:absolute;top:10px;left:10px}
+.ts-lightbox-gallery-slicebox .nav-options span.ts-slicebox-controls-play{left:0}
+.ts-lightbox-gallery-slicebox .nav-options span.ts-slicebox-controls-play.ts-slicebox-active-play:before{color:#C92121}
+.ts-lightbox-gallery-slicebox .nav-options span.ts-slicebox-controls-play:before{content:'\f003'}
+.ts-lightbox-gallery-slicebox .nav-options span.ts-slicebox-controls-pause{left:0}
+.ts-lightbox-gallery-slicebox .nav-options span.ts-slicebox-controls-pause.ts-slicebox-active-pause:before{color:#C92121}
+.ts-lightbox-gallery-slicebox .nav-options span.ts-slicebox-controls-pause:before{content:'\f004'}
+.ts-lightbox-gallery-slicebox:hover .nav-options span{opacity:.7}
+.ts-lightbox-gallery-slicebox:hover .nav-options span:hover{opacity:1}

@@ -1,0 +1,323 @@
+.ts-hover-effects-container{position:relative;margin:0 auto;padding:0}
+.ts-hover-effects-grid{position:relative;margin:0 auto;padding:0;max-width:100%;list-style:none;text-align:center;-webkit-box-sizing:content-box!important;-moz-box-sizing:content-box!important;-o-box-sizing:content-box!important;-ms-box-sizing:content-box!important;box-sizing:content-box!important}
+.ts-hover-effects-grid *{-webkit-box-sizing:content-box!important;-moz-box-sizing:content-box!important;-o-box-sizing:content-box!important;-ms-box-sizing:content-box!important;box-sizing:content-box!important}
+.ts-hover-effects-grid a.ts-hover-image-link{z-index:1000;white-space:nowrap;font-size:0;text-decoration:none;border:none;background:0 0;width:100%;height:100%;cursor:pointer}
+.ts-hover-effects-grid figure{position:relative;float:left;overflow:hidden;margin:0;padding:0;width:100%;height:100%;background:#3085a3;border:1px solid #ededed;text-align:center}
+.ts-hover-effects-grid figure img{position:relative;display:block;width:100%;max-width:100%;opacity:.8;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;-o-border-radius:0;-ms-border-radius:0}
+.ts-hover-effects-grid figure figcaption{padding:0;color:#fff;text-transform:uppercase;font-size:16px;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.ts-hover-effects-grid figure figcaption h2{font-size:30px;line-height:30px}
+.ts-hover-effects-grid figure figcaption p{font-size:16px;line-height:16px;white-space:normal}
+.ts-hover-effects-grid figure figcaption::after,.ts-hover-effects-grid figure figcaption::before{pointer-events:none}
+.ts-hover-effects-grid figure figcaption{position:absolute;top:0;left:0;width:100%;height:100%}
+.ts-hover-effects-grid figure h2{word-spacing:0;font-weight:300}
+.ts-hover-effects-grid figure h2 span{font-weight:800}
+.ts-hover-effects-grid figure h2,.ts-hover-effects-grid figure p{margin:0}
+.ts-hover-effects-grid figure p{letter-spacing:1px;font-size:68.5%}
+figure.ts-hover-effect-lily img{max-width:none;opacity:.7;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-40px,0,0);transform:translate3d(-40px,0,0)}
+figure.ts-hover-effect-lily figcaption{text-align:left}
+figure.ts-hover-effect-lily figcaption>div{position:absolute;bottom:0;left:0;padding:0;width:100%;height:50%}
+figure.ts-hover-effect-lily h2,figure.ts-hover-effect-lily p{padding:20px;-webkit-transform:translate3d(0,40px,0);transform:translate3d(0,40px,0);color:#fff}
+figure.ts-hover-effect-lily h2{-webkit-transition:-webkit-transform .35s;transition:transform .35s}
+figure.ts-hover-effect-lily p{color:rgba(255,255,255,.8);opacity:0;-webkit-transition:opacity .2s,-webkit-transform .35s;transition:opacity .2s,transform .35s}
+figure.ts-hover-effect-lily.ts-hover-effect-permanent img,figure.ts-hover-effect-lily.ts-hover-effect-permanent p,figure.ts-hover-effect-lily:hover img,figure.ts-hover-effect-lily:hover p{opacity:1}
+figure.ts-hover-effect-lily.ts-hover-effect-permanent h2,figure.ts-hover-effect-lily.ts-hover-effect-permanent img,figure.ts-hover-effect-lily:hover h2,figure.ts-hover-effect-lily:hover img{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-lily.ts-hover-effect-permanent p,figure.ts-hover-effect-lily:hover p{-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0);-webkit-transition-delay:.05s;transition-delay:.05s;-webkit-transition-duration:.35s;transition-duration:.35s}
+figure.ts-hover-effect-sadie figcaption::before{position:absolute;top:0;left:0;width:100%;height:100%;background:-webkit-linear-gradient(top,rgba(72,76,97,0)0,rgba(72,76,97,.8)75%);background:linear-gradient(to bottom,rgba(72,76,97,0)0,rgba(72,76,97,.8)75%);content:'';opacity:0;-webkit-transform:translate3d(0,50%,0);transform:translate3d(0,50%,0)}
+figure.ts-hover-effect-sadie h2{position:absolute;top:50%;left:0;width:80%;margin:0 10%;color:#484c61;-webkit-transition:-webkit-transform .35s,color .35s;transition:transform .35s,color .35s;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}
+figure.ts-hover-effect-sadie figcaption::before,figure.ts-hover-effect-sadie p{-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-sadie p{position:absolute;bottom:0;left:0;width:70%;margin:30px 15% 50px;opacity:0;-webkit-transform:translate3d(0,10px,0);transform:translate3d(0,10px,0)}
+figure.ts-hover-effect-sadie.ts-hover-effect-permanent h2,figure.ts-hover-effect-sadie:hover h2{color:#fff;-webkit-transform:translate3d(0,-50%,0) translate3d(0,-40px,0);transform:translate3d(0,-50%,0) translate3d(0,-40px,0)}
+figure.ts-hover-effect-sadie.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-sadie.ts-hover-effect-permanent p,figure.ts-hover-effect-sadie:hover figcaption::before,figure.ts-hover-effect-sadie:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-honey{background:#4a3753}
+figure.ts-hover-effect-honey img{opacity:.9;-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-honey.ts-hover-effect-permanent img,figure.ts-hover-effect-honey:hover img{opacity:.5}
+figure.ts-hover-effect-honey figcaption::before{position:absolute;bottom:0;left:0;width:100%;height:60px;background:#fff;content:'';-webkit-transform:translate3d(0,60px,0);transform:translate3d(0,60px,0)}
+figure.ts-hover-effect-honey h2{position:absolute;bottom:0;left:0;padding:20px;text-align:left;-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0)}
+figure.ts-hover-effect-honey h2 i{font-style:normal;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0)}
+figure.ts-hover-effect-honey p{position:absolute;bottom:0;left:0;padding:20px;text-align:left;opacity:0;-webkit-transform:translate3d(0,60px,0);transform:translate3d(0,60px,0)}
+figure.ts-hover-effect-honey figcaption::before,figure.ts-hover-effect-honey h2,figure.ts-hover-effect-honey p{-webkit-transition:-webkit-transform .35s;transition:transform .35s}
+figure.ts-hover-effect-honey.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-honey:hover figcaption::before{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-honey.ts-hover-effect-permanent h2,figure.ts-hover-effect-honey.ts-hover-effect-permanent h2 i,figure.ts-hover-effect-honey:hover h2,figure.ts-hover-effect-honey:hover h2 i{opacity:1;-webkit-transform:translate3d(0,-60px,0);transform:translate3d(0,-60px,0)}
+figure.ts-hover-effect-honey.ts-hover-effect-permanent p,figure.ts-hover-effect-honey:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-layla{background:#18a367}
+figure.ts-hover-effect-layla figcaption{padding:0}
+figure.ts-hover-effect-layla figcaption::after,figure.ts-hover-effect-layla figcaption::before{position:absolute;content:'';opacity:0}
+figure.ts-hover-effect-layla figcaption::before{top:50px;right:30px;bottom:50px;left:30px;border-top:1px solid #fff;border-bottom:1px solid #fff;-webkit-transform:scale(0,1);transform:scale(0,1);-webkit-transform-origin:0 0;transform-origin:0 0}
+figure.ts-hover-effect-layla figcaption::after{top:30px;right:50px;bottom:30px;left:50px;border-right:1px solid #fff;border-left:1px solid #fff;-webkit-transform:scale(1,0);transform:scale(1,0);-webkit-transform-origin:100% 0;transform-origin:100% 0}
+figure.ts-hover-effect-layla h2{padding-top:26%;-webkit-transition:-webkit-transform .35s;transition:transform .35s}
+figure.ts-hover-effect-layla p{padding:20px 60px;text-transform:none;opacity:0;-webkit-transform:translate3d(0,-10px,0);transform:translate3d(0,-10px,0)}
+figure.ts-hover-effect-layla h2,figure.ts-hover-effect-layla img{-webkit-transform:translate3d(0,-40px,0);transform:translate3d(0,-40px,0)}
+figure.ts-hover-effect-layla figcaption::after,figure.ts-hover-effect-layla figcaption::before,figure.ts-hover-effect-layla img,figure.ts-hover-effect-layla p{-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-layla.ts-hover-effect-permanent img,figure.ts-hover-effect-layla:hover img{opacity:.7;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-layla.ts-hover-effect-permanent figcaption::after,figure.ts-hover-effect-layla.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-layla:hover figcaption::after,figure.ts-hover-effect-layla:hover figcaption::before{opacity:1;-webkit-transform:scale(1);transform:scale(1)}
+figure.ts-hover-effect-layla.ts-hover-effect-permanent h2,figure.ts-hover-effect-layla.ts-hover-effect-permanent p,figure.ts-hover-effect-layla:hover h2,figure.ts-hover-effect-layla:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-layla.ts-hover-effect-permanent figcaption::after,figure.ts-hover-effect-layla.ts-hover-effect-permanent h2,figure.ts-hover-effect-layla.ts-hover-effect-permanent img,figure.ts-hover-effect-layla.ts-hover-effect-permanent p,figure.ts-hover-effect-layla:hover figcaption::after,figure.ts-hover-effect-layla:hover h2,figure.ts-hover-effect-layla:hover img,figure.ts-hover-effect-layla:hover p{-webkit-transition-delay:.15s;transition-delay:.15s}
+figure.ts-hover-effect-zoe figcaption{top:auto;bottom:0;padding:0;height:60px;background:#fff;color:#3c4a50;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}
+figure.ts-hover-effect-zoe h2{float:left;padding:15px 20px}
+figure.ts-hover-effect-zoe.ts-hover-effect-permanent p.icon-links a:focus,figure.ts-hover-effect-zoe.ts-hover-effect-permanent p.icon-links a:hover,figure.ts-hover-effect-zoe:hover p.icon-links a:focus,figure.ts-hover-effect-zoe:hover p.icon-links a:hover{color:#252d31}
+figure.ts-hover-effect-zoe p.description{position:absolute;bottom:120px;padding:20px;color:#fff;text-transform:none;font-size:16px;opacity:0;-webkit-transition:opacity .35s;transition:opacity .35s;-webkit-backface-visibility:hidden}
+figure.ts-hover-effect-zoe p.icon-links{margin-right:20px}
+figure.ts-hover-effect-zoe h2,figure.ts-hover-effect-zoe p.icon-links a{-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,200%,0);transform:translate3d(0,200%,0)}
+figure.ts-hover-effect-zoe p.icon-links a span:before{display:inline-block;padding:8px 10px;speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+figure.ts-hover-effect-zoe h2{display:inline-block}
+figure.ts-hover-effect-zoe p.icon-links a{float:right;color:#3c4a50;font-size:24px;margin-top:12px}
+figure.ts-hover-effect-zoe.ts-hover-effect-permanent p.description,figure.ts-hover-effect-zoe:hover p.description{opacity:1}
+figure.ts-hover-effect-zoe.ts-hover-effect-permanent figcaption,figure.ts-hover-effect-zoe.ts-hover-effect-permanent h2,figure.ts-hover-effect-zoe.ts-hover-effect-permanent p.icon-links a,figure.ts-hover-effect-zoe:hover figcaption,figure.ts-hover-effect-zoe:hover h2,figure.ts-hover-effect-zoe:hover p.icon-links a{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-zoe.ts-hover-effect-permanent h2,figure.ts-hover-effect-zoe:hover h2{-webkit-transition-delay:.05s;transition-delay:.05s}
+figure.ts-hover-effect-zoe.ts-hover-effect-permanent p.icon-links a:nth-child(3),figure.ts-hover-effect-zoe:hover p.icon-links a:nth-child(3){-webkit-transition-delay:.1s;transition-delay:.1s}
+figure.ts-hover-effect-zoe.ts-hover-effect-permanent p.icon-links a:nth-child(2),figure.ts-hover-effect-zoe:hover p.icon-links a:nth-child(2){-webkit-transition-delay:.15s;transition-delay:.15s}
+figure.ts-hover-effect-zoe.ts-hover-effect-permanent p.icon-links a:first-child,figure.ts-hover-effect-zoe:hover p.icon-links a:first-child{-webkit-transition-delay:.2s;transition-delay:.2s}
+figure.ts-hover-effect-oscar{background:-webkit-linear-gradient(45deg,#22682a 0,#9b4a1b 40%,#3a342a 100%);background:linear-gradient(45deg,#22682a 0,#9b4a1b 40%,#3a342a 100%)}
+figure.ts-hover-effect-oscar img{opacity:.9;-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-oscar figcaption{padding:0;background-color:rgba(58,52,42,.7);-webkit-transition:background-color .35s;transition:background-color .35s}
+figure.ts-hover-effect-oscar figcaption::before{position:absolute;top:30px;right:30px;bottom:30px;left:30px;border:1px solid #fff;content:''}
+figure.ts-hover-effect-oscar h2{margin:20% 0 10px;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}
+figure.ts-hover-effect-oscar figcaption::before,figure.ts-hover-effect-oscar p{opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:scale(0);transform:scale(0)}
+figure.ts-hover-effect-oscar p{padding:35px}
+figure.ts-hover-effect-oscar.ts-hover-effect-permanent h2,figure.ts-hover-effect-oscar:hover h2{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-oscar.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-oscar.ts-hover-effect-permanent p,figure.ts-hover-effect-oscar:hover figcaption::before,figure.ts-hover-effect-oscar:hover p{opacity:1;-webkit-transform:scale(1);transform:scale(1)}
+figure.ts-hover-effect-oscar.ts-hover-effect-permanent figcaption,figure.ts-hover-effect-oscar:hover figcaption{background-color:rgba(58,52,42,0)}
+figure.ts-hover-effect-oscar.ts-hover-effect-permanent img,figure.ts-hover-effect-oscar:hover img{opacity:.4}
+figure.ts-hover-effect-marley figcaption{text-align:right}
+figure.ts-hover-effect-marley h2,figure.ts-hover-effect-marley p{position:absolute;right:30px;left:30px;padding:10px 0}
+figure.ts-hover-effect-marley p{bottom:30px;line-height:1.5;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}
+figure.ts-hover-effect-marley h2{top:30px;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,20px,0)}
+figure.ts-hover-effect-marley.ts-hover-effect-permanent h2,figure.ts-hover-effect-marley:hover h2{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-marley h2::after{position:absolute;top:100%;left:0;width:100%;height:4px;background:#fff;content:'';-webkit-transform:translate3d(0,40px,0);transform:translate3d(0,40px,0)}
+figure.ts-hover-effect-marley h2::after,figure.ts-hover-effect-marley p{opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-marley.ts-hover-effect-permanent h2::after,figure.ts-hover-effect-marley.ts-hover-effect-permanent p,figure.ts-hover-effect-marley:hover h2::after,figure.ts-hover-effect-marley:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-ruby{background-color:#17819c}
+figure.ts-hover-effect-ruby img{opacity:.7;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:scale(1.15);transform:scale(1.15)}
+figure.ts-hover-effect-ruby.ts-hover-effect-permanent img,figure.ts-hover-effect-ruby:hover img{opacity:.5;-webkit-transform:scale(1);transform:scale(1)}
+figure.ts-hover-effect-ruby h2{margin-top:20%;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,20px,0)}
+figure.ts-hover-effect-ruby p{margin:20px;padding:20px;border:1px solid #fff;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,20px,0) scale(1.1);transform:translate3d(0,20px,0) scale(1.1)}
+figure.ts-hover-effect-ruby.ts-hover-effect-permanent h2,figure.ts-hover-effect-ruby:hover h2{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-ruby.ts-hover-effect-permanent p,figure.ts-hover-effect-ruby:hover p{opacity:1;-webkit-transform:translate3d(0,0,0) scale(1);transform:translate3d(0,0,0) scale(1)}
+figure.ts-hover-effect-roxy{background:-webkit-linear-gradient(45deg,#ff89e9 0,#05abe0 100%);background:linear-gradient(45deg,#ff89e9 0,#05abe0 100%)}
+figure.ts-hover-effect-roxy img{max-width:none;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-50px,0,0);transform:translate3d(-50px,0,0)}
+figure.ts-hover-effect-roxy figcaption::before{position:absolute;top:30px;right:30px;bottom:30px;left:30px;border:1px solid #fff;content:'';opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-20px,0,0);transform:translate3d(-20px,0,0)}
+figure.ts-hover-effect-roxy figcaption{padding:0;text-align:left}
+figure.ts-hover-effect-roxy h2{padding:30% 60px 10px}
+figure.ts-hover-effect-roxy p{padding:20px 60px;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}
+figure.ts-hover-effect-roxy.ts-hover-effect-permanent img,figure.ts-hover-effect-roxy:hover img{opacity:.7;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-roxy.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-roxy.ts-hover-effect-permanent p,figure.ts-hover-effect-roxy:hover figcaption::before,figure.ts-hover-effect-roxy:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-bubba{background:#9e5406}
+figure.ts-hover-effect-bubba img{opacity:.7;-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-bubba.ts-hover-effect-permanent img,figure.ts-hover-effect-bubba:hover img{opacity:.4}
+figure.ts-hover-effect-bubba figcaption::after,figure.ts-hover-effect-bubba figcaption::before{position:absolute;top:30px;right:30px;bottom:30px;left:30px;content:'';opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-bubba figcaption::before{border-top:1px solid #fff;border-bottom:1px solid #fff;-webkit-transform:scale(0,1);transform:scale(0,1)}
+figure.ts-hover-effect-bubba figcaption::after{border-right:1px solid #fff;border-left:1px solid #fff;-webkit-transform:scale(1,0);transform:scale(1,0)}
+figure.ts-hover-effect-bubba h2{padding-top:30%;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)}
+figure.ts-hover-effect-bubba p{padding:20px 2.5em;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,20px,0)}
+figure.ts-hover-effect-bubba.ts-hover-effect-permanent figcaption::after,figure.ts-hover-effect-bubba.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-bubba:hover figcaption::after,figure.ts-hover-effect-bubba:hover figcaption::before{opacity:1;-webkit-transform:scale(1);transform:scale(1)}
+figure.ts-hover-effect-bubba.ts-hover-effect-permanent h2,figure.ts-hover-effect-bubba.ts-hover-effect-permanent p,figure.ts-hover-effect-bubba:hover h2,figure.ts-hover-effect-bubba:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-romeo{-webkit-perspective:1000px;perspective:1000px}
+figure.ts-hover-effect-romeo img{-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,0,300px);transform:translate3d(0,0,300px)}
+figure.ts-hover-effect-romeo.ts-hover-effect-permanent img,figure.ts-hover-effect-romeo:hover img{opacity:.6;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-romeo figcaption::after,figure.ts-hover-effect-romeo figcaption::before{position:absolute;top:50%;left:50%;width:80%;height:1px;background:#fff;content:'';-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-50%,-50%,0);transform:translate3d(-50%,-50%,0)}
+figure.ts-hover-effect-romeo.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-romeo:hover figcaption::before{opacity:.5;-webkit-transform:translate3d(-50%,-50%,0) rotate(45deg);transform:translate3d(-50%,-50%,0) rotate(45deg)}
+figure.ts-hover-effect-romeo.ts-hover-effect-permanent figcaption::after,figure.ts-hover-effect-romeo:hover figcaption::after{opacity:.5;-webkit-transform:translate3d(-50%,-50%,0) rotate(-45deg);transform:translate3d(-50%,-50%,0) rotate(-45deg)}
+figure.ts-hover-effect-romeo h2,figure.ts-hover-effect-romeo p{position:absolute;top:50%;left:0;width:80%;margin:0 10%;-webkit-transition:-webkit-transform .35s;transition:transform .35s;text-align:center}
+figure.ts-hover-effect-romeo h2{-webkit-transform:translate3d(0,-50%,0) translate3d(0,-150%,0);transform:translate3d(0,-50%,0) translate3d(0,-150%,0)}
+figure.ts-hover-effect-romeo p{padding:0;-webkit-transform:translate3d(0,-50%,0) translate3d(0,150%,0);transform:translate3d(0,-50%,0) translate3d(0,150%,0)}
+figure.ts-hover-effect-romeo.ts-hover-effect-permanent h2,figure.ts-hover-effect-romeo:hover h2{-webkit-transform:translate3d(0,-50%,0) translate3d(0,-100%,0);transform:translate3d(0,-50%,0) translate3d(0,-100%,0)}
+figure.ts-hover-effect-romeo.ts-hover-effect-permanent p,figure.ts-hover-effect-romeo:hover p{-webkit-transform:translate3d(0,-50%,0) translate3d(0,100%,0);transform:translate3d(0,-50%,0) translate3d(0,100%,0)}
+figure.ts-hover-effect-dexter{background:-webkit-linear-gradient(top,rgba(37,141,200,1)0,rgba(104,60,19,1)100%);background:linear-gradient(to bottom,rgba(37,141,200,1)0,rgba(104,60,19,1)100%)}
+figure.ts-hover-effect-dexter img{-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-dexter.ts-hover-effect-permanent img,figure.ts-hover-effect-dexter:hover img{opacity:.4}
+figure.ts-hover-effect-dexter figcaption::after{position:absolute;right:30px;bottom:0;left:30px;height:-webkit-calc(50% - 30px);height:calc(50% - 30px);border:7px solid #fff;content:'';-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}
+figure.ts-hover-effect-dexter.ts-hover-effect-permanent figcaption::after,figure.ts-hover-effect-dexter:hover figcaption::after{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);bottom:30px}
+figure.ts-hover-effect-dexter figcaption{padding:0;text-align:left}
+figure.ts-hover-effect-dexter h2{padding:60px}
+figure.ts-hover-effect-dexter p{position:absolute;right:60px;bottom:60px;left:60px;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,-100px,0);transform:translate3d(0,-100px,0)}
+figure.ts-hover-effect-dexter.ts-hover-effect-permanent p,figure.ts-hover-effect-dexter:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-sarah{background:#42b078}
+figure.ts-hover-effect-sarah img{max-width:none;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+figure.ts-hover-effect-sarah.ts-hover-effect-permanent img,figure.ts-hover-effect-sarah:hover img{opacity:.4;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-sarah figcaption{text-align:left;margin:10%;width:80%}
+figure.ts-hover-effect-sarah h2{position:relative;overflow:hidden;padding:.5em 0}
+figure.ts-hover-effect-sarah h2::after{position:absolute;bottom:0;left:0;width:100%;height:3px;background:#fff;content:'';-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}
+figure.ts-hover-effect-sarah.ts-hover-effect-permanent h2::after,figure.ts-hover-effect-sarah:hover h2::after{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-sarah p{padding:1em 0;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}
+figure.ts-hover-effect-sarah.ts-hover-effect-permanent p,figure.ts-hover-effect-sarah:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-chico img{-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:scale(1.12);transform:scale(1.12)}
+figure.ts-hover-effect-chico.ts-hover-effect-permanent img,figure.ts-hover-effect-chico:hover img{opacity:.5;-webkit-transform:scale(1);transform:scale(1)}
+figure.ts-hover-effect-chico figcaption{padding:0}
+figure.ts-hover-effect-chico figcaption::before{position:absolute;top:30px;right:30px;bottom:30px;left:30px;border:1px solid #fff;content:'';-webkit-transform:scale(1.1);transform:scale(1.1)}
+figure.ts-hover-effect-chico figcaption::before,figure.ts-hover-effect-chico p{opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-chico h2{padding:20% 0 20px}
+figure.ts-hover-effect-chico p{margin:0 auto;max-width:50%;-webkit-transform:scale(1.5);transform:scale(1.5)}
+figure.ts-hover-effect-chico.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-chico.ts-hover-effect-permanent p,figure.ts-hover-effect-chico:hover figcaption::before,figure.ts-hover-effect-chico:hover p{opacity:1;-webkit-transform:scale(1);transform:scale(1)}
+figure.ts-hover-effect-milo{background:#2e5d5a}
+figure.ts-hover-effect-milo img{max-width:none;opacity:1;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-30px,0,0) scale(1.12);transform:translate3d(-30px,0,0) scale(1.12);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+figure.ts-hover-effect-milo.ts-hover-effect-permanent img,figure.ts-hover-effect-milo:hover img{opacity:.5;-webkit-transform:translate3d(0,0,0) scale(1);transform:translate3d(0,0,0) scale(1)}
+figure.ts-hover-effect-milo h2{position:absolute;right:0;bottom:0;padding:40px}
+figure.ts-hover-effect-milo p{padding:0 10px 0 0;margin:40px;width:50%;border-right:1px solid #fff;text-align:right;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-40px,0,0);transform:translate3d(-40px,0,0)}
+figure.ts-hover-effect-milo.ts-hover-effect-permanent p,figure.ts-hover-effect-milo:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-julia{background:#2f3238}
+figure.ts-hover-effect-julia img{max-width:none;height:400px;-webkit-transition:opacity 1s,-webkit-transform 1s;transition:opacity 1s,transform 1s;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+figure.ts-hover-effect-julia figcaption{text-align:left;width:80%;margin:10%}
+figure.ts-hover-effect-julia h2{position:relative;padding:.5em 0}
+figure.ts-hover-effect-julia p{display:inline-block;margin:0 0 .25em;padding:.4em 1em;background:rgba(255,255,255,.9);color:#2f3238;text-transform:none;font-weight:500;font-size:75%;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-360px,0,0);transform:translate3d(-360px,0,0)}
+figure.ts-hover-effect-julia p:first-child{-webkit-transition-delay:.15s;transition-delay:.15s}
+figure.ts-hover-effect-julia p:nth-of-type(2){-webkit-transition-delay:.1s;transition-delay:.1s}
+figure.ts-hover-effect-julia p:nth-of-type(3){-webkit-transition-delay:.05s;transition-delay:.05s}
+figure.ts-hover-effect-julia.ts-hover-effect-permanent p,figure.ts-hover-effect-julia:hover p{-webkit-transition-delay:.25s;transition-delay:.25s}
+figure.ts-hover-effect-julia.ts-hover-effect-permanent p:first-child,figure.ts-hover-effect-julia:hover p:first-child{-webkit-transition-delay:0s;transition-delay:0s}
+figure.ts-hover-effect-julia.ts-hover-effect-permanent p:nth-of-type(2),figure.ts-hover-effect-julia:hover p:nth-of-type(2){-webkit-transition-delay:.05s;transition-delay:.05s}
+figure.ts-hover-effect-julia.ts-hover-effect-permanent p:nth-of-type(3),figure.ts-hover-effect-julia:hover p:nth-of-type(3){-webkit-transition-delay:.1s;transition-delay:.1s}
+figure.ts-hover-effect-julia.ts-hover-effect-permanent p:nth-of-type(4),figure.ts-hover-effect-julia:hover p:nth-of-type(4){-webkit-transition-delay:.15s;transition-delay:.15s}
+figure.ts-hover-effect-julia.ts-hover-effect-permanent p:nth-of-type(5),figure.ts-hover-effect-julia:hover p:nth-of-type(5){-webkit-transition-delay:.2s;transition-delay:.2s}
+figure.ts-hover-effect-julia.ts-hover-effect-permanent img,figure.ts-hover-effect-julia:hover img{opacity:.4;-webkit-transform:scale3d(1.1,1.1,1);transform:scale3d(1.1,1.1,1)}
+figure.ts-hover-effect-julia.ts-hover-effect-permanent p,figure.ts-hover-effect-julia:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-goliath{background:#df4e4e}
+figure.ts-hover-effect-goliath h2,figure.ts-hover-effect-goliath img{-webkit-transition:-webkit-transform .35s;transition:transform .35s}
+figure.ts-hover-effect-goliath img{-webkit-backface-visibility:hidden;backface-visibility:hidden}
+figure.ts-hover-effect-goliath h2,figure.ts-hover-effect-goliath p{position:absolute;bottom:0;left:0;padding:30px}
+figure.ts-hover-effect-goliath p{text-transform:none;font-size:90%;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,50px,0);transform:translate3d(0,50px,0)}
+figure.ts-hover-effect-goliath.ts-hover-effect-permanent img,figure.ts-hover-effect-goliath:hover img{-webkit-transform:translate3d(0,-80px,0);transform:translate3d(0,-80px,0)}
+figure.ts-hover-effect-goliath.ts-hover-effect-permanent h2,figure.ts-hover-effect-goliath:hover h2{-webkit-transform:translate3d(0,-100px,0);transform:translate3d(0,-100px,0)}
+figure.ts-hover-effect-goliath.ts-hover-effect-permanent p,figure.ts-hover-effect-goliath:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-hera{background:#303fa9}
+figure.ts-hover-effect-hera h2{font-size:30px}
+figure.ts-hover-effect-hera h2,figure.ts-hover-effect-hera p{position:absolute;top:50%;left:50%;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-50%,-50%,0);transform:translate3d(-50%,-50%,0);-webkit-transform-origin:50%;transform-origin:50%}
+figure.ts-hover-effect-hera figcaption::before{position:absolute;top:50%;left:50%;width:200px;height:200px;border:2px solid #fff;content:'';opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(0,0,1);transform:translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(0,0,1);-webkit-transform-origin:50%;transform-origin:50%}
+figure.ts-hover-effect-hera p{width:100px;text-transform:none;font-size:121%;line-height:2}
+figure.ts-hover-effect-hera p a{color:#fff}
+figure.ts-hover-effect-hera p a:focus,figure.ts-hover-effect-hera p a:hover{opacity:.6}
+figure.ts-hover-effect-hera p a i{width:32px;font-size:32px;line-height:32px;height:32px;margin:8px;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-hera p a:first-child i{-webkit-transform:translate3d(-60px,-60px,0);transform:translate3d(-60px,-60px,0)}
+figure.ts-hover-effect-hera p a:nth-child(2) i{-webkit-transform:translate3d(60px,-60px,0);transform:translate3d(60px,-60px,0)}
+figure.ts-hover-effect-hera p a:nth-child(3) i{-webkit-transform:translate3d(-60px,60px,0);transform:translate3d(-60px,60px,0)}
+figure.ts-hover-effect-hera p a:nth-child(4) i{-webkit-transform:translate3d(60px,60px,0);transform:translate3d(60px,60px,0)}
+figure.ts-hover-effect-hera.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-hera:hover figcaption::before{opacity:1;-webkit-transform:translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(1,1,1);transform:translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(1,1,1)}
+figure.ts-hover-effect-hera.ts-hover-effect-permanent h2,figure.ts-hover-effect-hera:hover h2{opacity:0;-webkit-transform:translate3d(-50%,-50%,0) scale3d(0.8,.8,1);transform:translate3d(-50%,-50%,0) scale3d(0.8,.8,1)}
+figure.ts-hover-effect-hera.ts-hover-effect-permanent p i:empty,figure.ts-hover-effect-hera:hover p i:empty{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}
+figure.ts-hover-effect-winston{background:#162633;text-align:left}
+figure.ts-hover-effect-winston img{-webkit-transition:opacity .45s;transition:opacity .45s;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+figure.ts-hover-effect-winston figcaption::before{position:absolute;top:0;left:0;width:100%;height:100%;background:url(triangle.svg) no-repeat center center;background-size:100% 100%;content:'';-webkit-transition:opacity .45s,-webkit-transform .45s;transition:opacity .45s,transform .45s;-webkit-transform:rotate3d(0,0,1,45deg);transform:rotate3d(0,0,1,45deg);-webkit-transform-origin:0 100%;transform-origin:0 100%}
+figure.ts-hover-effect-winston h2{-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,20px,0);padding:40px}
+figure.ts-hover-effect-winston p{position:absolute;right:0;bottom:0;padding:0 1.5em 7% 0}
+figure.ts-hover-effect-winston a{margin:0 10px;color:#5d504f}
+figure.ts-hover-effect-winston a:focus,figure.ts-hover-effect-winston a:hover{color:#cc6055}
+figure.ts-hover-effect-winston p a i{opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,50px,0);transform:translate3d(0,50px,0);width:28px;font-size:28px;line-height:28px;height:28px;margin:0}
+figure.ts-hover-effect-winston.ts-hover-effect-permanent img,figure.ts-hover-effect-winston:hover img{opacity:.6}
+figure.ts-hover-effect-winston.ts-hover-effect-permanent h2,figure.ts-hover-effect-winston:hover h2{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-winston.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-winston:hover figcaption::before{opacity:.7;-webkit-transform:rotate3d(0,0,1,20deg);transform:rotate3d(0,0,1,20deg)}
+figure.ts-hover-effect-winston.ts-hover-effect-permanent p i,figure.ts-hover-effect-winston:hover p i{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-winston.ts-hover-effect-permanent p a:nth-child(3) i,figure.ts-hover-effect-winston:hover p a:nth-child(3) i{-webkit-transition-delay:.05s;transition-delay:.05s}
+figure.ts-hover-effect-winston.ts-hover-effect-permanent p a:nth-child(2) i,figure.ts-hover-effect-winston:hover p a:nth-child(2) i{-webkit-transition-delay:.1s;transition-delay:.1s}
+figure.ts-hover-effect-winston.ts-hover-effect-permanent p a:first-child i,figure.ts-hover-effect-winston:hover p a:first-child i{-webkit-transition-delay:.15s;transition-delay:.15s}
+figure.ts-hover-effect-selena{background:#fff}
+figure.ts-hover-effect-selena img{opacity:.95;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform-origin:50% 50%;transform-origin:50% 50%}
+figure.ts-hover-effect-selena.ts-hover-effect-permanent img,figure.ts-hover-effect-selena:hover img{-webkit-transform:scale3d(0.95,.95,1);transform:scale3d(0.95,.95,1)}
+figure.ts-hover-effect-selena h2{-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,20px,0);padding:40px 20px 0}
+figure.ts-hover-effect-selena p{opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:perspective(1000px) rotate3d(1,0,0,90deg);transform:perspective(1000px) rotate3d(1,0,0,90deg);-webkit-transform-origin:50% 0;transform-origin:50% 0;padding:10px 20px 0}
+figure.ts-hover-effect-selena.ts-hover-effect-permanent h2,figure.ts-hover-effect-selena:hover h2{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-selena.ts-hover-effect-permanent p,figure.ts-hover-effect-selena:hover p{opacity:1;-webkit-transform:perspective(1000px) rotate3d(1,0,0,0);transform:perspective(1000px) rotate3d(1,0,0,0)}
+figure.ts-hover-effect-terry{background:#34495e}
+figure.ts-hover-effect-terry figcaption{padding:0}
+figure.ts-hover-effect-terry figcaption::after,figure.ts-hover-effect-terry figcaption::before{position:absolute;width:200%;height:200%;border-style:solid;border-color:#101010;content:'';-webkit-transition:-webkit-transform .35s;transition:transform .35s}
+figure.ts-hover-effect-terry figcaption::before{right:0;bottom:0;border-width:0 70px 60px 0;-webkit-transform:translate3d(70px,60px,0);transform:translate3d(70px,60px,0)}
+figure.ts-hover-effect-terry figcaption::after{top:0;left:0;border-width:15px 0 0 15px;-webkit-transform:translate3d(-15px,-15px,0);transform:translate3d(-15px,-15px,0)}
+figure.ts-hover-effect-terry img,figure.ts-hover-effect-terry p a{-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-terry img{opacity:.85}
+figure.ts-hover-effect-terry h2{position:absolute;bottom:0;left:0;padding:20px;width:50%;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(50%,0,0);transform:translate3d(50%,0,0)}
+figure.ts-hover-effect-terry p{float:right;clear:both;text-align:left;text-transform:none;padding:20px}
+figure.ts-hover-effect-terry p a{display:block;margin-bottom:16px;width:20px;font-size:20px;line-height:20px;color:#fff;opacity:0;-webkit-transform:translate3d(90px,0,0);transform:translate3d(90px,0,0)}
+figure.ts-hover-effect-terry p a:focus,figure.ts-hover-effect-terry p a:hover{color:#f3cf3f}
+figure.ts-hover-effect-terry.ts-hover-effect-permanent figcaption::after,figure.ts-hover-effect-terry.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-terry:hover figcaption::after,figure.ts-hover-effect-terry:hover figcaption::before{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-terry.ts-hover-effect-permanent img,figure.ts-hover-effect-terry:hover img{opacity:.6}
+figure.ts-hover-effect-terry.ts-hover-effect-permanent h2,figure.ts-hover-effect-terry.ts-hover-effect-permanent p a,figure.ts-hover-effect-terry:hover h2,figure.ts-hover-effect-terry:hover p a{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-terry.ts-hover-effect-permanent p a,figure.ts-hover-effect-terry:hover p a{opacity:1}
+figure.ts-hover-effect-terry.ts-hover-effect-permanent p a:first-child,figure.ts-hover-effect-terry:hover p a:first-child{-webkit-transition-delay:.025s;transition-delay:.025s}
+figure.ts-hover-effect-terry.ts-hover-effect-permanent p a:nth-child(2),figure.ts-hover-effect-terry:hover p a:nth-child(2){-webkit-transition-delay:.05s;transition-delay:.05s}
+figure.ts-hover-effect-terry.ts-hover-effect-permanent p a:nth-child(3),figure.ts-hover-effect-terry:hover p a:nth-child(3){-webkit-transition-delay:.075s;transition-delay:.075s}
+figure.ts-hover-effect-terry.ts-hover-effect-permanent p a:nth-child(4),figure.ts-hover-effect-terry:hover p a:nth-child(4){-webkit-transition-delay:.1s;transition-delay:.1s}
+figure.ts-hover-effect-phoebe{background:#675983}
+figure.ts-hover-effect-phoebe img{opacity:.85;-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-phoebe.ts-hover-effect-permanent img,figure.ts-hover-effect-phoebe:hover img{opacity:.6}
+figure.ts-hover-effect-phoebe figcaption::before{position:absolute;top:0;left:0;width:100%;height:100%;background:url(triangle2.svg) no-repeat center center;background-size:100% 100%;content:'';-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:scale3d(5,2.5,1);transform:scale3d(5,2.5,1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}
+figure.ts-hover-effect-phoebe.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-phoebe:hover figcaption::before{opacity:.6;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+figure.ts-hover-effect-phoebe h2{margin-top:40px;-webkit-transition:transform .35s;transition:transform .35s;-webkit-transform:translate3d(0,40px,0);transform:translate3d(0,40px,0)}
+figure.ts-hover-effect-phoebe.ts-hover-effect-permanent h2,figure.ts-hover-effect-phoebe:hover h2{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-phoebe p a{color:#fff;width:24px;font-size:24px;line-height:24px;padding:10px;opacity:0;position:relative;display:inline-block;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-phoebe p a:first-child{-webkit-transform:translate3d(-60px,-60px,0);transform:translate3d(-60px,-60px,0)}
+figure.ts-hover-effect-phoebe p a:nth-child(2){-webkit-transform:translate3d(0,60px,0);transform:translate3d(0,60px,0)}
+figure.ts-hover-effect-phoebe p a:nth-child(3){-webkit-transform:translate3d(60px,-60px,0);transform:translate3d(60px,-60px,0)}
+figure.ts-hover-effect-phoebe.ts-hover-effect-permanent p a,figure.ts-hover-effect-phoebe:hover p a{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-apollo{background:#3498db}
+figure.ts-hover-effect-apollo img{opacity:.95;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:scale3d(1.05,1.05,1);transform:scale3d(1.05,1.05,1)}
+figure.ts-hover-effect-apollo figcaption::before{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,.5);content:'';-webkit-transition:-webkit-transform .6s;transition:transform .6s;-webkit-transform:scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);transform:scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0)}
+figure.ts-hover-effect-apollo p{position:absolute;right:0;bottom:0;margin:3em;padding:0 1em;max-width:150px;border-right:4px solid #fff;text-align:right;opacity:0;-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-apollo h2{text-align:left;padding:40px}
+figure.ts-hover-effect-apollo.ts-hover-effect-permanent img,figure.ts-hover-effect-apollo:hover img{opacity:.6;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+figure.ts-hover-effect-apollo.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-apollo:hover figcaption::before{-webkit-transform:scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);transform:scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0)}
+figure.ts-hover-effect-apollo.ts-hover-effect-permanent p,figure.ts-hover-effect-apollo:hover p{opacity:1;-webkit-transition-delay:.1s;transition-delay:.1s}
+figure.ts-hover-effect-kira{background:#fff;text-align:left}
+figure.ts-hover-effect-kira img{-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-kira figcaption{z-index:1}
+figure.ts-hover-effect-kira h2{padding:20px 40px}
+figure.ts-hover-effect-kira p{padding:20px 45px;font-weight:600;font-size:100%;line-height:1.5;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,-10px,0);transform:translate3d(0,-10px,0)}
+figure.ts-hover-effect-kira p a{margin:0;color:#101010;width:20px;font-size:20px;line-height:20px;padding:10px}
+figure.ts-hover-effect-kira p a:focus,figure.ts-hover-effect-kira p a:hover{opacity:.6}
+figure.ts-hover-effect-kira figcaption::before{position:absolute;top:0;right:40px;left:40px;z-index:-1;height:60px;background:#fff;content:'';-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(0,70px,0) scale3d(1,.023,1);transform:translate3d(0,70px,0) scale3d(1,.023,1);-webkit-transform-origin:50% 0;transform-origin:50% 0}
+figure.ts-hover-effect-kira.ts-hover-effect-permanent img,figure.ts-hover-effect-kira:hover img{opacity:.5}
+figure.ts-hover-effect-kira.ts-hover-effect-permanent p,figure.ts-hover-effect-kira:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-kira.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-kira:hover figcaption::before{opacity:.7;-webkit-transform:translate3d(0,70px,0) scale3d(1,1,1);transform:translate3d(0,70px,0) scale3d(1,1,1)}
+figure.ts-hover-effect-steve{z-index:auto;overflow:visible;background:#000}
+figure.ts-hover-effect-steve h2:before,figure.ts-hover-effect-steve:before{position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%;background:#000;content:'';-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-steve:before{box-shadow:0 3px 30px rgba(0,0,0,.8);-webkit-box-shadow:0 3px 30px rgba(0,0,0,.8);-moz-box-shadow:0 3px 30px rgba(0,0,0,.8);-o-box-shadow:0 3px 30px rgba(0,0,0,.8);-ms-box-shadow:0 3px 30px rgba(0,0,0,.8);opacity:0}
+figure.ts-hover-effect-steve figcaption{z-index:1;width:80%;margin:10%}
+figure.ts-hover-effect-steve img{opacity:1;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:perspective(1000px) translate3d(0,0,0);transform:perspective(1000px) translate3d(0,0,0)}
+figure.ts-hover-effect-steve h2,figure.ts-hover-effect-steve p{background:#fff;color:#2d434e}
+figure.ts-hover-effect-steve h2{position:relative;margin-top:20px;padding:10px}
+figure.ts-hover-effect-steve h2:before{box-shadow:0 1px 10px rgba(0,0,0,.5)}
+figure.ts-hover-effect-steve p{margin-top:20px;padding:10px;font-weight:800;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:scale3d(0.9,.9,1);transform:scale3d(0.9,.9,1)}
+figure.ts-hover-effect-steve.ts-hover-effect-permanent:before,figure.ts-hover-effect-steve:hover:before{opacity:1}
+figure.ts-hover-effect-steve.ts-hover-effect-permanent img,figure.ts-hover-effect-steve:hover img{-webkit-transform:perspective(1000px) translate3d(0,0,21px);transform:perspective(1000px) translate3d(0,0,21px)}
+figure.ts-hover-effect-steve.ts-hover-effect-permanent h2:before,figure.ts-hover-effect-steve:hover h2:before{opacity:0}
+figure.ts-hover-effect-steve.ts-hover-effect-permanent p,figure.ts-hover-effect-steve:hover p{opacity:1;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+figure.ts-hover-effect-moses{background:-webkit-linear-gradient(-45deg,#EC65B7 0,#05E0D8 100%);background:linear-gradient(-45deg,#EC65B7 0,#05E0D8 100%)}
+figure.ts-hover-effect-moses img{opacity:.85;-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-moses figcaption{width:80%;margin:10%}
+figure.ts-hover-effect-moses h2,figure.ts-hover-effect-moses p{border:2px solid #fff}
+figure.ts-hover-effect-moses h2{padding:5%;width:40%;height:40%;text-align:left;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(5%,5%,0);transform:translate3d(5%,5%,0)}
+figure.ts-hover-effect-moses p{float:right;padding:5%;width:40%;height:40%;margin-top:-2px;text-align:right;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(-50%,-50%,0);transform:translate3d(-50%,-50%,0)}
+figure.ts-hover-effect-moses.ts-hover-effect-permanent h2,figure.ts-hover-effect-moses:hover h2{-webkit-transform:translate3d(-5%,-5%,0);transform:translate3d(-5%,-5%,0)}
+figure.ts-hover-effect-moses.ts-hover-effect-permanent p,figure.ts-hover-effect-moses:hover p{opacity:1;-webkit-transform:translate3d(5%,-50%,0);transform:translate3d(5%,-50%,0)}
+figure.ts-hover-effect-moses.ts-hover-effect-permanent img,figure.ts-hover-effect-moses:hover img{opacity:.6}
+figure.ts-hover-effect-jazz{background:-webkit-linear-gradient(-45deg,#f3cf3f 0,#f33f58 100%);background:linear-gradient(-45deg,#f3cf3f 0,#f33f58 100%)}
+figure.ts-hover-effect-jazz img{opacity:.9}
+figure.ts-hover-effect-jazz figcaption::after,figure.ts-hover-effect-jazz img,figure.ts-hover-effect-jazz p{-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-jazz figcaption::after{position:absolute;top:0;left:0;width:100%;height:100%;border-top:1px solid #fff;border-bottom:1px solid #fff;content:'';opacity:0;-webkit-transform:rotate3d(0,0,1,45deg) scale3d(1,0,1);transform:rotate3d(0,0,1,45deg) scale3d(1,0,1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}
+figure.ts-hover-effect-jazz h2,figure.ts-hover-effect-jazz p{opacity:1;-webkit-transform:scale3d(0.8,.8,1);transform:scale3d(0.8,.8,1)}
+figure.ts-hover-effect-jazz h2{padding-top:26%;-webkit-transition:-webkit-transform .35s;transition:transform .35s}
+figure.ts-hover-effect-jazz p{padding:.5em 2em;text-transform:none;font-size:.85em;opacity:0}
+figure.ts-hover-effect-jazz.ts-hover-effect-permanent img,figure.ts-hover-effect-jazz:hover img{opacity:.7;-webkit-transform:scale3d(1.05,1.05,1);transform:scale3d(1.05,1.05,1)}
+figure.ts-hover-effect-jazz.ts-hover-effect-permanent figcaption::after,figure.ts-hover-effect-jazz:hover figcaption::after{opacity:1;-webkit-transform:rotate3d(0,0,1,45deg) scale3d(1,1,1);transform:rotate3d(0,0,1,45deg) scale3d(1,1,1)}
+figure.ts-hover-effect-jazz.ts-hover-effect-permanent h2,figure.ts-hover-effect-jazz.ts-hover-effect-permanent p,figure.ts-hover-effect-jazz:hover h2,figure.ts-hover-effect-jazz:hover p{opacity:1;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+figure.ts-hover-effect-ming{background:#030c17}
+figure.ts-hover-effect-ming img{opacity:.9;-webkit-transition:opacity .35s;transition:opacity .35s}
+figure.ts-hover-effect-ming figcaption::before{position:absolute;top:30px;right:30px;bottom:30px;left:30px;border:2px solid #fff;box-shadow:0 0 0 30px rgba(255,255,255,.2);content:'';opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:scale3d(1.4,1.4,1);transform:scale3d(1.4,1.4,1)}
+figure.ts-hover-effect-ming h2{margin:0;padding:60px 40px 0;-webkit-transition:-webkit-transform .35s;transition:transform .35s}
+figure.ts-hover-effect-ming p{padding:20px 40px;opacity:0;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:scale(1.5);transform:scale(1.5)}
+figure.ts-hover-effect-ming.ts-hover-effect-permanent h2,figure.ts-hover-effect-ming:hover h2{-webkit-transform:scale(0.9);transform:scale(0.9)}
+figure.ts-hover-effect-ming.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-ming.ts-hover-effect-permanent p,figure.ts-hover-effect-ming:hover figcaption::before,figure.ts-hover-effect-ming:hover p{opacity:1;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+figure.ts-hover-effect-ming.ts-hover-effect-permanent figcaption,figure.ts-hover-effect-ming:hover figcaption{background-color:rgba(58,52,42,0)}
+figure.ts-hover-effect-ming.ts-hover-effect-permanent img,figure.ts-hover-effect-ming:hover img{opacity:.4}
+figure.ts-hover-effect-lexi{background:-webkit-linear-gradient(-45deg,#000 0,#fff 100%);background:linear-gradient(-45deg,#000 0,#fff 100%)}
+figure.ts-hover-effect-lexi img{margin:-10px 0 0 -10px;max-width:none;opacity:.9;-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s;-webkit-transform:translate3d(10px,10px,0);transform:translate3d(10px,10px,0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+figure.ts-hover-effect-lexi figcaption::before,figure.ts-hover-effect-lexi p{-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-lexi figcaption::before{position:absolute;right:-100px;bottom:-100px;width:300px;height:300px;border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 900px rgba(255,255,255,.2);content:'';opacity:0;-webkit-transform:scale3d(0.5,.5,1);transform:scale3d(0.5,.5,1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}
+figure.ts-hover-effect-lexi.ts-hover-effect-permanent img,figure.ts-hover-effect-lexi:hover img{opacity:.6;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-lexi h2{text-align:left;-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:translate3d(5px,5px,0);transform:translate3d(5px,5px,0);padding:30px}
+figure.ts-hover-effect-lexi p{position:absolute;right:0;bottom:0;padding:0 30px 30px 0;width:140px;text-align:right;opacity:0;-webkit-transform:translate3d(30px,30px,0);transform:translate3d(30px,30px,0)}
+figure.ts-hover-effect-lexi.ts-hover-effect-permanent figcaption::before,figure.ts-hover-effect-lexi:hover figcaption::before{opacity:1;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
+figure.ts-hover-effect-lexi.ts-hover-effect-permanent h2,figure.ts-hover-effect-lexi.ts-hover-effect-permanent p,figure.ts-hover-effect-lexi:hover h2,figure.ts-hover-effect-lexi:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
+figure.ts-hover-effect-duke{background:-webkit-linear-gradient(-45deg,#34495e 0,#cc6055 100%);background:linear-gradient(-45deg,#34495e 0,#cc6055 100%)}
+figure.ts-hover-effect-duke img,figure.ts-hover-effect-duke p{-webkit-transition:opacity .35s,-webkit-transform .35s;transition:opacity .35s,transform .35s}
+figure.ts-hover-effect-duke.ts-hover-effect-permanent img,figure.ts-hover-effect-duke:hover img{opacity:.1;-webkit-transform:scale3d(2,2,1);transform:scale3d(2,2,1)}
+figure.ts-hover-effect-duke h2{-webkit-transition:-webkit-transform .35s;transition:transform .35s;-webkit-transform:scale3d(0.8,.8,1);transform:scale3d(0.8,.8,1);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;padding:20px}
+figure.ts-hover-effect-duke p{position:absolute;bottom:0;left:0;margin:20px;padding:30px;border:2px solid #fff;text-transform:none;font-size:90%;opacity:0;-webkit-transform:scale3d(0.8,.8,1);transform:scale3d(0.8,.8,1);-webkit-transform-origin:50% -100%;transform-origin:50% -100%}
+figure.ts-hover-effect-duke.ts-hover-effect-permanent h2,figure.ts-hover-effect-duke.ts-hover-effect-permanent p,figure.ts-hover-effect-duke:hover h2,figure.ts-hover-effect-duke:hover p{opacity:1;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
