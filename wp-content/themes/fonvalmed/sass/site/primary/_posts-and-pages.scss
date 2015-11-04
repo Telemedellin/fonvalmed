@@ -516,6 +516,44 @@ p.recaudo-total-texto{
 	margin-top: -15px;
 }
 
+//Timeline styles
+
+.timeline_fonvalmed{
+	.colA {
+		.ts-timeline-text-wrap{
+			&:before{
+				border-left: solid 10px $color__primary !important;
+			}
+		}
+	}
+	.colB {
+		.ts-timeline-text-wrap{
+			&:before{
+				border-right: solid 10px $color__primary !important;
+			}
+		}
+	}
+	h3.ts-timeline-title{
+		color: $color__primary !important;
+	}
+	.ts-timeline-date-connect{
+		&:after{
+			border-color: transparent transparent transparent lighten($color__primary, 40%) !important;
+		}
+		&:before {
+			border-color: transparent transparent lighten($color__primary, 40%) !important;	
+		}
+	}
+	.ts-timeline-date-text{
+		background: $color__primary !important;
+		color: #ffffff !important;
+		border: none !important;
+		&:before{
+			color: #ffffff !important;
+		}
+	}
+}
+
 @media screen and (min-width: 601px){
 	.soliloquy-container .soliloquy-caption{
 		bottom: 35px !important;
