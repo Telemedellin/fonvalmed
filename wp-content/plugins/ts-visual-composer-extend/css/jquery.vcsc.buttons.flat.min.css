@@ -1,0 +1,61 @@
+.ts-flat-button-wrapper{width:100%;margin:0;padding:0;border:none;display:block;position:relative}
+.ts-color-button-container{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;position:relative;vertical-align:top;width:100%;min-height:50px;height:100%;padding:0;margin:0 auto;font-size:20px;display:inline-block;overflow:hidden;text-decoration:none;border:1px solid #ccc}
+.ts-color-button-container .ts-color-button-icon,.ts-color-button-container .ts-color-button-title{display:inline-block;position:relative;vertical-align:top;font-size:20px;line-height:20px;max-width:100%;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
+.ts-color-button-container .ts-color-button-icon{padding:5px 0 5px 10px;margin:9px auto 0}
+.ts-color-button-container .ts-color-button-title{padding:5px 10px;margin:9px auto}
+body .ts-color-button-sun-flower{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#f1c40f;border:0;border-bottom:2px solid #e2b607;cursor:pointer;-webkit-box-shadow:inset 0 -2px #e2b607;box-shadow:inset 0 -2px #e2b607}
+body .ts-color-button-orange-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#f39c12;border:0;border-bottom:2px solid #e8930c;cursor:pointer;-webkit-box-shadow:inset 0 -2px #e8930c;box-shadow:inset 0 -2px #e8930c}
+body .ts-color-button-carrot-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#e67e22;border:0;border-bottom:2px solid #da751c;cursor:pointer;-webkit-box-shadow:inset 0 -2px #da751c;box-shadow:inset 0 -2px #da751c}
+body .ts-color-button-pumpkin-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#d35400;border:0;border-bottom:2px solid #c54e00;cursor:pointer;-webkit-box-shadow:inset 0 -2px #c54e00;box-shadow:inset 0 -2px #c54e00}
+body .ts-color-button-carrot-flat:hover,body .ts-color-button-carrot-flat:visited,body .ts-color-button-orange-flat:hover,body .ts-color-button-orange-flat:visited,body .ts-color-button-pumpkin-flat:hover,body .ts-color-button-pumpkin-flat:visited,body .ts-color-button-sun-flower:hover,body .ts-color-button-sun-flower:visited{color:#fff!important}
+body .ts-color-button-carrot-flat:active,body .ts-color-button-orange-flat:active,body .ts-color-button-pumpkin-flat:active,body .ts-color-button-sun-flower:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-alizarin-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#e74c3c;border:0;border-bottom:2px solid #db4334;cursor:pointer;-webkit-box-shadow:inset 0 -2px #db4334;box-shadow:inset 0 -2px #db4334}
+body .ts-color-button-alizarin-flat:hover{color:#fff}
+body .ts-color-button-alizarin-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-pomegranate-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#c0392b;border:0;border-bottom:2px solid #b53224;cursor:pointer;-webkit-box-shadow:inset 0 -2px #b53224;box-shadow:inset 0 -2px #b53224}
+body .ts-color-button-pomegranate-flat:hover{color:#fff}
+body .ts-color-button-pomegranate-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-turquoise-flat{text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#1abc9c;border:0;border-bottom:2px solid #12ab8d;cursor:pointer;-webkit-box-shadow:inset 0 -2px #12ab8d;box-shadow:inset 0 -2px #12ab8d;color:#fff}
+body .ts-color-button-turquoise-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-green-sea-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#16a085;border:0;border-bottom:2px solid #14947b;cursor:pointer;-webkit-box-shadow:inset 0 -2px #14947b;box-shadow:inset 0 -2px #14947b}
+body .ts-color-button-green-sea-flat:hover{color:#fff}
+body .ts-color-button-green-sea-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-emerald-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#2ecc71;border:0;border-bottom:2px solid #28be68;cursor:pointer;-webkit-box-shadow:inset 0 -2px #28be68;box-shadow:inset 0 -2px #28be68}
+body .ts-color-button-emerald-flat:hover{color:#fff}
+body .ts-color-button-emerald-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-nephritis-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#27ae60;border:0;border-bottom:2px solid #219d55;cursor:pointer;-webkit-box-shadow:inset 0 -2px #219d55;box-shadow:inset 0 -2px #219d55}
+body .ts-color-button-nephritis-flat:hover{color:#fff}
+body .ts-color-button-nephritis-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-peter-river-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#3498db;border:0;border-bottom:2px solid #2a8bcc;cursor:pointer;-webkit-box-shadow:inset 0 -2px #2a8bcc;box-shadow:inset 0 -2px #2a8bcc}
+body .ts-color-button-peter-river-flat:hover{color:#fff}
+body .ts-color-button-peter-river-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-belize-hole-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#2980b9;border:0;border-bottom:2px solid #2475ab;cursor:pointer;-webkit-box-shadow:inset 0 -2px #2475ab;box-shadow:inset 0 -2px #2475ab}
+body .ts-color-button-belize-hole-flat:hover{color:#fff}
+body .ts-color-button-belize-hole-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-amethyst-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#9b59b6;border:0;border-bottom:2px solid #8d4ca7;cursor:pointer;-webkit-box-shadow:inset 0 -2px #8d4ca7;box-shadow:inset 0 -2px #8d4ca7}
+body .ts-color-button-amethyst-flat:hover{color:#fff}
+body .ts-color-button-amethyst-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-wisteria-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#8e44ad;border:0;border-bottom:2px solid #80399d;cursor:pointer;-webkit-box-shadow:inset 0 -2px #80399d;box-shadow:inset 0 -2px #80399d}
+body .ts-color-button-wisteria-flat:hover{color:#fff}
+body .ts-color-button-wisteria-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-wet-asphalt-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#34495e;border:0;border-bottom:2px solid #263849;cursor:pointer;-webkit-box-shadow:inset 0 -2px #263849;box-shadow:inset 0 -2px #263849}
+body .ts-color-button-wet-asphalt-flat:hover{color:#fff}
+body .ts-color-button-wet-asphalt-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-midnight-blue-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#2c3e50;border:0;border-bottom:2px solid #22303f;cursor:pointer;-webkit-box-shadow:inset 0 -2px #22303f;box-shadow:inset 0 -2px #22303f}
+body .ts-color-button-midnight-blue-flat:hover{color:#fff}
+body .ts-color-button-midnight-blue-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-clouds-flat{color:#454545;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#ecf0f1;border:0;border-bottom:2px solid #dadedf;cursor:pointer;-webkit-box-shadow:inset 0 -2px #dadedf;box-shadow:inset 0 -2px #dadedf}
+body .ts-color-button-clouds-flat:hover{color:#454545}
+body .ts-color-button-clouds-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-silver-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#bdc3c7;border:0;border-bottom:2px solid #acb2b7;cursor:pointer;-webkit-box-shadow:inset 0 -2px #acb2b7;box-shadow:inset 0 -2px #acb2b7}
+body .ts-color-button-silver-flat:hover{color:#fff}
+body .ts-color-button-silver-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-concrete-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#859596;border:0;border-bottom:2px solid #95a5a6;cursor:pointer;-webkit-box-shadow:inset 0 -2px #95a5a6;box-shadow:inset 0 -2px #95a5a6}
+body .ts-color-button-concrete-flat:hover{color:#fff}
+body .ts-color-button-concrete-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-asbestos-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#7f8c8d;border:0;border-bottom:2px solid #6d7b7c;cursor:pointer;-webkit-box-shadow:inset 0 -2px #6d7b7c;box-shadow:inset 0 -2px #6d7b7c}
+body .ts-color-button-asbestos-flat:hover{color:#fff}
+body .ts-color-button-asbestos-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
+body .ts-color-button-graphite-flat{color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.25);background:#454545;border:0;border-bottom:2px solid #2f2e2e;cursor:pointer;-webkit-box-shadow:inset 0 -2px #2f2e2e;box-shadow:inset 0 -2px #2f2e2e}
+body .ts-color-button-graphite-flat:hover{color:#fff}
+body .ts-color-button-graphite-flat:active{top:1px;outline:0;-webkit-box-shadow:none;box-shadow:none}
