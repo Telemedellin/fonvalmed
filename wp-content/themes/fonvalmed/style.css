@@ -4465,7 +4465,7 @@ p.recaudo-total-texto {
 .ctn__img-obras_controles .img-obras_controles {
   display: inline-block;
   padding: 10px;
-  background: #EDEDEF;
+  background: #FF7F00;
   position: absolute;
   top: 50%;
   height: 45px;
@@ -4474,12 +4474,41 @@ p.recaudo-total-texto {
 .ctn__img-obras_controles .img-obras_controles#antes {
   left: 0;
 }
+.ctn__img-obras_controles .img-obras_controles#antes:before {
+  content: "d";
+  font-family: "fonvalmed" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
 .ctn__img-obras_controles .img-obras_controles#despues {
   right: 0;
 }
+.ctn__img-obras_controles .img-obras_controles#despues:before {
+  content: "e";
+  font-family: "fonvalmed" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
 .ctn__img-obras_controles .img-obras_controles.active {
-  background: #FF7F00;
-  color: #fff;
+  background: rgba(255, 127, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: initial;
 }
 
 .img-obras_despues {
