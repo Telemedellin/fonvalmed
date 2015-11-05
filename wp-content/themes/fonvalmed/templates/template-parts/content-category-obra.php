@@ -52,8 +52,8 @@
 				</figure>
 			</div>
 			<div class="ctn__img-obras_controles">
-				<span id="antes" class="img-obras_controles active">Antes</span>
-				<span id="despues" class="img-obras_controles">Ahora</span>
+				<span id="antes" class="img-obras_controles img-obras_controles-left active"></span>
+				<span id="despues" class="img-obras_controles img-obras_controles-right"></span>
 			</div>
 		</div>
 		<?php endwhile; ?>

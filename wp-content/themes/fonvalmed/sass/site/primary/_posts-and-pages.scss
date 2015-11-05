@@ -396,6 +396,7 @@ p.recaudo-total-texto{
 
 /*----------- Estilos de la página incial de obras ---------------*/
 .ctn__img-obras{
+	position: relative;
 	figure{
 		position: relative;
 	}
@@ -411,16 +412,31 @@ p.recaudo-total-texto{
 }
 .ctn__img-obras_controles{
 	text-align: center;
-	padding: 5px;
 	cursor: pointer;
 	.img-obras_controles{
-		display: inlin-block;
-		margin:0 10px;
+		display: inline-block;
 		padding: 10px;
-		background: $color__gray-light;
+		background: $color__primary;
+		position: absolute;
+		top: 50%;
+		height: 45px;
+		transform: translateY(-45px);
+		&#antes {
+			left: 0;
+			&:before{
+				@include iconos-fvm("d", 1.5rem, #ffffff);
+			}
+		}
+		&#despues {
+			right: 0;
+			&:before{
+				@include iconos-fvm("e", 1.5rem, #ffffff);
+			}
+		}
 		&.active{
-			background: $color__primary;
-			color: #fff;
+			background: rgba($color__primary, 0.5);
+			color: rgba(#FFFFFF, 0.5);
+			cursor: initial;
 		}
 	}
 }
@@ -459,6 +475,9 @@ p.recaudo-total-texto{
 }
 
 //Home
+.algo{
+	margin: 0;
+}
 
 .ctn__heroe-home{
 	margin-top: 15px;
@@ -556,19 +575,12 @@ p.recaudo-total-texto{
 	.info-recaudo_propietarios_total{
 		font-size: 2rem;
 	}
-	.grid-sizer, .grid-item{
+	.grid-sizer, .ctn__obra-preview {
 		width: 48.2%;
 	}
 	.fm-label{
 		width: auto;
 		padding: 5px 10px;
-	}
-	#obra-listado, #obra-mapas {
-		.obras {
-			-webkit-column-count: 2;
-			-moz-column-count: 2;
-			column-count: 2;
-		}
 	}
 }
 
@@ -612,15 +624,8 @@ p.recaudo-total-texto{
 	.recaudo-total-numero{
 		font-size: 2rem;
 	}
-	.grid-sizer, .grid-item{
+	.grid-sizer, .ctn__obra-preview {
 		width: 31.7%;
-	}
-	#obra-listado, #obra-mapas {
-		.obras {
-			-webkit-column-count: 3;
-			-moz-column-count: 3;
-			column-count: 3;
-		}
 	}
 }
 @media screen and (min-width: 1200px){
@@ -638,11 +643,7 @@ p.recaudo-total-texto{
 	.recaudo-total-numero {
 	    font-size: 2.3rem;
 	}
-	#obra-listado, #obra-mapas {
-		.obras {
-			-webkit-column-count: 3;
-			-moz-column-count: 3;
-			column-count: 3;
-		}
+	.grid-sizer, .ctn__obra-preview {
+		width: 32.3%;
 	}
 }
