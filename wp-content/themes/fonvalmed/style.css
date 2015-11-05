@@ -4564,6 +4564,17 @@ p.recaudo-total-texto {
   margin-top: -15px;
 }
 
+.ctn__meta-info span {
+  display: block;
+  font-size: 0.8rem;
+  color: #898989;
+}
+
+.article-medios {
+  padding-left: 19px;
+  border-left: solid 3px orange;
+}
+
 .timeline_fonvalmed .colA .ts-timeline-text-wrap:before {
   border-left: solid 10px #FF7F00 !important;
 }
