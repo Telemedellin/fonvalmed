@@ -198,15 +198,6 @@
 		background-color: $color__background-pre;
 		padding: 5px;
 		margin-top: 10px;
-		-webkit-column-count: 1;
-		-webkit-column-gap: 20px;
-		-webkit-column-fill: auto;
-		-moz-column-count: 1;
-		-moz-column-gap: 20px;
-		-moz-column-fill: auto;
-		column-count: 1;
-		column-gap: 20px;
-		column-fill: auto;
 	}
 }
 
@@ -260,41 +251,19 @@
 	background: $color__primary !important;
 	color: #fff !important;
 }
-.grid {
-  background: #EEE;
-  margin: 0 auto;
-}
 
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
 
 /* ---- grid-item ---- */
 
-.grid-sizer, .grid-item {
-  width: 100%;
-}
-.grid-item {
-  //float: left;
-}
+.grid-sizer { width: 98%; }
+
 .ctn__obra-preview{
 	background: #fff;
-	width: 100%;
-	margin: 0 0px 25px 0;
-	display: inline-block;
+	width: 98%;
 	cursor: pointer;
 	color: $color__gray-dark;
+	margin-bottom: 10px;
 	height: auto;
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	column-break-inside: avoid;
-	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
 	&:hover{
 		text-decoration: none;
 		color: $color__gray-dark;
@@ -516,6 +485,43 @@ p.recaudo-total-texto{
 	margin-top: -15px;
 }
 
+.tribe-events-list-event-description {
+	&.tribe-events-content {
+		&.description {
+			&.entry-summary {
+				margin: 0px;
+			}
+		}
+	}
+}
+
+.events-list .tribe-events-loop, .single-tribe_organizer .tribe-events-loop, .single-tribe_venue .tribe-events-loop, .tribe-events-day .tribe-events-loop {
+	max-width: none;
+}
+
+.tribe-events-loop {
+	.type-tribe_events {
+		.tribe-events-last {
+			border-bottom: 1px solid #e5e5e5;
+		}
+	}
+}
+
+.tribe-events-list {
+	.type-tribe_events {
+		h2 {
+			a {
+				color: #898989;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+.tribe-events-list .tribe-events-venue-details {
+	color: $color__primary;
+}
+
 @media screen and (min-width: 601px){
 	.soliloquy-container .soliloquy-caption{
 		bottom: 35px !important;
@@ -529,25 +535,16 @@ p.recaudo-total-texto{
 			text-align: left;
 		}
 	}
-	.obras {
-		padding: 0px 0px 15px 0px;
-	}
 	.info-recaudo_propietarios_total{
 		font-size: 2rem;
-	}
-	.grid-sizer, .grid-item{
-		width: 48.2%;
 	}
 	.fm-label{
 		width: auto;
 		padding: 5px 10px;
 	}
-	#obra-listado, #obra-mapas {
-		.obras {
-			-webkit-column-count: 2;
-			-moz-column-count: 2;
-			column-count: 2;
-		}
+	.grid-sizer,
+	.ctn__obra-preview {
+		width: 49%;
 	}
 }
 
@@ -591,15 +588,9 @@ p.recaudo-total-texto{
 	.recaudo-total-numero{
 		font-size: 2rem;
 	}
-	.grid-sizer, .grid-item{
-		width: 31.7%;
-	}
-	#obra-listado, #obra-mapas {
-		.obras {
-			-webkit-column-count: 3;
-			-moz-column-count: 3;
-			column-count: 3;
-		}
+	.grid-sizer,
+	.ctn__obra-preview {
+		width: 31.8%;
 	}
 }
 @media screen and (min-width: 1200px){
@@ -617,11 +608,8 @@ p.recaudo-total-texto{
 	.recaudo-total-numero {
 	    font-size: 2.3rem;
 	}
-	#obra-listado, #obra-mapas {
-		.obras {
-			-webkit-column-count: 3;
-			-moz-column-count: 3;
-			column-count: 3;
-		}
+	.grid-sizer,
+	.ctn__obra-preview {
+		width: 31.9%;
 	}
 }
