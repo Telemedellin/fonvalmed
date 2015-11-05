@@ -43,7 +43,9 @@
 						<span class="fm-label" rel="tipo:doble-calzada" onclick="javascript:filtrar(this)">Doble calzada</span>
 					</div>
 				</div><!-- /ctn_filtros -->
+				<script type="text/javascript" src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
 				<div class="obras">
+					<div class="grid-sizer"></div>
 					<?php $obras = array(); ?>
 					<?php foreach(get_term_children($terms->term_id, $terms->taxonomy) as $term_id): ?>
 						<?php
@@ -80,6 +82,16 @@
 						</a>
 					<?php endforeach; ?>
 				</div>
+				<script>
+				// Pure JS
+				var container = document.querySelector('.obras');
+				var msnry = new Masonry(container, {
+					columnWidth: '.grid-sizer',
+					itemSelector: '.ctn__obra-preview',
+					gutter: 10,
+					percentPosition: true
+				});
+				</script>
 			</div>
 			<div id="obra-mapas" style="visibility:hidden;height:0px;overflow:auto;">
 				<div class="row ctn__filtros" style="margin-left: 0px;margin-right: 0px;">
@@ -228,10 +240,17 @@
                     {
                         case null:
                         case "":
-                            jQuery('#obra-listado > .obras').html('Busqueda sin resultados.');
+                            jQuery('#obra-listado > .obras').html('Busqueda sin resultados.').css('height','auto');
                             break;
                         default:
                             jQuery('#obra-listado > .obras').html(data);
+							var container = document.querySelector('.obras');
+							var msnry = new Masonry(container, {
+								columnWidth: '.grid-sizer',
+								itemSelector: '.ctn__obra-preview',
+								gutter: 10,
+								percentPosition: true
+							});
                             break;
                     }
                 }

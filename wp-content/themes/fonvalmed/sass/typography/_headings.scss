@@ -27,3 +27,18 @@ h2, h3, h4, h5, h6{
 		}
 	}
 }
+.tribe-events-month-event-title {
+	&.entry-title {
+		&:before {
+			content: none;
+		}
+	}
+}
+
+.tribe-events-list-event-title {
+	&.entry-title {
+		&:before {
+			content: none;
+		}
+	}
+}
