@@ -43,7 +43,8 @@
 						<span class="fm-label" rel="tipo:doble-calzada" onclick="javascript:filtrar(this)">Doble calzada</span>
 					</div>
 				</div><!-- /ctn_filtros -->
-				<script type="text/javascript" src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+				<!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/masonry.pkgd.min.js"></script>-->
+				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 				<div class="obras">
 					<div class="grid-sizer"></div>
 					<?php $obras = array(); ?>
@@ -83,13 +84,13 @@
 					<?php endforeach; ?>
 				</div>
 				<script>
-				// Pure JS
-				var container = document.querySelector('.obras');
-				var msnry = new Masonry(container, {
-					columnWidth: '.grid-sizer',
-					itemSelector: '.ctn__obra-preview',
-					gutter: 10,
-					percentPosition: true
+				jQuery(function($) {
+					$('.obras').masonry({
+						itemSelector: '.ctn__obra-preview',
+						columnWidth: '.grid-sizer',
+						gutter: 10,
+						percentPosition: true
+					});
 				});
 				</script>
 			</div>
