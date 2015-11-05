@@ -516,6 +516,20 @@ p.recaudo-total-texto{
 	margin-top: -15px;
 }
 
+//Fonvalmed en los medios
+
+.ctn__meta-info{
+	span{
+		display: block;
+		font-size: 0.8rem;
+		color: $color__gray-dark;
+	}
+}
+.article-medios{
+	padding-left: 19px;
+    border-left: solid 3px orange;
+}
+
 //Timeline styles
 
 .timeline_fonvalmed{
