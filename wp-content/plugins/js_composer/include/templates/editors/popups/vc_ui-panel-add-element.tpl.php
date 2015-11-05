@@ -7,11 +7,12 @@
 			'header_css_class' => 'vc_ui-add-element-header-container',
 			'content_template' => 'editors/partials/add_element_tabs.tpl.php',
 			'search_template' => 'editors/partials/add_element_search.tpl.php',
-			'template_variables' => $template_variables
+			'template_variables' => $template_variables,
 		) ) ?>
 		<div class="vc_ui-panel-content-container">
 			<div class="vc_add-element-container">
-				<div class="wpb-elements-list vc_filter-all" data-vc-ui-filter="*" data-vc-ui-element="panel-add-element-list">
+				<div class="wpb-elements-list vc_filter-all" data-vc-ui-filter="*"
+				     data-vc-ui-element="panel-add-element-list">
 					<ul class="wpb-content-layouts-container">
 						<li class="vc_add-element-deprecated-warning">
 							<div class="wpb_element_wrapper">
@@ -19,6 +20,13 @@
 							</div>
 						</li>
 						<li><?php echo $box->getControls() ?></li>
+						<?php if ( $box->isShowEmptyMessage() && true !== $box->getPartState() ) :  ?>
+						<li class="vc_add-element-access-warning">
+							<div class="wpb_element_wrapper">
+								<?php echo vc_message_warning( __( 'Your user role have restricted access to content elements. If required, contact your site administrator to change Visual Composer Role Manager settings for your user role.', 'js_composer' ) ) ?>
+							</div>
+						</li>
+						<?php endif; ?>
 					</ul>
 					<div class="vc_clearfix"></div>
 				</div>

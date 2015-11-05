@@ -6,7 +6,7 @@
  * Visual composer panels & modals for frontend editor
  *
  * ========================================================= */
-/* global vcDefaultGridItemContent */
+/* global vcDefaultGridItemContent, vc */
 (function ( $ ) {
 	vc.gridItemEditor = true;
 	vc.Storage.prototype.getContent = function () {
@@ -86,7 +86,7 @@
 		} else if ( e && e.currentTarget ) {
 			iframeWindow.vcSetItemWidth( $( e.currentTarget ).val() );
 		}
-	}
+	};
 	vc.visualComposerView.prototype.openVcGitemEditForm = function ( e ) {
 		e && e.preventDefault();
 		var vcGitemModel = vc.shortcodes.findWhere( { shortcode: 'vc_gitem' } );
@@ -102,7 +102,8 @@
 			forceHelperSize: false,
 			connectWith: ".wpb_column_container",
 			placeholder: "vc_placeholder",
-			items: "> .wpb_sortable.wpb_content_element", //wpb_sortablee
+			items: "> .wpb_sortable.wpb_content_element,> .wpb_content_element.vc-non-draggable", //wpb_sortablee
+			cancel: ".vc-non-draggable", //wpb_sortablee
 			helper: this.renderPlaceholder,
 			distance: 3,
 			scroll: true,
@@ -170,13 +171,29 @@
 		var iframeWindow = $( '#vc_gitem-preview iframe' ).get( 0 ).contentWindow;
 		iframeWindow && iframeWindow.changeAnimation( animation );
 	};
+	vc.visualComposerView.prototype.initializeAccessPolicy = function () {
+		this.accessPolicy = {
+			be_editor: vc_user_access().editor( 'grid_builder' ),
+			fe_editor: false,
+			classic_editor: false
+		};
+	};
 	vc.EditElementPanelView.prototype.ajaxData = function () {
+		var params, mergedParams;
+
+		params = this.model.get( 'params' );
+		mergedParams = vc.getMergedParams( this.model.get( 'shortcode' ),
+			_.extend( {}, vc.getDefaults( this.model.get( 'shortcode' ) ), params ) );
+		if ( ! _.isUndefined( params.content ) ) {
+			mergedParams.content = params.content;
+		}
+
 		return {
 			action: 'vc_edit_form',
 			vc_grid_item_editor: 'true',
 			tag: this.model.get( 'shortcode' ),
 			post_id: $( '#post_ID' ).val(),
-			params: this.model.get( 'params' ),
+			params: mergedParams,
 			_vcnonce: window.vcAdminNonce
 		};
 	};
@@ -337,7 +354,7 @@
 		},
 		addCZone: function ( e ) {
 			var $column = $( e.currentTarget ),
-				position = $column.data( 'vcPosition' ), model
+				position = $column.data( 'vcPosition' ), model;
 			if ( this.cZone ) {
 				this.updateCZonePosition( $column, position );
 				return false;
@@ -394,7 +411,7 @@
 		},
 		setDraggableC: function () {
 			this.$content.find( '[data-vc-gitem="add-c"]' ).sortable( {
-				items: '[data-element_type="vc_gitem_zone_c"]',
+				items: '[data-element_type="vc_gitem_zone_c"]:not(.vc-non-draggable)',
 				connectWith: '[data-vc-gitem="add-c"]',
 				forcePlaceholderSize: true,
 				forceHelperSize: false,
@@ -419,6 +436,7 @@
 			} );
 			this.setCZonePosition( position );
 			this.setCssPosition( cBlockContainer );
+
 		},
 		setCssPosition: function ( $container ) {
 			this.$content
@@ -601,6 +619,7 @@
 			} );
 		},
 		buildDesignHelpers: function () {
+			var matches;
 			var featuredImage, css = this.model.getParam( 'css' ),
 				$before = this.$el.find( '> .vc_controls' ).get( 0 ),
 				image, color;
@@ -608,15 +627,15 @@
 			this.$el.find( '> [data-vc-helper="color"]' ).remove();
 			this.$el.find( '> [data-vc-helper="image"]' ).remove();
 			this.$el.find( '> [data-vc-helper="image-featured"]' ).remove();
-			var matches = css.match( /background\-image:\s*url\(([^\)]+)\)/ )
+			matches = css.match( /background\-image:\s*url\(([^\)]+)\)/ );
 			if ( matches && ! _.isUndefined( matches[ 1 ] ) ) {
 				image = matches[ 1 ];
 			}
-			var matches = css.match( /background\-color:\s*([^\s\;]+)\b/ )
+			matches = css.match( /background\-color:\s*([^\s\;]+)\b/ );
 			if ( matches && ! _.isUndefined( matches[ 1 ] ) ) {
 				color = matches[ 1 ];
 			}
-			var matches = css.match( /background:\s*([^\s]+)\b\s*url\(([^\)]+)\)/ )
+			matches = css.match( /background:\s*([^\s]+)\b\s*url\(([^\)]+)\)/ );
 			if ( matches && ! _.isUndefined( matches[ 1 ] ) ) {
 				color = matches[ 1 ];
 				image = matches[ 2 ];
@@ -793,6 +812,7 @@
 
 		this.addCustomCssStyleTag();
 	};
+	vc.TemplatesPanelViewBackend.prototype.templateLoadPreviewAction = 'vc_grid_item_editor_load_template_preview';
 	vc.TemplatesPanelViewBackend.prototype.renderTemplate = function ( html ) {
 		// Render template for backend
 		_.each( vc.filters.templates, function ( callback ) {

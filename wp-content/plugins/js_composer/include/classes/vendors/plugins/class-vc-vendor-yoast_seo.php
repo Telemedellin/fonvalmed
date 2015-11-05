@@ -4,7 +4,7 @@
  * Class Vc_Vendor_YoastSeo
  * @since 4.4
  */
-Class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
+class Vc_Vendor_YoastSeo implements Vc_Vendor_Interface {
 
 	/**
 	 * Created to improve yoast multiply calling wpseo_pre_analysis_post_content filter.

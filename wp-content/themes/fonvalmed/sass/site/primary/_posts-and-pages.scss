@@ -485,41 +485,56 @@ p.recaudo-total-texto{
 	margin-top: -15px;
 }
 
-.tribe-events-list-event-description {
-	&.tribe-events-content {
-		&.description {
-			&.entry-summary {
-				margin: 0px;
+//Fonvalmed en los medios
+
+.ctn__meta-info{
+	span{
+		display: block;
+		font-size: 0.8rem;
+		color: $color__gray-dark;
+	}
+}
+.article-medios{
+	padding-left: 19px;
+    border-left: solid 5px orange;
+}
+
+//Timeline styles
+
+.timeline_fonvalmed{
+	.colA {
+		.ts-timeline-text-wrap{
+			&:before{
+				border-left: solid 10px $color__primary !important;
 			}
 		}
 	}
-}
-
-.events-list .tribe-events-loop, .single-tribe_organizer .tribe-events-loop, .single-tribe_venue .tribe-events-loop, .tribe-events-day .tribe-events-loop {
-	max-width: none;
-}
-
-.tribe-events-loop {
-	.type-tribe_events {
-		.tribe-events-last {
-			border-bottom: 1px solid #e5e5e5;
-		}
-	}
-}
-
-.tribe-events-list {
-	.type-tribe_events {
-		h2 {
-			a {
-				color: #898989;
-				font-weight: normal;
+	.colB {
+		.ts-timeline-text-wrap{
+			&:before{
+				border-right: solid 10px $color__primary !important;
 			}
 		}
 	}
-}
-
-.tribe-events-list .tribe-events-venue-details {
-	color: $color__primary;
+	h3.ts-timeline-title{
+		color: $color__primary !important;
+	}
+	.ts-timeline-date-connect{
+		&:after{
+			border-color: transparent transparent transparent lighten($color__primary, 40%) !important;
+		}
+		&:before {
+			border-color: transparent transparent lighten($color__primary, 40%) !important;	
+		}
+	}
+	.ts-timeline-date-text{
+		background: $color__primary !important;
+		color: #ffffff !important;
+		border: none !important;
+		&:before{
+			color: #ffffff !important;
+		}
+	}
 }
 
 @media screen and (min-width: 601px){
@@ -535,16 +550,25 @@ p.recaudo-total-texto{
 			text-align: left;
 		}
 	}
+	.obras {
+		padding: 0px 0px 15px 0px;
+	}
 	.info-recaudo_propietarios_total{
 		font-size: 2rem;
+	}
+	.grid-sizer, .grid-item{
+		width: 48.2%;
 	}
 	.fm-label{
 		width: auto;
 		padding: 5px 10px;
 	}
-	.grid-sizer,
-	.ctn__obra-preview {
-		width: 49%;
+	#obra-listado, #obra-mapas {
+		.obras {
+			-webkit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2;
+		}
 	}
 }
 
@@ -588,9 +612,15 @@ p.recaudo-total-texto{
 	.recaudo-total-numero{
 		font-size: 2rem;
 	}
-	.grid-sizer,
-	.ctn__obra-preview {
-		width: 31.8%;
+	.grid-sizer, .grid-item{
+		width: 31.7%;
+	}
+	#obra-listado, #obra-mapas {
+		.obras {
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+		}
 	}
 }
 @media screen and (min-width: 1200px){
@@ -608,8 +638,11 @@ p.recaudo-total-texto{
 	.recaudo-total-numero {
 	    font-size: 2.3rem;
 	}
-	.grid-sizer,
-	.ctn__obra-preview {
-		width: 31.9%;
+	#obra-listado, #obra-mapas {
+		.obras {
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+		}
 	}
 }

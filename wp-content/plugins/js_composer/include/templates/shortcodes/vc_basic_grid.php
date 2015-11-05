@@ -20,9 +20,16 @@ $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter
 wp_enqueue_script( 'prettyphoto' );
 wp_enqueue_style( 'prettyphoto' );
 
+if ( 'true' === $this->atts['btn_add_icon'] ) {
+	vc_icon_element_fonts_enqueue( $this->atts['btn_i_type'] );
+}
+
 $this->buildGridSettings();
 if ( isset( $this->atts['style'] ) && 'pagination' === $this->atts['style'] ) {
 	wp_enqueue_script( 'twbs-pagination' );
+}
+if ( ! empty( $atts['page_id'] ) ) {
+	$this->grid_settings['page_id'] = (int) $atts['page_id'];
 }
 $this->enqueueScripts();
 ?><!-- vc_grid start -->

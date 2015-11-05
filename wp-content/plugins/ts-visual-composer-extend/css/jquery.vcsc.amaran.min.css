@@ -1,0 +1,28 @@
+.ts-amaran-popup-main{position:relative;display:block;height:0;padding:0;margin:0;width:0;border:none}
+.ts-amaran-popup-main[data-icon]:before{content:""!important}
+.ts-amaran-popup-trigger{position:relative;display:block;padding:0;margin:0;border:none}
+.ts-amaran-popup-content{display:none!important}
+.ts-amaran-wrapper *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#ts-amaran-overlay-color{display:none;position:fixed;top:0;left:0;width:100%;height:100%;margin:0;padding:0;background:#000;z-index:77777777;-ms-filter:"alpha(Opacity=75)";filter:alpha(opacity=75);-moz-opacity:.75;-khtml-opacity:.75;opacity:.75}
+#ts-amaran-overlay-noise{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-repeat:repeat;z-index:88888888}
+.ts-amaran-wrapper{position:fixed;z-index:99999999;max-width:100%;margin:0;padding:0}
+.ts-amaran-wrapper.top{top:0;bottom:auto}
+.ts-amaran-wrapper.bottom{bottom:0;top:auto}
+.ts-amaran-wrapper.left{left:0}
+.ts-amaran-wrapper.right{right:0;left:auto}
+.ts-amaran-wrapper.center{top:50%;left:50%;right:auto;bottom:auto}
+.ts-amaran{display:none;font-size:13px;cursor:pointer;position:relative;text-align:left;min-height:50px;margin:10px;max-width:400px;max-height:100%;overflow:auto}
+.ts-amaran-close{position:absolute;top:3px;right:0;display:block;padding:5px;margin:0;text-align:center;width:30px;height:30px;line-height:20px;vertical-align:middle;z-index:99;color:#555}
+.ts-amaran-close:before{content:"x";font-weight:700;font-family:Arial,sans-serif;font-size:20px}
+.ts-amaran.composer{max-width:100%;min-height:65px;background:#fff;color:#222;margin:10px;padding:0;font-size:13px;font-weight:600;box-shadow:0 0 10px 5px #444;-webkit-box-shadow:0 0 10px 5px #444;-moz-box-shadow:0 0 10px 5px #444;-o-box-shadow:0 0 10px 5px #444}
+.ts-amaran.composer .ts-amaran-holder{padding:10px 20px 10px 10px;margin:0}
+.ts-amaran.composer .ts-amaran-title{width:100%;border-bottom:1px solid #CACACA;position:absolute;top:0;left:0;padding:10px 40px 10px 10px;font-size:20px;line-height:20px;vertical-align:middle;font-weight:700;height:40px;background:#ededed;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ts-amaran.composer .ts-amaran-content{margin:40px 0 0;padding:0;width:100%;height:100%;position:relative}
+.ts-amaran.composer .ts-amaran-icon{width:50px;height:50px;position:absolute;top:50%;left:0;background:#000;margin-top:-25px;border-radius:50%;text-align:center;line-height:50px;font-size:30px;background-color:#2980b9;color:#fff}
+.ts-amaran.composer .ts-amaran-image{width:50px;height:50px;position:absolute;top:50%;left:5px;margin-top:-25px;text-align:center}
+.ts-amaran.composer .ts-amaran-message{font-weight:400;padding:5px 0;margin:5px 0 5px 70px}
+.ts-amaran.composer p{padding:0!important;margin:10px 0!important}
+.ts-amaran.composer .ts-amaran-note{font-weight:300;border-top:1px solid #CACACA;background:#555;color:#ededed;font-size:13px;display:block;padding:5px 10px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ts-amaran.composer p.bold{font-size:16px}
+.ts-amaran.composer.ok p.bold{color:#178B13}
+.ts-amaran.composer.ok .ts-amaran-icon{background-color:#178B13;color:#fff}

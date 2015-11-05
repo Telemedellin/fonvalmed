@@ -1,3 +1,22 @@
+22.10.2015 - ver 4.8
+   - New: Advanced Role manager for Visual Composer. Now you can fine tune access to Visual Composer functionality based on user roles
+   - New: New interface with template preview option in Default Templates and My Templates sections
+   - New: No need for license activation on localhost
+   - New: "vc_register_settings_preset" action is added. Theme authors can add elements presets through the inner API
+   - New: New design styles for Separator element
+   - New: Option to add icon to Separator element
+   - Improved: Single image element markup revises and improved
+   - Improved: UX improvements for "Save template" under the Templates section
+   - Improved: Load more button in grid now use latest VC button version
+   - Improved: Lighter and cleaner welcome screen on empty page
+   - Fixed: Protocol is replaced with // in css import (google fonts)
+   - Fixed: Loading of Google subsets
+   - Fixed: Display of icons for nested shortcodes
+   - Fixed: Post grid display if loaded from Templatera element
+   - Fixed: Fast switching between tabs
+   - Fixed: Autocomplete of categories (woocommerce)
+   - Fixed: Separator text moves to the next line when no space available
+
 2.10.2015 - ver 4.7.4
    - Fixed: Bug in grid builder presets
    - Added extra ajax check

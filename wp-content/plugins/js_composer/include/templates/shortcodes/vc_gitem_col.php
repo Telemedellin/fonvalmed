@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shortcode attributes
  * @var $atts
@@ -31,7 +32,7 @@ $css_class = $width
 	. vc_shortcode_custom_css_class( $css, ' ' );
 
 if ( 'yes' === $featured_image ) {
-	$style = "{{ post_image_background_image_css }}";
+	$style = '{{ post_image_background_image_css }}';
 }
 echo '<div class="' . $css_class . '"'
 	. ( strlen( $style ) > 0 ? ' style="' . $style . '"' : '' )

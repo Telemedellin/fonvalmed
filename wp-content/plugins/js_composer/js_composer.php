@@ -3,7 +3,7 @@
 Plugin Name: WPBakery Visual Composer
 Plugin URI: http://vc.wpbakery.com
 Description: Drag and drop page builder for WordPress. Take full control over your WordPress site, build any layout you can imagine – no programming knowledge required.
-Version: 4.7.4
+Version: 4.8.0.1
 Author: Michael M - WPBakery.com
 Author URI: http://wpbakery.com
 */
@@ -19,7 +19,7 @@ if ( ! defined( 'WPB_VC_VERSION' ) ) {
 	/**
 	 *
 	 */
-	define( 'WPB_VC_VERSION', '4.7.4' );
+	define( 'WPB_VC_VERSION', '4.8.0.1' );
 }
 
 /**
@@ -112,6 +112,19 @@ class Vc_Manager {
 	private static $_instance;
 
 	/**
+	 * @var Vc_Current_User_Access|false
+	 * @since 4.8
+	 */
+	private $current_user_access = false;
+	/**
+	 * @var Vc_Role_Access|false
+	 * @since 4.8
+	 */
+	private $role_access = false;
+
+	public $editor_post_types;
+
+	/**
 	 * Constructor loads API functions, defines paths and adds required wp actions
 	 *
 	 * @since  4.2
@@ -160,6 +173,7 @@ class Vc_Manager {
 		require_once $this->path( 'CORE_DIR', 'interfaces.php' );
 		require_once $this->path( 'CORE_DIR', 'class-vc-sort.php' ); // used by wpb-map
 		require_once $this->path( 'CORE_DIR', 'class-wpb-map.php' );
+		require_once $this->path( 'CORE_DIR', 'class-vc-shared-library.php' );
 		require_once $this->path( 'HELPERS_DIR', 'helpers_api.php' );
 		require_once $this->path( 'HELPERS_DIR', 'filters.php' );
 		require_once $this->path( 'PARAMS_DIR', 'params.php' );
@@ -257,6 +271,46 @@ class Vc_Manager {
 	}
 
 	/**
+	 * @return Vc_Current_User_Access
+	 * @since 4.8
+	 */
+	public function getCurrentUserAccess() {
+		if ( ! $this->current_user_access ) {
+			require_once vc_path_dir( 'CORE_DIR', 'access/class-vc-current-user-access.php' );
+			$this->current_user_access = new Vc_Current_User_Access();
+		}
+
+		return $this->current_user_access;
+	}
+
+	/**
+	 * @param false|Vc_Current_User_Access $current_user_access
+	 */
+	public function setCurrentUserAccess( $current_user_access ) {
+		$this->current_user_access = $current_user_access;
+	}
+
+	/**
+	 * @return Vc_Role_Access
+	 * @since 4.8
+	 */
+	public function getRoleAccess() {
+		if ( ! $this->role_access ) {
+			require_once vc_path_dir( 'CORE_DIR', 'access/class-vc-role-access.php' );
+			$this->role_access = new Vc_Role_Access();
+		}
+
+		return $this->role_access;
+	}
+
+	/**
+	 * @param false|Vc_Role_Access $role_access
+	 */
+	public function setRoleAccess( $role_access ) {
+		$this->role_access = $role_access;
+	}
+
+	/**
 	 * Enables to add hooks in activation process.
 	 * @since 4.5
 	 */
@@ -287,13 +341,13 @@ class Vc_Manager {
 				);
 				foreach ( $components as $component => $description ) {
 					$component_path = vc_path_dir( 'AUTOLOAD_DIR', $component );
-					if ( strpos( $component_path, '*' ) === false && is_file( $component_path ) ) {
+					if ( false === strpos( $component_path, '*' ) && is_file( $component_path ) ) {
 						require $component_path;
 					} else {
 						$components_paths = glob( $component_path );
 						if ( is_array( $components_paths ) && ! empty( $components_paths ) ) {
 							foreach ( $components_paths as $path ) {
-								if ( strpos( $path, '*' ) === false && is_file( $path ) ) {
+								if ( false === strpos( $path, '*' ) && is_file( $path ) ) {
 									require $path;
 								}
 							}
@@ -318,6 +372,7 @@ class Vc_Manager {
 		// Settings page. Adds menu page in admin panel.
 		// vc_settings()->addMenuPageHooks();
 		// Load backend editor hooks
+		// @todo : maybe do this only if be editor is enabled? fix_roles
 		vc_backend_editor()->addHooksSettings();
 		// If auto updater is enabled initialize updating notifications service.
 	}
@@ -344,20 +399,47 @@ class Vc_Manager {
 		 * 6. page_editable - by vc_action
 		 */
 		if ( is_admin() ) {
-			if ( vc_action() === 'vc_inline' && ( current_user_can( 'edit_posts' ) || current_user_can( 'edit_pages' ) ) ) {
+
+			if ( 'vc_inline' === vc_action() ) {
+				vc_user_access()
+					->wpAny( array(
+						'edit_post',
+						(int) vc_request_param( 'post_id' ),
+					) )
+					->validateDie()
+					->part( 'frontend_editor' )
+					->can()
+					->validateDie();
 				$this->mode = 'admin_frontend_editor';
-			} elseif ( ( current_user_can( 'edit_posts' ) || current_user_can( 'edit_pages' ) ) && (
-					vc_action() === 'vc_upgrade' ||
-					( vc_get_param( 'action' ) === 'update-selected' && vc_get_param( 'plugins' ) === $this->pluginName() )
-				) ) {
+			} elseif ( ( vc_user_access()
+					->wpAny( 'edit_posts', 'edit_pages' )
+					->get() ) && (
+				           'vc_upgrade' === vc_action() ||
+				           ( 'update-selected' === vc_get_param( 'action' ) && $this->pluginName() === vc_get_param( 'plugins' ) ) )
+			) {
 				$this->mode = 'admin_updater';
-			} elseif ( current_user_can( 'manage_options' ) && isset( $_GET['page'] ) && $_GET['page'] === $this->settings()->page() ) {
+			} elseif ( vc_user_access()
+				           ->wpAny( 'manage_options' )
+				           ->get() && isset( $_GET['page'] ) && $_GET['page'] === $this->settings()
+			                                                                           ->page()
+			) {
 				$this->mode = 'admin_settings_page';
 			} else {
 				$this->mode = 'admin_page';
 			}
 		} else {
-			if ( vc_verify_admin_nonce() && current_user_can( 'edit_post', (int) vc_request_param( 'vc_post_id' ) ) && isset( $_GET['vc_editable'] ) && 'true' === $_GET['vc_editable'] ) {
+			if ( isset( $_GET['vc_editable'] ) && 'true' === $_GET['vc_editable'] ) {
+				vc_user_access()
+					->checkAdminNonce()
+					->validateDie()
+					->wpAny( array(
+						'edit_post',
+						(int) vc_request_param( 'vc_post_id' ),
+					) )
+					->validateDie()
+					->part( 'frontend_editor' )
+					->can()
+					->validateDie();
 				$this->mode = 'page_editable';
 			} else {
 				$this->mode = 'page';
@@ -452,9 +534,9 @@ class Vc_Manager {
 	 * @return array
 	 */
 	public function editorPostTypes() {
-		if ( ! isset( $this->editor_post_types ) ) {
-			$pt_array = vc_settings()->get( 'content_types' );
-			$this->editor_post_types = $pt_array ? $pt_array : $this->editorDefaultPostTypes();
+		if ( is_null( $this->editor_post_types ) ) {
+			$post_types = array_keys( vc_user_access()->part( 'post_types' )->getAllCaps() );
+			$this->editor_post_types = $post_types ? $post_types : $this->editorDefaultPostTypes();
 		}
 
 		return $this->editor_post_types;
@@ -470,7 +552,24 @@ class Vc_Manager {
 	 */
 	public function setEditorPostTypes( array $post_types ) {
 		$this->editor_post_types = ! empty( $post_types ) ? $post_types : $this->editorDefaultPostTypes();
-		vc_settings()->set( 'content_types', $this->editor_post_types );
+
+		require_once ABSPATH . 'wp-admin/includes/user.php';
+
+		$editable_roles = get_editable_roles();
+		foreach ( $editable_roles as $role => $settings ) {
+			$part = vc_role_access()->who( $role )->part( 'post_types' );
+			$all_post_types = $part->getAllCaps();
+
+			foreach ( $all_post_types as $post_type => $value ) {
+				$part->getRole()->remove_cap( $part->getStateKey() . '/' . $post_type );
+			}
+			$part->setState( 'custom' );
+
+			foreach ( $this->editor_post_types as $post_type ) {
+				$part->setCapRule( $post_type );
+			}
+		}
+
 	}
 
 	/**
@@ -523,7 +622,7 @@ class Vc_Manager {
 		if ( is_null( $this->is_network_plugin ) ) {
 			// Check is VC as network plugin
 			if ( is_multisite() && ( is_plugin_active_for_network( 'js_composer/js_composer.php' )
-					|| is_network_only_plugin( 'js_composer/js_composer.php' ) )
+			                         || is_network_only_plugin( 'js_composer/js_composer.php' ) )
 			) {
 				$this->setAsNetworkPlugin( true );
 			}
@@ -540,7 +639,9 @@ class Vc_Manager {
 	 * @param bool $value
 	 */
 	public function disableUpdater( $value = true ) {
-		$this->disable_updater = $value;
+		if ( 'administrator' !== vc_user_access()->part( 'settings' )->getRoleName() ) {
+			$this->disable_updater = $value;
+		}
 	}
 
 	/**
@@ -589,14 +690,12 @@ class Vc_Manager {
 	 * @since  4.2
 	 * @access public
 	 *
-	 * @ruturn string
-	 *
 	 * @param $template
 	 *
 	 * @return string
 	 */
 	public function getShortcodesTemplateDir( $template ) {
-		return $this->custom_user_templates_dir !== false ? $this->custom_user_templates_dir . '/' . $template : locate_template( 'vc_templates/' . $template );
+		return false !== $this->custom_user_templates_dir ? $this->custom_user_templates_dir . '/' . $template : locate_template( 'vc_templates' . '/' . $template );
 	}
 
 	/**
@@ -641,19 +740,12 @@ class Vc_Manager {
 			do_action( 'vc_before_init_vc' );
 			require_once $this->path( 'CORE_DIR', 'class-vc-base.php' );
 			$vc = new Vc_Base();
-			// DI Set template editor. @deprecated and will be removed
-			require_once $this->path( 'EDITORS_DIR', 'popups/class-vc-templates-editor.php' );
-			$vc->setTemplatesEditor( new Vc_Templates_Editor() );
 			// DI Set template new modal editor.
 			require_once $this->path( 'EDITORS_DIR', 'popups/class-vc-templates-panel-editor.php' );
 			$vc->setTemplatesPanelEditor( new Vc_Templates_Panel_Editor() );
 			// DI Set edit form
 			require_once $this->path( 'EDITORS_DIR', 'popups/class-vc-shortcode-edit-form.php' );
 			$vc->setEditForm( new Vc_Shortcode_Edit_Form() );
-
-			// DI for third-party plugins manager.
-			require_once $this->path( 'VENDORS_DIR', 'class-vc-vendors-manager.php' );
-			$vc->setVendorsManager( new Vc_Vendors_Manager() );
 
 			$this->factory['vc'] = $vc;
 			do_action( 'vc_after_init_vc' );

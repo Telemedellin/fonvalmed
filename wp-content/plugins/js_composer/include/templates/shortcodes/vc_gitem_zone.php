@@ -57,7 +57,7 @@ if ( 'custom' === $height_mode ) {
 		. ( strlen( $height_mode ) > 0 ? ' vc-gitem-zone-height-mode-auto-' . $height_mode : '' );
 }
 if ( 'yes' === $featured_image ) {
-	$css_style .= "{{ post_image_background_image_css }}";
+	$css_style .= '{{ post_image_background_image_css }}';
 	$image = '<img src="{{ post_image_url'
 		. ( false !== $background_image_css_editor ? ':' . rawurlencode( $background_image_css_editor ) . '' : '' )
 		. ' }}" class="vc_gitem-zone-img" alt="{{ post_image_alt }}">';

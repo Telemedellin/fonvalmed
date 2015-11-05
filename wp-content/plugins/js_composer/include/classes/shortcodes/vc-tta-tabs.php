@@ -18,7 +18,7 @@ class WPBakeryShortCode_VC_Tta_Tabs extends WPBakeryShortCode_VC_Tta_Accordion {
 		$autoplay = $this->atts['autoplay'];
 		if ( $autoplay && 'none' !== $autoplay && intval( $autoplay ) > 0 ) {
 			$attributes[] = 'data-vc-tta-autoplay="' . esc_attr( json_encode( array(
-					'delay' => intval( $autoplay ) * 1000
+					'delay' => intval( $autoplay ) * 1000,
 				) ) ) . '"';
 		}
 
