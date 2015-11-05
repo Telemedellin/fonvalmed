@@ -10,6 +10,7 @@ input[type="submit"] {
 	line-height: 1;
 	padding: .8em 1em .8em;
 	transition: background 0.5s;
+	border: none;
 	
 	&:hover {
 		background: darken($color__primary, 8%)
