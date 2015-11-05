@@ -387,6 +387,14 @@ h2, h3, h4, h5, h6 {
   font-size: 1.3rem;
 }
 
+.tribe-events-month-event-title.entry-title:before {
+  content: none;
+}
+
+.tribe-events-list-event-title.entry-title:before {
+  content: none;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 1.5em;
@@ -2814,11 +2822,7 @@ a:hover, a:active {
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: block; } }
+}
 
 .menu-toggle {
   width: 80%;
@@ -4212,15 +4216,6 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   background-color: #eee;
   padding: 5px;
   margin-top: 10px;
-  -webkit-column-count: 1;
-  -webkit-column-gap: 20px;
-  -webkit-column-fill: auto;
-  -moz-column-count: 1;
-  -moz-column-gap: 20px;
-  -moz-column-fill: auto;
-  column-count: 1;
-  column-gap: 20px;
-  column-fill: auto;
 }
 
 .sidebar {
@@ -4273,38 +4268,18 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   color: #fff !important;
 }
 
-.grid {
-  background: #EEE;
-  margin: 0 auto;
-}
-
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
 /* ---- grid-item ---- */
-.grid-sizer, .grid-item {
-  width: 100%;
+.grid-sizer {
+  width: 98%;
 }
 
 .ctn__obra-preview {
   background: #fff;
-  width: 100%;
-  margin: 0 0px 25px 0;
-  display: inline-block;
+  width: 98%;
   cursor: pointer;
   color: #898989;
+  margin-bottom: 10px;
   height: auto;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-  column-break-inside: avoid;
-  -webkit-transition: all .2s ease;
-  -moz-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
 }
 .ctn__obra-preview:hover {
   text-decoration: none;
