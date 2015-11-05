@@ -416,20 +416,27 @@ p.recaudo-total-texto{
 	.img-obras_controles{
 		display: inline-block;
 		padding: 10px;
-		background: $color__gray-light;
+		background: $color__primary;
 		position: absolute;
 		top: 50%;
 		height: 45px;
 		transform: translateY(-45px);
 		&#antes {
 			left: 0;
+			&:before{
+				@include iconos-fvm("d", 1.5rem, #ffffff);
+			}
 		}
 		&#despues {
 			right: 0;
+			&:before{
+				@include iconos-fvm("e", 1.5rem, #ffffff);
+			}
 		}
 		&.active{
-			background: $color__primary;
-			color: #fff;
+			background: rgba($color__primary, 0.5);
+			color: rgba(#FFFFFF, 0.5);
+			cursor: initial;
 		}
 	}
 }
