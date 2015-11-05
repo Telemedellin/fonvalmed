@@ -43,8 +43,7 @@
 						<span class="fm-label" rel="tipo:doble-calzada" onclick="javascript:filtrar(this)">Doble calzada</span>
 					</div>
 				</div><!-- /ctn_filtros -->
-				<!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/masonry.pkgd.min.js"></script>-->
-				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+				<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/masonry.pkgd.min.js"></script>
 				<div class="obras">
 					<div class="grid-sizer"></div>
 					<?php $obras = array(); ?>
