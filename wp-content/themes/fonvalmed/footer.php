@@ -48,9 +48,9 @@
 						<div id="mce-responses" class="clear">
 							<div class="response" id="mce-error-response" style="display:none"></div>
 							<div class="response" id="mce-success-response" style="display:none"></div>
-						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+						</div>   
 					    <div style="position: absolute; left: -5000px;"><input type="text" name="b_17bd135742395ca590c4f5e90_10d88d9dca" tabindex="-1" value=""></div>
-					    <div class="clear"><input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+					    <div class="clear"><input type="submit" value="Suscríbete" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 					    </div>
 					</form>
 					</div>
