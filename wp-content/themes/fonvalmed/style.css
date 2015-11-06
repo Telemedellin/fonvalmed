@@ -3690,9 +3690,12 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
   font-size: 0.8rem;
 }
 #mc_embed_signup .mc-terminos-condiciones label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #898989;
   font-weight: 300;
+  width: 80%;
+  margin: 10px auto;
+  display: block;
 }
 #mc_embed_signup .mc-terminos-condiciones input {
   display: inline-block;
@@ -3700,7 +3703,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 }
 #mc_embed_signup .mc-terminos-condiciones a {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 /*--------------------------------------------------------------

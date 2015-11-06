@@ -106,9 +106,12 @@
 	}
 	.mc-terminos-condiciones{
 		label{
-			font-size: 0.9rem;
+			font-size: 0.8rem;
 			color: $color__gray-dark;
 			font-weight: 300;
+			width: 80%;
+			margin: 10px auto;
+			display: block;
 		}
 		input{
 			display: inline-block;
@@ -116,7 +119,7 @@
 		}
 		a{
 			display: inline-block;
-			font-size: 0.9rem;
+			font-size: 0.8rem;
 		}
 	}
 }
