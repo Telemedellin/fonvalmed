@@ -52,7 +52,7 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php 
 				 if(in_category('en-los-medios')){
-			        get_template_part('templates/template-parts/content', 'medios');
+			        get_template_part('templates/template-parts/loop', 'medios');
 			    }else{
 			        get_template_part('templates/template-parts/content', 'single');
 			    }
