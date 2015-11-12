@@ -30,21 +30,19 @@ $meses = array(
 		<div class="col-md-5">
 			<script>
 				jQuery(function($) {
-					var menu = '<?php echo $menu; ?>';
-					var parser = new DOMParser();
-					var menu = parser.parseFromString(menu, "text/xml");
+					var menu = $('<?php echo $menu; ?>');
 
 					$(menu).find('ul').children().each(function (k, v) {
 						var link = $(v).children().get(0);
 						var icon_name = $(link).attr('menu-icono');
 						var menu_color = $(link).attr('menu-color');
-						var span_icon = $('<span>').css({'float':'left','font-size':'40px','margin-top':'5px','width':'100%'});
-						var span_text = $('<span>').css({'float':'left','width':'100%'}).html(link.innerHTML);
+						var span_icon = $('<span>').css({'float':'left','font-size':'40px','margin-top':'5px','width':'100%'}).get(0);
+						var span_text = $('<span>').css({'float':'left','width':'100%'}).get(0).innerHTML = link.innerHTML;
 						link.innerHTML = '';
-						$(link).append(span_icon.attr('class','fa fa-' + icon_name).css({'color':menu_color})).append(span_text);
+						$(link).append($(span_icon).attr('class','fa fa-' + icon_name).css({'color':menu_color}).get(0).outerHTML).append(span_text);
 					});
-
-					$('.menu-menu-home-container').html($(menu).find('div').html());
+					
+					$('.menu-menu-home-container').html(menu.html());
 				});
 			</script>
 			<div class="menu-menu-home-container">
