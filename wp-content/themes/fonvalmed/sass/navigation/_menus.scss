@@ -8,6 +8,7 @@
 		list-style: none;
 	} 
 }
+
 .top-bar{
 	text-align: right;
 	a{
@@ -20,6 +21,7 @@
 .menu-menu-superior-container{
 	overflow: scroll;
 }
+
 #top-bar-menu{
 	min-width: 760px;
 	text-align: left;
@@ -266,7 +268,7 @@ li.mega-menu-item-has-children > ul.mega-sub-menu > .mega-menu-item-has-children
 
 @media screen and (min-width: 992px) {
 	.menu-menu-superior-container{
-		overflow: initial;
+		overflow: hidden;
 	}
 	#top-bar-menu{
 		min-width: 100%;

@@ -26,17 +26,16 @@ get_header();
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 				<?php 
+				    $the_query = get_posts(array(
+                            'posts_per_page' => -1,
+                            'category_name' => 'en-los-medios'
+                        )
+                    );
 
-				// The Query
-				$the_query = get_posts( array( 'category_name' => 'en-los-medios' ) );
-
-				// The Loop
-				foreach ($the_query as $_post) {
-					include 'templates/template-parts/loop-medios.php';
-				}
-				/* Restore original Post Data */
-				//wp_reset_postdata();
-
+				    foreach ($the_query as $_post)
+                    {
+					    include 'templates/template-parts/loop-medios.php';
+				    }
 				?>	
 			</main><!-- #main -->
 		</div><!-- #primary -->
