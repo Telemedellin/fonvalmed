@@ -111,9 +111,9 @@ function fonvalmed_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'fonvalmed' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_widget' => '<section id="%1$s" class="sidebar-block widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="sidebar_block_title widget-title">',
 		'after_title'   => '</h3>',
 	) );
 
