@@ -30,6 +30,7 @@ query_posts($query);
 
 $datos = array();
 
+$script_paginacion = "<script>jQuery(function($) { $('.vc_grid-pagination a').on('click', function(evt) { var pag = $(this).text(); pag = pag - 1; if($('.vc_grid-pagination-list li').length > 1) { $('.owl-stage').children().hide().removeClass('active'); $($('.owl-stage').children().get(pag)).addClass('active').show(); $('.vc_grid-pagination ul').children().removeClass('vc_grid-active'); $(this).parent().addClass('vc_grid-active'); } evt.stopPropagation(); });});</script>";
 $container_active = '<div class="owl-item active" style="width: 825px; margin-right: 10px;"><div class="vc_pageable-slide-wrapper">';
 $container = '<div class="owl-item" style="width: 825px; margin-right: 10px;"><div class="vc_pageable-slide-wrapper">';
 
@@ -100,6 +101,8 @@ if (have_posts()):
 	if ($cont != 0 && $cont < 9):
 		$datos['content'] .= '</div></div>';
 	endif;
+	
+	$datos['pag'] = $datos['pag'] .= $script_paginacion;
 
 else:
 	$datos['content'] = '<h1>No existe contenido relacionado</h1>';

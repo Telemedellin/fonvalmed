@@ -117,6 +117,19 @@ jQuery(function($) {
 		{
 			if (validarRangos() && validarFechas())
 			{
+				$('.owl-stage').html('');
+				$('.owl-stage-outer').css({height: '250px'});
+				$('.vc_grid-pagination > ul').html('');
+				
+				var loading = $('<div>', {
+					style: 'position: absolute;width: 100%; height: 100%;'
+				}).append($('<span>',{
+					id: 'postgrid-loading',
+					style: 'display:block;width:100%;font-size:30px;color:#FF7F00;text-align:center;'
+				}).text('CARGANDO...'));
+
+				$('.owl-stage-outer').append(loading.html());
+
 				$.ajax({
 					method: "POST",
 					url: window.location.origin + "/wp-content/themes/fonvalmed/ajax/noticias.php",
@@ -124,6 +137,8 @@ jQuery(function($) {
 					success: function(data)
 					{
 						var obj = JSON.parse(data);
+						$('#postgrid-loading').remove();
+						$('.owl-stage-outer').css({height: 'initial'});
 						$('.owl-stage').html(obj.content);
 						$('.vc_grid-pagination > ul').html(obj.pag);
 					},
