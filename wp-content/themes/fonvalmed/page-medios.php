@@ -87,7 +87,7 @@ get_header();
 						next: " ",
 						links: "numeric",
 						startPage: 1,
-						perPage: 2,
+						perPage: 10,
 						keyBrowse: false,
 						scrollBrowse: false,
 						animation: false
