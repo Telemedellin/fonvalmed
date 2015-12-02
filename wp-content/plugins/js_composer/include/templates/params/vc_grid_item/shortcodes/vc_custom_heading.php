@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var $this WPBakeryShortCode_VC_Custom_heading
  */

@@ -11,7 +11,7 @@ class WPBakeryShortCode_VC_Raw_js extends WPBakeryShortCode_VC_Raw_html {
 		extract( shortcode_atts( array(
 			'el_class' => '',
 			'el_position' => '',
-			'width' => '1/2'
+			'width' => '1/2',
 		), $atts ) );
 
 		$el_class = $this->getExtraClass( $el_class );

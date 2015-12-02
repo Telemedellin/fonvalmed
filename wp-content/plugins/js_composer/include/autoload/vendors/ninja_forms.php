@@ -13,7 +13,7 @@ function vc_init_vendor_ninja_forms() {
 		$vendor = new Vc_Vendor_NinjaForms();
 		add_action( 'vc_after_set_mode', array(
 			$vendor,
-			'load'
+			'load',
 		) );
 	}
 }

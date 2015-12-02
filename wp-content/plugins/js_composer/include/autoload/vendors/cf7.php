@@ -13,7 +13,7 @@ function vc_init_vendor_cf7() {
 		$vendor = new Vc_Vendor_ContactForm7();
 		add_action( 'vc_after_set_mode', array(
 			$vendor,
-			'load'
+			'load',
 		) );
 	} // if contact form7 plugin active
 }

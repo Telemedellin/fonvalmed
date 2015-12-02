@@ -9,14 +9,15 @@
 			'title' => __( 'Templates', 'js_composer' ),
 			'controls' => array(
 				'minimize',
-				'close'
+				'close',
 			),
 			'header_css_class' => 'vc_ui-template-panel-header-container',
 			'content_template' => 'editors/partials/vc_ui-templates-tabs.tpl.php',
+			'search_template' => 'editors/partials/templates_search.tpl.php',
 			'template_variables' => array(
 				'categories_data' => $categories_data,
 				'categories' => $categories,
-			)
+			),
 		) ); ?>
 		<!-- param window footer-->
 		<div class="vc_ui-panel-content-container">
@@ -30,8 +31,8 @@
 					?>
 					<?php
 					$first = true;
-					foreach ( $categories_data as $key => $category ):
-						echo '<div class="vc_edit-form-tab vc_row' . ( $first ? ' vc_active' : '' ) . '"'
+					foreach ( $categories_data as $key => $category ) :
+						echo '<div class="vc_edit-form-tab vc_row vc_ui-flex-row' . ( $first ? ' vc_active' : '' ) . '"'
 						     . ' data-vc-ui-element="panel-edit-element-tab"'
 						     . ' data-tab="'
 						     . esc_attr( $category['category'] )

@@ -111,9 +111,19 @@ function fonvalmed_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'fonvalmed' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_widget' => '<section id="%1$s" class="sidebar-block widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="sidebar_block_title widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar noticias', 'fonvalmed' ),
+		'id'            => 'sidebar-noticias',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="sidebar-block widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="sidebar_block_title widget-title">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -164,6 +174,14 @@ function fonvalmed_widgets_init() {
 		'before_widget' => '<div id="%1$s" class="widget ctn_widget-proyecto">',
 		'after_widget'  => '</div>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Consistencia', 'consistencia' ),
+		'id'            => 'consistencia',
+		'description'   => 'Widget que inserta un mapa informativo con filtros. ',
+		'before_widget' => '<div id="%1$s" class="widget ctn_widget-consistencia">',
+		'after_widget'  => '</div>',
+	) );
 }
 add_action( 'widgets_init', 'fonvalmed_widgets_init' );
 
@@ -176,6 +194,7 @@ function creaWidgets()
 {
 	// Widget Avance de la obra 
 	 register_widget( 'WidgetAvanceProyecto' );
+	 register_widget( 'WidgetConsistencia' );
 
 }
 add_action( 'widgets_init', 'creaWidgets' );
@@ -196,6 +215,8 @@ function fonvalmed_scripts() {
 	wp_enqueue_script( 'fonvalmed-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'fonvalmed-script', get_template_directory_uri() . '/js/script.js', array(), true );
+
+	wp_enqueue_script('jquery-ui-datepicker');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -267,6 +288,32 @@ function add_custom_rewrite_rule() {
 } // end add_custom_rewrite_rule
 add_action('init', 'add_custom_rewrite_rule');
 
+function custom_menu_options_default_fonvalmed(){
+	$fields = array(
+		array(
+			'type' => 'color',
+			'name' => 'color',
+			'label' => 'Color'
+		),
+		array(
+			'type' => 'text',
+			'name' => 'menu-icono',
+			'label' => 'Icono del menú'
+		)
+		
+	);
+	return $fields;
+} 
+add_filter( 'custom_menu_fields', 'custom_menu_options_default_fonvalmed' );
+
+add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
+function my_nav_menu_attribs( $atts, $item, $args )
+{
+	$atts['menu-icono'] = get_menu_field( 'menu-icono', $item->ID );
+	$atts['menu-color'] = get_menu_field( 'color', $item->ID );
+	return $atts;
+}
+
 /**
  * Implement the Custom Header feature.
  */
@@ -295,4 +342,9 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
 * avance widgets
 */
-require get_template_directory() . '/widgets/avance.php';
+require get_template_directory() . '/widgets/avance/avance.php';
+
+/**
+* consistencia de las obras
+*/
+require get_template_directory() . '/widgets/consistencia/consistencia.php';

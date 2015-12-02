@@ -21,10 +21,6 @@ document.documentElement.className += 'ontouchstart' in document.documentElement
  If you want to override function behavior then copy it to your theme js file
  with the same name.
  */
-
-jQuery( window ).load( function () {
-
-} );
 function vc_js() {
 	vc_twitterBehaviour();
 	vc_toggleBehaviour();
@@ -45,9 +41,6 @@ function vc_js() {
 	jQuery( document ).trigger( 'vc_js' );
 	window.setTimeout( vc_waypoints, 500 );
 }
-jQuery( document ).ready( function ( $ ) {
-	window.vc_js();
-} );
 
 if ( 'function' !== typeof(window[ 'vc_plugin_flexslider' ]) ) {
 	window.vc_plugin_flexslider = function ( $parent ) {
@@ -917,3 +910,6 @@ function vcExtractYoutubeId( url ) {
 
 	return false;
 }
+jQuery( document ).ready( function ( $ ) {
+	window.vc_js();
+} );

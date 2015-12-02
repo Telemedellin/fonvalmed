@@ -1,0 +1,957 @@
+Version 4.0.1
+-------------
+- Fixed issue when activating / deactivating plugin networkwide on a multisite setup
+
+Version 4.0.0
+-------------
+- Added new elements for code highlighting ("EnlighterJS - Syntax Highlighter")
+- Added optional theme builder for Syntax Highlighter to create a custom theme (based on default theme)
+- Added new element "TS Circle Steps"
+- Added new element "TS Image Scroll"
+- Added new element "TS Google Maps Plus" (multiple markers, group filter, overlays and other new features)
+- Deprecated "TS Google Maps" element and renamed element to "TS Google Maps (Deprecated)"
+- Added new element "TS Posts Timeline"
+- Added new element "TS Mixcloud Player"
+- Added new element "TS Quick Skillset" with repeatable group settings (independent from "VC Skillsets" post type)
+- Added new element "TS Quick Testimonial" (independent from "VC Testimonials" post type)
+- Added new element "TS Testimonial Form" to create frontend submission form for "VC Testimonials" post type
+- Added new custom post type "VC Logos" and associated elements (currently only basic features, but will be expanded with future updates)
+- Fixed lazy scroll imitation mode for "TS CSS Media Timeline" element
+- Added "Honeycombs Fluid Grid of all Images" layout to "TS Image Gallery" element
+- Added "Pagawa Slideshow" layout to "TS Image Gallery" element
+- Added option to "TS Image Gallery" element to use external images
+- Added option to "TS Image Gallery" element to use different preview/thumbnail images than the ones shown in the lightbox
+- Added option to "TS Image Gallery" element to define tooltip animation
+- Fixed missing image titles for "Nivo Slider" layout in "TS Image Gallery" element
+- Added option to "TS Image Gallery" to disable mouse scroll for "FlexSlider" layouts
+- Added circle, losange, diamond, hexagon and octagon shape option to "TS Image Lightbox" element
+- Added option to "TS Image Lightbox" element to use featured image of post/page
+- Fixed social share "Off" setting not getting applied to "TS Image Lightbox" element
+- Added option to "TS Image Lightbox" element to show a different image inside the lightbox than the one used for the preview
+- Added options to "TS Image Switch" element to apply optional click event to element (provided switch is triggered via hover)
+- Added option to "TS Image Switch" element to have no transition effect between images
+- Added alignment option to "TS Image Lightbox" element
+- Renamed "TS Icon Title" element to "TS Title Advanced" element
+- Added option to "TS Title Advanced" element to highlight words in title with different color
+- Added option to "TS Title Advanced" element to add pre-text with different style to title
+- Added option to "TS Title Advanced" element to apply CSS text-transform to title
+- Added alternative light colored strikethrough pattern to "TS Title Advanced" element
+- Fixed missing strikethrough pattern for "TS Title Advanced" element if icon top/bottom combined with background
+- Added option to "TS Creative Links" element to use basic shortcodes to generate link title
+- Fixed button layout for "TS Icon Flat Button" when viewed on extra small mobile screens
+- Added option to "TS Divider" element to define font size for "Divider with Text" layout
+- Added option to "TS Divider" element to define icon size for "Divider with Icon" layout
+- Added option to "TS Divider" element to define image size for "Divider with Image" layout
+- Added shortcode processing for content for "TS Pricing Table" element
+- Added alternative title for mobile devices to "TS Title Ticker" element
+- Added breakpoint options to scale down font size on small screen devices to "TS Title Ticker" element
+- Added option to "TS Video YouTube" element to hide video title in top info bar (only when video is NOT viewed in browser fullscreen mode)
+- Added option to "TS Video YouTube" element to define custom maximum video size in lightbox
+- Added option to "TS Video Dailymotion" element to define custom maximum video size in lightbox
+- Added option to "TS Video Vimeo" element to define custom maximum video size in lightbox
+- Added option to "TS Video HTML5" element to define custom maximum video size in lightbox
+- Added option to "TS Horizontal Steps" element to define tooltip animation
+- Fixed tooltip themes not getting correctly applied to "TS Horizontal Steps" element
+- Fixed interval stacking issue for "TS Icon Wall" element when using auto-rotation
+- Added optional deeplinking to "TS Fancy Tabs (BETA)" element
+- Fixed custom overlay color not getting correctly applied to "TS Image Advanced Overlay" element
+- Added new background option "Particlify Animation" to extended row settings
+- Added optiom to extended row settings to create group of images to randomly select one for background (single image background types)
+- Added option to extended row settings to equalize column heights with top/center/bottom content alignment
+- Added option to extended row settings to define speed for fadeIn effect for parallax backgrounds
+- Fixed extended row settings where background size option is not transferring to frontend when using automove background type
+- Fixed extended row settings where KenBurns effect were always chosen randomly, ignoring actual selection
+- Added three new zoom effects (Basic Center Zoom, Center Zoom + Fade In, Center Zoom + Fade Out) to some row backgrounds
+- Fixed missing top/bottom padding options for single color and gradient color background options in extended row settings
+- Optional top/bottom settings for rows and left/right margins for row backgrounds are now by default disabled to avoid conflicts with some themes
+- Fixed "mixed content" issue on "https" pages when using "TS Video HTML5" element
+- Changed content holder for "TS SlitSlider" element from "blockquote" to "DIV" tag to prevent CSS conflicts
+- Added option to "VC Timelines" post type to assign tags to each timeline section
+- Added option to "TS CSS Timeline" element to filter timeline section by categories and/or tags
+- Added option to "TS CSS Timeline" element to show or hide categories and tags for each timeline section
+- Fixed missing "advanced gradient" file for "TS SlitSlider" element if extended row options are disabled
+- Added option to "TS Icon Flat Button" element to also use the hover styles available in "TS Icon Dual button" element
+- Added one column layout for "TS Processes" element (layout #3) for screen sizes below 480px (via CSS3 media query)
+- Fixed custom font styles not getting applied to "TS Title Typed" and "TS Title Textillate" elements on some sites
+- Fixed optional CSS3 animation not saving for "TS Icon Counter" element
+- Fixed broken sort buttons in "Basic Products Isotope Grid" and "TS Isotope Posts" elements
+- Fixed Call to a member function get_cart() on a non-object for "TS WooCommerce Ticker" element
+- Fixed broken live preview for elements with images due to changes in AJAX requests in WP 4.3.x + VC 4.7.x
+- Added "no-ajaxy" class to all lightbox elements to avoid conflicts with standard page transition effect in "Salient" theme v6.x
+- Fixed elements with custom CSS output where CSS code did not get applied in FireFox browser
+- Fixed broken mousescroll in lightbox zoom mode when overall page scroll has been disabled in lightbox settings (using JS)
+- Fixed broken mousescroll in lightbox thumbnail list when overall page scroll has been disabled in lightbox settings (using JS)
+- Added option to plugin settings to control priority (position) for JS variables output on frontend
+- Bonus plugin "Iconicum" now has the option to provide the icon shortcode generator only as menu item, only added to the tinyMCE editor, or both
+- Added options to plugin settings to control menu position of custom post types associated with the plugin
+- Changed all external Google requests (fonts, maps, etc.) from "http" to "https" to avoid mixed content warnings on SSL sites
+- Adjusted styling for setting controls to new Visual Composer v4.7.x layout
+- Fixed broken description link on plugin listing page
+- Moved some (less used) CSS + JS routines from core plugin files into dedicated single CSS + JS files
+- Adjusted all internal links from "tekanewascripts.info" to "tekanewascripts.com" to account for server changes
+- Changed license check and other Envato dependent routines to new Envato API
+- License check page will now show support expiration date (already confirmed licenses need to be re-confirmed to show date)
+- Fixed incorrect update notification check interval from 60s to 12h (in order to match standard WP update check interval)
+- Fixed default options not getting set for new sites on an existing multisite environment if plugin is activated networkwide
+- Added fallback check to icon font loading procedure to get correct default value if matching WordPress option has not been set yet
+- Custom CSS + JS code from editors will now be outputted on all pages (even if no element from add-on is present)
+- Restored all column layouts for rows in "VC Widgets" custom post type that were previously removed
+- Fixed "VC Widgets" post type issue with VC "Design Options" (tab) settings not outputting correctly when used as footer and sidebar widget
+- Fixed settings export/import tool to include previously missing settings
+- Updated built-in Font Awesome icon font from v4.3.0 to v4.4.0 (adding 66 new icons)
+- Improved compatibility with WP Rocket Cache image and iFrame lazyload feature
+- Adjustments for Visual Composer v4.8.x
+- Other CSS + JS Improvements
+- Updated .po/.mo language files
+
+Version 3.4.5
+-------------
+- Fixed widget registration in WordPress 4.3.0+
+
+Version 3.4.4
+-------------
+- Added new element "TS Icon Wall"
+- Fixed "TS Google Maps" element not rendering in default style after updating to Visual Composer v4.6.x
+- Fixed "TS Posts Ticker" element not auto-playing anymore after updating to Visual Composer v4.6.x
+- Fixed "TS Products Ticker" element not auto-playing anymore after updating to Visual Composer v4.6.x
+- Fixed "TS Pricing Table" element not applying some default settings after updating to Visual Composer v4.6.x
+- Fixed "TS Info & Notice Panel" element not applying some default settings after updating to Visual Composer v4.6.x
+- Fixed "TS Title Textillate" element not applying some default settings after updating to Visual Composer v4.6.x
+- Fixed extended row options issues (auto-movement "leftright") after updating to Visual Composer v4.6.x
+- Fixed broken switch controls in WooCommerce elements
+- Fixed background scroll still working when "TS Element Focus" has been triggered
+- Added option to "TS Image Advanced Overlay" element to use custom color for overlay background
+- Added alternative Modernizr Check to lightbox script in order to test for fullscreen availability
+- Added option to "TS Google Maps" element to show/hide the link button to the official Google Maps website
+- Added option to "TS Image Gallery" element to define custom number of items per slide for OwlSlider layout
+- Added option to "TS Almost Anything Slider" element to define custom number of items per slide for OwlSlider layout
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.4.3
+-------------
+- Fixed disappearance of "VC Timelines" custom post types after update to v3.4.2
+- Fixed failed rendering of "TS Fancy Tabs (BETA)" element in backend editor if live preview rendering has been disabled
+
+Version 3.4.2
+-------------
+- Added option to "TS Horizontal Steps" to add viewport animations to steps with delay
+- Added option to use auto play setting with "TS Video YouTube" element when additional overlay image has been used
+- Added option to "TS Video YouTube" element to loop video
+- Added option to "TS Video YouTube" element to only use modest branding for player
+- Added option to "VC Timelines" custom post type to define custom (lightbox) title for media elements
+- Fixed custom ALT string not getting correctly applied to media elements in "VC Timelines" custom post type
+- Added option to "TS Image Full" element to assign link to element
+- Fixed looping issue for "TS HTML5 Video" and "TS HTML5 Audio" elements
+- Added option to "TS Fancy Tabs (BETA)" element to also customize colors for mobile menu admin bar
+- Added option to "TS Fancy Tabs (BETA)" element to define inner padding for each tab
+- Added option to "TS Fancy Tabs (BETA)" element to use automatic tooltips if tab title does not fit tab width
+- Added option to "TS Fancy Tabs (BETA)" element to use tab position (as roman number, standard number or letter) in medium breakpoint view if no custom icon has been set
+- Fixed "bleeding through" of hover tooltips on hidden tabs for "TS Fancy Tabs (BETA)" element
+- Fixed error where tab link events were assigned to some link elements inside the tab content for "TS Fancy Tabs (BETA)" element
+- Fixed broken viewport animation for "TS Icon Fonts" element
+- Switched from VC internal viewport animations to CSS3 viewport animation for "TS Icon Fonts" and "TS Icon List Item" elements
+- Added option to "TS Content Flip" element to trigger flip via hover or click event
+- Fixed issue with "TS Content Flip" element where custom height settings did not get applied correctly
+- Improved touch behaviour for "TS Image iHover" element when additional link is applied
+- Added option to "TS Page Background" element to allow first image of slideshow to be used as fixed background on mobile devices
+- Added option to "TS Page Background" element to show fixed background image on mobile devices
+- Fixed issue with "TS Video DailyMotion" element where short URL for video did not parse correctly
+- Added option to "TS Video DailyMotion" element to show or block related videos at the end of video
+- Fixed "TS Social Networks" element issues after updating to Visual Composer v4.6.x
+- Fixed "TS Content Flip" element issues after updating to Visual Composer v4.6.x
+- Fixed "TS Modal Popup" element issues after updating to Visual Composer v4.6.x
+- Fixed extended row options issues (parallax "up") after updating to Visual Composer v4.6.x
+- Fixed issue with link events for "TS Image Advanced Overlay" element in Internet Explorer
+- Improved touch behaviour for "TS Image Advanced Overlay" element when additional link is applied
+- Added option to "TS Image Gallery" element to define image spacing when using Owl Slider layout
+- Added new optional update notification page to admin dashboard
+- Added simple fade transition animation option to lightbox
+- Added "Jello" animation to listing of available CSS3 animations (for supported elements)
+- Added option to global lightbox settings to control if and how background page scrolling should be blocked when lightbox is opened
+- Added option to global lightbox settings to define speed for lightbox entry animations
+- Increased timeout limit for data requests sent to Envato to account for slower servers on license page
+- Fixed issue with default Skype Username setting not accepting underscores
+- Fixed Uncaught TypeError: jQuery(...).TS_VCSC_ClassyGradient is not a function in "TS Page Background" element if extended row options are disabled
+- Fixed failed icon font upload process if icon font package name contained space characters
+- Fixed fatal error on some installations when attempting to uninstall plugin
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.4.1
+-------------
+- Fixed parse error: syntax error, unexpected '[' error in "TS Page Background" and extended row settings
+
+Version 3.4.0
+-------------
+- Added new element "TS SplitSlider" to create animated hero slides
+- Added new element "TS Google Forms" to embed Google forms
+- Added new element "Real 3D Flipbook" (requires 3rd party "Real 3D Flipbook" plugin; not included)
+- Added image background slideshow option to "TS Image(s) Full Width" element
+- Added image background slideshow option to "TS Page Background" element
+- Added image background slideshow as option to extended row background settings
+- Added CSS3 KenBurns effect options to single image and gradient row backgrounds
+- Added alternative YouTube and HTML5 video background options to row backgrounds (with basic parallax and fixed attachment)
+- Added triangle/spectral pattern as option to extended row background settings
+- Added triangle/spectral pattern as option to "TS Page Background" element
+- Added "Freewall Fluid Grid of all Images" layout to "TS Image Gallery" element
+- Added "Freewall Fluid Posts Grid" option to "TS Posts Image Grid" element
+- Added "Freewall Fluid Image Link Grid" option to "TS Image Link Grid" element
+- Added "Freewall Fluid Products Grid" option to "TS Products Image Grid" element
+- Added option to "TS Products Image Grid" element to disable filter feature
+- Added flat button option to "TS Pricing Table" element
+- Added font icon or image icon option to "TS Pricing Table" element
+- Added options to define colors for box shadows to "TS Pricing Table" element
+- Added option to "TS Divider" element to define fixed width in pixels
+- Added option to "TS Content Flip" element to define minimum or maximum height for element
+- Added fixed height option to "TS Icon Box" element
+- Added custom width options (percent / pixels) to "TS Image Advanced Overlay" element
+- Added custom width options (percent / pixels) to "TS Image iHover" element
+- Added option to "TS iFrame Embed" element to define custom backlight color for lightbox
+- Added option to "TS Teaser Block" element to use without featured image
+- Added option to "TS Icon Counter" element to add link to icon / image, content, whole element or via button
+- Added option to "TS Icon Counter" element to allow HTML code in tooltip and switched tooltip script to "ToolTipster"
+- Added options to "TS Counter Circle" element to define font colors for text strings inside circle
+- Added option to "TS HTML5 Video" element to set sizing setting for video and poster image
+- Added option to "TS Image Advanced Overlay" element to define image size (source) for preview and optional lightbox image
+- Added option to "TS Image iHover" element to define image size (source) for preview and optional lightbox image
+- Added option to "TS Image Gallery" element to define image source for thumbnail images in lightbox
+- Improved smoothness of first transition per slide for "TS Image Gallery" element in polaroid stack layout
+- Fixed bug where "TS Row Center Frame" only centered content on full screen height rows
+- Increased allowable height limit for "TS Google Docs" element to 5000px
+- Changed breakpoint to switch from vertical tabs to horizontal tabs from 960px to 820px for "TS Fancy Tabs (BETA)" element
+- Fixed broken output of custom CSS styles for tabs in "TS Fancy Tabs (BETA)" element
+- Changed output of "TS Image Switch" element when using frontend editor
+- Changed output of "TS Image Magnify" element when using frontend editor
+- Fixed error with "TS Image Magnify" element where a "division by zero" was triggerend when no image was selected
+- Fixed error with "TS Icon Fonts" element (undefined variable: icon_margin)
+- Fixed conflict with MooTools library with "TS Single Page Navigator" element
+- Fixed conflict with MooTools library with "TS Image Adipoli" element
+- Fixed issue where some element combinations caused problems with opening settings panel in VC
+- Fixed wrong element count in plugin settings page (section "Manage Elements")
+- Fixed issue where activating of "VC Widgets" post type unchecks VC for pages and posts
+- Added select/deselect all elements buttons for settings page (section "Manage Elements")
+- Renamed shortcode paramater "switch" to "switch_button" to avoid conflicts with similar parameters from other add-ons
+- Adjustments for Visual Composer v4.6.0
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.3.3
+-------------
+- Added new element "TS Single Page Navigator" to build one-page navigation bars
+- Added new element "TS Row Center Frame" to vertically center elements inside a full height row
+- Fixed layout issues for "TS Image Grid", "TS Post Image Grid" and "TS Product Image Grid" elements
+- Fixed error with new "VC Widgets" post type when adding widget to sidebar
+- Fixed filter routine for "VC Widgets" elements on widgets page
+- Changed "VC Widgets" post type default setting to disabled (to match other custom post types)
+- Added support for element's design option setting for "VC Widgets" post type (a big thank you @NoahjChampion for providing code)
+- Added frontend editor support and preview for "VC Widgets" post type
+- Fixed missing category selectors for WooCommerce elements
+- Added extended link options to "TS Image Switch" element
+- Made image order reversal optional in Polaroid Stack layout for "TS Image Gallery" element
+- Added auto-rotate option to Polaroid Stack layout for "TS Image Gallery" element
+- Fixed display problems with some countdown types on FF
+- Added option to "TS Video YouTube" element to place image overlay above directly embedded video iFrame
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.3.2
+-------------
+- Added new (dependency free) "Sidebar Widgets Builder" post type "VC Widgets", allowing VC elements to be used in sidebars via widget
+- Added font family options to "TS Teaser Block" elements
+- Added background + font color options to "TS Teaser Block" elements
+- Added font size options to "TS Teaser Block" elements
+- Fixed error where "no dots navigation" setting for OwlSliders did not transfer to frontend
+- Fixed error with preview image using FF in "TS Image Hotspot" element when setting hotpost position
+- Removed the automatic message truncation via JS for "TS Image Basic Overlay" element and made it optional via setting
+- Changed priority for frontend JS variabled output in page HEAD to be listed later and not at beginning of HEAD
+- Added option to custom icon font import to prevent path change in uploaded CSS file
+- Added option to custom icon font import to use relative path for uploaded CSS file
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.3.1
+-------------
+- Fixed error with missing row paddings / margins on some themes after updating to v3.3.0
+
+Version 3.3.0
+-------------
+- Introduced new Google Font Manager (requires PHP 5.2 or higher)
+- Added font family options to "TS Info / Notice Panel" element
+- Added font family options to "TS Content Flip" element
+- Added font family options to "TS Icon Box" element
+- Added new options to "TS Icon Box" element to apply link to title only or title + button
+- Added minimum/maximum height setting option to inner section of "TS Icon Box" element
+- Added new elements "TS Fancy Tabs (BETA)" (currently only available for backend editor)
+- Added new element "TS Google Tables" to embed interactive tables from a Google Spreadsheet document
+- Added new element "TS Creative Links"
+- Adjustments for WordPress v4.2.0
+- Adjustments for Visual Composer v4.5.0
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.2.2
+-------------
+- Added option to "TS Google Charts" element to use external Google Doc Spreadsheet as data source
+- Added option to "TS Google Charts" element to provide chart in image version in order to download and save
+- Fixed show/hide toggle button for "TS Google Maps" element when viewed on mobile devices
+- Fixed JS error with "TS Google Map" element when showing in frontend editor mode
+- Added option to "TS Image Gallery" to show thumbnails for "FlexSlider" layout on top or bottom
+- Added option to "TS Image Gallery" element to enable/disable hashtag navigation (separate from global settings)
+- Added more control options for "NivoSlider" layout for "TS Image Gallery" element
+- Added option to "TS Image Lightbox" element to enable/disable hashtag navigation (separate from global settings)
+- Added option to "TS Image Lightbox" element to enable/disable social share (separate from global settings)
+- Added option to "TS Image Switch" element to use slide effect in horizontal or vertical direction
+- Added option to "TS Image Switch" element to use slide effect in hover or drag mode
+- Added option to "TS Image Switch" element to set initial position of separation bar
+- Added option to "TS Image Switch" element to add a before/after label string to each image
+- Added color option to typing cursor for "TS Title Typed"
+- Added basic filter/search option for Google font selector parameter
+- Fixed line height setting for "TS Icon Box" element not applying correctly
+- Fixed misaligned hotspot pulse for large hotspots with icon
+- Fixed path duplication for custom font upload in font CSS file (on some servers)
+- Added setting to disable auto-update check and routine
+- Added link to full changelog page in plugin listing page
+- Added additional checks for enabled elements/features for output of JS variables on frontend
+- Fixed error on frontend editor where advanced gradient file was not loaded correctly
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.2.1
+-------------
+- Fixed error in "TS Spacer" element where settings panel does not open correctly
+
+Version 3.2.0
+-------------
+- Added memory check to plugin activation to prevent activation if not sufficient memory left
+- Added new element "TS Element Focus"
+- Element "TS Lightbox Gallery" renamed to "TS Image Gallery"
+- Added "Thumbnail" size option for preview images for "TS Image Gallery" element
+- Added option to some gallery layouts to remove lightbox feature or open image in new tab for "TS Image Gallery" element
+- Added new layout "Polaroid Image Stack" to "TS Image Gallery" element
+- Added new layout "Random Image Only" to "TS Image Gallery" element
+- Changed "Flex Image Slider (With Thumbnails)" layout for "TS Image Gallery" element to always use "thumbnail" image size for thumbnails
+- Added "Thumbnail" size option for preview image for "TS Image Lightbox" element
+- Changed layout for "TS Image Gallery" element when shown in frontend editor mode
+- Added option to automtically stop some row background effects when row width is below a pre-defined breakpoint (non-mobile devices only)
+- Added option to "TS Posts Image Grid" to disable filter feature
+- Added option to prevent built-in lightbox solution to load API's for utilzied social share networks
+- Changed that lightbox scipt will only load the social network API's for networks actually selected in settings
+- Added option to lightbox settings to apply lightbox (via class name) to image links inserted via tinyMCE media button
+- Added option to "TS Image Hotspot" element to use dynamic or fixed hotspot size
+- Added option to "TS Image Hotspot" element to select entry/exit animation for tooltip
+- Added option to "TS Image Hotspot" element to trigger tooltip via hover or click (provided no hotspot event has been assigned)
+- Added option to "TS CSS Media Timeline" to hide title in timeline description and only show at the top of timeline
+- Added option to "TS Almost Anything Slider" to define custom spacing between elements (if more than one element per slide)
+- Added option to "TS Image Advanced Overlay" element to add tooltip to link ioncs (for icon overlays)
+- Added new advanced border settings parameter to "TS Icon Box" element
+- Added new advanced border settings parameter to "TS Icon Title" element
+- Added more setting options to "TS Icon Title" element to better control icon / image and title string positioning
+- Changed opacity animations for "TS Figure Navigation" element from jQuery "animate" to CSS3 animation
+- Added option to "TS Video YouTube" element to define how player controls are provided
+- Added option to extended row settings to use radial gradients (ellipse + circle) and multiple gradient colors
+- Added option to "TS Video YouTube" element to define how player controls are displayed during play
+- Added option to "TS iPresenter" element to use fade transition for slides instead of advanced 3D animations
+- Added flat button styles to "TS Icon Box" element
+- Added tooltip option to "TS Icon Box" element
+- Added tooltip option to individual "TS Horizontal Step" items
+- Added option to "TS Image Lightbox" element to use external image sources for lightbox and preview image
+- Added option to "TS Google Charts" element to define custom color for data sets
+- Fixed stacked image bug in lightbox when large sized images are used
+- Fixed wrong element count if VC 4.4.0+ is used and default WooCommerce elements are removed due to duplication
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.1.1
+-------------
+- Removed misplaced switch for "TS CSS Timeline" element in element listing (actually controlled via custom post type switch)
+- Updated Modernizr library to include prefixed function
+- Fixed error with "TS iPresenter" element where fixed height setting did not transfer to frontend
+- Fixed background-position for row image background with scroll
+- Fixed issue where "TS Image Gallery" element did not use selected preview image size for some layouts
+- Fixed error where images in gallery layout "Image Stack" did not open in lightbox
+- Updated built-in Font Awesome Icon Font to v4.3.0
+
+Version 3.1.0
+-------------
+- Full backend STYLING is now only supported for VC 4.3.0 or higher; older VC versions are not supported anymore
+- Added new custom post type "VC Timeline" and corresponding elements to create interactive timeline with optional media elements
+- Deprecated existing "TS Isotope Timeline" element in favor of new element "TS CSS Timeline" (which uses custom post type)
+- Added new element "TS Fancy List"
+- Added option to "TS Title Flipboard" element to switch between dark / light style
+- Added option to "TS Title Flipboard" element to define separate start string
+- Added russian alphabet to allowable characters for "TS Title Flipboard" element
+- Added check for presets in "TS Info / Notice Panel" to use VC built-in icon font first, if available
+- Added options to row settings to show/hide row based on available screen sizes (4 devices types with variable screen sizes defined in settings)
+- Row viewport CSS3 animation settings now available for inner rows as well
+- Added timezone selector to "TS Countdown" element
+- Added option to count up once target date / time has been reached or has been intentionally set in the past for "TS Countdown" element
+- Added option to easily enable/disable frontend editor (administrator roles only)
+- Added option to "TS Modal Popup" to define size of lightbox / modal window
+- Added option to "TS Icon Counter" element to start count on pageload
+- Added option to disable built-in lightbox solution (at own risk; no guarantees for functionality of elements that rely on lightbox)
+- Added option to "TS Teaser Block" elements to define button hover color for flat button style
+- Added option to "TS HTML5 Video" element to define border settings around video frame
+- Added flat (icon) button as trigger option for "TS Modal Popup" element
+- Added flat (icon) button as trigger option for "TS Video DailyMotion" element
+- Added flat (icon) button as trigger option for "TS Video YouTube" element
+- Added flat (icon) button as trigger option for "TS Video Vimeo" element
+- Added flat (icon) button as trigger option for "TS Video HTML5" element
+- Added flat (icon) button as trigger option for "TS iFrame Embed" element
+- Added optional title for tooltips in "TS Image Hotspot" element
+- Added new style to "TS Image SVG" element
+- Changed fade effect for "TS Image Switch" element from jQuery animation to CSS3 opacity animation
+- Added option to lightbox settings to disable "Tap-To-Next" navigation
+- Changed lightbox script to automatically prevent "Tap-To-Next" animation if there is only one item in the group
+- Fixed gradient preview indicator for row backgrounds
+- Fixed array warning in "Transfer Settings" page
+- Fixed missing custom ID / Class name assignment for "TS Imaged Advanced Overlay" element
+- Fixed wrong path for default image for "TS Teammate" elements
+- Fixed JS error for self-hosted video row + page background when video controls are deactivated
+- Fixed additional white space below image when using "TS Image Adipoli" element
+- Fixed error with Projekktor (HTML5) video player script when leaving fullscreen mode does not restore scrollbars
+- Script for "TS Google Map" element will now follow http/https when retrieving images from Google
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 3.0.3
+-------------
+- Added check for constant defined prior to calling 'cmb_Meta_Box::CMB_VERSION'
+- SmoothScroll feature will automatically be deactivated when using the frontend editor
+- Permanently disabled keyboard navigation for "TS Modal Popup" element to avoid conflicts with embedded forms
+- Fixed JS error in FF when SmoothScroll Feature has been activated
+
+Version 3.0.2
+-------------
+- Changed "arry_map" function in lightbox gallery shortcode to not use an "anonymous function" in order to work with PHP versions prior to 5.3
+- Fixed error where plugin defaults are not registering in WP database, preventing icon font files from loading until plugin settings have been saved at least once
+
+Version 3.0.1
+-------------
+- Fixed array error in settings page for lightbox settings
+- Added option to "Basic Products Slider" element to define custom number of items per breakpoint
+- Updated .po/.mo language files
+
+Version 3.0.0
+-------------
+- Plugin officially renamed to "Composium - Visual Composer Extensions" (note change in plugin listing order)
+- Adjustments for v4.4.0 of Visual Composer
+- Added option to also utilize new built-in fonts from Visual Composer (v4.4.0+)
+- Added option to use new VC icon picker (v4.4.0+) instead of the one previously utilized by this add-on
+- Recoded arrays with icon font data to include icon description for better search results
+- Introduced live preview of CSS only elements when using backend editor (requires VC 4.3.0 or higher)
+- Added option to export and import main plugin settings
+- Added new element "TS Image Magnify"
+- Added new element "TS Title Ticker"
+- Added new element "TS Title Flipboard"
+- Added new element "TS Page Background"
+- Added new element "TS Icon Flat Button"
+- Added new element "TS Icon Dual Buttons"
+- Added new element "TS Image Link Grid"
+- Added new element "TS Posts Image Grid"
+- Added option to "TS Lightbox Gallery" element to limit number of images shown in "Auto Grid" layout
+- Added option to "TS Lightbox Gallery" element to randomly shuffle image order in "Auto Grid" layout
+- Added option to hotspots to show font icon or number / letter inside inner dot for "TS Image Hotspots" element
+- Added new hotpost event to "TS Image Hotspots" element to switch out the main hotspot image
+- Added option to "TS Image Hotspots" element to allow advanced HTML code for tooltip utilizing Base64 encoding/decoding
+- Added two more hotspot sizes for "TS Image Hotspot" element to adjust for smaller images
+- Added option to "TS Image Advanced Overlay" to always show overlay
+- Added option to "TS Icon Box" element to define in which DOM element the title should be wrapped in
+- Added option to "TS Icon Box" element to define icon / image position for style "Icon Outside - Left"
+- Added option to "TS Image iHover" element to enable / disable box-shadow effect
+- Added option to "TS Modal Popup" element to retrieve content from other elements via ID
+- Added option to "TS Products Isotope Grid" to link mini thumbnail to product page instead of opening image in lightbox
+- Added option to "TS Products Isotope Grid" to define if links should be opened in new or current window/tab
+- Added option to "TS Image Switch" element to add basic text / logo overlay
+- Added option to "TS Image Basic Overlay" to define border settings for element
+- Added option to "TS Countdown" element to provide target date/time via separate shortcode
+- Added new style for "TS Skillsets" element
+- Added option to "TS Title Typed" element to disable animation on mobile devices and use alternate title instead
+- Added self-hosted video to row background options (via browser HTML5 player)
+- Added basic support for playlists to "TS Video YouTube" element
+- Deprecated "TS YouTube Background" element
+- Added new "TS Page Background" element
+- Added self hosted video to page background element
+- Added fixed image to page background element
+- Added option to "TS Image Switch" element to apply link to element if switch is not triggered via click
+- Added option to "TS Video YouTube" to define start and end point of video in seconds
+- Added option to lightbox to globally enable/disable social share feature and to define social networks to be used
+- Added option to lightbox to use custom background image for lightbox overlay
+- Fixed uninstall error message
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.7.3
+-------------
+- Removed PHP truncation for WooCommerce product titles and switched to CSS white-space truncations
+- Fixed error with OwlSlider2 when navigation dots are disabled and prev/next navigation buttons are used
+- Changed when plugin's static JS variables are outputted to better accomodate minify / caching plugins
+- Other CSS + JS Improvements
+
+Version 2.7.2
+-------------
+- Added option to lightbox settings to allow CORS cross domain image requests
+- Added option to show / hide background indicators in backend editor
+- Improvements to "TS Divider" element and styling
+- Added fade fallback for "TS Content Flip" element when 3D Animations are not supported
+- Fixed issue where deactivating hotspot pulse does not transfer to the frontend
+- Fixed issue with some missing default translation strings in plugin settings
+- Fixed inner close icon for lightbox not reacting to tap event
+- Fixed missing parameter for "TS Embed iFrame" element when defining lightbox height in percent
+- Fixed missing button stylesheet for "TS iPresenter" element
+- Fixed icon misalignment in preview section for icon font import
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.7.1
+-------------
+- Added new element "TS iPresenter"
+- Added new element "TS Image Advanced Overlay"
+- Added option to "TS Image Overlay" to select between normal link button or icon button
+- Added option to define maximum height for image in "TS Figure Navigation" element
+- Increased max. value for min-width setting of "TS Figure Navigation" element to 2,048
+- Added option to define starting point for auto-numbering for "TS Figure Navigation" element
+- Added option to set navigation items within "TS Figure Navigation" element to use full column width
+- Added option to allow multiple items within a "TS Figure Navigation" element to be open at the same time
+- Fixed error with "TS Social Networks" element with undefined index
+- Added "Line Chart" to layout options for "TS Google Charts" element
+- Added new click events for "TS Image PicStrips" element
+- Added filter option for "TS Lightbox Gallery" element (only for Grid layout)
+- Added 18 new raster / noise pattern for overlays
+- Changes to tooltips for "TS Image iHover" and "TS Image Hotspots" elements
+- Changed which elements are activated by default upon first install (least used elements are now initially deactivated to improve performance)
+- SVG row separator are now visible on mobile devices that support SVG shapes
+- Full width backgrounds now remain full width on mobile devices
+- All advanced row background effects using images (i.e. parallax, automove, etc.) will revert to normal images on mobile devices
+- Lightbox now has global option to show additional close button inside lightbox element
+- Lightbox now assigns another close event to all custom DOM elements with the class name "nch-lb-exit-custom"
+- Fixed error with missing bonus icon generator buttons in tinyMCE editor and failed shortcode processing for those icons
+- Fixed error with conflict between Google Charts API and front-end editor
+- Fixed output of random number instead of blank author name when no author name has been entered for testimonial
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.7.0
+-------------
+- Added "Flex Slider" layout options to "TS Lightbox Gallery" element
+- Added "SliceBox" layout option to "TS Lightbox Gallery" element
+- Added "NivoSlider" layout option to "TS Lightbox Gallery" element
+- Added option to "TS Lightbox Gallery" element to add grayscale effect to single image trigger layouts
+- Added new element "TS Soundcloud"
+- Added new element "TS Info / Notice Panel"
+- Added new element "TS Amaran Popup"
+- Added elements to embed standard bbPress shortcodes with Visual Composer
+- Added optional date/time string translation for "TS Posts Slider" and "TS Posts Grid" elements
+- Added "Flex Slider" layout option to "TS Posts Slider"
+- Changed "TS Social Icons" from using images to using an icon font
+- Added option to define icon size and padding for "TS Social Icons" element
+- Added blur option (CSS3) to some row background effects
+- Added SVG shape overlays to background effects
+- Added Noise overlays to background effects
+- Added color over to background effects
+- Added option to make row background full viewport height
+- Added blur option (CSS3) to "TS Image Full" element
+- Added SVG shape overlays to "TS Image Full" element
+- Added Noise overlays to "TS Image Full" element
+- Added color over to "TS Image Full" element
+- Added follow movement effect to "TS Image Full" element
+- Added new element "TS Image SVG"
+- Added option to "TS Figure Navigation" element to use custom number / letter instead of icon / auto number
+- Added option to "TS Figure Navigation" element to select between different shaded for the handle
+- Added option to define label width for bar style 2 for "TS Skillsets" element
+- Added option to "TS iFrame Embed" to define size of lightbox if iFrame is shown inside
+- Added option to disable visual icon selector and switch to manual class name input for improved performance
+- Added search option to icon preview page
+- Added option to post elements to use WordPress internal translations to translate date and time strings
+- Fixed error for "TS HTML5 Video" + "TS HTML5 Audio" when used in IE
+- Fixed broken visual hotpost position selector for "TS Image Hotspot" element
+- Fixed issue with missing icon font for post elements
+- Fixed issue when debugging was enabled and error messages showed up after saving plugin settings
+- Fixed issue with undefined variable "animation_hover" in "TS Icon List Item" element
+- Changed namespace and classes for OwlCarousel 2 function to prevent conflicts when older (1.x) versions are also present
+- Renamed class and variable used to detect mobile devices to avoid conflicts when already used on site
+- Added new admin page to provide system information for support requests
+- Added new admin page to show changelog for plugin
+- Added option to define lightbox background color and opacity in plugin settings
+- Added option to add noise pattern to lightbox overlay
+- Added option to select between button schemes for lightbox to account for dark / light backgrounds
+- Plugin can now be activate network wide (each site stores its own options, except license information)
+- Redesigned admin (settings) panels and switched to use Dashicons instead of image icons (when possible)
+- Added WordPress icon font "Dashicons" to font selection
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.6.7
+-------------
+- Added option to "TS Figure Navigation" to apply tooltip to element
+- Added option to "TS Image iHover" to apply tooltip to element
+- Other CSS + JS Improvements
+
+Version 2.6.6
+-------------
+- Added new element "TS Title Typed"
+- Added new element "TS Skillsets Raphael"
+- Added 2nd style for skill bars for "TS Skillsets Bars" element
+- Added option to "TS Skillsets Bars" element to show skill value as tooltip
+- Added "LTR" direction for plugin setting sections to prevent display problems on RTL sites
+- Added option to "TS Icon Box" element to define padding between icon and content for "icon outside" styles
+- Added option to "TS Lightbox Gallery" to show gallery in full width (for grid and slider view)
+- Fixed custom font selector for "TS Textillate" element
+- Fixed error with "TS Image Hotspots" elements which caused "strpos() expects parameter 1 to be string, array given in class.wp-styles.php" error
+- Added check to fixed settings menu to allow scrolling if screen size is smaller than menu height
+- Added shortcode processing for flip box content (HTML inputs only)
+- Added option to "TS title Textillate" element to define initial animation delay
+- Removed default title and content for "TS Image iHover" element
+- Added option to disable the image preview for elements in the back-end editor to improve performance
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.6.5
+-------------
+- Added new element "TS Figure Navigation"
+- Major improvements to "TS Icon List Item" element
+- Added new style to testimonial elements
+- Added 4 new icon fonts with 1,400+ new icons to built-in font collection
+- Added optional geolocation feature to "TS Google Map" element
+- Added optional autocomplete feature to "TS Google Map" element
+- Added 20 new color themes for "TS Google Map" element
+- Added option to initially hide map on mobile devices and show via button click
+- Added option to prevent Google Map API to load if already loaded otherwise
+- Added option to "TS iFrame Embed" element to add border to iFrame
+- Added option to "TS iFrame Embed" to make iFrame full width
+- Improved PHP function that checks if links have valid "http" syntax
+- Fixed broken auto-play feature for lightbox gallery
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.6.4
+-------------
+- Added option to "TS Animation Frame" element to re-trigger the animation for subsequent viewport events
+- Added option to "TS Google Map" to show marker infowindow on page load
+- Added new element "TS Image Hotspots"
+- Added new element "TS Image iHover"
+- Fixed misaligned dropdown boxes for "TS Isotope Posts" and "TS Basic Products Grid"
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.6.3
+-------------
+- Added new WooCommerce element "Single Product Rating" to show a custom rating for a specific product
+- Added new WooCommerce element "Basic Products Ticker" to show products in ticker form
+- Added new WooCommerce element "Basic Products Grid" to show products in an Isotope grid layout
+- Added default in/out animations for OwlSlider v2.0 for better transition from v1.0 sliders already created
+- Added option to all slider elements to select if page is RTL to account for errors in slide coordinates
+- Renamed NoUiSlider function to ensure compatiblity with Redux Framework that uses an older version of NoUiSlider
+- Changed tooltip storage from "data-tooltip" to "data-tstooltip" to avoid conflicts with other tooltip plugins
+- The included bonus plugin "Iconicum" will be disabled automatically if the standalone version of the plugin has been detected
+- Fixed YouTube videos in lightbox on "https" sites that didn't play before
+- Updated .po/.mo language files
+
+Version 2.6.2
+-------------
+- Added option to "TS Modal Popup" element to add background image or color to popup
+- Added option to "TS Rating Scale" element to disable the icon auto-size feature
+- Added option to teammate post type (and associated elements) to provide opening / contact hours
+- Added option to teammate post type to use external page as dedicated page for team member
+- Added new elements "TS Team Page Builder" to built custom page for teammate using custom post type content
+- Added option to WooCommerce "Basic Products Slider" to custom style ratings
+- Fixed issue where link validation for some elements occasionally drops ":" character after "http"
+- Fixed issue where "TS Anything Slider" in AutoPlay didn't change slides when navigation buttons have been disabled
+- Some improvements to "TS Icon Box" element
+- All front-end scripts and stylesheets are now fully registered and loaded accordingly
+- Fixed where default values for social networks are only saved when license key has been entered
+- Updated PHP helper class "Custom Metaboxes and Fields" to newest version
+- Updated .po/.mo language files
+
+Version 2.6.1
+-------------
+- Fixed issue where content is outputted twice using the "TS Process" element with style 3
+- Fixed missing JS file for "TS Rating Scale" element
+- Fixed misaligned icon selector for "TS Rating Scale" element in FireFox browser
+- Fixed issue where back-bone view addition caused error for post types not utilizing Visual Composer
+- Changed all file names and file name references to lower case for better compatibility with some server setups
+- Other CSS + JS Improvements
+
+Version 2.6.0
+-------------
+- Added new element "TS HTML5 Video" to embed a self-hosted or remote video file
+- Added new element "TS HTML5 Audio" to embed a self-hosted or remote audio file
+- Added new element "TS Posts Slider"
+- Added new element "TS Anything Slider"
+- Added new element "TS Rating Scale"
+- Added option to Google Charts to define chart background color or set to transparent
+- Added option to Google Charts to define border color and width
+- Added option to show/hide author avatar for testimonial elements
+- Added option to show/hide author metadata for testimonial elements
+- Added option to provide end value for "TS Icon Counter" element via external shortcode
+- Added option to provide circle + label value for "TS Circle Counter" element via external shortcode
+- Added option for auto-moving image to row background settings
+- Row background image and colors are now shown next to row controls
+- Added option to teammate elements to apply link to external on featured image if no lightbox used
+- Added option to teammate elements to apply grayscale effect as default and show normal image on hover
+- Changed checkboxes in plugin settings for more convenient toggles
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.5.1
+-------------
+- Fixed bug where deactivating the custom icon font completely removes font
+- Fixed bug with "TS Countdown" element when using circle layout without seconds
+- Fixed issue where iFrame doesn't get correct height when a fixed height has been set
+- Fixed CSS issues with "TS Isotope Posts" element caused by Visual Composer 4.3+
+
+Version 2.5.0
+-------------
+- Updated back-end styling to account for changes in Visual Composer 2.3.0
+- Added new element "TS Animation Frame"
+- Added new elements for all standard WooCommerce shortcodes
+- Added new element for WooCommerce product slider
+- Added options to completely disable all WooCommerce elements
+- Increased limit for manual iFrame height from 2048px to 4096px
+- Added option to "TS Processes" element to use HTML code for main content
+- Added option to "TS Teaser" element to show header information above or below teaser image
+- Added option to "TS Teaser" element to define background color for hover overlay
+- Updated owlSlider script to version 2.0 and adjusted elements / shortcodes accordingly
+- Fixed error with missing border for "TS Icon Title" element
+- Fixed custom font upload for WordPress multi-site install setups
+- Updated .po/.mo language files
+- Other CSS + JS Improvements
+
+Version 2.4.2
+-------------
+- Fixed google map reset on mobile devices when entering start address for directions
+- Google maps will now attempt to automatically switch the scale bar to imperial units if metric units are disabled in map settings
+- Fixed broken icon search feature
+- Fixed issue where plugin stopped multi-activate/deactivate of more than one plugin when plugin was included
+- Added warning when attempting to activate plugin network wide on multi-site installs
+- Added check for function "vc_shortcode_custom_css_class" in case older version of Visual Composer is used
+- Deprecated elements are now deactivated by default and must be manually enabled in plugin settings if utilized
+
+Version 2.4.1
+-------------
+- Added new font selector for "TS Icon Title" that shows a preview for all available fonts
+- Fixed missing close button for lightbox info overlay
+- Updated .po/.mo language files
+
+Version 2.4.0
+-------------
+- Included bonus "Iconicum - WordPress Icon Fonts" plugin so font icons can be used within tinyMCE editor and outside of Visual Composer elements
+- Added new element "TS Isotope Posts"
+- Added option to "TS Image Overlay" to trigger overlay by "Click" or "Hover"
+- Added option to "TS Image Overlay" to show overlay on page load (if trigger is "Click")
+- Added option to "TS Image Overlay" to use HTML code for content
+- Fixed missing DailyMotion and Vimeo output for "TS Isotope Timeline" element
+- Added option for image slider as featured media to "TS Isotope Timeline" element
+- Added option to define inner padding to "TS Icon box" element (for "Icon Inside - Top" + "Icon Inside - Left" styles)
+- Fixed issue with applied border radius to "TS Icon Box" element
+- Added option to all teammate elements to disable hover animations
+- Added option to plugin settings to move plugin main menu into "Settings" section
+- Added some additional redundancy checks to font import routine in case font pack doesn't include all required data
+- Added additional hooks for theme developers to control which plugin features should be available to end users
+- Other improvements for theme authors to apply custom class names to elements via VC filter
+- Plugin is now fully translatable via (.po/.mo) file, using text domain "ts_visual_composer_extend" (Currently English and German available)
+- Custom Post Types are now deactivated by default and must be manually enabled in plugin settings if utilized
+- Improved "TS Icon Title" element to be more responsive
+- Fixed margin settings not getting applied to "TS Countdown" element
+- Fixed validation errors in tab for default settings for "Social Networks"
+- Fixed missing background image size setting for row parallax
+- Added option for row background image to select which WordPress image size should be used
+- Added option for row background to use single color background with full width breakout
+- Extended row and column settings are now disabled by default to avoid possible conflicts with other extension plugins (can be activated in plugin settings)
+- Added option to "TS Modal Popup" to define custom backlight color
+- Added option to "TS Team" elements to define custom color for communication icons (for dark themes)
+- Added panel for global lightbox settings to plugin settings
+- Lifted license restrictions for plugin core (only required for auto-update and bonus "Iconicum" plugin)
+- Other CSS + JS Improvements
+
+Version 2.3.1
+-------------
+- Removed duplicate "/" from require_once command lines
+
+Version 2.3.0
+-------------
+- Added new element "TS Image Teaser"
+- Added new slider element for "TS Image Teaser"
+- Added new element "TS Image Full"
+- Added new element "TS Icon Button"
+- Added new element "TS Isotope Timeline"
+- Added improved "TS Lightbox Gallery" element; old element has been deprecated but still available
+- Fixed error with auto-grid in "TS Lightbox Gallery" when less images than defined breakpoints (columns)
+- Added option to select image size source for preview/lightbox image for "TS Lightbox Image" and "TS Lightbox Gallery" elements
+- Added option to "TS Google Maps" element to disable mouse wheel zoom
+- Added option to "TS Google Maps" element to define map height
+- Added option to "TS Youtube Video" to enable/disable related videos at the end of the video
+- Added new style to "TS Countdown" element ("Flipboard")
+- Added new style to "TS Countdown" element ("3D Horizontal Flip")
+- Added option to "TS Countdown" element to automatically reset (up to 24 hour intervals) with optional link load after expiration
+- Added option to "TS Pricing Table" to use custom code for link button
+- Added option to "TS Circle Counter" to use image instead of font icon
+- Other improvement to "TS Circle Counter" element
+- Fixed issue with touch & swipe not working correctly in lightbox
+- Removed hashtag navigation for lightbox so that browser back button is now working normally (while keeping share feature fully functional)
+- Fixed issue with "Mobile_Detect" error message if other plugin or theme is using the same PHP helper class
+- Disabled parallax + fixed image background on mobile devices for performance and compatibility reasons
+- Disabled row + column viewport animations on mobile devices for performance and compatibility reasons
+
+Version 2.2.5
+-------------
+- Fixed glitch where empty icon holders are generated in icon selector for disabled fonts
+
+Version 2.2.4
+-------------
+- Fixed error where "TS Circliful" did not correctly apply default value
+- Updated waypoints.js to most current version
+- Updated jquery.mb.ytplayer.js to most current version
+- Added shortcodes to display all included font icons and CSS3 animations on front-end for demo purposes
+
+Version 2.2.3
+-------------
+- Fixed issue with some installs (multi-site) not being able to update past v2.1.2
+
+Version 2.2.2
+-------------
+- Removed "roque" message from "TS Image Switch" element
+- Fixed debug error in "TS Image Overlay" element
+
+Version 2.2.1
+-------------
+- Fixed error with missing viewport animations for rows and columns
+
+Version 2.2.0
+-------------
+- Added sliders to teammate element
+- Added improved Icon Box element with full tinyMCE editor (old element still available but deprecated)
+- Added new element to create animated text strings ("TS Textillate")
+- Fixed error for rounded border are not applied to icon box element
+- Fixed image alignment with "TS Image Adipoli" element
+- Added option to make "TS Image Adipoli" element responsive
+- Added option to disable switch effekt for "TS Image Caman"
+- Added filter option (by category) for custom post types on back-end
+- Added option to disable grayscale effect for "TS Teammate" elements
+- Added option to disable lightbox for featured image in "TS Teammate" elements
+- Switched PHP class used to create metaboxes for custom post types
+- Added additional settings/fields to "VC Team" custom post type
+- Added option to create unlimited skill bars for each teammate (formerly limited to 6)
+- Added auto-play option for YouTube, Vimeo and DailyMotion videos in lightbox
+- Added option to lightbox gallery to only show first image as trigger
+- Added option to lightbox gallery to use custom image as trigger
+- Fixed missing shortcode support for "TS Modal" element
+- Added new custom post type "VC Skillsets" and matching element
+- Improved loading of plugin files on back/front-end to increase site performance
+- Added option to completely disable undesired elements (to improve back-end performance)
+- Added option to load lightbox files on all pages
+- Added option to load tooltip files on all pages
+- Added option to load active icon font files on all pages
+- Other CSS and JS Improvements
+
+Version 2.1.2
+-------------
+- Fixed error with social icons ("TS Social Networks") producing error on front-end
+
+Version 2.1.1
+-------------
+- Fixed error with missing lightbox file
+
+Version 2.1.0
+-------------
+- Fixed row background settings due to changes in VC 4.1
+- Added "fixed" image background for rows
+- Added option to control z-Index for row backgrounds
+- Added custom post type for testimonials
+- Added testimonial single element + slider element
+- Added default image for team members / testimonials in case no featured image has been set
+- Added additional controls for "TS Teammate" element to better control output
+- Preparation to introduce slider for "TS Teammate" elements
+
+ Version 2.0.0
+-------------
+- Rewrote most of plugin code to be better compatible with theme frameworks (i.e. Gantry)
+- Added new custom post type for Team Member details with more options (replacing existing "Meet the Team" element)
+- Added new circle counter element with icon
+- Added new element to easily insert any shortcode
+- Added new element to create QR-Code blocks
+- Added new element to create countdowns (including option to translate text strings)
+- Added VC element for "QuForm - Form Builder" (plugin NOT included)
+- Added option to translate all custom text strings in "TS Google Map" element
+- Improved how required CSS / JS files are loaded when page can not be scanned for shortcode
+- Fixed CSS error with icon padding and border in Mozilla Firefox
+- Fixed backlight issue with gallery lightbox
+- Other CSS and JS Improvements
+
+Version 1.3.1
+-------------
+- Fixed error with missing JS file that prevents element settings to work properly
+- Added option to assign custom ALT value to images
+- Other minor fixes
+
+Version 1.3.0
+-------------
+- Added option to automatically set height for content flip box or use fixed height
+- Added new "Google Map" element with direction panel and custom styles
+- Included fully featured lightbox solution for images, videos, iframes and modal popups
+- Lightbox automatically applied to "Image with PicStrips" element
+- Added option to make "Image Switch" element responsive
+- Added "alt" attribute for all images (except in gallery grid)
+- Fixed missing link for "Image Adipoli" element
+- Fixed some error outputs about missing variables
+- Added VC element for "Go - Responsive Pricing & Compare Tables for WP" (plugin NOT included)
+
+Version 1.2.2
+-------------
+- Fixed error with broken settings page
+- Added check to social network links to add "http://" if not provided
+
+Version 1.2.1
+-------------
+- Fixed bug where social links in Meet The Team element are not working
+
+Version 1.2.0
+-------------
+- Content Flip Box now accepts HTML code for additional formatting
+- Icon Box now accepts HTML code for additional formatting
+- Added option for Google Pie and Donut charts to select different label content for slices
+- Added option for bar chart to stack values
+- Added option for creating column chart
+- Added option for GeoMap chart to select geographic region
+- Added 60+ viewport animations to columns and rows
+- Added Parallax Effect (up, down, left, right) for Row Background Images
+- Added Gradient Color Background for Rows
+- Added YouTube Video Background for Rows
+- Added YouTube Video Background for Page
+- Added Icon List Item Element
+- Fixed missing ID / Class names for Icon Title, Content Flip Box and Hover Image
+- Fixed issue where title alignment for icon title (left / right icon) doesn't get applied correctly
+
+Version 1.1.0
+-------------
+- Added new Image PicStrips element
+- Added new Image Caman element
+- Changes to backend to make it easier for theme authors to incorporate plugin
+- Timeline Style 2 can now be used without the date section
+- Some improvements to CSS
+- Fixed some spelling errors
+
+Version 1.0.3
+-------------
+- Fixed error with link target in pricing tables
+
+Version 1.0.2
+-------------
+- Fixed issue with image lightbox where no image src was applied
+- Fixed issue where responsive image width for image with overlay was not correctly applied
+- Changed height to min-height for Content Flip Box
+- Added option to select different speeds for standard content flip box animation
+- Changed Google Charts to be responsive to changes in screen dimensions
+- Added Donut Google Chart Option
+- Added option to position legend for Google Charts
+- Added option to forcible load plugins main CSS and JS files on all pages
+- Added option to load Icon Font CSS files on all pages, even if no shortcode has been found
+- Added options to control loading of MagnificPopup.js, Waypoints.js and CountTo.js
+
+Version 1.0.1
+-------------
+- Fixed missing viewport animation for content flip box
+
+Version 1.0.0
+-------------
+- Initial Release

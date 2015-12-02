@@ -1,0 +1,4 @@
+.pbImagePreview{ position: relative; width: 160px; }
+.pbImagePreview .pbThePreviewImage{ z-index: 1; border: 1px solid #eee; }
+.pbImagePreview .pbImagePreviewDelete{ position: absolute; top: -8px; right: -8px; z-index: 2; cursor: pointer; opacity: 0.8; }
+.pbImagePreview .pbImagePreviewDelete:hover{opacity: 1;}

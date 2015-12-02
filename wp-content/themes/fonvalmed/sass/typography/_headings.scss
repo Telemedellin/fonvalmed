@@ -19,3 +19,26 @@ h2, h3, h4, h5, h6{
 		font-size: 1.1rem;
 	}
 }
+.titulo-naranja{
+	.vc_toggle_title{
+		h4{
+			color: $color__primary !important;
+			font-size: 1.3rem;
+		}
+	}
+}
+.tribe-events-month-event-title {
+	&.entry-title {
+		&:before {
+			content: none;
+		}
+	}
+}
+
+.tribe-events-list-event-title {
+	&.entry-title {
+		&:before {
+			content: none;
+		}
+	}
+}

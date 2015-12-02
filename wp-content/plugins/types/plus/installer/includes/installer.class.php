@@ -98,6 +98,10 @@ final class WP_Installer{
             $this->_pre_1_0_clean_up();
         }
 
+        if ( !function_exists( 'get_plugins' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+
         $this->_using_icl     = function_exists('wpml_site_uses_icl') && wpml_site_uses_icl();
         $this->_wpml_version  = defined('ICL_SITEPRESS_VERSION') ? ICL_SITEPRESS_VERSION : '';
 
@@ -263,8 +267,8 @@ final class WP_Installer{
     }
     
     public function setup_plugins_action_links(){
-
-        $plugins = $this->get_plugins();
+        
+        $plugins = get_plugins();
 
         $repositories_plugins = array();
 
@@ -1110,6 +1114,8 @@ final class WP_Installer{
         $this->api_debug_log("POST {$this->repositories[$repository_id]['api-url']}");
         $this->api_debug_log($args);
 
+        $this->log("POST {$this->repositories[$repository_id]['api-url']} - fetch subscription data");
+
         if(!is_wp_error($response)){
             $datas = wp_remote_retrieve_body($response);
             
@@ -1261,7 +1267,7 @@ final class WP_Installer{
     
     public function setup_plugins_renew_warnings(){
         
-        $plugins = $this->get_plugins();
+        $plugins = get_plugins();
         
         $subscriptions_with_warnings = array();
         foreach($this->settings['repositories'] as $repository_id => $repository){
@@ -1515,7 +1521,7 @@ final class WP_Installer{
 
         $is = false;
         
-        $plugins = $this->get_plugins();
+        $plugins = get_plugins();
         
         foreach($plugins as $plugin_id => $plugin){
 
@@ -1547,7 +1553,7 @@ final class WP_Installer{
     public function plugin_is_embedded_version($name, $slug){
         $is = false;
 
-        $plugins = $this->get_plugins();
+        $plugins = get_plugins();
 
         //false if teh full version is also installed
         $is_full_installed = false;
@@ -1662,7 +1668,7 @@ final class WP_Installer{
                 
                 remove_action( 'upgrader_process_complete', array( 'Language_Pack_Upgrader', 'async_upgrade' ), 20 );
                 
-                $plugins = $this->get_plugins();
+                $plugins = get_plugins();
                             
                 //upgrade or install?
                 foreach($plugins as $id => $plugin){
@@ -1711,7 +1717,7 @@ final class WP_Installer{
                     }
                 }
 
-                $plugins = $this->get_plugins(); //read again
+                $plugins = get_plugins(); //read again
 
                 if($ret && !empty($_POST['activate'])){
                     foreach($plugins as $id => $plugin){
@@ -1754,7 +1760,7 @@ final class WP_Installer{
 
         remove_action( 'upgrader_process_complete', array( 'Language_Pack_Upgrader', 'async_upgrade' ), 20 );
 
-        $plugins = $this->get_plugins();
+        $plugins = get_plugins();
 
         $plugin_id = false;
 
@@ -1891,7 +1897,7 @@ final class WP_Installer{
 
             $this->filter_downloads_by_icl(); //downloads for ICL users
 
-            $plugins = $this->get_plugins();
+            $plugins = get_plugins();
 
             foreach($plugins as $plugin_id => $plugin){
                 
@@ -1956,7 +1962,7 @@ final class WP_Installer{
 
     public function setup_plugins_page_notices(){
         
-        $plugins = $this->get_plugins();
+        $plugins = get_plugins();
         
         foreach($plugins as $plugin_id => $plugin){
             
@@ -2303,7 +2309,7 @@ final class WP_Installer{
 
         // Exception: WPML before 3.2 should not be able to upgrade to 3.2+ automatically
         // Only when the exact folder name is used: sitepress-multilignaul-cms
-        $plugins = $this->get_plugins();
+        $plugins = get_plugins();
         foreach($plugins as $id => $plugin){
             if( dirname($id) == 'sitepress-multilingual-cms' ){
                 $wpml_version = $plugin['Version'];
@@ -2526,14 +2532,6 @@ final class WP_Installer{
             }
         }
 
-    }
-
-    private function get_plugins()
-    {
-        if ( ! function_exists( 'get_plugins' ) ) {
-            require_once ABSPATH . 'wp-admin/includes/plugin.php';
-        }
-        return get_plugins();
     }
 
 }

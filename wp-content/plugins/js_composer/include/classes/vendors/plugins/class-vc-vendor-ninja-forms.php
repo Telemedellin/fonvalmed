@@ -4,7 +4,7 @@
  * Ninja Forms vendor
  * @since 4.4
  */
-Class Vc_Vendor_NinjaForms implements Vc_Vendor_Interface {
+class Vc_Vendor_NinjaForms implements Vc_Vendor_Interface {
 
 	/**
 	 * Implement interface, map ninja forms shortcode
@@ -13,7 +13,7 @@ Class Vc_Vendor_NinjaForms implements Vc_Vendor_Interface {
 	public function load() {
 		if ( ! function_exists( 'ninja_forms_get_all_forms' ) ) {
 			// experimental, maybe not needed
-			require_once( NINJA_FORMS_DIR . "/includes/database.php" );
+			require_once( NINJA_FORMS_DIR . '/includes/database.php' );
 		}
 		$ninja_forms_data = ninja_forms_get_all_forms();
 		$ninja_forms = array();

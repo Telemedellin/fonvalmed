@@ -29,7 +29,7 @@
 				<div class="row ctn__filtros">
 					<div class="filtros col-md-5">
 						<span class="filtro-title">Estado de la obra</span>
-						<span class="fm-label" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizada</span>
+						<span class="fm-label" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizadas</span>
 						<span class="fm-label" rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 						<span class="fm-label" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
 						<span class="fm-label" rel="estado:en-licitacion" onclick="javascript:filtrar(this)">En licitaci&oacute;n</span>
@@ -43,7 +43,8 @@
 						<span class="fm-label" rel="tipo:doble-calzada" onclick="javascript:filtrar(this)">Doble calzada</span>
 					</div>
 				</div><!-- /ctn_filtros -->
-				<div class="obras grid">
+				<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/masonry.pkgd.min.js"></script>
+				<div class="obras">
 					<div class="grid-sizer"></div>
 					<?php $obras = array(); ?>
 					<?php foreach(get_term_children($terms->term_id, $terms->taxonomy) as $term_id): ?>
@@ -65,7 +66,7 @@
 
 							$obras[] = $obra;
 						?>
-						<a href="<?php echo get_term_link($term_id, $terms->taxonomy); ?>" class="ctn__obra-preview grid-item">
+						<a href="<?php echo get_term_link($term_id, $terms->taxonomy); ?>" class="ctn__obra-preview">
 							<div class="ctn__obra-preview_image" style="background: url(<?php echo $obra->cabezote; ?>) no-repeat; background-size: 100%; background-position: center center;">
 								
 							</div>
@@ -81,12 +82,22 @@
 						</a>
 					<?php endforeach; ?>
 				</div>
+				<script>
+				jQuery(function($) {
+					$('.obras').masonry({
+						itemSelector: '.ctn__obra-preview',
+						columnWidth: '.grid-sizer',
+						gutter: 10,
+						percentPosition: true
+					});
+				});
+				</script>
 			</div>
 			<div id="obra-mapas" style="visibility:hidden;height:0px;overflow:auto;">
 				<div class="row ctn__filtros" style="margin-left: 0px;margin-right: 0px;">
 					<div class="filtros col-md-12">
 						<span></span>
-						<span class="fm-label" style="width:24%;" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizada</span>
+						<span class="fm-label" style="width:24%;" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizadas</span>
 						<span class="fm-label" style="width:24%;" rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 						<span class="fm-label" style="width:24%;" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
 						<span class="fm-label" style="width:24%;" rel="estado:en-licitacion" onclick="javascript:filtrar(this)">En licitaci&oacute;n</span>
@@ -160,13 +171,14 @@
 						'width':'100%',
 						'height':'400px',
 						'z-index':'1'
-					}).prepend(jQuery('<sapn>').css({
+					}).prepend(jQuery('<span>').css({
 						'display':'block',
 						'width':'100%',
 						'padding-top':'21%',
 						'text-align':'center',
 						'font-size':'30px',
-						'color':'red'
+						'color':'#FF7F00',
+						'font-family':'"Open Sans"'
 					}).text('CARGANDO').append(jQuery('<img>', {
 						'src':'http://www.samvernon.com/resources/img/loading2.gif'
 					}).css({
@@ -228,10 +240,17 @@
                     {
                         case null:
                         case "":
-                            jQuery('#obra-listado > .obras').html('Busqueda sin resultados.');
+                            jQuery('#obra-listado > .obras').html('Busqueda sin resultados.').css('height','auto');
                             break;
                         default:
                             jQuery('#obra-listado > .obras').html(data);
+							var container = document.querySelector('.obras');
+							var msnry = new Masonry(container, {
+								columnWidth: '.grid-sizer',
+								itemSelector: '.ctn__obra-preview',
+								gutter: 10,
+								percentPosition: true
+							});
                             break;
                     }
                 }

@@ -1,0 +1,52 @@
+Installation:
+-------------
+Depending upon your WordPress upload and post size limits, the plugin file size might be too large to install the plugin via
+WordPress upload routine. In those cases, you either need to increase the upload and post size limits, or upload the plugin
+via FTP directly to your server and then activate it in WordPress. Consult the manual for more information.
+
+Update:
+-------
+To update an existing installation of the plugin, simply upload the extracted plugin folder "Ts-visual-composer-extend" to your
+WordPress "plugins" folder (.../wp-content/plugins) and replace the existing folder with the same name and all files inside of
+that folder with the new version.
+
+
+Manual:
+-------
+http://tekanewascripts.com/vcextensions/documentation/
+
+
+
+Contact:
+--------
+http://tekanewascripts.com/vcextensions/contact-us/
+
+
+
+Changelog:
+----------
+http://helpdesk.tekanewascripts.com/changelog-visual-composer-extensions/
+
+
+
+Knowledge Base:
+---------------
+http://helpdesk.tekanewascripts.com/category/visual-composer-extensions/
+
+
+
+Support Forum:
+--------------
+http://helpdesk.tekanewascripts.com/forums/forum/wordpress-plugins/visual-composer-extensions/
+
+
+
+CodeCanyon (Purchase):
+----------------------
+http://codecanyon.net/item/visual-composer-extensions/7190695
+
+
+
+CodeCanyon (Comments):
+----------------------
+http://codecanyon.net/item/visual-composer-extensions/7190695/comments

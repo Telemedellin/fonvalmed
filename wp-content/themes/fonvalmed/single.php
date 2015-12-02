@@ -46,23 +46,30 @@
 			endif;
 		endif;
 	else: ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'templates/template-parts/content', 'single' ); ?>
-			<?php the_post_navigation(); ?>
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-		<?php endwhile; // End of the loop. ?>
-		</main>
-		<!-- #main -->
+	<div class="row-fluid">
+		<div id="primary" class="content-area col-sm-9">
+			<main id="main" class="site-main" role="main">
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php 
+				 if(in_category('en-los-medios')){
+			        get_template_part('templates/template-parts/content', 'medios');
+			    }else{
+			        get_template_part('templates/template-parts/content', 'single');
+			    }
+				?>
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
+			<?php endwhile; // End of the loop. ?>
+			</main>
+			<!-- #main -->
+		</div>
+		<!-- #primary -->
+		<?php get_sidebar(); ?>
 	</div>
-	<!-- #primary -->
-	<?php //get_sidebar(); ?>
 <?php endif; ?>
 
 <?php get_footer(); ?>

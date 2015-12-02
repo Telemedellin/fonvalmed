@@ -48,6 +48,7 @@
 	color: $color__gray-dark;
 	position: relative;
 	padding-right: 65px;
+	line-height: 2.5rem;
 }
 .entry-title::before {
 	content: "";
@@ -195,8 +196,8 @@
 	}
 	.obras {
 		background-color: $color__background-pre;
-		padding: 10px;
-		margin-top: 15px;
+		padding: 5px;
+		margin-top: 10px;
 	}
 }
 
@@ -250,35 +251,19 @@
 	background: $color__primary !important;
 	color: #fff !important;
 }
-.grid {
-  background: #EEE;
-  margin: 0 auto;
-}
 
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
 
 /* ---- grid-item ---- */
 
-.grid-sizer, .grid-item {
-  width: 100%;
-}
-.grid-item {
-  //float: left;
-}
+.grid-sizer { width: 98%; }
+
 .ctn__obra-preview{
 	background: #fff;
-	margin: 0 10px 25px 0;
-	display: block;
-	overflow: auto;
+	width: 98%;
 	cursor: pointer;
 	color: $color__gray-dark;
+	margin-bottom: 10px;
 	height: auto;
-	float: left;
 	&:hover{
 		text-decoration: none;
 		color: $color__gray-dark;
@@ -320,7 +305,7 @@
 	margin-top: 10px;
 }
 .obra-avance{
-	background: #eee;
+	background: #CCCCCC;
 	position: relative;
 }
 .obra-avance_texto{
@@ -331,7 +316,9 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    color: #000000;
+    color: #FFFFFF;
+    font-weight: 600;
+    text-shadow: 0px 0px 2px #4E4E4E;
 }
 .obra-avance_porcentaje{
 	display: block;
@@ -341,27 +328,32 @@
 
 .entry-content {
 	p {
-		color: $color__gray-dark;
+		color: darken($color__gray-dark, 15%);
 		text-align: left;
 	}
 }
 
 //Estilos del template Avance del proyecto
 
+.ctn__recaudo{
+	margin-top: 15px;
+}
+
 .ctn__recaudo_texto{
 	background: $color__primary;
 	padding: 20px;
 	position: relative;
 	&:before{
-		@include triangulos($color__primary, 30px)
+		@include triangulos($color__primary, 30px);
+		z-index: 2;
 	}
 }
 p.recaudo-texto{
 	color: #fff;
 	margin: 0;
-	font-size: 1.3rem;
+	font-size: 1.8rem;
 	text-align: center;
-	line-height: 2rem;
+	line-height: 2.5rem;
 }
 .ctn__recaudo_total{
 	@include bg-degrade;
@@ -369,12 +361,12 @@ p.recaudo-texto{
 	text-align: center;
 }
 p.recaudo-total-texto{
-	font-size: 1rem;
+	font-size: 1.5rem;
 	text-align: center;
 	margin: 0 0 10px 0;
 }
 .recaudo-total-numero{
-	font-size: 1.5rem;
+	font-size: 2rem;
 	color: $color__primary;
 	font-weight: 700;
 }
@@ -404,6 +396,7 @@ p.recaudo-total-texto{
 
 /*----------- Estilos de la página incial de obras ---------------*/
 .ctn__img-obras{
+	position: relative;
 	figure{
 		position: relative;
 	}
@@ -419,16 +412,31 @@ p.recaudo-total-texto{
 }
 .ctn__img-obras_controles{
 	text-align: center;
-	padding: 5px;
 	cursor: pointer;
 	.img-obras_controles{
-		display: inlin-block;
-		margin:0 10px;
+		display: inline-block;
 		padding: 10px;
-		background: $color__gray-light;
+		background: $color__primary;
+		position: absolute;
+		top: 50%;
+		height: 45px;
+		transform: translateY(-45px);
+		&#antes {
+			left: 0;
+			&:before{
+				@include iconos-fvm("d", 1.5rem, #ffffff);
+			}
+		}
+		&#despues {
+			right: 0;
+			&:before{
+				@include iconos-fvm("e", 1.5rem, #ffffff);
+			}
+		}
 		&.active{
-			background: $color__primary;
-			color: #fff;
+			background: rgba($color__primary, 0.5);
+			color: rgba(#FFFFFF, 0.5);
+			cursor: initial;
 		}
 	}
 }
@@ -437,11 +445,128 @@ p.recaudo-total-texto{
 	display: none;
 }
 
+.recaudo-home {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ededed+0,ffffff+24,ffffff+38,ffffff+47,ffffff+71,ededed+100 */
+	background: #ededed; /* Old browsers */
+	background: -moz-linear-gradient(left,  #ededed 0%, #ffffff 24%, #ffffff 38%, #ffffff 47%, #ffffff 71%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ededed), color-stop(24%,#ffffff), color-stop(38%,#ffffff), color-stop(47%,#ffffff), color-stop(71%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 71%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 71%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 71%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to right,  #ededed 0%,#ffffff 24%,#ffffff 38%,#ffffff 47%,#ffffff 71%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
+	border-bottom: 4px solid $color__primary;
+	span {
+		display: block;
+		text-align: center;
+	}
+	.recaudo-titulo {
+		color: #808080;
+		font-size: 20px;
+	}
+	.recaudo-fecha {
+		font-size: 12px;
+	}
+	.recaudo-dinero {
+		font-size: 24px;
+		font-weight: bold;
+		color: $color__primary;
+	}
+}
+
+//Home
+.algo{
+	margin: 0;
+}
+
+.ctn__heroe-home{
+	margin-top: 15px;
+}
+
+.soliloquy-container .soliloquy-caption{
+	display: block !important;
+	bottom: 10px !important;
+}
+
+.title-home{
+	border-bottom: 2px solid $color__primary;
+	position: relative;
+	margin-bottom: 20px;
+	&:before{
+		@include triangulos($color__primary, 15px);
+	}
+}
+
+//Entry styles
+.entry-meta{
+	font-size: 0.8rem;
+	color: $color__gray-dark;
+	margin-top: -15px;
+}
+
+//Fonvalmed en los medios
+
+.ctn__meta-info{
+	span{
+		display: block;
+		font-size: 0.8rem;
+		color: $color__gray-dark;
+	}
+}
+.article-medios{
+	padding-left: 19px;
+    border-left: solid 5px orange;
+}
+
+//Timeline styles
+
+.timeline_fonvalmed{
+	.colA {
+		.ts-timeline-text-wrap{
+			&:before{
+				border-left: solid 10px $color__primary !important;
+			}
+		}
+	}
+	.colB {
+		.ts-timeline-text-wrap{
+			&:before{
+				border-right: solid 10px $color__primary !important;
+			}
+		}
+	}
+	h3.ts-timeline-title{
+		color: $color__primary !important;
+	}
+	.ts-timeline-date-connect{
+		&:after{
+			border-color: transparent transparent transparent lighten($color__primary, 40%) !important;
+		}
+		&:before {
+			border-color: transparent transparent lighten($color__primary, 40%) !important;	
+		}
+	}
+	.ts-timeline-date-text{
+		background: $color__primary !important;
+		color: #ffffff !important;
+		border: none !important;
+		&:before{
+			color: #ffffff !important;
+		}
+	}
+}
+
+@media screen and (min-width: 601px){
+	.soliloquy-container .soliloquy-caption{
+		bottom: 35px !important;
+	}
+}
 
 @media screen and (min-width: 768px){
 	#obra-listado {
 		.filtros {
 			border-right: 0px solid #fff;
+			text-align: left;
 		}
 	}
 	.obras {
@@ -450,7 +575,7 @@ p.recaudo-total-texto{
 	.info-recaudo_propietarios_total{
 		font-size: 2rem;
 	}
-	.grid-sizer, .grid-item{
+	.grid-sizer, .ctn__obra-preview {
 		width: 48.2%;
 	}
 	.fm-label{
@@ -468,10 +593,10 @@ p.recaudo-total-texto{
 		margin-left: -30px;
 	}
 	.ctn__recaudo_texto{
-		padding: 40px 30px;
+		padding: 26px 30px;
 		font-size: 1.8rem;
 		line-height: 2.5rem;
-		width: 108%;
+		width: 111%;
 		&:before{
 			content: "";
 			width: 0;
@@ -488,6 +613,7 @@ p.recaudo-total-texto{
 	}
 	p.recaudo-texto{
 		font-size: 1.5rem;
+		//line-height: 2.5rem;
 	}
 	.ctn__recaudo_total{
 		padding: 23px;
@@ -498,23 +624,26 @@ p.recaudo-total-texto{
 	.recaudo-total-numero{
 		font-size: 2rem;
 	}
-	.grid-sizer, .grid-item{
+	.grid-sizer, .ctn__obra-preview {
 		width: 31.7%;
 	}
 }
 @media screen and (min-width: 1200px){
 	.ctn__recaudo_texto {
-    	padding: 47px 30px;
-    	width: 107%;
+    	padding: 39px 30px;
+    	width: 109%;
     }
     p.recaudo-texto {
-	    font-size: 2rem;
-	    line-height: 2.5rem;
+		font-size: 1.6rem;
+		line-height: 2.2rem;
 	}
 	p.recaudo-total-texto {
-	    font-size: 1.8rem;
+	    font-size: 1.5rem;
 	}
 	.recaudo-total-numero {
-	    font-size: 3rem;
+	    font-size: 2.3rem;
+	}
+	.grid-sizer, .ctn__obra-preview {
+		width: 32.3%;
 	}
 }

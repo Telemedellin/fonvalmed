@@ -25,9 +25,7 @@ get_header(); ?>
 
 				</main><!-- #main -->
 			</div>
-			<div class="col-md-3">
-				<?php get_template_part( 'templates/template-parts/content-sidebar-obra', 'page' ); ?>
-			</div>
+				<?php get_sidebar(); ?>
 		</div>
 	</div><!-- #primary -->
 

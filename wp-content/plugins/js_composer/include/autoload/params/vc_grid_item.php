@@ -22,7 +22,7 @@ function vc_vc_grid_item_form_field( $settings, $value ) {
 	$grid_item_posts = get_posts( array(
 		'posts_per_page' => '-1',
 		'orderby' => 'post_title',
-		'post_type' => Vc_Grid_Item_Editor::postType()
+		'post_type' => Vc_Grid_Item_Editor::postType(),
 	) );
 	foreach ( $grid_item_posts as $post ) {
 		$output .= '<option  data-vc-link="' . esc_url( get_edit_post_link( $post->ID ) ) . '"value="' . $post->ID . '"'
@@ -108,7 +108,7 @@ function vc_gitem_create_link_real( $atts, $post, $default_class = '', $title = 
 		} elseif ( 'image_lightbox' === $atts['link'] ) {
 			$link = 'a' . vc_gitem_template_attribute_post_image_url_attr_prettyphoto( '', array(
 					'post' => $post,
-					'data' => $link_css_class
+					'data' => $link_css_class,
 				) );
 		}
 	}

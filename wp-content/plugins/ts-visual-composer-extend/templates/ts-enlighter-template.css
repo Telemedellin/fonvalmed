@@ -1,0 +1,96 @@
+/* Hover Color */
+body ol.customEnlighterJS.hoverEnabled li:hover,
+body ul.customEnlighterJS.hoverEnabled li:hover {
+	background-color: 			$(HOVER_BG_COLOR);
+}
+
+
+/* Line Highlight Color */
+body ol.customEnlighterJS li.specialline {
+	background-color: 			$(HIGHLIGHT_BG_COLOR);
+}
+
+
+/* Base Styles */
+body ol.customEnlighterJS,
+body ul.customEnlighterJS {
+	overflow: 					auto;
+	border: 					$(GENERAL_BORDER);
+	background-color: 			$(LINES_BG_COLOR);
+}
+body ol.customEnlighterJS,
+body ol.customEnlighterJS li,
+body ul.customEnlighterJS,
+body ul.customEnlighterJS li {
+	$(LINESTYLE)
+}
+body ol.customEnlighterJS li,
+body ul.customEnlighterJS li {
+	border: 					none;
+	background-color: 			$(GENERAL_BG_COLOR);
+}
+body ol.customEnlighterJS li {
+	list-style: 				decimal outside;
+	border-left: 				$(LINES_BORDER);
+}
+
+
+/* Default Symbol Style */
+body .customEnlighterJS span {
+	$(FONTSTYLE)
+}
+
+
+/* Symbol Styles */
+body .customEnlighterJS .de1 { $(DE1) }
+body .customEnlighterJS .de2 { $(DE2) }
+body .customEnlighterJS .kw1 { $(KW1) }
+body .customEnlighterJS .kw2 { $(KW2) }
+body .customEnlighterJS .kw3 { $(KW3) }
+body .customEnlighterJS .kw4 { $(KW4) }
+body .customEnlighterJS .co1 { $(CO1) }
+body .customEnlighterJS .co2 { $(CO2) }
+body .customEnlighterJS .st0 { $(ST0) }
+body .customEnlighterJS .st1 { $(ST1) }
+body .customEnlighterJS .st2 { $(ST2) }
+body .customEnlighterJS .nu0 { $(NU0) }
+body .customEnlighterJS .me0 { $(ME0) }
+body .customEnlighterJS .me1 { $(ME1) }
+body .customEnlighterJS .br0 { $(BR0) }
+body .customEnlighterJS .sy0 { $(SY0) }
+body .customEnlighterJS .es0 { $(ES0) }
+body .customEnlighterJS .re0 { $(RE0) }
+
+body .customEnlighterJSRawButton::AFTER {
+	content: 					'Toggle RAW Code';
+}
+body .customEnlighterJSWrapper pre {
+	overflow: 					auto;
+	border: 					$(GENERAL_BORDER);
+	$(RAWSTYLE)
+}
+
+
+/* Group Settings */
+body .customEnlighterJSTabPane .pane {
+	padding: 					0px;
+}
+body .customEnlighterJSTabPane .controls {
+	background-color: 			#f9f9f9;
+	border: 					$(GENERAL_BORDER);
+	border-bottom-width: 		0px;
+	padding: 					5px;
+}
+body .customEnlighterJSTabPane .controls ul {
+	list-style: 				none;
+}
+body .customEnlighterJSTabPane .controls ul li {
+	$(BUTTONS_STYLE)
+	cursor: 					pointer;
+}
+body .customEnlighterJSTabPane .controls li.selected {
+	$(SELECTED_STYLE)
+}
+body .customEnlighterJSTabPane .controls li:hover {
+	$(HOVER_STYLE)
+}
