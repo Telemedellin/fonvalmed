@@ -27,26 +27,24 @@
 		<div>
 			<div id="obra-listado" class="container-fluid">
 				<div class="row ctn__filtros">
-					<div class="filtros col-md-4">
+					<div class="filtros col-md-5">
 						<span class="filtro-title">Estado de la obra</span>
 <<<<<<< HEAD
 						<span class="fm-label" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizada</span>
 =======
-						<span class="fm-label" rel="estado:finalizados" onclick="javascript:filtrar(this)">Finalizados</span>
+						<span class="fm-label" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizadas</span>
 >>>>>>> obras-templates
 						<span class="fm-label" rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 						<span class="fm-label" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
 						<span class="fm-label" rel="estado:en-licitacion" onclick="javascript:filtrar(this)">En licitaci&oacute;n</span>
 					</div>
-					<div class="filtros col-md-4">
-						<span class="filtro-title">Zona de influencia</span>
-					</div>
-					<div class="filtros col-md-4">
+					<div class="filtros col-md-7">
 						<span class="filtro-title">Tipo de obra</span>
-						<span class="fm-label" rel="tipo:ampliacion" onclick="javascript:filtrar(this)">Ampliaci&oacute;n</span>
-						<span class="fm-label" rel="tipo:apertura" onclick="javascript:filtrar(this)">Apertura</span>
-						<span class="fm-label" rel="tipo:paso-a-desnivel" onclick="javascript:filtrar(this)">Paso a desnivel</span>
-						<span class="fm-label" rel="tipo:otras-obras" onclick="javascript:filtrar(this)">Otras obras</span>
+						<span class="fm-label" rel="tipo:puente" onclick="javascript:filtrar(this)">Puente</span>
+						<span class="fm-label" rel="tipo:paso-a-desnivel-puente" onclick="javascript:filtrar(this)">Paso a desnivel: puente</span>
+						<span class="fm-label" rel="tipo:paso-a-deprimido" onclick="javascript:filtrar(this)">Paso a desnivel: deprimido</span>
+						<span class="fm-label" rel="tipo:via-nueva-o-mejorada" onclick="javascript:filtrar(this)">Vía nueva o mejorada</span>
+						<span class="fm-label" rel="tipo:doble-calzada" onclick="javascript:filtrar(this)">Doble calzada</span>
 					</div>
 				</div><!-- /ctn_filtros -->
 				<div class="obras grid">
@@ -95,7 +93,7 @@
 <<<<<<< HEAD
 						<span class="fm-label" style="width:24%;" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizada</span>
 =======
-						<span class="fm-label" style="width:24%;" rel="estado:finalizados" onclick="javascript:filtrar(this)">Finalizados</span>
+						<span class="fm-label" style="width:24%;" rel="estado:finalizada" onclick="javascript:filtrar(this)">Finalizadas</span>
 >>>>>>> obras-templates
 						<span class="fm-label" style="width:24%;" rel="estado:en-ejecucion" onclick="javascript:filtrar(this)">En ejecuci&oacute;n</span>
 						<span class="fm-label" style="width:24%;" rel="estado:por-ejecutar" onclick="javascript:filtrar(this)">Por ejecutar</span>
@@ -170,13 +168,14 @@
 						'width':'100%',
 						'height':'400px',
 						'z-index':'1'
-					}).prepend(jQuery('<sapn>').css({
+					}).prepend(jQuery('<span>').css({
 						'display':'block',
 						'width':'100%',
 						'padding-top':'21%',
 						'text-align':'center',
 						'font-size':'30px',
-						'color':'red'
+						'color':'#FF7F00',
+						'font-family':'"Open Sans"'
 					}).text('CARGANDO').append(jQuery('<img>', {
 						'src':'http://www.samvernon.com/resources/img/loading2.gif'
 					}).css({
@@ -281,7 +280,6 @@
 				map: map, title: locations[i].name, position: latlngset
 			});
 
-			console.log(locations[i].url);
 			map.setCenter(marker.getPosition());
 			var content = '<a href="' + locations[i].enlace + '" target="_blank">' +
 						'<div id="obra-detalle">' +
