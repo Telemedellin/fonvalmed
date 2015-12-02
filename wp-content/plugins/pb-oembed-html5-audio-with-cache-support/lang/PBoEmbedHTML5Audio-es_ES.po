@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PBoEmbedHTML5Audio\n"
+"POT-Creation-Date: 2013-03-24 02:18+0100\n"
+"PO-Revision-Date: 2014-02-06 11:54+0100\n"
+"Last-Translator: jelena kovacevic <jecajeca260@gmail.com>\n"
+"Language-Team: Pascal Bajorat <pascal@pascal-bajorat.com>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../pb-oEmbed-html5-audio.php:166 ../pb-oEmbed-html5-audio.php:172
+msgid "HTML5 Audio - Generator"
+msgstr "Generador de Audio HTML5"
+
+#: ../pb-oEmbed-html5-audio.php:181
+msgid ""
+"This little Generator can help you to add a full featured HTML5-Audio Player "
+"with Flash Fallback to your website. You can also use the pure file URL, "
+"simply put it in the editor and the plugin automatically generates the HTML5 "
+"audio player."
+msgstr ""
+"Este pequeño generador puede ayudar a que usted agregue un reproductor HTML5-"
+"Audio completo con Flash Fallback a su sitio web. También puede utilizar la "
+"dirección URL del archivo, simplemente póngalo en el editor y el plugin "
+"genera automáticamente el reproductor de audio HTML5."
+
+#: ../pb-oEmbed-html5-audio.php:183
+msgid "MP3 URL"
+msgstr "URL MP3"
+
+#: ../pb-oEmbed-html5-audio.php:184 ../pb-oEmbed-html5-audio.php:187
+#: ../pb-oEmbed-html5-audio.php:190
+msgid "Upload / Select from Media Library"
+msgstr "Subir / Seleccionar de la biblioteca de medios"
+
+#: ../pb-oEmbed-html5-audio.php:186
+msgid "OGG URL"
+msgstr "URL OGG"
+
+#: ../pb-oEmbed-html5-audio.php:189
+msgid "WAV URL"
+msgstr "URL WAV"
+
+#: ../pb-oEmbed-html5-audio.php:192
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:117
+msgid "Autoplay"
+msgstr "Reproducción automática"
+
+#: ../pb-oEmbed-html5-audio.php:193 ../pb-oEmbed-html5-audio.php:196
+#: ../pb-oEmbed-html5-audio.php:199 ../pb-oEmbed-html5-audio.php:202
+#: ../pb-oEmbed-html5-audio.php:205
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:128
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:147
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:166
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:185
+msgid "off"
+msgstr "Apagado"
+
+#: ../pb-oEmbed-html5-audio.php:193 ../pb-oEmbed-html5-audio.php:196
+#: ../pb-oEmbed-html5-audio.php:199 ../pb-oEmbed-html5-audio.php:202
+#: ../pb-oEmbed-html5-audio.php:205
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:129
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:148
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:167
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:186
+msgid "on"
+msgstr "Encendido"
+
+#: ../pb-oEmbed-html5-audio.php:195
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:136
+msgid "Loop"
+msgstr "Bucle"
+
+#: ../pb-oEmbed-html5-audio.php:198
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:155
+msgid "Preload"
+msgstr "Precargar"
+
+#: ../pb-oEmbed-html5-audio.php:201
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:174
+msgid "Controls"
+msgstr "Controles"
+
+#: ../pb-oEmbed-html5-audio.php:204
+msgid "Flash Fallback"
+msgstr "Flash Fallback"
+
+#: ../pb-oEmbed-html5-audio.php:207
+msgid "This is your Shortcode:"
+msgstr "Este es su shortcode"
+
+#: ../pb-oEmbed-html5-audio.php:207
+msgid "Insert into the editor"
+msgstr "Inserte en el editor"
+
+#: ../pb-oEmbed-html5-audio.php:209
+msgid "Disable this Metabox"
+msgstr "Desactive esta Metabox"
+
+#: ../pb-oEmbed-html5-audio.php:209
+msgid "PB HTML5 Audio Settings"
+msgstr "Ajustes Audio PB HTML5"
+
+#: ../pb-oEmbed-html5-audio.php:209
+msgid "PB HTML5 Audio by Pascal Bajorat"
+msgstr "PB HTML5 Audio por Pascal Bajorat"
+
+#: ../pb-oEmbed-html5-audio.php:240
+msgid "Sorry, it seems this is not a valid audio file ..."
+msgstr "Lo sentimos, parece que este no es un archivo de audio válido ..."
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:69
+msgid ""
+"Here you can set the defaults for oEmbed HTML5 Audio integration (this "
+"settings are not for the shortcode):"
+msgstr ""
+"Aquí se pueden establecer los valores predeterminados para la integración "
+"oEmbed HTML5 Audio (estos ajustes no son para el shortcode ):"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:80
+msgid "HTML5 Audio Settings for oEmbed Integration"
+msgstr "Ajustes de audio de HTML5 para la Integración oEmbed"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:87
+msgid "Hide Donation Message"
+msgstr "Ocultar Mensaje donación"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:96
+msgid "Hide the Donation Message on this Page."
+msgstr "Ocultar Mensaje donación en esta página."
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:102
+msgid "Disable Metabox"
+msgstr "Deshabilitar Metabox"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:111
+msgid "Disable the <code>HTML5 Audio - Generator</code> Metabox."
+msgstr "Deshabilitar <code> HTML5 Audio - Generador /<code> Metabox"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:218
+msgid "HTML5 Audio Settings"
+msgstr "Configuración HTML5 Audio"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:226
+msgid "Thank you for using PB oEmbed HTML5 Audio"
+msgstr "¡Gracias por usar PB oEmbed HTML5 Audio!"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:227
+msgid "I’m really proud that you use my HTML5 Audio Plugin on your website."
+msgstr ""
+"Me siento muy orgulloso de que utilice mi Plugin HTML5 Audio en su sitio web."
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:228
+msgid ""
+"If you like my Plugin and find it useful, please invite me for a cup of "
+"Coffee or a Beer and help me to keep it free and up to date."
+msgstr ""
+"Si te gusta mi Plugin y le resulta útil, por favor, me invitan a tomar una "
+"taza de café o una cerveza y me ayudan a mantenerlo gratuito y actualizado."
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:239
+msgid ""
+"Do you need some support? No problem let <a href=\"http://www.pascal-bajorat."
+"com\" target=\"_blank\">me</a> know and write a short mail or visit the <a "
+"href=\"http://wordpress.org/support/plugin/pb-oembed-html5-audio-with-cache-"
+"support\" target=\"_blank\">Support-Forum</a>."
+msgstr ""
+"¿Necesita apoyo? No hay problema, deje <a href=\"http://www.pascal-bajorat."
+"com\" target=\"_blank\">me</a> y escriba un breve mensaje o visite el <a "
+"href=\"http://wordpress.org/support/plugin/pb-oembed-html5-audio-with-cache-"
+"support\" target=\"_blank\">Support-Forum</a>."
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:241
+msgid "Plugins Page and Documentation"
+msgstr "Página y Documentación Plugins"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:241
+msgid "Support Forum"
+msgstr "Foro de Soporte"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:241
+msgid "Donation Page"
+msgstr "Página Donación"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:241
+msgid "Pascal-Bajorat.com"
+msgstr "Pascal-Bajorat.com"
+
+#: ../pascal-bajorat_com-libs/pascal-bajorat_com.php:352
+msgid "Upload / Mediathek"
+msgstr "Subir / Mediathek"
