@@ -36,8 +36,65 @@ get_header();
                     {
 					    include 'templates/template-parts/loop-medios.php';
 				    }
-				?>	
+				?>
 			</main><!-- #main -->
+			<div class="pagination">
+			</div>
+			<style>
+				.pagination {
+					text-align: center;
+				}
+				.pagination > a {
+					display: inline-block;
+					box-sizing: border-box;
+					min-width: 28px;
+					min-height: 22px;
+					background-color: #f7be68!important;
+					border-color: #f7be68!important;
+					color: #fff!important;
+					z-index: 2;
+					opacity: .5;
+					cursor: default;
+					transition: opacity .3s ease-in 0s;
+					position: relative;
+					padding: 3px 10px;
+					line-height: 1.42857143;
+					text-decoration: none;
+					margin-left: -1px;
+					font-size: 10px;
+				}
+				.pagination > a:hover {
+					opacity: 1;
+				}
+				.pagination > a.jp-current {
+					opacity: 1;
+				}
+				.pagination > a.jp-previous:before {
+					content: "<";
+				}
+				.pagination > a.jp-next:before {
+					content: ">";
+				}
+				.pagination > a.jp-disabled {
+					display: none;
+				}
+			</style>
+			<script type="text/javascript">
+				jQuery(function ($) {
+					$(".pagination").jPages({
+						containerID: "main",
+						previous: " ",
+						next: " ",
+						links: "numeric",
+						startPage: 1,
+						perPage: 10,
+						keyBrowse: false,
+						scrollBrowse: false,
+						animation: false
+					});
+				});
+			</script>
+			<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.paginate.js"></script>
 		</div><!-- #primary -->
 	</div>
 	<?php else: ?>
