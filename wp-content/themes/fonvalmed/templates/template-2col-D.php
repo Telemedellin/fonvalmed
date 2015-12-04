@@ -99,11 +99,7 @@
 				<h2 class="sidebar_block_title">Obras relacionadas</h2>
 				<div class="ctn__sidebar_content">
 					<?php $obras_relacionadas = get_field('obras_relacionadas', $terms->taxonomy.'_'.$terms->term_id); ?>
-<<<<<<< HEAD
 					<?php if (count($obras_relacionadas) > 0 && !empty($obras_relacionadas)): ?>
-=======
-					<?php if (count($obras_relacionadas) > 0 && !is_null($obras_relacionadas) && !empty($obras_relacionadas)): ?>
->>>>>>> 5dbc7f985bc7550f50843e7dcef11b71d8744781
 					<?php foreach($obras_relacionadas as $term_id): ?>
 					<?php if ($terms->term_id != $term_id): ?>
 					<?php $obra = get_term($term_id, $terms->taxonomy); ?>
