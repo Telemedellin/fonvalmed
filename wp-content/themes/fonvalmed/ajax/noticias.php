@@ -5,24 +5,22 @@ require_once $parse_uri[0] . 'wp-load.php';
 
 extract($_POST);
 
-$txtFecha = explode(" - ", $txtFecha);
-$fechaA = explode("-", $txtFecha[0]);
-$fechaB = explode("-", $txtFecha[1]);
-
+$txtDesde = explode("-", $txtDesde);
+$txtHasta = explode("-", $txtHasta);
 
 $query = array(
 	'cat' => 'noticias',
 	'date_query' => array(
 		array(
-			'year' => $fechaA[0],
-			'month' => $fechaA[1],
-			'day' => $fechaA[2],
+			'year' => $txtDesde[0],
+			'month' => $txtDesde[1],
+			'day' => $txtDesde[2],
 			'compare' => '>='
 		),
 		array(
-			'year' => $fechaB[0],
-			'month' => $fechaB[1],
-			'day' => $fechaB[2],
+			'year' => $txtHasta[0],
+			'month' => $txtHasta[1],
+			'day' => $txtHasta[2],
 			'compare' => '<='
 		)
 	)

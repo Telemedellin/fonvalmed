@@ -13,14 +13,28 @@
 	</header><!-- .entry-header -->
 	<div class="row">
 		<div class="col-md-12">
+			<style>
+				#filtro > .col-sm-4 > label {
+					padding-left: 15px;
+				}
+			</style>
 			<form id="filtro" method="POST">
-				<div class="col-sm-8">
-					<label>Rango de fecha</label>
-					<div class="col-md-10">
-						<input type="text" id="txtFecha" name="txtFecha" class="form-control" placeholder="Seleccione un rango de fecha" readonly>
+				<div class="col-sm-4">
+					<label>Fecha inicio</label>
+					<div class="col-md-8">
+						<input type="text" id="txtDesde" name="txtDesde" class="form-control" placeholder="Seleccione fecha" readonly>
 					</div>
-					<div class="col-md-2">
-						<img id="calendar" src="<?php echo get_template_directory_uri(). '/img/datepicker.png'; ?>" />
+					<div class="col-md-4">
+						<img id="calendar-desde" src="<?php echo get_template_directory_uri(). '/img/datepicker.png'; ?>" />
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<label>Fecha fin</label>
+					<div class="col-md-8">
+						<input type="text" id="txtHasta" name="txtHasta" class="form-control" placeholder="Seleccione fecha" readonly>
+					</div>
+					<div class="col-md-4">
+						<img id="calendar-hasta" src="<?php echo get_template_directory_uri(). '/img/datepicker.png'; ?>" />
 					</div>
 				</div>
 				<div class="col-md-4">
