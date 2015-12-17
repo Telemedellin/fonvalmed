@@ -24,9 +24,11 @@ Text Domain: fonvalmed
 	## Links
 	## Menus
 # Accessibility
+# DatePicker
 # Alignments
 # Clearings
 # Tabs
+# Filtros
 # Widgets
 # Content
 	## Header
@@ -78,6 +80,11 @@ Text Domain: fonvalmed
 @import "modules/accessibility";
 
 /*--------------------------------------------------------------
+# DatePicker
+--------------------------------------------------------------*/
+@import "modules/datepicker";
+
+/*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
 @import "modules/alignments";
@@ -91,6 +98,11 @@ Text Domain: fonvalmed
 # Tabs
 --------------------------------------------------------------*/
 @import "modules/tabs";
+
+/*--------------------------------------------------------------
+# Filtros
+--------------------------------------------------------------*/
+@import "modules/filtros";
 
 /*--------------------------------------------------------------
 # Widgets
