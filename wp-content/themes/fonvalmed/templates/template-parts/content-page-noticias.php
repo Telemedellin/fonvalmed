@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="ctn__fecha-final ctn__filtro">
-				<label>Fecha final</label>
+				<label>Fecha final </label>
 				<div class="ctn__fecha-input">
 					<input type="text" id="txtHasta" name="txtHasta" class="form-control" placeholder="Seleccione fecha" readonly>
 				</div>
