@@ -11,24 +11,32 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-	<div class="row">
-		<div class="col-md-12">
-			<form id="filtro" method="POST">
-				<div class="col-sm-8">
-					<label>Rango de fecha</label>
-					<div class="col-md-10">
-						<input type="text" id="txtFecha" name="txtFecha" class="form-control" placeholder="Seleccione un rango de fecha" readonly>
-					</div>
-					<div class="col-md-2">
-						<img id="calendar" src="<?php echo get_template_directory_uri(). '/img/datepicker.png'; ?>" />
-					</div>
+	<div class="row-fluid">
+		<p>Puedes utilizar los siguientes filtros para buscar noticias con fechas específicas</p>
+		<form id="filtro" method="POST">
+			<div class="ctn__fecha-inicial ctn__filtro">
+				<label>Fecha inicial</label>
+				<div class="ctn__fecha-input">
+					<input type="text" id="txtDesde" name="txtDesde" class="form-control" placeholder="Seleccione fecha" readonly>
 				</div>
-				<div class="col-md-4">
-					<label>&nbsp;</label>
-					<input type="button" id="btnFiltrar" class="btn btn-warning form-control" value="Filtrar" >
+				<div class="ctn__fecha-input_img">
+					<img id="calendar-desde" src="<?php echo get_template_directory_uri(). '/img/datepicker.png'; ?>" />
 				</div>
-			</form>
-		</div>
+			</div>
+			<div class="ctn__fecha-final ctn__filtro">
+				<label>Fecha final </label>
+				<div class="ctn__fecha-input">
+					<input type="text" id="txtHasta" name="txtHasta" class="form-control" placeholder="Seleccione fecha" readonly>
+				</div>
+				<div class="ctn__fecha-input_img">
+					<img id="calendar-hasta" src="<?php echo get_template_directory_uri(). '/img/datepicker.png'; ?>" />
+				</div>
+			</div>
+			<div class="ctn__btn-filtrar ctn__filtro">
+				<label>&nbsp;</label>
+				<input type="button" id="btnFiltrar" class="btn btn-warning form-control" value="Filtrar" >
+			</div>
+		</form>
 	</div>
 	<div class="entry-content">
 		<?php the_content(); ?>

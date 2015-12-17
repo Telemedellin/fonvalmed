@@ -25,13 +25,20 @@ jQuery(function($) {
 
 		$.datepick.setDefaults($.datepick.regionalOptions['es']);
 
-		$('#txtFecha').datepick({
-			dateFormat: 'yyyy-mm-dd',
-			rangeSelect: true
+		$('#txtDesde').datepick({
+			dateFormat: 'yyyy-mm-dd'
 		});
 
-		$('#calendar').on('click', function() {
-			$('#txtFecha').trigger("focus");
+		$('#txtHasta').datepick({
+			dateFormat: 'yyyy-mm-dd'
+		});
+
+		$('#calendar-desde').on('click', function() {
+			$('#txtDesde').trigger("focus");
+		});
+
+		$('#calendar-hasta').on('click', function() {
+			$('#txtHasta').trigger("focus");
 		});
 
 		$('#btnFiltrar').on('click', function(evt)

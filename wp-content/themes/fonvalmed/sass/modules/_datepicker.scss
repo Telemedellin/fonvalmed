@@ -2,7 +2,7 @@
 .datepick {
 	background-color: #fff;
 	color: #000;
-	border: 1px solid #444;
+	border: 1px solid #aaa;
     border-radius: 0.25em;
     -moz-border-radius: 0.25em;
     -webkit-border-radius: 0.25em;
@@ -27,7 +27,7 @@
 	text-decoration: none;
 }
 .datepick a.datepick-disabled {
-	color: #888;
+	color: rgb(247, 148, 104);
 	cursor: auto;
 }
 .datepick button {
@@ -147,7 +147,7 @@ button.datepick-cmd {
 	border-collapse: collapse;
 }
 .datepick-month thead {
-	border-bottom: 1px solid #aaa;
+	border-bottom: 0px solid #aaa;
 }
 .datepick-month th, .datepick-month td {
 	margin: 0em;
