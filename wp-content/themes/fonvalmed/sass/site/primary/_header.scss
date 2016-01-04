@@ -20,7 +20,13 @@
 .ctn_logos-alcaldia{
 	a{
 		display: block;
-		margin-top: 15%;
+		margin-top: 6%;
+		max-height: 40px;
+		text-align: right;
+		img{
+			max-width: 50%;
+			height: auto;
+		}
 	}
 }
 /* Estilos para pantallas entre los 768 px y 992 px */
@@ -35,6 +41,9 @@
 	.ctn_logos-alcaldia{
 		a{
 			margin-top: 11%;
+			img{
+				max-width: 26%;
+			}
 		}
 	}
 	.logos-alcaldia{
@@ -59,6 +68,9 @@
 	.ctn_logos-alcaldia{
 		a{
 			margin-top: 3%;
+			img{
+				max-width: 15%;
+			}
 		}
 	}
 	.logos-alcaldia{
@@ -93,5 +105,15 @@
 		margin: 0px;
 		bottom: 0px;
 		left: 0;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.ctn_logos-alcaldia{
+		a{
+			margin-top: 3%;
+			img{
+				max-width: 12%;
+			}
+		}
 	}
 }
