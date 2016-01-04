@@ -33,10 +33,10 @@
 		</div><!-- /ctn_top-bar -->
 		<div class="header_container container">
 			<div class="site-branding col-xs-6">
-				<h1 class="site-title"><a class="ctn_logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php bloginfo("template_directory"); ?>/img/logo-fonvalmed.png" alt="Logo Fonvalmed"></a></h1>
+			<h1 class="site-title"><a class="ctn_logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?php bloginfo("template_directory"); ?>/img/logo-fonvalmed.png" alt="Logo Fonvalmed" height="135" widht="251" ></a></h1>
 			</div><!-- .site-branding -->
 			<div class="ctn_logos-alcaldia col-xs-6">
-				<a href="https://www.medellin.gov.co/irj/portal/medellin"><img class="logos-alcaldia" src="<?php bloginfo("template_directory"); ?>/img/logos-alcaldia.png" alt="Logos Alcaldía de Medellín"></a>
+				<a href="https://www.medellin.gov.co/irj/portal/medellin"><img class="logos-alcaldia" src="<?php bloginfo("template_directory"); ?>/img/logos-alcaldia.png" width="307"  height="58" alt="Logos Alcaldía de Medellín"></a>
 			</div>
 		</div><!-- .header_container -->
 		<div class="ctn_navigation">
