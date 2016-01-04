@@ -4047,7 +4047,13 @@ button.datepick-cmd {
 
 .ctn_logos-alcaldia a {
   display: block;
-  margin-top: 15%;
+  margin-top: 6%;
+  max-height: 40px;
+  text-align: right;
+}
+.ctn_logos-alcaldia a img {
+  max-width: 50%;
+  height: auto;
 }
 
 /* Estilos para pantallas entre los 768 px y 992 px */
@@ -4063,6 +4069,9 @@ button.datepick-cmd {
 
   .ctn_logos-alcaldia a {
     margin-top: 11%;
+  }
+  .ctn_logos-alcaldia a img {
+    max-width: 26%;
   }
 
   .logos-alcaldia {
@@ -4090,6 +4099,9 @@ button.datepick-cmd {
 
   .ctn_logos-alcaldia a {
     margin-top: 3%;
+  }
+  .ctn_logos-alcaldia a img {
+    max-width: 15%;
   }
 
   .logos-alcaldia {
@@ -4126,6 +4138,14 @@ button.datepick-cmd {
   left: 0;
 }
 
+@media only screen and (min-width: 1200px) {
+  .ctn_logos-alcaldia a {
+    margin-top: 3%;
+  }
+  .ctn_logos-alcaldia a img {
+    max-width: 12%;
+  }
+}
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
